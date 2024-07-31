@@ -1,0 +1,27 @@
+{
+  "name": "forest-website",
+  "version": "1.0.0",
+  "description": "Forest Group - Find the most beautiful parks near you",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "forest",
+    "park",
+    "nature",
+    "travel",
+    "beautiful"
+  ],
+  "author": {
+    "name": "Forest Group Inc",
+    "email": "contact@forestgroup.com",
+    "url": "https://www.forestgroup.com"
+  },
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-sass": "^5.1.0",
+    "sass": "^1.77.8"
+  }
+}
