@@ -1,0 +1,1 @@
+var firstName="Kiwa",surname="Yakotako",country="Japan",city="Nagasuka",introduceMyFriend=function(){console.log("Hello, my name is ".concat(firstName," ").concat(surname,". I live in ").concat(city,", ").concat(country,"."))};introduceMyFriend();
