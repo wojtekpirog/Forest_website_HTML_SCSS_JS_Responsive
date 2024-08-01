@@ -1,4 +1,4 @@
-@use "./font-faces_"; // self-hosted fonts
+@use "./utils"; // utilities (colors, self-hosted fonts, mixins, animations, etc.)
 @use "./reset"; // CSS reset
 @use "./components"; // components
 @use "./small";
