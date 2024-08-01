@@ -7,13 +7,18 @@
 }
 
 :root {
+  --primary-font: "Primary", Arial, sans-serif;
+  --primary-font-italic: "Primary_italic", Arial, sans-serif;
+  --primary-font-medium: "Primary_medium", Arial, sans-serif;
+  --primary-font-bold: "Primary_bold", Arial, sans-serif;
+
   scroll-behavior: smooth;
   font-size: 62.5%;
 }
 
 body {
   font-size: 1.6rem;
-  font-family: Arial, sans-serif;
+  font-family: var(--primary-font);
   background-color: #588157;
   color: #dad7cd;
 }

@@ -1,2 +1,4 @@
-@use "./reset";
+@use "./font-faces_"; // self-hosted fonts
+@use "./reset"; // CSS reset
+@use "./components"; // components
 @use "./small";
