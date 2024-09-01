@@ -1,4 +1,4 @@
-const { src, dest, series, parallel, watch } = require('gulp');
+const { src, dest, series, watch } = require('gulp');
 // CSS-related plug-ins
 const sass = require('gulp-sass')(require('sass'));
 const postcss = require('gulp-postcss');
@@ -13,8 +13,6 @@ const uglify = require('gulp-uglify');
 const imagemin = require('gulp-imagemin');
 // Gulp-clean
 const clean = require('gulp-clean');
-// Kit
-const kit = require('gulp-kit');
 // Sourcemaps
 const sourcemaps = require('gulp-sourcemaps');
 // BrowserSync & reload
@@ -114,7 +112,6 @@ function startBrowserSync(callback) {
     {
       injectChanges: true,
       server: {
-        // Ścieżka do katalogu, w którym będzie uruchamiany serwer
         baseDir: "./dist"
       },
     }
@@ -125,7 +122,6 @@ function startBrowserSync(callback) {
 
 function watchForChanges() {
   watch("./dist/*.html").on("change", reload);
-  // watch([paths.styles.src, paths.scripts.src], series(prepareCSS, transformJS)).on("change", reload);
   watch(paths.styles.src, prepareCSS).on("change", reload);
   watch(paths.scripts.src, transformJS).on("change", reload);
   watch(paths.images.src, compressImages).on("change", reload);
