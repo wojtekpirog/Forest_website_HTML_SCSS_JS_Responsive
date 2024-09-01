@@ -1,0 +1,21 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+
+  &__logo {
+    width: 24px;
+    display: flex;
+    align-items: center;
+    gap: .25em;
+    font-size: 3.2rem;
+  }
+
+  &__burger-icon {
+    padding: .5em;
+    cursor: pointer;
+  }
+
+  &__links {
+    display: none;
+  }
+}
