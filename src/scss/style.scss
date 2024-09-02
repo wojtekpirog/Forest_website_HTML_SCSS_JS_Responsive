@@ -1,4 +1,6 @@
-@use "./utils"; // utilities (colors, self-hosted fonts, mixins, animations, etc.)
+@use "./utils" as utils; // utilities (colors, self-hosted fonts, mixins, animations, etc.)
 @use "./reset"; // CSS reset
+@use "./miscellaneous"; // styles for more general and none-specific selectors
 @use "./components"; // components
-@use "./small";
+@use "./small"; // >= 576px;
+@use "./large"; // >= 992px;
