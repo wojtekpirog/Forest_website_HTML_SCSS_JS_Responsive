@@ -9,10 +9,14 @@
 }
 
 :root {
-  --primary-font: "Primary", Arial, sans-serif;
+  --primary-font: "Primary";
   --primary-font-italic: "Primary_italic", Arial, sans-serif;
+  --primary-font-extralight: "Primary_extralight", Arial, sans-serif;
+  --primary-font-light: "Primary_light", Arial, sans-serif;
   --primary-font-medium: "Primary_medium", Arial, sans-serif;
+  --primary-font-semibold: "Primary_semibold", Arial, sans-serif;
   --primary-font-bold: "Primary_bold", Arial, sans-serif;
+  --primary-font-black: "Primary_black", Arial, sans-serif;
 
   scroll-behavior: smooth;
   font-size: 62.5%;
@@ -20,6 +24,6 @@
 
 body {
   font-size: 1.6rem;
-  font-family: var(--primary-font);
+  font-family: var(--primary-font-light);
   background-color: colors.$primary-color;
 }
