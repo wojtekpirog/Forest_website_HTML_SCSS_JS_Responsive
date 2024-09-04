@@ -10,7 +10,7 @@ const main = () => {
 const prepareDOMElements = () => {
   toggleButton = document.querySelector(".navbar__burger-icon");
   navbarLinksContainer = document.querySelector(".navbar__links");
-  overlay = document.querySelector(".overlay");
+  overlay = document.querySelector(".navbar__overlay");
 }
 
 const addListeners = () => {
@@ -22,11 +22,11 @@ const addListeners = () => {
 const toggleNavbarMenu = () => {
   toggleButton.classList.toggle("navbar__burger-icon--active");
   navbarLinksContainer.classList.toggle("navbar__links--active");
-  overlay.classList.toggle("overlay--active");
+  overlay.classList.toggle("navbar__overlay--active");
 }
 
 const closeNavbarMenu = () => {
-  overlay.classList.remove("overlay--active");
+  overlay.classList.remove("navbar__overlay--active");
   toggleButton.classList.remove("navbar__burger-icon--active");
   navbarLinksContainer.classList.remove("navbar__links--active");
 }

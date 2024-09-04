@@ -21,4 +21,18 @@
       flex-direction: row;
     }
   }
+
+  .hero {
+    &__text {
+      padding-left: 1em;
+    }
+
+    &__title {
+      font-size: 2rem;
+    }
+
+    &__description {
+      font-size: 3.2rem;
+    }
+  }
 }
