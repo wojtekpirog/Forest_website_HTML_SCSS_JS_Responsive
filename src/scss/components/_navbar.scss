@@ -1,6 +1,9 @@
 @use "../utils/colors" as colors;
 
 .navbar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
@@ -107,4 +110,8 @@
       }
     }
   }
+}
+
+.container {
+  height: 100vh;
 }
