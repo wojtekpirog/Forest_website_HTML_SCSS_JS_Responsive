@@ -3,10 +3,10 @@
 .navbar {
   display: flex;
   justify-content: space-between;
-  padding: 1em;
+  flex-wrap: wrap;
+  padding: .5em 1em .5em 2em;
 
   &__logo {
-    padding: .5em;
     display: flex;
     align-items: center;
     gap: .25em;
@@ -27,14 +27,14 @@
     padding: 1em;
     background: none;
     border: 2px solid transparent;
-    border-radius: 8px;
+    border-radius: 4px;
     font-size: 1.6rem;
     cursor: pointer;
 
     &-line,
     &-line::before,
     &-line::after {
-      width: 100%;
+      width: 37px;
       height: 4px;
       background-color: colors.$black;
       border-radius: 2px;
@@ -44,7 +44,6 @@
     &-line::after {
       content: "";
       position: absolute;
-      width: 36px;
       left: 16px;
       transition: transform 200ms ease-in-out;
     }
@@ -74,5 +73,38 @@
 
   &__links {
     display: none;
+    flex-basis: 100%;
+
+    &--active {
+      display: block;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    list-style-type: none;
+  }
+
+  &__item {
+    width: 100%;
+    text-align: center;
+  }
+
+  &__link {
+    width: 100%;
+    display: inline-block;
+    padding: 2em 1em;
+    text-decoration: none;
+    color: colors.$black;
+    transition: background-color 100ms linear, color 200ms linear;
+
+    @media (hover: hover) {
+      &:hover {
+        background-color: colors.$black;
+        color: colors.$light;
+      }
+    }
   }
 }

@@ -1,5 +1,24 @@
+@use "./utils/colors" as colors;
+
 @media screen and (min-width: 992px) {
   .container {
     width: 960px;
+  }
+
+  .navbar {
+    padding: 0;
+
+    &__burger-icon {
+      display: none;
+    }
+
+    &__links {
+      display: block;
+      flex-basis: auto;
+    }
+
+    &__list {
+      flex-direction: row;
+    }
   }
 }

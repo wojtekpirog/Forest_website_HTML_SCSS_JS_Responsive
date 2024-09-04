@@ -44,7 +44,6 @@ function prepareCSS() {
     .pipe(sourcemaps.init())
     .pipe(sass().on("error", (error) => {
       console.error(`Sass error: ${error}`);
-      this.emit("end");
     }))
     .pipe(postcss([
       autoprefixer(),
@@ -56,7 +55,6 @@ function prepareCSS() {
       extname: '.css'
     }).on("error", (error) => {
       console.error(`Rename error: ${error}`);
-      this.emit("end");
     }))
     .pipe(sourcemaps.write("."))
     .pipe(dest(paths.styles.dist));
@@ -69,18 +67,15 @@ function transformJS() {
       presets: ['@babel/env']
     }).on("error", (error) => {
       console.error(`Babel error: ${error}`);
-      this.emit("end");
     }))
     .pipe(uglify().on("error", (error) => {
       console.error(`Uglify error: ${error}`);
-      this.emit("end");
     }))
     .pipe(rename({
       suffix: ".min",
       extname: ".js"
     }).on("error", (error) => {
       console.error(`Rename error: ${error}`);
-      this.emit("end");
     }))
     .pipe(sourcemaps.write("."))
     .pipe(dest(paths.scripts.dist));
@@ -90,13 +85,11 @@ function compressImages() {
   return src(paths.images.src)
     .pipe(imagemin().on("error", (error) => {
       console.error(`Imagemin error: ${error}`);
-      this.emit("end");
     }))
     .pipe(rename({
       suffix: '.min',
     }).on("error", (error) => {
       console.error(`Rename error: ${error}`);
-      this.emit("end");
     }))
     .pipe(dest(paths.images.dist));
 }
