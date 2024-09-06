@@ -1,0 +1,27 @@
+@use "../utils/colors" as colors;
+
+.about {
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 3em;
+  }
+
+  &__image-box {
+    width: 100%;
+    object-fit: cover;
+  }
+
+  &__image {
+    width: 100%;
+  }
+
+  &__title {
+    margin-bottom: 1em;
+    text-align: center;
+  }
+
+  &__description {
+    color: colors.$darkgray;
+  }
+}

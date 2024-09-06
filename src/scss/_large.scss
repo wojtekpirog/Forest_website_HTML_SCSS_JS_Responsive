@@ -35,4 +35,18 @@
       font-size: 3.2rem;
     }
   }
+
+  .about {
+    &__content {
+      flex-direction: row;
+
+      & > * {
+        flex-basis: 50%;
+      }
+    }
+
+    &__title {
+      text-align: initial;
+    }
+  }
 }

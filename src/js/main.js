@@ -1,3 +1,4 @@
+let navbar;
 let toggleButton;
 let navbarLinksContainer;
 let overlay;
@@ -5,9 +6,11 @@ let overlay;
 const main = () => {
   prepareDOMElements();
   addListeners();
+  fixNavbarMargin();
 }
 
 const prepareDOMElements = () => {
+  navbar = document.querySelector(".navbar");
   toggleButton = document.querySelector(".navbar__burger-icon");
   navbarLinksContainer = document.querySelector(".navbar__links");
   overlay = document.querySelector(".navbar__overlay");
@@ -29,6 +32,11 @@ const closeNavbarMenu = () => {
   overlay.classList.remove("navbar__overlay--active");
   toggleButton.classList.remove("navbar__burger-icon--active");
   navbarLinksContainer.classList.remove("navbar__links--active");
+}
+
+const fixNavbarMargin = () => {
+  const navbarContainer = navbar.parentNode;
+  navbarContainer.style.width = "100%";
 }
 
 document.addEventListener("DOMContentLoaded", main);

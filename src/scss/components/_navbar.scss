@@ -1,12 +1,14 @@
 @use "../utils/colors" as colors;
 
+
+
 .navbar {
   position: sticky;
   top: 0;
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  padding: .5em 1em;
+  padding: .5em 0;
   background-color: colors.$light;
   z-index: 10;
 
