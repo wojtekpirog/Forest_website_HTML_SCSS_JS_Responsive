@@ -1,6 +1,8 @@
 @use "../utils/colors" as colors;
 
 .about {
+  margin-bottom: 3em;
+
   &__content {
     display: flex;
     flex-direction: column;
@@ -23,5 +25,6 @@
 
   &__description {
     color: colors.$darkgray;
+    line-height: 2;
   }
 }

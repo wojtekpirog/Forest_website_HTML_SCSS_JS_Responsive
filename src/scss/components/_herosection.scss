@@ -1,0 +1,35 @@
+@use "../utils/colors" as colors;
+
+.hero-section {
+  position: relative;
+  margin-bottom: 3em;
+  height: 20vh;
+  z-index: 0;
+
+  &.hero-image {
+    background-image: url("../images/girl_walking_mobile.min.jpg");
+    background-position: center center;
+    background-size: cover;
+  }
+
+  &__text-box {
+    width: 80%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 2px solid colors.$light;
+  }
+  
+  &__text {
+    color: colors.$light;
+    font-size: 1.6rem;
+    font-family: var(--primary-font-medium);
+    padding: 1em 2em;
+    text-align: center;
+  }
+
+  & > .section__overlay {
+    z-index: -1;
+  }
+}

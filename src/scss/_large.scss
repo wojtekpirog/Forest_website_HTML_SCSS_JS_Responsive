@@ -48,5 +48,13 @@
     &__title {
       text-align: initial;
     }
+
+    &__description {
+      font-size: 1.4rem;
+    }
+  }
+
+  .hero-image {
+    background-image: url("../images/girl_walking_desktop.jpg");
   }
 }

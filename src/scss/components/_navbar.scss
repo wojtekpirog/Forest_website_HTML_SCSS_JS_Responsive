@@ -1,4 +1,5 @@
 @use "../utils/colors" as colors;
+@use "../utils/mixins" as mixins;
 
 .navbar {
   position: sticky;
@@ -111,9 +112,12 @@
 
     @media (hover: hover) {
       &:hover {
-        background-color: colors.$black;
-        color: colors.$light;
+        @include mixins.navbarLinkActiveAndHover;
       }
+    }
+
+    &--active {
+      @include mixins.navbarLinkActiveAndHover;      
     }
   }
 }

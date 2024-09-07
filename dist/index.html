@@ -32,7 +32,7 @@
         <!-- Links -->
         <div class="navbar__links" id="navbarLinks">
           <ul class="navbar__list">
-            <li class="navbar__item"><a href="./index.html" class="navbar__link">Home</a></li>
+            <li class="navbar__item"><a href="./index.html" class="navbar__link navbar__link--active" aria-current="page">Home</a></li>
             <li class="navbar__item"><a href="#about" class="navbar__link">O nas</a></li>
             <li class="navbar__item"><a href="./about.html" class="navbar__link">Oferta</a></li>
             <li class="navbar__item"><a href="./about.html" class="navbar__link">Kontakt</a></li>
@@ -53,7 +53,12 @@
     <!-- Hero -->
     <section class="hero">
       <!-- Hero image -->
-      <img class="hero__image" src="./images/hero_image_mobile.min.jpg" alt="Drewniany pomost biegnący przez las."> 
+      <picture>
+        <!-- Obrazek dla urządzeń o szerokości ekranu co najmniej 768px -->
+        <source srcset="./images/hero_image_desktop.min.jpg" media="(min-width: 768px)">
+        <!-- Obrazek domyślny, dla urządzeń o węższych ekranach -->
+        <img class="hero__image" src="./images/hero_image_mobile.min.jpg" alt="Drewniany pomost biegnący przez las."> 
+      </picture> 
       <!-- Hero image -->
       <!-- Container -->
       <div class="container">
@@ -81,13 +86,19 @@
         <div class="about__content">
           <!-- Image box -->
           <div class="about__image-box">
-            <img class="about__image" src="./images/aboutus_image_mobile.min.jpg" alt="Malutka wyspa na środku jeziora otoczonego drzewami.">
+            <picture>
+              <!-- Obrazek dla urządzeń o szerokości ekranu co najmniej 768px -->
+              <source srcset="./images/aboutus_image_desktop.min.jpg" media="(min-width: 992px)">
+              <!-- Obrazek domyślny, dla urządzeń o węższych ekranach -->
+              <img class="about__image" src="./images/aboutus_image_mobile.min.jpg" alt="Malutka wyspa na środku jeziora otoczonego drzewami.">
+            </picture>
           </div> 
           <!-- Image box -->
           <!-- Text box -->
           <div class="about__text">
             <h3 class="about__title">Niezapomniane przygody</h3>
-            <p class="about__description">Plejsholderek...</p>
+            <p class="about__description">Naszą misją jest odkrywanie z Tobą najpiękniejszych zakątków natury – tych bliskich i dalekich, które ożywiają zmysły i wyciszają umysł. Specjalizujemy się w doradztwie i organizacji wypraw do najpiękniejszych terenów zielonych, gdzie lasy szepczą historie, a łąki rozkwitają kolorami. Z pasją tworzymy niezapomniane doświadczenia, które pozwolą Ci na nowo odkryć harmonię z przyrodą.</p>
+            <p class="about__description">Dołącz do nas, by poczuć magię dzikiej przyrody, odnaleźć spokój i napełnić się energią natury!</p>
           </div> 
           <!-- Text box -->
         </div> 
@@ -96,6 +107,22 @@
       <!-- Container -->
     </section> 
     <!-- About us -->
+    <!-- Hero -->
+    <section class="hero-section hero-image">
+      <!-- Container -->
+      <div class="container">
+        <!-- Text -->
+        <div class="hero-section__text-box">
+          <p class="hero-section__text">Przygoda dla całej rodziny</p>
+        </div> 
+        <!-- Text -->
+      </div> 
+      <!-- Container -->
+      <!-- Overlay -->
+      <div class="section__overlay"></div>
+      <!-- Overlay -->
+    </section> 
+    <!-- Hero -->
   </main> 
   <!-- Main content -->
   <script src="./js/main.min.js"></script>

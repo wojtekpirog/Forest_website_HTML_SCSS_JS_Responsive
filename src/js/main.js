@@ -23,6 +23,10 @@ const toggleNavbarMenu = () => {
   toggleButton.classList.toggle("navbar__burger-icon--active");
   navbarLinksContainer.classList.toggle("navbar__links--active");
   overlay.classList.toggle("navbar__overlay--active");
+
+  navbarLinksContainer.classList.contains("navbar__links--active") 
+    ? toggleButton.setAttribute("aria-expanded", "true") 
+    : toggleButton.setAttribute("aria-expanded", "false");
 }
 
 const closeNavbarMenu = () => {
