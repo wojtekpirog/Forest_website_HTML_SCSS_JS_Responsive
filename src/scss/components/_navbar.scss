@@ -6,7 +6,7 @@
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  padding: .5em 0;
+  padding: .5em;
   background-color: colors.$light;
   z-index: 10;
 
@@ -35,6 +35,10 @@
     border-radius: 4px;
     font-size: 1.6rem;
     cursor: pointer;
+
+    &-line {
+      display: block;
+    }
 
     &-line,
     &-line::before,

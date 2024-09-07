@@ -1,11 +1,13 @@
 @use "./utils/colors" as colors;
 
 @media screen and (min-width: 992px) {
-  .container {
+  .container, .container:has(.navbar) {
     width: 960px;
   }
 
   .navbar {
+    padding: 0;
+
     &__burger-icon {
       display: none;
     }

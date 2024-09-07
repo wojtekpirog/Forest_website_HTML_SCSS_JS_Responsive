@@ -9,9 +9,9 @@
     @include mixins.overlay;
   }
 
-  // &:has(.navbar) {
-  //   width: 100%;
-  // }
+  &:has(.navbar) {
+    width: 100%;
+  }
 }
 
 .section__overlay {
