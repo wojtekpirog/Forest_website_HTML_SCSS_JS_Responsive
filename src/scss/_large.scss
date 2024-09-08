@@ -53,11 +53,16 @@
   .hero-image {
     background-image: url("../images/girl_walking_desktop.jpg");
   }
-  
-  .hero-section {
 
+  .hero-section {
     &__text {
       font-size: 3.2rem;
+    }
+  }
+
+  .offer {
+    &__cards {
+      flex-direction: row;
     }
   }
 }

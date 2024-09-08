@@ -1,0 +1,8 @@
+@use "../utils/colors" as colors;
+
+.offer {
+  &__cards {
+    display: flex;
+    flex-direction: column;
+  }
+}
