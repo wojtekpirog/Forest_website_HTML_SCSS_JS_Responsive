@@ -1,0 +1,11 @@
+@media screen and (min-width: 1200px) {
+  .container, .container:has(.navbar) {
+    width: 1140px;
+  }
+
+  .hero-section {
+    &__text {
+      font-size: 3.8rem;
+    }
+  }
+}

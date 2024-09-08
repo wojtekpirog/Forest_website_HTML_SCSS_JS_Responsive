@@ -27,10 +27,6 @@
       padding-left: 1em;
     }
 
-    &__title {
-      font-size: 2rem;
-    }
-
     &__description {
       font-size: 3.2rem;
     }
@@ -56,5 +52,12 @@
 
   .hero-image {
     background-image: url("../images/girl_walking_desktop.jpg");
+  }
+  
+  .hero-section {
+
+    &__text {
+      font-size: 3.2rem;
+    }
   }
 }
