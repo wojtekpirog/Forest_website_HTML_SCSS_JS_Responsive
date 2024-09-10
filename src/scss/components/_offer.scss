@@ -1,8 +1,88 @@
 @use "../utils/colors" as colors;
 
 .offer {
-  &__cards {
+  &__card-group {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  &__card {
+    padding: 3em;
+    box-shadow: 0 2px 5px 0 colors.$darkgray;
+    border-radius: 4px;
+    text-align: center;
+
+    &-title {
+      margin-bottom: 1em;
+      font-family: var(--primary-font-extralight);
+    }
+
+    &-price {
+      margin-bottom: .5em;
+      font-family: var(--primary-font-medium);
+      font-size: 3.6rem;
+      letter-spacing: -2px;
+
+      &-currency {
+        font-size: 1.3em;
+      }
+    }
+
+    &-options {
+      &-box {
+        margin-bottom: 2em;
+      }
+      
+      &-list {
+        list-style-type: none;
+      }
+    }
+    
+    &-option {
+      margin-bottom: .5em;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: .5em;
+    }
+
+    &-link {
+      display: inline-block;
+      text-decoration: none;
+      padding: .75em 4.5em;
+      color: colors.$darkgray;
+      border-radius: 4px;
+      box-shadow: 0 2px 5px 0 colors.$darkgray;
+      transform: translateY(0);
+      transition: transform 200ms ease-in-out, box-shadow 200ms ease-in-out;
+
+      &--popular {
+        background-color: colors.$mint;
+        color: colors.$black;
+        box-shadow: 0 2px 5px 0 colors.$mintshadow;
+      }
+
+      @media (hover: hover) {
+        &:hover {
+          transform: scale(1.05);
+          box-shadow: 0 3px 8px 0 colors.$darkgray;
+        }
+
+        &--popular:hover {
+          box-shadow: 0 3px 8px 0 colors.$mintshadow;
+        }
+      }
+    }
+  }
+
+  &__card-option-icon {
+    width: 1.6rem;
+
+    &--available {
+      fill: green;
+    }
   }
 }

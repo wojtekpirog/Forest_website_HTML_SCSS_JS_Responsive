@@ -8,4 +8,18 @@
       font-size: 3.8rem;
     }
   }
+
+  .offer {
+    &__card-group {
+      gap: 3rem;
+    }
+
+    &__card {
+      padding: 3em;
+
+      &-option {
+        font-size: 1.6rem;
+      }
+    }
+  }
 }

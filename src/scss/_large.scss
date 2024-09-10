@@ -61,8 +61,16 @@
   }
 
   .offer {
-    &__cards {
+    &__card-group {
       flex-direction: row;
+    }
+
+    &__card {
+      padding: 2em;
+
+      &-option {
+        font-size: 1.4rem;
+      }
     }
   }
 }
