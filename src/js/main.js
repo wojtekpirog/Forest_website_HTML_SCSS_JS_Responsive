@@ -1,16 +1,19 @@
 let toggleButton;
 let navbarLinksContainer;
 let overlay;
+let footerYear;
 
 const main = () => {
   prepareDOMElements();
   addListeners();
+  setFooterYear();
 }
 
 const prepareDOMElements = () => {
   toggleButton = document.querySelector(".navbar__burger-icon");
   navbarLinksContainer = document.querySelector(".navbar__links");
   overlay = document.querySelector(".navbar__overlay");
+  footerYear = document.querySelector(".footer__copyright-year");
 }
 
 const addListeners = () => {
@@ -33,6 +36,11 @@ const closeNavbarMenu = () => {
   overlay.classList.remove("navbar__overlay--active");
   toggleButton.classList.remove("navbar__burger-icon--active");
   navbarLinksContainer.classList.remove("navbar__links--active");
+}
+
+const setFooterYear = () => {
+  const currentYear = new Date().getFullYear();
+  footerYear.textContent = currentYear;
 }
 
 document.addEventListener("DOMContentLoaded", main);

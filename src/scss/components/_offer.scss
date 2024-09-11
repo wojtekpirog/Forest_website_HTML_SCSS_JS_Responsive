@@ -1,6 +1,8 @@
 @use "../utils/colors" as colors;
 
 .offer {
+  margin-bottom: 2em;
+
   &__card-group {
     display: flex;
     flex-direction: column;
