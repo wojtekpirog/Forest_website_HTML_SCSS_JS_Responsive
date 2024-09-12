@@ -1,4 +1,5 @@
 @use "../utils/colors" as colors;
+@use "../utils/mixins" as mixins;
 
 .footer {
   background-color: colors.$lightgray;
@@ -9,6 +10,16 @@
     flex-direction: column;
     flex-wrap: wrap;
     padding: 2em;
+
+    &-logo {
+      &-link {
+        @include mixins.companyLogo;
+      }
+
+      &-icon {
+        width: 25px;
+      }
+    }
   }
 
   &__copyright {

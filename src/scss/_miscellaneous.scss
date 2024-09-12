@@ -1,21 +1,23 @@
 @use "./utils/mixins" as mixins;
+@use "./utils/colors" as colors;
+
+.navbar__container {
+  width: 100%;
+  position: sticky;
+  top: 0;
+  background-color: colors.$light;
+  z-index: 11;
+}
+
+.navbar__overlay--active {
+  position: fixed;
+  @include mixins.overlay;
+  z-index: 10;
+}
 
 .container {
   width: 94%;
   margin: 0 auto;
-
-  & > .navbar__overlay--active {
-    position: fixed;
-    @include mixins.overlay;
-    z-index: 11;
-  }
-
-  &:has(.navbar) {
-    width: 100%;
-  }
-  // &:first-of-type {
-  //   width: 100%;
-  // }
 }
 
 .section__overlay {

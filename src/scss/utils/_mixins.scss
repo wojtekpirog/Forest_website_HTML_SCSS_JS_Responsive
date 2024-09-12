@@ -12,3 +12,13 @@
   background-color: colors.$black;
   color: colors.$light;
 }
+
+@mixin companyLogo {
+  display: flex;
+  align-items: center;
+  gap: .25em;
+  font-size: 3.2rem;
+  font-family: var(--primary-font-light);
+  color: colors.$black;
+  text-decoration: none;
+}
