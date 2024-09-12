@@ -74,4 +74,14 @@
       }
     }
   }
+
+  .footer {
+    &__nav {
+      flex-direction: row;
+
+      &-logo {
+        flex-grow: 1;
+      }
+    }
+  }
 }

@@ -9,15 +9,48 @@
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    padding: 2em;
+    gap: 2em;
+    padding: 3em;
 
     &-logo {
       &-link {
         @include mixins.companyLogo;
+        font-size: 4.6rem;
       }
 
       &-icon {
-        width: 25px;
+        width: 40px;
+      }
+    }
+
+    &-section {
+      &-title, &-item {
+        margin-bottom: 1em;
+      }
+
+      &-title {
+        font-size: 2.2rem;
+        color: colors.$black;
+      }
+
+      &-list {
+        list-style-type: none;
+      }
+
+      &-item:last-child {
+        margin-bottom: 0;
+      }
+
+      &-link {
+        text-decoration: none;
+        color: colors.$darkgray;
+        font-size: 1.4rem;
+      }
+
+      &:last-child {
+        .footer__nav-section-item:last-child {
+          margin-bottom: 1em;
+        }
       }
     }
   }
