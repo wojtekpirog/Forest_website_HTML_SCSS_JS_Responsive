@@ -1,3 +1,5 @@
+let navbar;
+let navbarContainer;
 let toggleButton;
 let navbarLinksContainer;
 let overlay;
@@ -9,18 +11,15 @@ const main = () => {
   prepareDOMElements();
   addListeners();
   setFooterYear();
-
-  allSections.forEach((section) => {
-    console.log(section.offsetTop);
-  });
 }
 
 const prepareDOMElements = () => {
+  navbar = document.querySelector(".navbar");
+  navbarContainer = document.querySelector(".navbar__container");
   toggleButton = document.querySelector(".navbar__burger-icon");
   navbarLinksContainer = document.querySelector(".navbar__links");
   overlay = document.querySelector(".navbar__overlay");
   footerYear = document.querySelector(".footer__copyright-year");
-
   allSections = document.querySelectorAll(".page-section");
 }
 
@@ -39,6 +38,8 @@ const toggleNavbarMenu = () => {
   navbarLinksContainer.classList.contains("navbar__links--active") 
     ? toggleButton.setAttribute("aria-expanded", "true") 
     : toggleButton.setAttribute("aria-expanded", "false");
+
+  navbarLinksContainer.classList.contains("navbar__links--active") && (navbar.classList.remove("navbar--dark"))
 }
 
 const closeNavbarMenu = () => {
@@ -52,9 +53,13 @@ const handleObserver = () => {
 
   allSections.forEach((section) => {
     if (section.classList.contains("page-section--light") && section.offsetTop <= currentSection + 100) {
-      console.log("Change navbar theme to dark");
+      if (!navbarLinksContainer.classList.contains("navbar__links--active")) {
+        navbar.classList.add("navbar--dark");
+        navbarContainer.classList.add("navbar__container--dark");
+      }
     } else if (section.classList.contains("page-section--dark") && section.offsetTop <= currentSection + 100) {
-      console.log("Change navbar theme to light");
+      navbar.classList.remove("navbar--dark");
+      navbarContainer.classList.remove("navbar__container--dark");
     }
   });
 }

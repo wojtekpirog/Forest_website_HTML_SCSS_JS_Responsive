@@ -7,6 +7,10 @@
   top: 0;
   background-color: colors.$light;
   z-index: 11;
+
+  &--dark {
+    background-color: colors.$black;
+  }
 }
 
 .navbar__overlay--active {

@@ -13,6 +13,11 @@
   color: colors.$light;
 }
 
+@mixin darkNavbarLinkActiveAndHover {
+  background-color: colors.$light;
+  color: colors.$black;
+}
+
 @mixin companyLogo {
   display: flex;
   align-items: center;
