@@ -2,14 +2,14 @@ let navbar;
 let navbarContainer;
 let toggleButton;
 let navbarLinksContainer;
+let navbarLinks;
 let overlay;
 let footerYear;
-
-let allSections;
-
+// All sections on the page that need to be spied on when scrolling
+let allSections; 
 // The value of the margin-bottom property of the section element (each section has the same value of the `margin-bottom` property)
-let sectionMarginBottom;
-
+// let sectionMarginBottom;
+// `offsetHeight` of the navbar
 let navbarHeight;
 
 const main = () => {
@@ -23,11 +23,13 @@ const prepareDOMElements = () => {
   navbarContainer = document.querySelector(".navbar__container");
   toggleButton = document.querySelector(".navbar__burger-icon");
   navbarLinksContainer = document.querySelector(".navbar__links");
+  navbarLinks = document.querySelectorAll(".navbar__link");
   overlay = document.querySelector(".navbar__overlay");
   footerYear = document.querySelector(".footer__copyright-year");
-  allSections = document.querySelectorAll(".page-section");
 
-  sectionMarginBottom = Number(window.getComputedStyle(allSections[0]).getPropertyValue("margin-bottom").slice(0, -2));
+  allSections = document.querySelectorAll(".page-section"); // Scrollspy sections
+
+  // sectionMarginBottom = Number(window.getComputedStyle(allSections[0]).getPropertyValue("margin-bottom").slice(0, -2));
   navbarHeight = navbar.offsetHeight;
 }
 
@@ -35,7 +37,8 @@ const addListeners = () => {
   toggleButton.addEventListener("click", toggleNavbarMenu);
   overlay.addEventListener("click", closeNavbarMenu);
   window.addEventListener("resize", () => window.innerWidth >= 992 && closeNavbarMenu());
-  window.addEventListener("scroll", handleNavbarThemeChange);
+  window.addEventListener("scroll", handleScrollSpy);
+  // window.addEventListener("scroll", handleNavbarThemeChange);
 }
 
 const toggleNavbarMenu = () => {
@@ -56,20 +59,21 @@ const closeNavbarMenu = () => {
   navbarLinksContainer.classList.remove("navbar__links--active");
 }
 
-const handleNavbarThemeChange = () => {
-  const currentSection = window.scrollY;
+const handleScrollSpy = () => {
+  // We want the scroll spy to work only on the main page:
+  if (document.body.dataset.mainPage === "true") {
+    const sections = [];
+    
+    allSections.forEach((section) => {
 
-  allSections.forEach((section) => {
-    if (section.classList.contains("page-section--light") && section.offsetTop <= currentSection + navbarHeight + sectionMarginBottom) {
-      if (!navbarLinksContainer.classList.contains("navbar__links--active")) {
-        navbar.classList.add("navbar--dark");
-        navbarContainer.classList.add("navbar__container--dark");
+      if (window.scrollY <= section.offsetHeight + section.offsetTop - navbarHeight) {
+        sections.push(section);
       }
-    } else if (section.classList.contains("page-section--dark") && section.offsetTop <= currentSection + navbarHeight + sectionMarginBottom) {
-      navbar.classList.remove("navbar--dark");
-      navbarContainer.classList.remove("navbar__container--dark");
-    }
-  });
+
+    });
+
+    console.log(sections);
+  }
 }
 
 const setFooterYear = () => {

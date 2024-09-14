@@ -1,8 +1,9 @@
 @use "../utils/colors" as colors;
 
 .hero-section {
-  position: relative;
   height: 20vh;
+  margin-bottom: 3em;
+  position: relative;
   z-index: 0;
 
   &.hero-image {

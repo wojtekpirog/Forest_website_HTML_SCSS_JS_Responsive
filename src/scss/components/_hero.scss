@@ -1,8 +1,9 @@
 @use "../utils/colors" as colors;
 
 .hero {
-  position: relative;
   height: 25vh;
+  margin-bottom: 3em;
+  position: relative;
 
   &__image {
     width: 100%;
