@@ -1,9 +1,11 @@
 @use "../utils/colors" as colors;
+@use "../utils/mixins" as mixins;
 
 .offer {
   margin-bottom: 2em;
 
   &__card-group {
+    margin-bottom: 2em;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -52,19 +54,10 @@
     }
 
     &-link {
-      display: inline-block;
-      text-decoration: none;
-      padding: .75em 4.5em;
-      color: colors.$darkgray;
-      border-radius: 4px;
-      box-shadow: 0 2px 5px 0 colors.$darkgray;
-      transform: translateY(0);
-      transition: transform 200ms ease-in-out, box-shadow 200ms ease-in-out;
+      @include mixins.offerLink;
 
       &--popular {
-        background-color: colors.$mint;
-        color: colors.$black;
-        box-shadow: 0 2px 5px 0 colors.$mintshadow;
+        @include mixins.greenOfferLink;
       }
 
       @media (hover: hover) {
@@ -85,6 +78,22 @@
 
     &--available {
       fill: green;
+    }
+  }
+
+  &__link-box {
+    text-align: center;
+  }
+
+  &__link {
+    @include mixins.offerLink;
+    @include mixins.greenOfferLink;
+
+    @media (hover: hover) {
+      &:hover {
+        transform: scale(1.05);
+        box-shadow: 0 3px 8px 0 colors.$mintshadow;
+      }
     }
   }
 }

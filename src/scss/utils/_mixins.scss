@@ -18,6 +18,23 @@
   color: colors.$black;
 }
 
+@mixin offerLink {
+  display: inline-block;
+  text-decoration: none;
+  padding: .75em 4.5em;
+  color: colors.$darkgray;
+  border-radius: 4px;
+  box-shadow: 0 2px 5px 0 colors.$darkgray;
+  transform: scale(1);
+  transition: transform 200ms ease-in-out, box-shadow 200ms ease-in-out;
+}
+
+@mixin greenOfferLink {
+  background-color: colors.$mint;
+  color: colors.$black;
+  box-shadow: 0 2px 5px 0 colors.$mintshadow;
+}
+
 @mixin companyLogo {
   display: flex;
   align-items: center;

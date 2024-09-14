@@ -5,7 +5,7 @@ let navbarLinksContainer;
 let overlay;
 let footerYear;
 
-let allSections;
+let allSections; 
 
 const main = () => {
   prepareDOMElements();
@@ -27,7 +27,7 @@ const addListeners = () => {
   toggleButton.addEventListener("click", toggleNavbarMenu);
   overlay.addEventListener("click", closeNavbarMenu);
   window.addEventListener("resize", () => window.innerWidth >= 992 && closeNavbarMenu());
-  window.addEventListener("scroll", handleObserver);
+  window.addEventListener("scroll", handleNavbarThemeChange);
 }
 
 const toggleNavbarMenu = () => {
@@ -48,16 +48,17 @@ const closeNavbarMenu = () => {
   navbarLinksContainer.classList.remove("navbar__links--active");
 }
 
-const handleObserver = () => {
+const handleNavbarThemeChange = () => {
   const currentSection = window.scrollY;
+  const navbarHeight = navbar.offsetHeight;
 
   allSections.forEach((section) => {
-    if (section.classList.contains("page-section--light") && section.offsetTop <= currentSection + 100) {
+    if (section.classList.contains("page-section--light") && section.offsetTop <= currentSection + navbarHeight) {
       if (!navbarLinksContainer.classList.contains("navbar__links--active")) {
         navbar.classList.add("navbar--dark");
         navbarContainer.classList.add("navbar__container--dark");
       }
-    } else if (section.classList.contains("page-section--dark") && section.offsetTop <= currentSection + 100) {
+    } else if (section.classList.contains("page-section--dark") && section.offsetTop <= currentSection + navbarHeight) {
       navbar.classList.remove("navbar--dark");
       navbarContainer.classList.remove("navbar__container--dark");
     }
