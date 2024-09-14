@@ -1,6 +1,10 @@
 @use "./utils/mixins" as mixins;
 @use "./utils/colors" as colors;
 
+.page-section {
+  margin-bottom: 3em;
+}
+
 .navbar__container {
   width: 100%;
   position: sticky;
@@ -31,7 +35,7 @@
 }
 
 .section__title {
-  margin: 1.6em 0;
+  margin-bottom: 1.6em;
   font-size: 2.8rem;
   text-transform: uppercase;
   font-family: var(--primary-font-extralight);

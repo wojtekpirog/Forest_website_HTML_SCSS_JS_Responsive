@@ -5,7 +5,12 @@ let navbarLinksContainer;
 let overlay;
 let footerYear;
 
-let allSections; 
+let allSections;
+
+// The value of the margin-bottom property of the section element (each section has the same value of the `margin-bottom` property)
+let sectionMarginBottom;
+
+let navbarHeight;
 
 const main = () => {
   prepareDOMElements();
@@ -21,6 +26,9 @@ const prepareDOMElements = () => {
   overlay = document.querySelector(".navbar__overlay");
   footerYear = document.querySelector(".footer__copyright-year");
   allSections = document.querySelectorAll(".page-section");
+
+  sectionMarginBottom = Number(window.getComputedStyle(allSections[0]).getPropertyValue("margin-bottom").slice(0, -2));
+  navbarHeight = navbar.offsetHeight;
 }
 
 const addListeners = () => {
@@ -50,15 +58,14 @@ const closeNavbarMenu = () => {
 
 const handleNavbarThemeChange = () => {
   const currentSection = window.scrollY;
-  const navbarHeight = navbar.offsetHeight;
 
   allSections.forEach((section) => {
-    if (section.classList.contains("page-section--light") && section.offsetTop <= currentSection + navbarHeight) {
+    if (section.classList.contains("page-section--light") && section.offsetTop <= currentSection + navbarHeight + sectionMarginBottom) {
       if (!navbarLinksContainer.classList.contains("navbar__links--active")) {
         navbar.classList.add("navbar--dark");
         navbarContainer.classList.add("navbar__container--dark");
       }
-    } else if (section.classList.contains("page-section--dark") && section.offsetTop <= currentSection + navbarHeight) {
+    } else if (section.classList.contains("page-section--dark") && section.offsetTop <= currentSection + navbarHeight + sectionMarginBottom) {
       navbar.classList.remove("navbar--dark");
       navbarContainer.classList.remove("navbar__container--dark");
     }
