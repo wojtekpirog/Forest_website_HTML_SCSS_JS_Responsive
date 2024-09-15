@@ -7,8 +7,6 @@ let overlay;
 let footerYear;
 // All sections on the page that need to be spied on when scrolling
 let allSections; 
-// The value of the margin-bottom property of the section element (each section has the same value of the `margin-bottom` property)
-// let sectionMarginBottom;
 // `offsetHeight` of the navbar
 let navbarHeight;
 
@@ -71,6 +69,12 @@ const handleScrollSpy = () => {
 
     allSections.forEach((section) => section.classList.remove("page-section--active"));
     sections[0].classList.add("page-section--active");
+
+    let activeSectionId;
+    allSections.forEach((section) => section.classList.contains("page-section--active") && (activeSectionId = section.id));
+
+    navbarLinks.forEach((navbarLink) => navbarLink.classList.remove("navbar__link--active"));
+    document.querySelector(`.navbar__link[href*="${activeSectionId}"]`).classList.add("navbar__link--active");
   }
 }
 
