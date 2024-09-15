@@ -1,7 +1,7 @@
 @use "./utils/mixins" as mixins;
 @use "./utils/colors" as colors;
 
-.navbar__container {
+.container-fluid {
   width: 100%;
   position: sticky;
   top: 0;

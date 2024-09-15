@@ -3,18 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Najpiękniejszy park w twojej okolicy | Forest</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Forest - Najpiękniejszy park w Twojej okolicy</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
   <meta name="author" content="Forest Group Inc">
   <meta name="description" content="Forest - zaufana platforma gotowa do pomocy w znalezieniu najpiękniejszych parków w twojej okolicy.">
   <link rel="icon" type="image/svg+xml" href="./assets/icons/tree-icon.svg"> <!-- favicon SVG -->
   <link rel="icon" type="image/png" href="./assets/icons/tree-icon.png"> <!-- favicon PNG jako fallback dla starszych przeglądarek, które nie wspierają SVG -->
-  <meta name="keywords" content="forest, park, nature, travel, beautiful">
   <link rel="stylesheet" type="text/css" href="./css/style.min.css">
 </head>
 <body data-main-page="true">
   <!-- Fluid container -->
-  <div class="navbar__container">
+  <div class="container-fluid">
     <!-- Navbar -->
     <nav class="navbar">
       <!-- Logo -->
@@ -24,7 +23,7 @@
       </a>
       <!-- Logo -->
       <!-- Hamburger icon -->
-      <button type="button" class="navbar__burger-icon" aria-label="Toggle navigation" aria-expanded="false" aria-controls="navbarLinks">
+      <button type="button" class="navbar__burger-icon" aria-label="Otwórz menu nawigacyjne" aria-expanded="false" aria-controls="navbarLinks">
         <span class="navbar__burger-icon-line"></span>
       </button> 
       <!-- Hamburger icon -->
@@ -41,18 +40,18 @@
     </nav>
     <!-- Navbar -->
   </div>
+  <!-- Fluid container -->
   <!-- Overlay -->
   <div class="navbar__overlay"></div> 
   <!-- Overlay -->
-  <!-- Fluid container -->
   <!-- Hero -->
   <header id="hero" class="hero page-section page-section--active">
     <!-- Hero image -->
     <picture>
-      <!-- Obrazek dla urządzeń o szerokości ekranu co najmniej 768px -->
-      <source srcset="./images/hero_image_desktop.min.jpg" media="(min-width: 768px)">
       <!-- Obrazek dla urządzeń o szerokości ekranu co najmniej 1200px -->
       <source srcset="./images/hero_image_desktop_hq.min.jpg" media="(min-width: 1200px)">
+      <!-- Obrazek dla urządzeń o szerokości ekranu co najmniej 768px -->
+      <source srcset="./images/hero_image_desktop.min.jpg" media="(min-width: 768px)">
       <!-- Obrazek domyślny, dla urządzeń o węższych ekranach -->
       <img class="hero__image" src="./images/hero_image_mobile.min.jpg" alt="Drewniany pomost biegnący przez las."> 
     </picture> 

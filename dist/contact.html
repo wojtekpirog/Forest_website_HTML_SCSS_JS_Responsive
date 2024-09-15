@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Forest - Kontakt</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Skontaktuj się z nami. Chętnie odpowiemy na Twoje pytania i przedstawimy Ci ofertę dopasowaną do Twoich oczekiwań.">
+  <link rel="icon" type="image/svg+xml" href="./assets/icons/tree-icon.svg"> <!-- favicon SVG -->
+  <link rel="icon" type="image/png" href="./assets/icons/tree-icon.png"> <!-- favicon PNG jako fallback dla starszych przeglądarek, które nie wspierają SVG -->
+  <link rel="stylesheet" type="text/css" href="./css/style.min.css">
+</head>
+<body data-main-page="false">
+  <!-- Fluid container -->
+  <div class="container-fluid">
+    <!-- Navbar -->
+    <nav class="navbar">
+      <!-- Logo -->
+      <a href="./index.html" class="navbar__logo" aria-label="Forest - logo firmy">
+        <svg class="navbar__logo-icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M210.6 5.9L62 169.4c-3.9 4.2-6 9.8-6 15.5C56 197.7 66.3 208 79.1 208l24.9 0L30.6 281.4c-4.2 4.2-6.6 10-6.6 16C24 309.9 34.1 320 46.6 320L80 320 5.4 409.5C1.9 413.7 0 419 0 424.5c0 13 10.5 23.5 23.5 23.5L192 448l0 32c0 17.7 14.3 32 32 32s32-14.3 32-32l0-32 168.5 0c13 0 23.5-10.5 23.5-23.5c0-5.5-1.9-10.8-5.4-15L368 320l33.4 0c12.5 0 22.6-10.1 22.6-22.6c0-6-2.4-11.8-6.6-16L344 208l24.9 0c12.7 0 23.1-10.3 23.1-23.1c0-5.7-2.1-11.3-6-15.5L237.4 5.9C234 2.1 229.1 0 224 0s-10 2.1-13.4 5.9z"/></svg>
+        Forest
+      </a>
+      <!-- Logo -->
+      <!-- Burger icon -->
+      <button type="button" class="navbar__burger-icon" aria-label="Otwórz menu nawigacyjne" aria-expanded="false" aria-controls="navbarLinks">
+        <span class="navbar__burger-icon-line"></span>
+      </button> 
+      <!-- Burger icon -->
+      <!-- Links -->
+      <div class="navbar__links">
+        <ul class="navbar__list">
+          <li class="navbar__item"><a href="./index.html" class="navbar__link">Home</a></li>
+          <li class="navbar__item"><a href="./index.html#about" class="navbar__link">O nas</a></li>
+          <li class="navbar__item"><a href="./index.html#offer" class="navbar__link">Oferta</a></li>
+          <li class="navbar__item"><a href="./contact.html" class="navbar__link navbar__link--active" aria-current="page">Kontakt</a></li>
+        </ul>
+      </div> 
+      <!-- Links -->
+    </nav> 
+    <!-- Navbar -->
+  </div> 
+  <!-- Fluid container -->
+  <!-- Overlay -->
+  <div class="navbar__overlay"></div> 
+  <!-- Overlay -->
+  <!-- Hero -->
+  <header id="hero" class="hero page-section">
+    <!-- Hero image -->
+    <picture>
+      <!-- Obrazek dla urządzeń o szerokości ekranu co najmniej 1200px -->
+      <source srcset="./images/contact_page_hero_image_hq.min.jpg" media="(min-width: 1200px)">
+      <!-- Obrazek dla urządzeń o szerokości ekranu co najmniej 768px -->
+      <source srcset="./images/contact_page_hero_image_desktop.min.jpg" media="(min-width: 768px)"> 
+      <!-- Obrazek domyślny, dla urządzeń o węższych ekranach -->
+      <img class="hero__image" src="./images/contact_page_hero_image_mobile.min.jpg" alt="Drewniany mostek nad rzeką w parku.">
+    </picture>
+    <!-- Hero image -->
+    <!-- Container -->
+    <div class="container">
+      <!-- Hero text -->
+      <div class="hero__text">
+        <p class="hero__title">Forest Group</p>
+        <h1 class="hero__description">Skontaktuj się z nami!</h1>
+      </div> 
+      <!-- Hero text -->
+    </div> 
+    <!-- Container -->
+    <!-- Overlay -->
+    <div class="section__overlay"></div>
+    <!-- Overlay -->
+  </header>
+  <!-- Hero -->
+  <!-- <script src="./js/contact.min.js"></script> -->
+</body>
+</html>

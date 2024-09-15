@@ -2,6 +2,8 @@
 @use "../utils/mixins" as mixins;
 
 .offer {
+  margin-bottom: 3em;
+
   &__card-group {
     margin-bottom: 2em;
     display: flex;
