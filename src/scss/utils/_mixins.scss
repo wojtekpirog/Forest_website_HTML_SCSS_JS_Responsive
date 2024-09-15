@@ -13,11 +13,6 @@
   color: colors.$light;
 }
 
-@mixin darkNavbarLinkActiveAndHover {
-  background-color: colors.$light;
-  color: colors.$black;
-}
-
 @mixin offerLink {
   display: inline-block;
   text-decoration: none;

@@ -8,7 +8,6 @@
   flex-wrap: wrap;
   padding: .5em;
   background-color: colors.$light;
-  border-bottom: 2px solid black;
 
   &__logo {
     margin-left: .5em;
@@ -16,48 +15,6 @@
 
     &-icon {
       width: 25px;
-    }
-  }
-
-  &--dark {
-    background-color: colors.$black;
-    color: colors.$light;
-
-    & > .navbar__logo {
-      color: colors.$light;
-
-      & > .navbar__logo-icon {
-        fill: colors.$light;
-      }
-    }
-
-    & > .navbar__burger-icon {
-      background-color: colors.$black;
-
-      & > .navbar__burger-icon-line,
-      & > .navbar__burger-icon-line::before,
-      & > .navbar__burger-icon-line::after {
-        background-color: colors.$light;
-      }
-
-      &:focus {
-        outline: none;
-        border-color: colors.$light;
-      }
-    }
-
-    & .navbar__link {
-      color: colors.$light;
-
-      @media (hover: hover) {
-        &:hover {
-          @include mixins.darkNavbarLinkActiveAndHover;
-        }
-      }
-
-      &--active {
-        @include mixins.darkNavbarLinkActiveAndHover;
-      }
     }
   }
 

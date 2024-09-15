@@ -6,7 +6,6 @@
   }
 
   .navbar {
-
     padding: 0;
 
     &__burger-icon {
@@ -49,14 +48,8 @@
     &__description {
       font-size: 1.4rem;
     }
-  }
 
-  .hero-image {
-    background-image: url("../images/girl_walking_desktop.jpg");
-  }
-
-  .hero-section {
-    &__text {
+    &__banner-text {
       font-size: 3.2rem;
     }
   }

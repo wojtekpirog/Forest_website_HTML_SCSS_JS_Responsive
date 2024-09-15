@@ -1,15 +1,12 @@
 @use "./utils/mixins" as mixins;
 @use "./utils/colors" as colors;
 
-.page-section {
-  margin-bottom: 3em;
-}
-
 .navbar__container {
   width: 100%;
   position: sticky;
   top: 0;
   background-color: colors.$light;
+  border-bottom: 2px solid black;
   z-index: 11;
 
   &--dark {

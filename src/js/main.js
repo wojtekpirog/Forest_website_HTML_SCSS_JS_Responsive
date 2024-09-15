@@ -27,9 +27,8 @@ const prepareDOMElements = () => {
   overlay = document.querySelector(".navbar__overlay");
   footerYear = document.querySelector(".footer__copyright-year");
 
-  allSections = document.querySelectorAll(".page-section"); // Scrollspy sections
+  allSections = document.querySelectorAll(".page-section"); // All sections on the page
 
-  // sectionMarginBottom = Number(window.getComputedStyle(allSections[0]).getPropertyValue("margin-bottom").slice(0, -2));
   navbarHeight = navbar.offsetHeight;
 }
 
@@ -62,17 +61,16 @@ const closeNavbarMenu = () => {
 const handleScrollSpy = () => {
   // We want the scroll spy to work only on the main page:
   if (document.body.dataset.mainPage === "true") {
-    const sections = [];
-    
-    allSections.forEach((section) => {
+    const sections = []; // Sections for which `offsetHeight` + `offsetTop` - navbarHeight <= `window.scrollY`
 
+    allSections.forEach((section) => {
       if (window.scrollY <= section.offsetHeight + section.offsetTop - navbarHeight) {
         sections.push(section);
       }
-
     });
 
-    console.log(sections);
+    allSections.forEach((section) => section.classList.remove("page-section--active"));
+    sections[0].classList.add("page-section--active");
   }
 }
 
