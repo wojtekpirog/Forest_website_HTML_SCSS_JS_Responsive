@@ -68,6 +68,20 @@
     }
   }
 
+  .contact {
+    &__box {
+      flex-direction: row;
+    }
+
+    &__details {
+      flex-grow: 1;
+    }
+
+    &__form {
+      flex-grow: 2;
+    }
+  }
+
   .footer {
     &__nav {
       flex-direction: row;

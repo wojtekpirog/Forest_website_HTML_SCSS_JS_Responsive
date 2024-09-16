@@ -1,0 +1,53 @@
+@use "../utils/colors" as colors;
+
+.contact, .map {
+  margin-bottom: 3em;
+}
+
+.contact {
+  &__details, &__form {
+    padding: 2em;
+    border: 2px solid colors.$darkgray;
+    text-align: center;
+  }
+
+  &__details {
+    &-box {
+      margin-bottom: 1em;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    &-address, &-phone, &-email {
+      color: colors.$darkgray;
+      line-height: 1.4;
+    }
+  }
+
+  &__box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2em;
+  }
+
+  &__title {
+    margin-bottom: 1em;
+    text-transform: uppercase;
+  }
+
+  &__subtitle {
+    margin-bottom: .5em;
+    font-size: 1.8rem;
+  }
+}
+
+.map {
+  &__frame {
+    width: 100%;
+    height: 600px;
+    border: 2px solid colors.$darkgray;
+  }
+}
