@@ -79,6 +79,10 @@
 
     &__form {
       flex-grow: 2;
+
+      &-grid-row {
+        flex-direction: row;
+      }
     }
   }
 

@@ -107,8 +107,51 @@
           </div>
           <!-- Details -->
           <!-- Form -->
-          <form class="contact__form">
+          <form class="contact__form" action="" method="post">
             <h3 class="contact__title">Formularz kontaktowy</h3>
+            <!-- Row -->
+            <div class="contact__form-grid-row">
+              <!-- Column -->
+              <div class="contact__form-grid-column">
+                <!-- Input -->
+                <label for="first-name" class="contact__form-label">Imię: </label> 
+                <input type="text" id="first-name" class="contact__form-input" placeholder="Gall" aria-label="Imię" maxlength="30" required>
+                <!-- Input -->
+              </div> 
+              <!-- Column -->
+              <!-- Column -->
+              <div class="contact__form-grid-column">
+                <!-- Input -->
+                <label for="last-name" class="contact__form-label">Nazwisko: </label>
+                <input type="text" id="last-name" class="contact__form-input" placeholder="Anonim" aria-label="Nazwisko" maxlength="50" required>
+                <!-- Input -->
+              </div> 
+              <!-- Column -->
+            </div> 
+            <!-- Row -->
+            <!-- Row -->
+            <div class="contact__form-grid-row">
+              <!-- Column -->
+              <div class="contact__form-grid-column">
+                <!-- Input -->
+                <label for="email" contact="contact__form-label">Adres e-mail: </label>
+                <input type="email" id="email" class="contact__form-input" placeholder="gallanonim@gmail.com" aria-label="Adres e-mail" required>
+                <!-- Input -->
+              </div> 
+              <!-- Column -->
+              <!-- Column -->
+              <div class="contact__form-grid-column">
+                <!-- Input -->
+                <label for="reason">W jakiej sprawie piszesz? </label>
+                <select id="reason" class="contact__form-select" aria-label="W jakiej sprawie piszesz?" required>
+                  <option disabled selected> - Wybierz - </option>
+                  <option value=""></option>
+                </select>
+                <!-- Input -->
+              </div> 
+              <!-- Column -->
+            </div> 
+            <!-- Row -->
           </form> 
           <!-- Form -->
         </div> 
