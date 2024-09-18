@@ -54,10 +54,11 @@
     }
 
     &-link {
-      @include mixins.offerLink;
+      @include mixins.buttonAndLinkStyles();
+      text-decoration: none;
 
       &--popular {
-        @include mixins.greenOfferLink;
+        @include mixins.buttonAndLinkStyles(colors.$mint, colors.$black, colors.$mintshadow);
       }
 
       @media (hover: hover) {
@@ -86,8 +87,8 @@
   }
 
   &__link {
-    @include mixins.offerLink;
-    @include mixins.greenOfferLink;
+    @include mixins.buttonAndLinkStyles(colors.$mint, colors.$black, colors.$mintshadow);
+    text-decoration: none;
 
     @media (hover: hover) {
       &:hover {

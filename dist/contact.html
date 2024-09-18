@@ -104,6 +104,12 @@
               <p class="contact__details-email">contact@forest.com</p>
             </div> 
             <!-- Box -->
+            <!-- Logo -->
+            <div class="contact__details-logo">
+              <svg class="navbar__logo-icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M210.6 5.9L62 169.4c-3.9 4.2-6 9.8-6 15.5C56 197.7 66.3 208 79.1 208l24.9 0L30.6 281.4c-4.2 4.2-6.6 10-6.6 16C24 309.9 34.1 320 46.6 320L80 320 5.4 409.5C1.9 413.7 0 419 0 424.5c0 13 10.5 23.5 23.5 23.5L192 448l0 32c0 17.7 14.3 32 32 32s32-14.3 32-32l0-32 168.5 0c13 0 23.5-10.5 23.5-23.5c0-5.5-1.9-10.8-5.4-15L368 320l33.4 0c12.5 0 22.6-10.1 22.6-22.6c0-6-2.4-11.8-6.6-16L344 208l24.9 0c12.7 0 23.1-10.3 23.1-23.1c0-5.7-2.1-11.3-6-15.5L237.4 5.9C234 2.1 229.1 0 224 0s-10 2.1-13.4 5.9z"/></svg>
+              Forest
+            </div> 
+            <!-- Logo -->
           </div>
           <!-- Details -->
           <!-- Form -->
@@ -115,7 +121,7 @@
               <div class="contact__form-grid-column">
                 <!-- Input -->
                 <label for="first-name" class="contact__form-label">Imię: </label> 
-                <input type="text" id="first-name" class="contact__form-input" placeholder="Gall" aria-label="Imię" maxlength="30" required>
+                <input type="text" id="first-name" class="contact__form-input" name="first-name" placeholder="Gall" aria-label="Imię" maxlength="30" required>
                 <!-- Input -->
               </div> 
               <!-- Column -->
@@ -123,7 +129,7 @@
               <div class="contact__form-grid-column">
                 <!-- Input -->
                 <label for="last-name" class="contact__form-label">Nazwisko: </label>
-                <input type="text" id="last-name" class="contact__form-input" placeholder="Anonim" aria-label="Nazwisko" maxlength="50" required>
+                <input type="text" id="last-name" class="contact__form-input" name="last-name" placeholder="Anonim" aria-label="Nazwisko" maxlength="50" required>
                 <!-- Input -->
               </div> 
               <!-- Column -->
@@ -134,22 +140,44 @@
               <!-- Column -->
               <div class="contact__form-grid-column">
                 <!-- Input -->
-                <label for="email" contact="contact__form-label">Adres e-mail: </label>
-                <input type="email" id="email" class="contact__form-input" placeholder="gallanonim@gmail.com" aria-label="Adres e-mail" required>
+                <label for="email" class="contact__form-label">Adres e-mail: </label>
+                <input type="email" id="email" class="contact__form-input" name="email-address" placeholder="gallanonim@gmail.com" aria-label="Adres e-mail" required>
                 <!-- Input -->
               </div> 
               <!-- Column -->
               <!-- Column -->
               <div class="contact__form-grid-column">
-                <!-- Input -->
-                <label for="reason">W jakiej sprawie piszesz? </label>
-                <select id="reason" class="contact__form-select" aria-label="W jakiej sprawie piszesz?" required>
-                  <option disabled selected> - Wybierz - </option>
-                  <option value=""></option>
-                </select>
-                <!-- Input -->
+                <!-- Select box -->
+                <div class="contact__form-select-box">
+                  <!-- Select -->
+                  <label for="reason" class="contact__form-label">W jakiej sprawie piszesz? </label>
+                  <select id="reason" class="contact__form-select" name="reason" aria-label="W jakiej sprawie piszesz?" required>
+                    <option disabled selected> - Wybierz - </option>
+                    <option value="1">Sprawa 1</option>
+                    <option value="2">Sprawa 2</option>
+                    <option value="3">Sprawa 3</option>
+                    <option value="4">Sprawa 4</option>
+                  </select>
+                  <!-- Select -->
+                </div> 
+                <!-- Select box -->
               </div> 
               <!-- Column -->
+            </div> 
+            <!-- Row -->
+            <!-- Row -->
+            <div class="contact__form-grid-row">
+              <!-- Textarea -->
+              <label for="message" class="contact__form-label">Treść wiadomości: </label>
+              <textarea id="message" class="contact__form-textarea" name="message" aria-label="Treść wiadomości" required></textarea>
+              <!-- Textarea -->
+            </div> 
+            <!-- Row -->
+            <!-- Row -->
+            <div class="contact__form-grid-row">
+              <!-- Button -->
+              <button type="submit" class="contact__form-button">Wyślij</button> 
+              <!-- Button -->
             </div> 
             <!-- Row -->
           </form> 

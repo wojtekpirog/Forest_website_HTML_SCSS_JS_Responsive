@@ -71,6 +71,7 @@
   .contact {
     &__box {
       flex-direction: row;
+      align-items: flex-start;
     }
 
     &__details {

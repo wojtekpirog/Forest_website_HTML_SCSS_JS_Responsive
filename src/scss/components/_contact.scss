@@ -1,4 +1,5 @@
 @use "../utils/colors" as colors;
+@use "../utils/mixins" as mixins;
 
 .contact, .map {
   margin-bottom: 3em;
@@ -14,22 +15,24 @@
   &__details {
     &-box {
       margin-bottom: 1em;
-
-      &:last-child {
-        margin-bottom: 0;
-      }
     }
 
     &-address, &-phone, &-email {
       color: colors.$darkgray;
       line-height: 1.4;
     }
+
+    &-logo {
+      @include mixins.companyLogo;
+      justify-content: center;
+      padding-top: 1em;
+      border-top: 2px solid colors.$darkgray;
+    }
   }
 
   &__box {
     display: flex;
     flex-direction: column;
-    align-items: center;
     gap: 2em;
   }
 
@@ -45,10 +48,36 @@
 
   &__form {
     &-grid-row {
+      margin-bottom: 1.5em;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
       gap: 1.5em;
+
+      &:nth-last-child(2) {
+        flex-direction: column;
+        gap: 0;
+      }
+
+      &:last-child {
+        margin-bottom: 0;
+        justify-content: center;
+
+        & > .contact__form-button {
+          @include mixins.buttonAndLinkStyles(colors.$mint, colors.$black, colors.$mintshadow);
+          align-self: center;
+          font-family: var(--primary-font);
+          border: 2px solid transparent;
+          cursor: pointer;
+
+          @media (hover: hover) {
+            &:hover {
+              transform: scale(1.05);
+              box-shadow: 0 3px 8px 0 colors.$mintshadow;
+            }
+          }
+        }
+      }
     }
 
     &-grid-column {
@@ -62,17 +91,51 @@
       font-family: var(--primary-font-medium);
     }
 
-    &-input {
-      width: 100%;
-      padding: .75em;
-      border: 2px solid transparent;
-      font-size: 1.6rem;
-      font-family: var(--primary-font);
+    &-input, &-textarea {
+      @include mixins.formControlStyles;
+
+      &::-webkit-input-placeholder {
+        color: colors.$darkgray;
+      }
 
       &:focus {
         outline: none;
         border-color: colors.$darkgray;
       }
+    }
+
+    &-select-box {
+      position: relative;
+    }
+
+    &-select {
+      @include mixins.formControlStyles;
+      appearance: none;
+      cursor: pointer;
+
+      &:focus {
+        outline: none;
+        border: 2px solid colors.$darkgray;
+      }
+
+      // &::before,
+      // &::after {
+      //   content: "Txt";
+      //   position: absolute;
+      //   right: 1em;
+      //   pointer-events: none;
+      // }
+
+      // &::before {
+      //   border-left: .3rem solid transparent;
+      //   border-right: .3rem solid transparent;
+      //   border-bottom: .3rem solid colors.$black;
+      //   top: 40%;
+      // }
+    }
+
+    &-textarea {
+      resize: vertical;
     }
   }
 }
