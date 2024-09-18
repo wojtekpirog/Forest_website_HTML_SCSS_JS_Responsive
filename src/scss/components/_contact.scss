@@ -111,6 +111,7 @@
     &-select {
       @include mixins.formControlStyles;
       appearance: none;
+      -webkit-appearance: none;
       cursor: pointer;
 
       &:focus {
@@ -118,20 +119,24 @@
         border: 2px solid colors.$darkgray;
       }
 
-      // &::before,
-      // &::after {
-      //   content: "Txt";
-      //   position: absolute;
-      //   right: 1em;
-      //   pointer-events: none;
-      // }
+      &-arrow {
+        position: absolute;
+        width: 20px;
+        right: 0;
+        bottom: 0;
+        margin: 1em;
+        fill: colors.$darkgray;
+        opacity: .75;
+        pointer-events: none;
 
-      // &::before {
-      //   border-left: .3rem solid transparent;
-      //   border-right: .3rem solid transparent;
-      //   border-bottom: .3rem solid colors.$black;
-      //   top: 40%;
-      // }
+        &--up {
+          bottom: 2px;
+        }
+
+        &--down {
+          bottom: 0;
+        }
+      }
     }
 
     &-textarea {
