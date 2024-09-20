@@ -8,7 +8,7 @@ const autoprefixer = require('autoprefixer');
 const rename = require('gulp-rename');
 // JavaScript-related plug-ins
 const babel = require('gulp-babel');
-const uglify = require('gulp-uglify');
+const terser = require('gulp-terser');
 // Image-related plug-ins
 const imagemin = require('gulp-imagemin');
 // Gulp-clean
@@ -35,7 +35,7 @@ const paths = {
     dist: "./dist/images" 
   },
 
-  html: "./html/**/*.kit",
+  html: "./dist/*.html",
   dist: "./dist"
 };
 
@@ -64,12 +64,14 @@ function transformJS() {
   return src(paths.scripts.src)
     .pipe(sourcemaps.init())
     .pipe(babel({
-      presets: ['@babel/env']
+      presets: ['@babel/env'],
     }).on("error", (error) => {
       console.error(`Babel error: ${error}`);
     }))
-    .pipe(uglify().on("error", (error) => {
-      console.error(`Uglify error: ${error}`);
+    .pipe(terser({
+      toplevel: true
+    }).on("error", (error) => {
+      console.error(`Terser error: ${error}`);
     }))
     .pipe(rename({
       suffix: ".min",
@@ -114,7 +116,7 @@ function startBrowserSync(callback) {
 }
 
 function watchForChanges() {
-  watch("./dist/*.html").on("change", reload);
+  watch(paths.html).on("change", reload);
   watch(paths.styles.src, prepareCSS).on("change", reload);
   watch(paths.scripts.src, transformJS).on("change", reload);
   watch(paths.images.src, compressImages).on("change", reload);

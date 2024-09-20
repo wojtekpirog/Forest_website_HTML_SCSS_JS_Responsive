@@ -17,6 +17,8 @@ let submitButton;
 let footerYear;
 // All sections on the page that need to be spied on when scrolling
 let allSections;
+// All input elements inside the contact form
+let contactFormControls;
 
 const main = () => {
   prepareDOMElements();
@@ -41,6 +43,8 @@ const prepareDOMElements = () => {
   submitButton = document.querySelector(".contact__form-button--submit");
   // All sections on the page
   allSections = document.querySelectorAll(".page-section");
+  // All input elements inside the contact form
+  contactFormControls = document.querySelectorAll(".contact__form-input");
 
   navbarHeight = navbar.offsetHeight;
 }
@@ -48,8 +52,17 @@ const prepareDOMElements = () => {
 const addListeners = () => {
   toggleButton.addEventListener("click", toggleNavbarMenu);
   overlay.addEventListener("click", closeNavbarMenu);
+  resetButton.addEventListener("click", handleFormClear);
+  submitButton.addEventListener("click", handleFormClear);
+
   window.addEventListener("resize", () => window.innerWidth >= 992 && closeNavbarMenu());
   window.addEventListener("scroll", handleScrollSpy);
+}
+
+const handleFormClear = (event) => {
+  event.preventDefault();
+
+  contactFormControls.forEach((input) => input.value = "");
 }
 
 const toggleNavbarMenu = () => {

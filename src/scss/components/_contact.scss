@@ -101,7 +101,7 @@
       font-family: var(--primary-font-medium);
     }
 
-    &-input, &-textarea {
+    &-input {
       @include mixins.formControlStyles;
 
       &::-webkit-input-placeholder {
@@ -112,21 +112,17 @@
         outline: none;
         border-color: colors.$darkgray;
       }
-    }
 
-    &-select-box {
-      position: relative;
-    }
-
-    &-select {
-      @include mixins.formControlStyles;
-      appearance: none;
-      -webkit-appearance: none;
-      cursor: pointer;
-
-      &:focus {
-        outline: none;
-        border: 2px solid colors.$darkgray;
+      &--select {
+        @include mixins.formControlStyles;
+        appearance: none;
+        -webkit-appearance: none;
+        cursor: pointer;
+  
+        &:focus {
+          outline: none;
+          border: 2px solid colors.$darkgray;
+        }
       }
 
       &-arrow {
@@ -147,10 +143,14 @@
           bottom: 0;
         }
       }
+
+      &--textarea {
+        resize: vertical;
+      }
     }
 
-    &-textarea {
-      resize: vertical;
+    &-select-box {
+      position: relative;
     }
   }
 }
