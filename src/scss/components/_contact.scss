@@ -70,6 +70,16 @@
           border: 2px solid transparent;
           cursor: pointer;
 
+          &.contact__form-button--reset {
+            @include mixins.buttonAndLinkStyles(colors.$light, colors.$black, colors.$darkgray);
+
+            @media (hover: hover) {
+              &:hover {
+                box-shadow: 0 2px 5px 0 colors.$darkgray;
+              }
+            }
+          }
+
           @media (hover: hover) {
             &:hover {
               transform: scale(1.05);

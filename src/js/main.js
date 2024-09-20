@@ -1,14 +1,22 @@
+// Navbar
 let navbar;
-let navbarContainer;
 let toggleButton;
 let navbarLinksContainer;
 let navbarLinks;
+// Overlay
 let overlay;
+// `offsetHeight` of navbar
+let navbarHeight;
+// Contact form controls
+let firstNameInput;
+let lastNameInput;
+// Contact form buttons
+let resetButton;
+let submitButton;
+// Footer
 let footerYear;
 // All sections on the page that need to be spied on when scrolling
-let allSections; 
-// `offsetHeight` of the navbar
-let navbarHeight;
+let allSections;
 
 const main = () => {
   prepareDOMElements();
@@ -18,14 +26,21 @@ const main = () => {
 
 const prepareDOMElements = () => {
   navbar = document.querySelector(".navbar");
-  navbarContainer = document.querySelector(".navbar__container");
   toggleButton = document.querySelector(".navbar__burger-icon");
   navbarLinksContainer = document.querySelector(".navbar__links");
   navbarLinks = document.querySelectorAll(".navbar__link");
+  // Overlay
   overlay = document.querySelector(".navbar__overlay");
+  // Footer
   footerYear = document.querySelector(".footer__copyright-year");
-
-  allSections = document.querySelectorAll(".page-section"); // All sections on the page
+  // Contact form controls
+  firstNameInput = document.querySelector("#first-name");
+  lastNameInput = document.querySelector("#last-name");
+  // Contact form buttons
+  resetButton = document.querySelector(".contact__form-button--reset");
+  submitButton = document.querySelector(".contact__form-button--submit");
+  // All sections on the page
+  allSections = document.querySelectorAll(".page-section");
 
   navbarHeight = navbar.offsetHeight;
 }
@@ -35,7 +50,6 @@ const addListeners = () => {
   overlay.addEventListener("click", closeNavbarMenu);
   window.addEventListener("resize", () => window.innerWidth >= 992 && closeNavbarMenu());
   window.addEventListener("scroll", handleScrollSpy);
-  // window.addEventListener("scroll", handleNavbarThemeChange);
 }
 
 const toggleNavbarMenu = () => {
