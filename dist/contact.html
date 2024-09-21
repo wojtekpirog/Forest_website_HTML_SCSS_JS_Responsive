@@ -123,6 +123,9 @@
                 <label for="first-name" class="contact__form-label">Imię: </label> 
                 <input type="text" id="first-name" class="contact__form-input" name="first-name" placeholder="Gall" aria-label="Imię" maxlength="30" required>
                 <!-- Input -->
+                <!-- Error -->
+                <p class="contact__form-error"></p>
+                <!-- Error -->
               </div> 
               <!-- Column -->
               <!-- Column -->
@@ -131,6 +134,9 @@
                 <label for="last-name" class="contact__form-label">Nazwisko: </label>
                 <input type="text" id="last-name" class="contact__form-input" name="last-name" placeholder="Anonim" aria-label="Nazwisko" maxlength="50" required>
                 <!-- Input -->
+                <!-- Error -->
+                <p class="contact__form-error"></p>
+                <!-- Error --> 
               </div> 
               <!-- Column -->
             </div> 
@@ -143,6 +149,9 @@
                 <label for="email" class="contact__form-label">Adres e-mail: </label>
                 <input type="email" id="email" class="contact__form-input" name="email-address" placeholder="gallanonim@gmail.com" aria-label="Adres e-mail" required>
                 <!-- Input -->
+                <!-- Error -->
+                <p class="contact__form-error"></p>
+                <!-- Error -->
               </div> 
               <!-- Column -->
               <!-- Column -->
@@ -159,6 +168,9 @@
                     <option value="4">Sprawa 4</option>
                   </select>
                   <!-- Select -->
+                  <!-- Error -->
+                  <p class="contact__form-error"></p>
+                  <!-- Error --> 
                   <!-- Arrow -->
                   <svg class="contact__form-input-arrow contact__form-input-arrow--up" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="2"><line x1="12" y1="19" x2="12" y2="5"></line><polyline points="5 12 12 5 19 12"></polyline></svg> 
                   <svg class="contact__form-input-arrow contact__form-input-arrow--down" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"></line><polyline points="19 12 12 19 5 12"></polyline></svg> 
@@ -173,8 +185,14 @@
             <div class="contact__form-grid-row">
               <!-- Textarea -->
               <label for="message" class="contact__form-label">Treść wiadomości: </label>
-              <textarea id="message" class="contact__form-input contact__form-input--textarea" name="message" aria-label="Treść wiadomości" required></textarea>
+              <textarea id="message" class="contact__form-input contact__form-input--textarea" name="message" aria-label="Treść wiadomości" maxlength="500" required></textarea>
               <!-- Textarea -->
+              <!-- Error -->
+              <p class="contact__form-error"></p>
+              <!-- Error -->
+              <!-- Chars counter -->
+              <p class="contact__form-counter"></p>
+              <!-- Chars counter --> 
             </div> 
             <!-- Row -->
             <!-- Row -->
@@ -184,7 +202,7 @@
               <button type="submit" class="contact__form-button contact__form-button--submit">Wyślij</button>
               <!-- Buttons -->
             </div> 
-            <!-- Row -->
+            <!-- Row --> 
           </form> 
           <!-- Form -->
         </div> 

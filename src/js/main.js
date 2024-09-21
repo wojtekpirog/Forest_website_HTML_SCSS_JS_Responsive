@@ -10,6 +10,11 @@ let navbarHeight;
 // Contact form controls
 let firstNameInput;
 let lastNameInput;
+let emailAddressInput;
+let contactSelect;
+let messageTextarea;
+// Chars counter
+let charsCounter;
 // Contact form buttons
 let resetButton;
 let submitButton;
@@ -38,6 +43,11 @@ const prepareDOMElements = () => {
   // Contact form controls
   firstNameInput = document.querySelector("#first-name");
   lastNameInput = document.querySelector("#last-name");
+  emailAddressInput = document.querySelector("#email");
+  contactSelect = document.querySelector("#reason");
+  messageTextarea = document.querySelector("#message");
+  // Chars counter
+  charsCounter = document.querySelector(".contact__form-counter");
   // Contact form buttons
   resetButton = document.querySelector(".contact__form-button--reset");
   submitButton = document.querySelector(".contact__form-button--submit");
@@ -47,23 +57,79 @@ const prepareDOMElements = () => {
   contactFormControls = document.querySelectorAll(".contact__form-input");
 
   navbarHeight = navbar.offsetHeight;
+  charsCounter.innerHTML = `<span>${messageTextarea.value.length}</span>/${messageTextarea.maxLength}`;
 }
 
 const addListeners = () => {
   toggleButton.addEventListener("click", toggleNavbarMenu);
   overlay.addEventListener("click", closeNavbarMenu);
+  messageTextarea.addEventListener("input", handleTextarea);
   resetButton.addEventListener("click", handleFormClear);
-  submitButton.addEventListener("click", handleFormClear);
+  submitButton.addEventListener("click", handleFormSubmit);
 
   window.addEventListener("resize", () => window.innerWidth >= 992 && closeNavbarMenu());
   window.addEventListener("scroll", handleScrollSpy);
 }
+
+// Form-related functions
 
 const handleFormClear = (event) => {
   event.preventDefault();
 
   contactFormControls.forEach((input) => input.value = "");
 }
+
+const handleFormSubmit = (event) => {
+  event.preventDefault();
+
+  checkForm([firstNameInput, lastNameInput, emailAddressInput, messageTextarea]);
+  checkEmailAddress(emailAddressInput);
+  // checkSelect(contactSelect);
+  // showModal();
+}
+
+const checkForm = (inputs) => {
+  inputs.forEach((input) => {
+    input.value === "" ? showError(input, `Pole "${input.previousElementSibling.textContent.slice(0, -2)}" nie może być puste`) : clearError(input);
+  });
+}
+
+const handleTextarea = () => {
+  charsCounter.innerHTML = `<span>${messageTextarea.value.length}</span>/${messageTextarea.maxLength}`;
+
+  if (messageTextarea.value.length === messageTextarea.maxLength) {
+    messageTextarea.value = messageTextarea.value.slice(0, messageTextarea.maxLength + 1);
+    showError(messageTextarea, `Osiągnięto limit ${messageTextarea.maxLength} znaków.`);
+  } else {
+    clearError(messageTextarea);
+  }
+}
+
+const checkEmailAddress = (emailAddressInput) => {
+  const regExp = /^[\w\.-]+@[a-zA-Z\d\.-]+\.[a-zA-Z]{2,}$/;
+  
+  if (emailAddressInput.value === "") {
+    showError(emailAddressInput, 'Pole "Adres e-mail" nie może być puste');
+  } else if (!regExp.test(emailAddressInput.value)) {
+    showError(emailAddressInput, 'Adres e-mail jest nieprawidłowy');
+  } else {
+    clearError(emailAddressInput);
+  }
+}
+
+const showError = (input, message) => {
+  input.style.borderColor = "hsl(0, 100%, 40%)";
+  input.nextElementSibling.classList.add("contact__form-error--active");
+  input.nextElementSibling.textContent = message;
+}
+
+const clearError = (input) => {
+  input.style.borderColor = "hsl(0, 0%, 25%)";
+  input.nextElementSibling.classList.remove("contact__form-error--active");
+  input.nextElementSibling.textContent = "";
+}
+
+// Navbar-related functions
 
 const toggleNavbarMenu = () => {
   toggleButton.classList.toggle("navbar__burger-icon--active");
@@ -86,6 +152,8 @@ const closeNavbarMenu = () => {
   toggleButton.setAttribute("aria-label", "Otwórz menu nawigacyjne");
   navbarLinksContainer.classList.remove("navbar__links--active");
 }
+
+// Scroll spy
 
 const handleScrollSpy = () => {
   // We want the scroll spy to work only on the main page:

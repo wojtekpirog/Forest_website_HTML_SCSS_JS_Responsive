@@ -47,6 +47,8 @@
   }
 
   &__form {
+    position: relative;
+
     &-grid-row {
       margin-bottom: 1.5em;
       display: flex;
@@ -54,12 +56,13 @@
       justify-content: space-between;
       gap: 1.5em;
 
-      &:nth-last-child(2) {
+      &:nth-last-of-type(2) {
+        position: relative;
         flex-direction: column;
         gap: 0;
       }
 
-      &:last-child {
+      &:last-of-type {
         margin-bottom: 0;
         justify-content: center;
 
@@ -147,10 +150,34 @@
       &--textarea {
         resize: vertical;
       }
+
+      &--error {
+        border-color: colors.$red;
+      }
     }
 
     &-select-box {
       position: relative;
+    }
+
+    &-error {
+      display: none;
+      margin-top: .5em;
+      color: colors.$red;
+      font-size: 1.6rem;
+      text-align: left;
+
+      &--active {
+        display: block;
+      }
+    }
+
+    &-counter {
+      position: absolute;
+      right: 0;
+      bottom: -18px;
+      font-size: 1.4rem;
+      color: colors.$darkgray;
     }
   }
 }
