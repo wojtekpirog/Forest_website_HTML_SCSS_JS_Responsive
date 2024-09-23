@@ -1,0 +1,42 @@
+@use "../utils/colors" as colors;
+@use "../utils/mixins" as mixins;
+
+.form-popup__container {
+  display: none;
+  position: fixed;
+  @include mixins.overlay;
+  z-index: 11;
+
+  &--active {
+    display: block;
+  }
+
+  .form-popup {
+    width: 400px;
+    padding: 2em;
+    background-color: colors.$light;
+    border: 2px solid colors.$darkgray;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    &__title {
+      margin-bottom: .75em;
+      font-family: var(--primary-font-light);
+    }
+
+    &__info {
+      margin-bottom: 1.5em;
+      color: colors.$darkgray;
+      line-height: 1.25;
+    }
+
+    &__close-button {
+      @include mixins.buttonAndLinkStyles(colors.$mint, colors.$black, colors.$mintshadow);
+      border: 2px solid transparent;
+      cursor: pointer;
+    }
+  }
+}

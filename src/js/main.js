@@ -24,10 +24,14 @@ let footerYear;
 let allSections;
 // All input elements inside the contact form
 let contactFormControls;
+// Popup
+let popupContainer;
+let closePopupButton;
 
 const main = () => {
   prepareDOMElements();
   addListeners();
+  setInitialCharsCounter();
   setFooterYear();
 }
 
@@ -55,20 +59,23 @@ const prepareDOMElements = () => {
   allSections = document.querySelectorAll(".page-section");
   // All input elements inside the contact form
   contactFormControls = document.querySelectorAll(".contact__form-input");
+  // Popup container
+  popupContainer = document.querySelector(".form-popup__container");
+  closePopupButton = document.querySelector(".form-popup__close-button");
 
   navbarHeight = navbar.offsetHeight;
-  charsCounter.innerHTML = `<span>${messageTextarea.value.length}</span>/${messageTextarea.maxLength}`;
 }
 
 const addListeners = () => {
   toggleButton.addEventListener("click", toggleNavbarMenu);
   overlay.addEventListener("click", closeNavbarMenu);
+  
+  window.addEventListener("resize", () => window.innerWidth >= 992 && closeNavbarMenu());
+  window.addEventListener("scroll", handleScrollSpy);
+  
   messageTextarea.addEventListener("input", handleTextarea);
   resetButton.addEventListener("click", handleFormClear);
   submitButton.addEventListener("click", handleFormSubmit);
-
-  window.addEventListener("resize", () => window.innerWidth >= 992 && closeNavbarMenu());
-  window.addEventListener("scroll", handleScrollSpy);
 }
 
 // Form-related functions
@@ -85,7 +92,8 @@ const handleFormSubmit = (event) => {
   checkForm([firstNameInput, lastNameInput, emailAddressInput, messageTextarea]);
   checkEmailAddress(emailAddressInput);
   checkSelect(contactSelect);
-  showModal();
+  // Symulacja wysyłania formularza
+  setTimeout(handlePopup, 1000);
 }
 
 const checkForm = (inputs) => {
@@ -135,13 +143,35 @@ const clearError = (input) => {
   input.parentElement.querySelector(".contact__form-error").textContent = "";
 }
 
-const showModal = () => {
+// Popup-related functions
+
+const handlePopup = () => {
   let errorCount = 0;
   
   const errorsBoxes = document.querySelectorAll(".contact__form-error");
   errorsBoxes.forEach((errorBox) => errorBox.textContent !== "" && (errorCount += 1));
 
-  errorCount === 0 ? console.log("Wysyłanie formularza") : console.log("Formularz nie został wysłany");
+  if (errorCount === 0) {
+    openPopup();
+  } else {
+    closePopup();
+  }
+
+  // Zamknij popup po naciśnięciu klawisza ESC
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" || event.key === "Esc") closePopup();
+  });
+}
+
+const openPopup = () => {
+  popupContainer.classList.add("form-popup__container--active");
+  popupContainer.setAttribute("aria-hidden", false);
+  closePopupButton.addEventListener("click", closePopup);
+}
+
+const closePopup = () => {
+  popupContainer.classList.remove("form-popup__container--active");
+  popupContainer.setAttribute("aria-hidden", true);
 }
 
 // Navbar-related functions
@@ -190,6 +220,10 @@ const handleScrollSpy = () => {
     navbarLinks.forEach((navbarLink) => navbarLink.classList.remove("navbar__link--active"));
     document.querySelector(`.navbar__link[href*="${activeSectionId}"]`).classList.add("navbar__link--active");
   }
+}
+
+const setInitialCharsCounter = () => {
+  charsCounter.innerHTML = `<span>${messageTextarea.value.length}</span>/${messageTextarea.maxLength}`;
 }
 
 const setFooterYear = () => {
