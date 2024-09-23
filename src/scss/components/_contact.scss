@@ -60,6 +60,20 @@
         position: relative;
         flex-direction: column;
         gap: 0;
+
+        & > .contact__form-info-box {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+
+          // & > .contact__form-error {
+          //   opacity: 0;
+
+          //   &--active {
+          //     opacity: 1;
+          //   }
+          // }
+        }
       }
 
       &:last-of-type {
@@ -132,18 +146,17 @@
         position: absolute;
         width: 20px;
         right: 0;
-        bottom: 0;
         margin: 1em;
         fill: colors.$darkgray;
         opacity: .75;
         pointer-events: none;
 
         &--up {
-          bottom: 2px;
+          top: 25px;
         }
 
         &--down {
-          bottom: 0;
+          top: 27px;
         }
       }
 
@@ -161,21 +174,12 @@
     }
 
     &-error {
-      display: none;
-      margin-top: .5em;
       color: colors.$red;
       font-size: 1.6rem;
       text-align: left;
-
-      &--active {
-        display: block;
-      }
     }
 
     &-counter {
-      position: absolute;
-      right: 0;
-      bottom: -18px;
       font-size: 1.4rem;
       color: colors.$darkgray;
     }

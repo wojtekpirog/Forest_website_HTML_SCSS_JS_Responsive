@@ -84,25 +84,14 @@ const handleFormSubmit = (event) => {
 
   checkForm([firstNameInput, lastNameInput, emailAddressInput, messageTextarea]);
   checkEmailAddress(emailAddressInput);
-  // checkSelect(contactSelect);
-  // showModal();
+  checkSelect(contactSelect);
+  showModal();
 }
 
 const checkForm = (inputs) => {
   inputs.forEach((input) => {
     input.value === "" ? showError(input, `Pole "${input.previousElementSibling.textContent.slice(0, -2)}" nie może być puste`) : clearError(input);
   });
-}
-
-const handleTextarea = () => {
-  charsCounter.innerHTML = `<span>${messageTextarea.value.length}</span>/${messageTextarea.maxLength}`;
-
-  if (messageTextarea.value.length === messageTextarea.maxLength) {
-    messageTextarea.value = messageTextarea.value.slice(0, messageTextarea.maxLength + 1);
-    showError(messageTextarea, `Osiągnięto limit ${messageTextarea.maxLength} znaków.`);
-  } else {
-    clearError(messageTextarea);
-  }
 }
 
 const checkEmailAddress = (emailAddressInput) => {
@@ -117,16 +106,42 @@ const checkEmailAddress = (emailAddressInput) => {
   }
 }
 
+const checkSelect = (contactSelect) => {
+  if (contactSelect.value === "") {
+    showError(contactSelect, "Powiedz nam, w jakiej sprawie piszesz");
+  } else {
+    clearError(contactSelect);
+  }
+}
+
+const handleTextarea = () => {
+  charsCounter.innerHTML = `<p class="contact__form-counter"><span>${messageTextarea.value.length}</span>/${messageTextarea.maxLength}</p>`;
+
+  if (messageTextarea.value.length === messageTextarea.maxLength) {
+    messageTextarea.value = messageTextarea.value.slice(0, messageTextarea.maxLength + 1);
+    showError(messageTextarea, `Osiągnięto limit ${messageTextarea.maxLength} znaków.`);
+  } else {
+    clearError(messageTextarea);
+  }
+}
+
 const showError = (input, message) => {
   input.style.borderColor = "hsl(0, 100%, 40%)";
-  input.nextElementSibling.classList.add("contact__form-error--active");
-  input.nextElementSibling.textContent = message;
+  input.parentElement.querySelector(".contact__form-error").textContent = message;
 }
 
 const clearError = (input) => {
   input.style.borderColor = "hsl(0, 0%, 25%)";
-  input.nextElementSibling.classList.remove("contact__form-error--active");
-  input.nextElementSibling.textContent = "";
+  input.parentElement.querySelector(".contact__form-error").textContent = "";
+}
+
+const showModal = () => {
+  let errorCount = 0;
+  
+  const errorsBoxes = document.querySelectorAll(".contact__form-error");
+  errorsBoxes.forEach((errorBox) => errorBox.textContent !== "" && (errorCount += 1));
+
+  errorCount === 0 ? console.log("Wysyłanie formularza") : console.log("Formularz nie został wysłany");
 }
 
 // Navbar-related functions
