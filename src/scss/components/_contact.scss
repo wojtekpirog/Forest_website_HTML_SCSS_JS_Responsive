@@ -36,11 +36,6 @@
     gap: 2em;
   }
 
-  &__title {
-    margin-bottom: 1em;
-    text-transform: uppercase;
-  }
-
   &__subtitle {
     margin-bottom: .5em;
     font-size: 1.8rem;
@@ -48,6 +43,11 @@
 
   &__form {
     position: relative;
+
+    &-title {
+      margin-bottom: 1em;
+      text-transform: uppercase;
+    }
 
     &-grid-row {
       margin-bottom: 1.5em;
