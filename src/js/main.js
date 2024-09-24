@@ -31,8 +31,8 @@ let closePopupButton;
 const main = () => {
   prepareDOMElements();
   addListeners();
-  setInitialCharsCounter();
   setFooterYear();
+  document.body.dataset.currentPage === "contact" ? setInitialCharsCounter() : false;
 }
 
 const prepareDOMElements = () => {
@@ -70,12 +70,14 @@ const addListeners = () => {
   toggleButton.addEventListener("click", toggleNavbarMenu);
   overlay.addEventListener("click", closeNavbarMenu);
   
-  window.addEventListener("resize", () => window.innerWidth >= 992 && closeNavbarMenu());
+  window.addEventListener("resize", () => window.innerWidth >= 992 ? closeNavbarMenu() : false);
   window.addEventListener("scroll", handleScrollSpy);
   
-  messageTextarea.addEventListener("input", handleTextarea);
-  resetButton.addEventListener("click", handleFormClear);
-  submitButton.addEventListener("click", handleFormSubmit);
+  if (document.body.dataset.currentPage === "contact") {
+    messageTextarea.addEventListener("input", handleTextarea);
+    resetButton.addEventListener("click", handleFormClear);
+    submitButton.addEventListener("click", handleFormSubmit);
+  }
 }
 
 // Form-related functions
@@ -149,7 +151,7 @@ const handlePopup = () => {
   let errorCount = 0;
   
   const errorsBoxes = document.querySelectorAll(".contact__form-error");
-  errorsBoxes.forEach((errorBox) => errorBox.textContent !== "" && (errorCount += 1));
+  errorsBoxes.forEach((errorBox) => errorBox.textContent !== "" ? errorCount += 1 : false);
 
   if (errorCount === 0) {
     openPopup();
@@ -202,7 +204,7 @@ const closeNavbarMenu = () => {
 
 const handleScrollSpy = () => {
   // We want the scroll spy to work only on the main page:
-  if (document.body.dataset.mainPage === "true") {
+  if (document.body.dataset.currentPage === "home") {
     const sections = []; // Sections for which `offsetHeight` + `offsetTop` - navbarHeight <= `window.scrollY`
 
     allSections.forEach((section) => {
