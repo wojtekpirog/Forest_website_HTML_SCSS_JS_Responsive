@@ -45,71 +45,37 @@
     position: relative;
 
     &-title {
-      margin-bottom: 1em;
       text-transform: uppercase;
     }
 
-    &-grid-row {
-      margin-bottom: 1.5em;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      gap: 1.5em;
+    // Grid
 
-      &:nth-last-of-type(2) {
-        position: relative;
-        flex-direction: column;
-        gap: 0;
+    &-grid {
+      display: grid;
+      gap: 1em;
 
-        & > .contact__form-info-box {
+      &-item {
+        margin-bottom: 1em;
+
+        &:nth-last-of-type(2) {
+          & > .contact__form-info-box {
+            display: flex;
+            justify-content: space-between;
+          }
+        }
+
+        &:last-of-type {
+          margin-bottom: 0;
           display: flex;
-          justify-content: space-between;
+          flex-direction: column;
+          justify-content: center;
           align-items: center;
-
-          // & > .contact__form-error {
-          //   opacity: 0;
-
-          //   &--active {
-          //     opacity: 1;
-          //   }
-          // }
-        }
-      }
-
-      &:last-of-type {
-        margin-bottom: 0;
-        justify-content: center;
-
-        & > .contact__form-button {
-          @include mixins.buttonAndLinkStyles(colors.$mint, colors.$black, colors.$mintshadow);
-          align-self: center;
-          font-family: var(--primary-font);
-          border: 2px solid transparent;
-          cursor: pointer;
-
-          &.contact__form-button--reset {
-            @include mixins.buttonAndLinkStyles(colors.$light, colors.$black, colors.$darkgray);
-
-            @media (hover: hover) {
-              &:hover {
-                box-shadow: 0 2px 5px 0 colors.$darkgray;
-              }
-            }
-          }
-
-          @media (hover: hover) {
-            &:hover {
-              transform: scale(1.05);
-              box-shadow: 0 3px 8px 0 colors.$mintshadow;
-            }
-          }
+          gap: 1em;
         }
       }
     }
 
-    &-grid-column {
-      flex-basis: 50%;
-    }
+    // Grid
 
     &-label {
       display: block;
@@ -182,6 +148,28 @@
     &-counter {
       font-size: 1.4rem;
       color: colors.$darkgray;
+    }
+
+    &-button {
+      @include mixins.buttonAndLinkStyles();
+      width: 220px;
+      border: 2px solid transparent;
+      cursor: pointer;
+
+      @media (hover: hover) {
+        &:hover {
+          transform: scale(.95);
+          box-shadow: 0 0 4px 0 colors.$darkgray;
+        }
+
+        &--submit:hover {
+          box-shadow: 0 0 4px 0 colors.$mintshadow;
+        }
+      }
+
+      &--submit {
+        @include mixins.buttonAndLinkStyles(colors.$mint, colors.$black, colors.$mintshadow);
+      }
     }
   }
 }
