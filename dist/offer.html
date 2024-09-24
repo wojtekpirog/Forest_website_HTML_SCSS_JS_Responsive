@@ -3,11 +3,49 @@
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Forest - Najpiękniejszy park w Twojej okolicy</title>
-  <meta name="description" content="Forest - poznaj naszą wyjątkową ofertę i spełnij z nami swoje marzenia o idealnym odpoczynku na łonie natury.">
+  <title>Forest - Oferta</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="author" content="Wojciech Piróg">
+  <meta name="description" content="Forest - poznaj naszą wyjątkową ofertę i spełnij z nami swoje marzenia o idealnym odpoczynku na łonie natury.">
+  <meta name="author" content="Forest Group Company Ltd.">
+  <link rel="icon" type="image/svg+xml" href="./assets/icons/tree-icon.svg"> <!-- favicon SVG -->
+  <link rel="icon" type="image/png" href="./assets/icons/tree-icon.png"> <!-- Fallback favicon PNG for older browsers -->
+  <link rel="stylesheet" type="text/css" href="./css/style.min.css">
 </head>
-<body>
+<body data-current-page="offer">
+  <!-- Fluid container -->
+  <div class="container-fluid">
+    <!-- Navbar -->
+    <nav class="navbar">
+      <!-- Logo -->
+      <a href="./index.html" class="navbar__logo" aria-label="Forest - logo firmy">
+        <picture>
+          <!-- Fallback PNG logo for older browsers -->
+          <source type="image/png" srcset="./assets/icons/tree-icon.png">
+          <!-- SVG logo -->
+          <img src="./assets/icons/tree-icon.svg" class="navbar__logo-icon" alt="Czarne drzewo na białym tle jako symbol firmy Forest."> 
+        </picture>
+        Forest
+      </a> 
+      <!-- Logo -->
+      <!-- Burger icon -->
+      <button type="button" class="navbar__burger-icon" aria-label="Otwórz menu nawigacyjne" aria-expanded="false" aria-controls="navbarLinks">
+        <span class="navbar__burger-icon-line"></span>
+      </button> 
+      <!-- Burger icon -->
+      <!-- Links -->
+      <div class="navbarLinks" id="navbarLinks">
+        <ul class="navbar__list">
+          <li class="navbar__item"><a href="./index.html" class="navbar__link">Home</a></li>
+          <li class="navbar__item"><a href="./index.html#about" class="navbar__link">O nas</a></li>
+          <li class="navbar__item"><a href="./offer.html" class="navbar__link navbar__link--active" aria-current="page">Oferta</a></li>
+          <li class="navbar__item"><a href="./contact.html" class="navbar__link">Kontakt</a></li>
+        </ul>
+      </div> 
+      <!-- Links -->
+    </nav> 
+    <!-- Navbar -->
+  </div> 
+  <!-- Fluid container -->
+  <script src="./js/main.min.js"></script>
 </body>
 </html>
