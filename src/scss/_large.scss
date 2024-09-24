@@ -81,8 +81,20 @@
     &__form {
       flex-grow: 2;
 
-      &-grid-row {
-        flex-direction: row;
+      &-grid {
+        grid-template-columns: repeat(2, 1fr);
+
+        &-item {
+          &:first-of-type,
+          &:nth-last-of-type(2),
+          &:last-of-type {
+            grid-column: 1 / 3;
+          }
+
+          &:last-of-type {
+            flex-direction: row;
+          }
+        }
       }
 
       &-error {
