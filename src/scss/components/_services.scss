@@ -1,0 +1,38 @@
+@use "../utils/colors" as colors;
+
+.services {
+  margin-bottom: 3em;
+
+  &__cards {
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+  }
+
+  &__card {
+    padding: 1.5em;
+    border: 2px solid colors.$darkgray;
+    text-align: center;
+
+    &-header {
+      display: inline-block;
+      margin-bottom: 1em;
+      padding: 1.25em;
+      background-color: colors.$mintshadow;
+      opacity: .85;
+      border-radius: 50%;
+    }
+
+    &-icon {
+      width: 26px;
+    }
+
+    &-title {
+      margin-bottom: 1em;
+    }
+
+    &-description {
+      color: colors.$darkgray;
+    }
+  }
+}
