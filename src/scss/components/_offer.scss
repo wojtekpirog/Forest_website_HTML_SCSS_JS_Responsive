@@ -51,6 +51,22 @@
       justify-content: center;
       align-items: center;
       gap: .5em;
+
+      &-icon {
+        &--available {
+          fill: colors.$mint;
+          opacity: 1;
+        }
+
+        &--unavailable {
+          fill: colors.$darkgray;
+          opacity: .5;
+
+          & + span {
+            opacity: .6;
+          }
+        }
+      }
     }
 
     &-link {
