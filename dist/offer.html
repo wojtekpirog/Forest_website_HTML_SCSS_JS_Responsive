@@ -22,7 +22,7 @@
           <!-- Fallback PNG logo for older browsers -->
           <source type="image/png" srcset="./assets/icons/tree-icon.png">
           <!-- SVG logo -->
-          <img src="./assets/icons/tree-icon.svg" class="navbar__logo-icon" alt="Czarne drzewo na białym tle jako symbol firmy Forest."> 
+          <img src="./assets/icons/tree-icon.svg" class="navbar__logo-icon" alt="Czarne drzewo na białym tle - symbol firmy Forest."> 
         </picture>
         Forest
       </a> 
@@ -33,7 +33,7 @@
       </button> 
       <!-- Burger icon -->
       <!-- Links -->
-      <div class="navbarLinks" id="navbarLinks">
+      <div class="navbar__links" id="navbarLinks">
         <ul class="navbar__list">
           <li class="navbar__item"><a href="./index.html" class="navbar__link">Home</a></li>
           <li class="navbar__item"><a href="./index.html#about" class="navbar__link">O nas</a></li>
@@ -46,6 +46,134 @@
     <!-- Navbar -->
   </div> 
   <!-- Fluid container -->
+  <!-- Overlay -->
+  <div class="navbar__overlay"></div>
+  <!-- Overlay -->
+  <!-- Hero -->
+  <header id="hero" class="hero page-section">
+    <!-- Hero image -->
+    <picture>
+      <!-- Obrazek dla urządności o szerokości ekranu co najmniej 1200px -->
+      <source media="(min-width: 1200px)" srcset="./images/offer_image_hq.min.jpg">
+      <!-- Obrazek dla urządności o szerokości ekranu co najmniej 768px -->
+      <source media="(min-width: 768px)" srcset="./images/offer_image_desktop.min.jpg">  
+      <!-- Obrazek domyślny, dla urządzeń o węższych ekranach -->
+      <img class="hero__image" src="./images/offer_image_mobile.min.jpg" alt="Drzewa w parku miejskim."> 
+    </picture> 
+    <!-- Hero image -->
+    <!-- Container -->
+    <div class="container">
+      <!-- Hero text -->
+      <div class="hero__text">
+        <p class="hero__title">Forest Group</p>
+        <h1 class="hero__description">Poznaj naszą ofertę</h1>
+      </div> 
+      <!-- Hero text -->
+    </div> 
+    <!-- Container -->
+    <!-- Overlay -->
+    <div class="section__overlay"></div> 
+    <!-- Overlay -->
+  </header>
+  <!-- Hero -->
+  <!-- Main content -->
+  <main></main> 
+  <!-- Main content -->
+  <!-- Footer -->
+  <footer class="footer">
+    <!-- Container -->
+    <div class="container">
+      <!-- Footer nav -->
+      <nav class="footer__nav">
+        <!-- Logo -->
+        <div class="footer__nav-logo">
+          <a href="/" class="footer__nav-logo-link">
+            <picture>
+              <!-- Fallback PNG logo for older browsers -->
+              <source type="image/png" srcset="./assets/icons/tree-icon.png">
+              <!-- SVG logo -->
+              <img src="./assets/icons/tree-icon.svg" class="footer__nav-logo-icon" alt="Czarne drzewo na białym tle - symbol firmy Forest.">  
+            </picture>
+            Forest
+          </a> 
+        </div> 
+        <!-- Logo -->
+        <!-- Menu -->
+        <div class="footer__nav-section">
+          <h4 class="footer__nav-section-title">O nas</h4>
+          <!-- Links -->
+          <ul class="footer__nav-section-list">
+            <!-- Link -->
+            <li class="footer__nav-section-item">
+              <a href="#" class="footer__nav-section-link">Historia</a></a>
+            </li> 
+            <!-- Link -->
+            <!-- Link -->
+            <li class="footer__nav-section-item">
+              <a href="#" class="footer__nav-section-link">Parki</a>
+            </li> 
+            <!-- Link -->
+            <!-- Link -->
+            <li class="footer__nav-section-item">
+              <a href="#" class="footer__nav-section-link">Opinie</a>
+            </li> 
+            <!-- Link --> 
+          </ul> 
+          <!-- Links -->
+        </div> 
+        <!-- Menu -->
+        <!-- Menu -->
+        <div class="footer__nav-section">
+          <h4 class="footer__nav-section-title">Nasza firma</h4>
+          <!-- Links -->
+          <ul class="footer__nav-section-list">
+            <!-- Link -->
+            <li class="footer__nav-section-item">
+              <a href="#" class="footer__nav-section-link">Praca</a>
+            </li> 
+            <!-- Link -->
+            <!-- Link -->
+            <li class="footer__nav-section-item">
+              <a href="#" class="footer__nav-section-link">Kadry</a>
+            </li> 
+            <!-- Link -->
+            <!-- Link -->
+            <li class="footer__nav-section-item">
+              <a href="#" class="footer__nav-section-link">Zarząd</a>
+            </li> 
+            <!-- Link -->
+          </ul> 
+          <!-- Links -->
+        </div> 
+        <!-- Menu -->
+        <!-- Menu -->
+        <div class="footer__nav-section">
+          <h4 class="footer__nav-section-title">Dokumenty</h4>
+          <!-- Links -->
+          <ul class="footer__nav-section-list">
+            <!-- Link -->
+            <li class="footer__nav-section-item">
+              <a href="#" class="footer__nav-section-link">Wnioski</a>
+            </li> 
+            <!-- Link -->
+            <!-- Link -->
+            <li class="footer__nav-section-item">
+              <a href="#" class="footer__nav-section-link">Rezerwacje</a>
+            </li> 
+            <!-- Link -->
+          </ul>
+          <!-- Links -->
+        </div> 
+        <!-- Menu -->
+      </nav> 
+      <!-- Footer nav -->
+    </div> 
+    <!-- Container -->
+    <!-- Copyright -->
+    <p class="footer__copyright"><sup>&copy;</sup><span class="footer__copyright-year"></span> Forest Group Company Ltd.</p> 
+    <!-- Copyright -->
+  </footer> 
+  <!-- Footer -->
   <script src="./js/main.min.js"></script>
 </body>
 </html>
