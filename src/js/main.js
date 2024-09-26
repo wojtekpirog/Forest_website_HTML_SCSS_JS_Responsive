@@ -85,7 +85,10 @@ const addListeners = () => {
 const handleFormClear = (event) => {
   event.preventDefault();
 
-  contactFormControls.forEach((input) => input.value = "");
+  contactFormControls.forEach((input) => {
+    input.value = "";
+    clearError(input);
+  });
 }
 
 const handleFormSubmit = (event) => {
@@ -138,11 +141,13 @@ const handleTextarea = () => {
 const showError = (input, message) => {
   input.style.borderColor = "hsl(0, 100%, 40%)";
   input.parentElement.querySelector(".contact__form-error").textContent = message;
+  input.parentElement.querySelector(".contact__form-error").classList.add("contact__form-error--active");
 }
 
 const clearError = (input) => {
   input.style.borderColor = "hsl(0, 0%, 25%)";
   input.parentElement.querySelector(".contact__form-error").textContent = "";
+  input.parentElement.querySelector(".contact__form-error").classList.remove("contact__form-error--active");
 }
 
 // Popup-related functions
