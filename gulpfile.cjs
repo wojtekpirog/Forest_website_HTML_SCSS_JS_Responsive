@@ -18,6 +18,8 @@ const sourcemaps = require('gulp-sourcemaps');
 // BrowserSync & reload
 const browserSync = require('browser-sync').create();
 const reload = browserSync.reload;
+// Webpack
+const webpack = require('webpack-stream');
 
 const paths = {
   styles: {
@@ -26,8 +28,8 @@ const paths = {
   },
 
   scripts: {
-    src: "./src/js/**/*.js",
-    // src: "./src/js/main.js",
+    // src: "./src/js/**/*.js",
+    src: "./src/js/main.js",
     dist: "./dist/js"
   },
 
@@ -62,17 +64,36 @@ function prepareCSS() {
 }
 
 // Webpack-stream configuration
-// function bundleJS() {
-//   return src(paths.scripts.src)
-//     .pipe(webpack().on("error", (error) => {
-//       console.log(`Webpack error: ${error}`);
-//     }))
-//     .pipe(dest(paths.scripts.dist));
-// }
+function bundleJS() {
+  return src(paths.scripts.src)
+    .pipe(webpack({
+      mode: "production",
+      output: {
+        filename: "main.min.js",
+      },
+      module: {
+        rules: [
+          {
+            test: /\.js$/,
+            exclude: /node_modules/,
+            // use: {
+            //   loader: 'babel-loader', // Webpack może korzystać z Babela do transpilacji
+            //   options: {
+            //     presets: ['@babel/preset-env']
+            //   }
+            // }
+          }
+        ]
+      }
+    }).on("error", (error) => {
+      console.log(`Webpack error: ${error}`);
+    }))
+    .pipe(dest(paths.scripts.dist));
+}
 // Webpack-stream configuration
 
 function transformJS() {
-  return src(paths.scripts.src)
+  return src(`${paths.scripts.dist}/main.min.js`)
     .pipe(sourcemaps.init())
     .pipe(babel({
       presets: ['@babel/env'],
@@ -84,12 +105,7 @@ function transformJS() {
     }).on("error", (error) => {
       console.error(`Terser error: ${error}`);
     }))
-    .pipe(rename({
-      suffix: ".min",
-      extname: ".js"
-    }).on("error", (error) => {
-      console.error(`Rename error: ${error}`);
-    }))
+ 
     .pipe(sourcemaps.write("."))
     .pipe(dest(paths.scripts.dist));
 }
@@ -129,14 +145,16 @@ function startBrowserSync(callback) {
   callback();
 }
 
+const optimizeJS = series(bundleJS, transformJS);
+
 function watchForChanges() {
   watch(paths.html).on("change", reload);
   watch(paths.styles.src, prepareCSS).on("change", reload);
-  watch(paths.scripts.src, transformJS).on("change", reload);
+  watch(paths.scripts.src, optimizeJS).on("change", reload);
   watch(paths.images.src, compressImages).on("change", reload);
 }
 
-const optimizeFiles = series(prepareCSS, transformJS, compressImages);
+const optimizeFiles = series(prepareCSS, optimizeJS, compressImages);
 module.exports.default = series(optimizeFiles, startBrowserSync, watchForChanges);
 module.exports.cleanUnncessaryFiles = cleanUnncessaryFiles;
 module.exports.startBrowserSync = startBrowserSync;

@@ -19,7 +19,7 @@ let charsCounter;
 let resetButton;
 let submitButton;
 // Footer
-let footerYear;
+export let footerYear;
 // All sections on the page that need to be spied on when scrolling
 let allSections;
 // All input elements inside the contact form
@@ -27,6 +27,8 @@ let contactFormControls;
 // Popup
 let popupContainer;
 let closePopupButton;
+
+import setFooterYear from "./footer.js";
 
 const main = () => {
   prepareDOMElements();
@@ -231,11 +233,6 @@ const handleScrollSpy = () => {
 
 const setInitialCharsCounter = () => {
   charsCounter.innerHTML = `<span>${messageTextarea.value.length}</span>/${messageTextarea.maxLength}`;
-}
-
-const setFooterYear = () => {
-  const currentYear = new Date().getFullYear();
-  footerYear.textContent = currentYear;
 }
 
 document.addEventListener("DOMContentLoaded", main);
