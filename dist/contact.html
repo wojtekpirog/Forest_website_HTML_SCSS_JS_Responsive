@@ -193,14 +193,14 @@
               <div class="contact__form-grid-item">
                 <!-- Textarea -->
                 <label for="message" class="contact__form-label">Treść wiadomości: </label>
-                <textarea id="message" class="contact__form-input contact__form-input--textarea" name="message" aria-label="Treść wiadomości" maxlength="500" required></textarea>
+                <textarea id="message" class="contact__form-input contact__form-input--textarea" name="message" aria-label="Treść wiadomości" aria-describedby="chars-counter" maxlength="500" required></textarea>
                 <!-- Textarea -->
                 <div class="contact__form-info-box">
                   <!-- Error -->
                   <p class="contact__form-error" role="alert"></p>
                   <!-- Error -->
                   <!-- Chars counter -->
-                  <p class="contact__form-counter"></p>
+                  <p id="chars-counter" class="contact__form-counter" aria-live="polite"></p>
                   <!-- Chars counter --> 
                 </div> 
               </div> 
