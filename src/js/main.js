@@ -1,34 +1,37 @@
+import setFooterYear from "./footer.js";
+import handleScrollSpy from "./homepage/scrollspy.js";
+import { setInitialCharsCounter, handleFormClear, handleFormSubmit, handleTextarea } from "./contact/form.js";
+import { toggleNavbarMenu, closeNavbarMenu } from "./navbar.js";
+
+// All sections on the page that need to be spied on when scrolling
+export let allSections;
 // Navbar
-let navbar;
-let toggleButton;
-let navbarLinksContainer;
-let navbarLinks;
+export let navbar;
+export let toggleButton;
+export let navbarLinksContainer;
+export let navbarLinks;
 // Overlay
-let overlay;
+export let overlay;
 // `offsetHeight` of navbar
-let navbarHeight;
-// Contact form controls
-let firstNameInput;
-let lastNameInput;
-let emailAddressInput;
-let contactSelect;
-let messageTextarea;
-// Chars counter
-let charsCounter;
+export let navbarHeight;
 // Contact form buttons
 let resetButton;
 let submitButton;
+// Contact form controls
+export let firstNameInput;
+export let lastNameInput;
+export let emailAddressInput;
+export let contactSelect;
+export let messageTextarea;
+// Chars counter
+export let charsCounter;
 // Footer
 export let footerYear;
-// All sections on the page that need to be spied on when scrolling
-let allSections;
 // All input elements inside the contact form
-let contactFormControls;
+export let contactFormControls;
 // Popup
-let popupContainer;
-let closePopupButton;
-
-import setFooterYear from "./footer.js";
+export let popupContainer;
+export let closePopupButton;
 
 const main = () => {
   prepareDOMElements();
@@ -71,168 +74,18 @@ const prepareDOMElements = () => {
 const addListeners = () => {
   toggleButton.addEventListener("click", toggleNavbarMenu);
   overlay.addEventListener("click", closeNavbarMenu);
-  
-  window.addEventListener("resize", () => window.innerWidth >= 992 ? closeNavbarMenu() : false);
-  window.addEventListener("scroll", handleScrollSpy);
+
+  if (document.body.dataset.currentPage === "home") {
+    window.addEventListener("scroll", handleScrollSpy);
+  }
   
   if (document.body.dataset.currentPage === "contact") {
     messageTextarea.addEventListener("input", handleTextarea);
     resetButton.addEventListener("click", handleFormClear);
     submitButton.addEventListener("click", handleFormSubmit);
   }
-}
 
-// Form-related functions
-
-const handleFormClear = (event) => {
-  event.preventDefault();
-
-  contactFormControls.forEach((input) => {
-    input.value = "";
-    clearError(input);
-  });
-}
-
-const handleFormSubmit = (event) => {
-  event.preventDefault();
-
-  checkForm([firstNameInput, lastNameInput, emailAddressInput, messageTextarea]);
-  checkEmailAddress(emailAddressInput);
-  checkSelect(contactSelect);
-  // Symulacja wysyłania formularza
-  setTimeout(handlePopup, 1000);
-}
-
-const checkForm = (inputs) => {
-  inputs.forEach((input) => {
-    input.value === "" ? showError(input, `Pole "${input.previousElementSibling.textContent.slice(0, -2)}" nie może być puste`) : clearError(input);
-  });
-}
-
-const checkEmailAddress = (emailAddressInput) => {
-  const regExp = /^[\w\.-]+@[a-zA-Z\d\.-]+\.[a-zA-Z]{2,}$/;
-  
-  if (emailAddressInput.value === "") {
-    showError(emailAddressInput, 'Pole "Adres e-mail" nie może być puste');
-  } else if (!regExp.test(emailAddressInput.value)) {
-    showError(emailAddressInput, 'Adres e-mail jest nieprawidłowy');
-  } else {
-    clearError(emailAddressInput);
-  }
-}
-
-const checkSelect = (contactSelect) => {
-  if (contactSelect.value === "") {
-    showError(contactSelect, "Powiedz nam, w jakiej sprawie piszesz");
-  } else {
-    clearError(contactSelect);
-  }
-}
-
-const handleTextarea = () => {
-  charsCounter.innerHTML = `<p class="contact__form-counter"><span>${messageTextarea.value.length}</span>/${messageTextarea.maxLength}</p>`;
-
-  if (messageTextarea.value.length === messageTextarea.maxLength) {
-    messageTextarea.value = messageTextarea.value.slice(0, messageTextarea.maxLength + 1);
-    showError(messageTextarea, `Osiągnięto limit ${messageTextarea.maxLength} znaków.`);
-  } else {
-    clearError(messageTextarea);
-  }
-}
-
-const showError = (input, message) => {
-  input.style.borderColor = "hsl(0, 100%, 40%)";
-  input.parentElement.querySelector(".contact__form-error").textContent = message;
-  input.parentElement.querySelector(".contact__form-error").classList.add("contact__form-error--active");
-}
-
-const clearError = (input) => {
-  input.style.borderColor = "hsl(0, 0%, 25%)";
-  input.parentElement.querySelector(".contact__form-error").textContent = "";
-  input.parentElement.querySelector(".contact__form-error").classList.remove("contact__form-error--active");
-}
-
-// Popup-related functions
-
-const handlePopup = () => {
-  let errorCount = 0;
-  
-  const errorsBoxes = document.querySelectorAll(".contact__form-error");
-  errorsBoxes.forEach((errorBox) => errorBox.textContent !== "" ? errorCount += 1 : false);
-
-  if (errorCount === 0) {
-    openPopup();
-  } else {
-    closePopup();
-  }
-
-  // Zamknij popup po naciśnięciu klawisza ESC
-  document.addEventListener("keydown", (event) => {
-    if (event.key === "Escape" || event.key === "Esc") closePopup();
-  });
-}
-
-const openPopup = () => {
-  popupContainer.classList.add("form-popup__container--active");
-  popupContainer.setAttribute("aria-hidden", false);
-  closePopupButton.addEventListener("click", closePopup);
-}
-
-const closePopup = () => {
-  popupContainer.classList.remove("form-popup__container--active");
-  popupContainer.setAttribute("aria-hidden", true);
-}
-
-// Navbar-related functions
-
-const toggleNavbarMenu = () => {
-  toggleButton.classList.toggle("navbar__burger-icon--active");
-  navbarLinksContainer.classList.toggle("navbar__links--active");
-  overlay.classList.toggle("navbar__overlay--active");
-
-  if (navbarLinksContainer.classList.contains("navbar__links--active")) {
-    toggleButton.setAttribute("aria-expanded", "true");
-    toggleButton.setAttribute("aria-label", "Zamknij menu nawigacyjne");
-  } else {
-    toggleButton.setAttribute("aria-expanded", "false");
-    toggleButton.setAttribute("aria-label", "Otwórz menu nawigacyjne");
-  }
-}
-
-const closeNavbarMenu = () => {
-  overlay.classList.remove("navbar__overlay--active");
-  toggleButton.classList.remove("navbar__burger-icon--active");
-  toggleButton.setAttribute("aria-expanded", "false");
-  toggleButton.setAttribute("aria-label", "Otwórz menu nawigacyjne");
-  navbarLinksContainer.classList.remove("navbar__links--active");
-}
-
-// Scroll spy
-
-const handleScrollSpy = () => {
-  // We want the scroll spy to work only on the main page:
-  if (document.body.dataset.currentPage === "home") {
-    const sections = []; // Sections for which `offsetHeight` + `offsetTop` - navbarHeight <= `window.scrollY`
-
-    allSections.forEach((section) => {
-      if (window.scrollY <= section.offsetHeight + section.offsetTop - navbarHeight) {
-        sections.push(section);
-      }
-    });
-
-    allSections.forEach((section) => section.classList.remove("page-section--active"));
-    sections[0].classList.add("page-section--active");
-
-    let activeSectionId;
-    allSections.forEach((section) => section.classList.contains("page-section--active") && (activeSectionId = section.id));
-
-    navbarLinks.forEach((navbarLink) => navbarLink.classList.remove("navbar__link--active"));
-    document.querySelector(`.navbar__link[href*="${activeSectionId}"]`).classList.add("navbar__link--active");
-  }
-}
-
-const setInitialCharsCounter = () => {
-  charsCounter.innerHTML = `<span>${messageTextarea.value.length}</span>/${messageTextarea.maxLength}`;
+  window.addEventListener("resize", () => window.innerWidth >= 992 ? closeNavbarMenu() : false);
 }
 
 document.addEventListener("DOMContentLoaded", main);

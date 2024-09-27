@@ -1,4 +1,4 @@
-import footerYear from "./main.js";
+import { footerYear } from "./main.js"; // Zmienna "footerYear" jest eksportowana z pliku "main.js" jako "named export"
 
 const setFooterYear = () => {
   const currentYear = new Date().getFullYear();
