@@ -24,22 +24,22 @@ const webpack = require('webpack-stream');
 const paths = {
   styles: {
     src: "./src/scss/**/*.scss",
-    dist: "./dist/css"
+    dist: "./docs/css"
   },
 
   scripts: {
     // src: "./src/js/**/*.js",
     src: "./src/js/main.js",
-    dist: "./dist/js"
+    dist: "./docs/js"
   },
 
   images: {
     src: "./src/images/**/*",
-    dist: "./dist/images" 
+    dist: "./docs/images" 
   },
 
-  html: "./dist/*.html",
-  dist: "./dist"
+  html: "./docs/*.html",
+  dist: "./docs"
 };
 
 function prepareCSS() {
@@ -136,7 +136,7 @@ function startBrowserSync(callback) {
       port: 3000,
       injectChanges: true,
       server: {
-        baseDir: "./dist",
+        baseDir: "./docs",
         index: "index.html"
       },
     }
