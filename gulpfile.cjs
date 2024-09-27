@@ -27,6 +27,7 @@ const paths = {
 
   scripts: {
     src: "./src/js/**/*.js",
+    // src: "./src/js/main.js",
     dist: "./dist/js"
   },
 
@@ -59,6 +60,16 @@ function prepareCSS() {
     .pipe(sourcemaps.write("."))
     .pipe(dest(paths.styles.dist));
 }
+
+// Webpack-stream configuration
+// function bundleJS() {
+//   return src(paths.scripts.src)
+//     .pipe(webpack().on("error", (error) => {
+//       console.log(`Webpack error: ${error}`);
+//     }))
+//     .pipe(dest(paths.scripts.dist));
+// }
+// Webpack-stream configuration
 
 function transformJS() {
   return src(paths.scripts.src)
