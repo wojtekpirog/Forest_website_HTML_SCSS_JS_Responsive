@@ -138,7 +138,7 @@
                 <input type="text" id="first-name" class="contact__form-input" name="first-name" placeholder="Gall" aria-label="Imię" maxlength="30" required>
                 <!-- Input -->
                 <!-- Error -->
-                <p class="contact__form-error"></p>
+                <p class="contact__form-error" role="alert"></p>
                 <!-- Error -->
               </div> 
               <!-- Grid item -->
@@ -149,7 +149,7 @@
                 <input type="text" id="last-name" class="contact__form-input" name="last-name" placeholder="Anonim" aria-label="Nazwisko" maxlength="50" required>
                 <!-- Input -->
                 <!-- Error -->
-                <p class="contact__form-error"></p>
+                <p class="contact__form-error" role="alert"></p>
                 <!-- Error -->
               </div> 
               <!-- Grid item -->
@@ -160,7 +160,7 @@
                 <input type="email" id="email" class="contact__form-input" name="email-address" placeholder="gallanonim@gmail.com" aria-label="Adres e-mail" required>
                 <!-- Input -->
                 <!-- Error -->
-                <p class="contact__form-error"></p>
+                <p class="contact__form-error" role="alert"></p>
                 <!-- Error -->
               </div> 
               <!-- Grid item -->
@@ -179,7 +179,7 @@
                   </select>
                   <!-- Select -->
                   <!-- Error -->
-                  <p class="contact__form-error"></p>
+                  <p class="contact__form-error" role="alert"></p>
                   <!-- Error --> 
                   <!-- Arrow -->
                   <svg class="contact__form-input-arrow contact__form-input-arrow--up" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="2"><line x1="12" y1="19" x2="12" y2="5"></line><polyline points="5 12 12 5 19 12"></polyline></svg> 
@@ -193,14 +193,14 @@
               <div class="contact__form-grid-item">
                 <!-- Textarea -->
                 <label for="message" class="contact__form-label">Treść wiadomości: </label>
-                <textarea id="message" class="contact__form-input contact__form-input--textarea" name="message" aria-label="Treść wiadomości" maxlength="500" required></textarea>
+                <textarea id="message" class="contact__form-input contact__form-input--textarea" name="message" aria-label="Treść wiadomości" aria-describedby="chars-counter" maxlength="500" required></textarea>
                 <!-- Textarea -->
                 <div class="contact__form-info-box">
                   <!-- Error -->
-                  <p class="contact__form-error"></p>
+                  <p class="contact__form-error" role="alert"></p>
                   <!-- Error -->
                   <!-- Chars counter -->
-                  <p class="contact__form-counter"></p>
+                  <p id="chars-counter" class="contact__form-counter" aria-live="polite"></p>
                   <!-- Chars counter --> 
                 </div> 
               </div> 

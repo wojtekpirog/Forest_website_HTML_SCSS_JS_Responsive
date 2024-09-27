@@ -140,9 +140,14 @@
     }
 
     &-error {
+      display: none;
       color: colors.$red;
       font-size: 1.6rem;
       text-align: left;
+
+      &--active {
+        display: block;
+      }
     }
 
     &-counter {
