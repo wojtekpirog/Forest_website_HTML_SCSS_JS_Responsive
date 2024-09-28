@@ -1,7 +1,7 @@
 # Dependencies
 node_modules/
 
-#Optional npm cache directory
+# Optional npm cache directory
 .npm
 
 # Files with environmental variables
@@ -15,8 +15,11 @@ npm-debug.log*
 # IDE files
 .vscode
 
-#Runtime data
+# Runtime data
 pids
 *.pid
 *.seed
 *.pid.lock
+
+# Others
+park_6.min.jpeg

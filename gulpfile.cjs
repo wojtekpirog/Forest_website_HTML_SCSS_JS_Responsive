@@ -76,12 +76,6 @@ function bundleJS() {
           {
             test: /\.js$/,
             exclude: /node_modules/,
-            // use: {
-            //   loader: 'babel-loader', // Webpack może korzystać z Babela do transpilacji
-            //   options: {
-            //     presets: ['@babel/preset-env']
-            //   }
-            // }
           }
         ]
       }
