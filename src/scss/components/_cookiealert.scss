@@ -12,9 +12,9 @@
   transform: translateY(100%);
   animation: showCookieAlert 1s 500ms forwards;
 
-  &--hidden {
-    animation: hideCookieAlert 1s forwards;
-  }
+  // &--hidden {
+  //   display: none;
+  // }
 
   &__message, &__button {
     margin-top: 1.5em;
@@ -37,14 +37,5 @@
   }
   100% {
     transform: translateY(0);
-  }
-}
-
-@keyframes hideCookieAlert {
-  0% {
-    transform: translateY(0);  
-  }
-  100% {
-    transform: translateY(100%);
   }
 }
