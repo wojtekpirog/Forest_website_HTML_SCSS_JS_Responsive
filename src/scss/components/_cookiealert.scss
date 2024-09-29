@@ -1,0 +1,50 @@
+@use "../utils/colors" as colors;
+@use "../utils/mixins" as mixins;
+
+.cookie-alert {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  padding: 2em;
+  background-color: colors.$light;
+  border-top: 2px solid colors.$black;
+  z-index: 12;
+  transform: translateY(100%);
+  animation: showCookieAlert 1s 500ms forwards;
+
+  &--hidden {
+    animation: hideCookieAlert 1s forwards;
+  }
+
+  &__message, &__button {
+    margin-top: 1.5em;
+  }
+
+  &__link {
+    color: colors.$mint;
+  }
+
+  &__button {
+    @include mixins.buttonAndLinkStyles(colors.$mint, colors.$black, colors.$mintshadow);
+    border: 2px solid transparent;
+    cursor: pointer;
+  }
+}
+
+@keyframes showCookieAlert {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes hideCookieAlert {
+  0% {
+    transform: translateY(0);  
+  }
+  100% {
+    transform: translateY(100%);
+  }
+}

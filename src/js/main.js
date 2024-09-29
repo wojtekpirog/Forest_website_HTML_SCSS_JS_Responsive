@@ -1,4 +1,5 @@
 import setFooterYear from "./footer.js";
+import handleCookieAlert from "./cookie_alert.js";
 import handleScrollSpy from "./homepage/scrollspy.js";
 import { setInitialCharsCounter, handleFormClear, handleFormSubmit, handleTextarea } from "./contact/form.js";
 import { toggleNavbarMenu, closeNavbarMenu } from "./navbar.js";
@@ -32,6 +33,9 @@ export let contactFormControls;
 // Popup
 export let popupContainer;
 export let closePopupButton;
+// Cookie alert
+export let cookieAlertBox;
+export let cookieAcceptButton;
 
 const main = () => {
   prepareDOMElements();
@@ -67,11 +71,15 @@ const prepareDOMElements = () => {
   // Popup container
   popupContainer = document.querySelector(".form-popup__container");
   closePopupButton = document.querySelector(".form-popup__close-button");
+  // Cookie alert
+  cookieAlertBox = document.querySelector(".cookie-alert");
+  cookieAcceptButton = document.querySelector(".cookie-alert__button");
 
   navbarHeight = navbar.offsetHeight;
 }
 
 const addListeners = () => {
+  cookieAcceptButton.addEventListener("click", handleCookieAlert);
   toggleButton.addEventListener("click", toggleNavbarMenu);
   overlay.addEventListener("click", closeNavbarMenu);
 
