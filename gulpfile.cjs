@@ -18,25 +18,28 @@ const sourcemaps = require('gulp-sourcemaps');
 // BrowserSync & reload
 const browserSync = require('browser-sync').create();
 const reload = browserSync.reload;
+// Webpack
+const webpack = require('webpack-stream');
 
 const paths = {
   styles: {
     src: "./src/scss/**/*.scss",
-    dist: "./dist/css"
+    dist: "./docs/css"
   },
 
   scripts: {
-    src: "./src/js/**/*.js",
-    dist: "./dist/js"
+    // src: "./src/js/**/*.js",
+    src: "./src/js/main.js",
+    dist: "./docs/js"
   },
 
   images: {
     src: "./src/images/**/*",
-    dist: "./dist/images" 
+    dist: "./docs/images" 
   },
 
-  html: "./dist/*.html",
-  dist: "./dist"
+  html: "./docs/*.html",
+  dist: "./docs"
 };
 
 function prepareCSS() {
@@ -60,8 +63,31 @@ function prepareCSS() {
     .pipe(dest(paths.styles.dist));
 }
 
-function transformJS() {
+// Webpack-stream configuration
+function bundleJS() {
   return src(paths.scripts.src)
+    .pipe(webpack({
+      mode: "production",
+      output: {
+        filename: "main.min.js",
+      },
+      module: {
+        rules: [
+          {
+            test: /\.js$/,
+            exclude: /node_modules/,
+          }
+        ]
+      }
+    }).on("error", (error) => {
+      console.log(`Webpack error: ${error}`);
+    }))
+    .pipe(dest(paths.scripts.dist));
+}
+// Webpack-stream configuration
+
+function transformJS() {
+  return src(`${paths.scripts.dist}/main.min.js`)
     .pipe(sourcemaps.init())
     .pipe(babel({
       presets: ['@babel/env'],
@@ -73,12 +99,7 @@ function transformJS() {
     }).on("error", (error) => {
       console.error(`Terser error: ${error}`);
     }))
-    .pipe(rename({
-      suffix: ".min",
-      extname: ".js"
-    }).on("error", (error) => {
-      console.error(`Rename error: ${error}`);
-    }))
+ 
     .pipe(sourcemaps.write("."))
     .pipe(dest(paths.scripts.dist));
 }
@@ -109,7 +130,7 @@ function startBrowserSync(callback) {
       port: 3000,
       injectChanges: true,
       server: {
-        baseDir: "./dist",
+        baseDir: "./docs",
         index: "index.html"
       },
     }
@@ -118,14 +139,16 @@ function startBrowserSync(callback) {
   callback();
 }
 
+const optimizeJS = series(bundleJS, transformJS);
+
 function watchForChanges() {
   watch(paths.html).on("change", reload);
   watch(paths.styles.src, prepareCSS).on("change", reload);
-  watch(paths.scripts.src, transformJS).on("change", reload);
+  watch(paths.scripts.src, optimizeJS).on("change", reload);
   watch(paths.images.src, compressImages).on("change", reload);
 }
 
-const optimizeFiles = series(prepareCSS, transformJS, compressImages);
+const optimizeFiles = series(prepareCSS, optimizeJS, compressImages);
 module.exports.default = series(optimizeFiles, startBrowserSync, watchForChanges);
 module.exports.cleanUnncessaryFiles = cleanUnncessaryFiles;
 module.exports.startBrowserSync = startBrowserSync;

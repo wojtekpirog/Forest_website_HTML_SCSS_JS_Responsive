@@ -103,17 +103,11 @@
     }
   }
 
-  // .services {
-  //   &__cards {
-  //     grid-template-columns: repeat(3, 1fr);
-  //   }
-
-  //   &__card {
-  //     &:last-of-type {
-  //       grid-column: 3 / 4;
-  //     }
-  //   }
-  // }
+  .services {
+    &__cards {
+      flex-wrap: nowrap;
+    }
+  }
 
   .footer {
     &__nav {

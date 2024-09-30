@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Forest - Kontakt</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Skontaktuj się z nami. Chętnie odpowiemy na Twoje pytania i przedstawimy Ci ofertę dopasowaną do Twoich oczekiwań.">
+  <meta name="author" content="Forest Group Company Ltd.">
+  <link rel="icon" type="image/svg+xml" href="./assets/icons/tree-icon.svg"> <!-- favicon SVG -->
+  <link rel="icon" type="image/png" href="./assets/icons/tree-icon.png"> <!-- favicon PNG jako fallback dla starszych przeglądarek, które nie wspierają SVG -->
+  <link rel="stylesheet" type="text/css" href="./css/style.min.css">
+</head>
+<body data-current-page="contact">
+  <!-- Fluid container -->
+  <div class="container-fluid">
+    <!-- Navbar -->
+    <nav class="navbar">
+      <!-- Logo -->
+      <a href="./index.html" class="navbar__logo" aria-label="Forest - logo firmy">
+        <picture>
+          <!-- Fallback PNG logo for older browsers -->
+          <source type="image/png" srcset="./assets/icons/tree-icon.png">
+          <!-- SVG logo -->
+          <img src="./assets/icons/tree-icon.svg" class="navbar__logo-icon" alt="Czarne drzewo na białym tle - symbol firmy Forest." aria-hidden="true"> 
+        </picture>
+        Forest
+      </a>
+      <!-- Logo -->
+      <!-- Burger icon -->
+      <button type="button" class="navbar__burger-icon" aria-label="Otwórz menu nawigacyjne" aria-expanded="false" aria-controls="navbarLinks">
+        <span class="navbar__burger-icon-line"></span>
+      </button> 
+      <!-- Burger icon -->
+      <!-- Links -->
+      <div class="navbar__links" id="navbarLinks">
+        <ul class="navbar__list">
+          <li class="navbar__item"><a href="./index.html" class="navbar__link">Home</a></li>
+          <li class="navbar__item"><a href="./index.html#about" class="navbar__link">O nas</a></li>
+          <li class="navbar__item"><a href="./index.html#offer" class="navbar__link">Oferta</a></li>
+          <li class="navbar__item"><a href="./contact.html" class="navbar__link navbar__link--active" aria-current="page">Kontakt</a></li>
+        </ul>
+      </div> 
+      <!-- Links -->
+    </nav> 
+    <!-- Navbar -->
+  </div> 
+  <!-- Fluid container -->
+  <!-- Overlay -->
+  <div class="navbar__overlay"></div> 
+  <!-- Overlay -->
+  <!-- Hero -->
+  <header id="hero" class="hero page-section">
+    <!-- Hero image -->
+    <picture>
+      <!-- Obrazek dla urządzeń o szerokości ekranu co najmniej 1200px -->
+      <source srcset="./images/contact_page_hero_image_hq.min.jpg" media="(min-width: 1200px)">
+      <!-- Obrazek dla urządzeń o szerokości ekranu co najmniej 768px -->
+      <source srcset="./images/contact_page_hero_image_desktop.min.jpg" media="(min-width: 768px)"> 
+      <!-- Obrazek domyślny, dla urządzeń o węższych ekranach -->
+      <img class="hero__image" src="./images/contact_page_hero_image_mobile.min.jpg" alt="Drewniany mostek nad rzeką w parku.">
+    </picture>
+    <!-- Hero image -->
+    <!-- Container -->
+    <div class="container">
+      <!-- Hero text -->
+      <div class="hero__text">
+        <p class="hero__title">Forest Group</p>
+        <h1 class="hero__description">Skontaktuj się z nami!</h1>
+      </div> 
+      <!-- Hero text -->
+    </div> 
+    <!-- Container -->
+    <!-- Overlay -->
+    <div class="section__overlay"></div>
+    <!-- Overlay -->
+  </header>
+  <!-- Hero -->
+  <!-- Main content -->
+  <main>
+    <!-- Contact -->
+    <section class="contact">
+      <!-- Container -->
+      <div class="container">
+        <!-- Section title -->
+        <h2 class="section__title">Napisz do nas</h2> 
+        <!-- Section title -->
+        <!-- Flex container -->
+        <div class="contact__box">
+          <!-- Details -->
+          <div class="contact__details">
+            <h3 class="contact__title">Dane kontaktowe</h3>
+            <!-- Box -->
+            <div class="contact__details-box">
+              <h4 class="contact__subtitle">Adres</h4> 
+              <p class="contact__details-address">ul. Jasnogórska 2</p>
+              <p class="contact__details-address">31-358, Kraków</p>
+            </div> 
+            <!-- Box -->
+            <!-- Box -->
+            <div class="contact__details-box">
+              <h4 class="contact__subtitle">Telefon</h4>
+              <p class="contact__details-phone">+48 123 456 789</p>
+            </div> 
+            <!-- Box -->
+            <!-- Box -->
+            <div class="contact__details-box">
+              <h4 class="contact__subtitle">Adres e-mail</h4>
+              <p class="contact__details-email">contact@forest.com</p>
+            </div> 
+            <!-- Box -->
+            <!-- Logo -->
+            <div class="contact__details-logo" aria-label="Forest - logo firmy">
+              <picture>
+                <!-- Fallback PNG logo for older browsers -->
+                <source type="image/png" srcset="./assets/icons/tree-icon.png">
+                <!-- SVG logo -->
+                <img src="./assets/icons/tree-icon.svg" class="navbar__logo-icon" alt="Czarne drzewo na białym tle - symbol firmy Forest." aria-hidden="true"> 
+              </picture>
+              Forest
+            </div> 
+            <!-- Logo -->
+          </div>
+          <!-- Details -->
+          <!-- Form -->
+          <form class="contact__form" action="" method="post">
+            <!-- Grid container -->
+            <div class="contact__form-grid">
+              <!-- Grid item -->
+              <div class="contact__form-grid-item">
+                <h3 class="contact__form-title">Formularz kontaktowy</h3>
+              </div> 
+              <!-- Grid item -->
+              <!-- Grid item -->
+              <div class="contact__form-grid-item">
+                <!-- Input -->
+                <label for="first-name" class="contact__form-label">Imię: </label> 
+                <input type="text" id="first-name" class="contact__form-input" name="first-name" placeholder="Gall" aria-label="Imię" maxlength="30" required>
+                <!-- Input -->
+                <!-- Error -->
+                <p class="contact__form-error" role="alert"></p>
+                <!-- Error -->
+              </div> 
+              <!-- Grid item -->
+              <!-- Grid item -->
+              <div class="contact__form-grid-item">
+                <!-- Input -->
+                <label for="last-name" class="contact__form-label">Nazwisko: </label>
+                <input type="text" id="last-name" class="contact__form-input" name="last-name" placeholder="Anonim" aria-label="Nazwisko" maxlength="50" required>
+                <!-- Input -->
+                <!-- Error -->
+                <p class="contact__form-error" role="alert"></p>
+                <!-- Error -->
+              </div> 
+              <!-- Grid item -->
+              <!-- Grid item -->
+              <div class="contact__form-grid-item">
+                <!-- Input -->
+                <label for="email" class="contact__form-label">Adres e-mail: </label>
+                <input type="email" id="email" class="contact__form-input" name="email-address" placeholder="gallanonim@gmail.com" aria-label="Adres e-mail" required>
+                <!-- Input -->
+                <!-- Error -->
+                <p class="contact__form-error" role="alert"></p>
+                <!-- Error -->
+              </div> 
+              <!-- Grid item -->
+              <!-- Grid item -->
+              <div class="contact__form-grid-item">
+                <!-- Select box -->
+                <div class="contact__form-select-box">
+                  <!-- Select -->
+                  <label for="reason" class="contact__form-label">W jakiej sprawie piszesz? </label>
+                  <select id="reason" class="contact__form-input contact__form-input--select contact__form-select" name="reason" required>
+                    <option value="" disabled selected> - Wybierz - </option>
+                    <option value="1">Sprawa 1</option>
+                    <option value="2">Sprawa 2</option>
+                    <option value="3">Sprawa 3</option>
+                    <option value="4">Sprawa 4</option>
+                  </select>
+                  <!-- Select -->
+                  <!-- Error -->
+                  <p class="contact__form-error" role="alert"></p>
+                  <!-- Error --> 
+                  <!-- Arrow -->
+                  <svg class="contact__form-input-arrow contact__form-input-arrow--up" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="2"><line x1="12" y1="19" x2="12" y2="5"></line><polyline points="5 12 12 5 19 12"></polyline></svg> 
+                  <svg class="contact__form-input-arrow contact__form-input-arrow--down" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"></line><polyline points="19 12 12 19 5 12"></polyline></svg> 
+                  <!-- Arrow -->
+                </div> 
+                <!-- Select box -->                
+              </div> 
+              <!-- Grid item -->
+              <!-- Grid item -->
+              <div class="contact__form-grid-item">
+                <!-- Textarea -->
+                <label for="message" class="contact__form-label">Treść wiadomości: </label>
+                <textarea id="message" class="contact__form-input contact__form-input--textarea" name="message" aria-label="Treść wiadomości" aria-describedby="chars-counter" maxlength="500" required></textarea>
+                <!-- Textarea -->
+                <div class="contact__form-info-box">
+                  <!-- Error -->
+                  <p class="contact__form-error" role="alert"></p>
+                  <!-- Error -->
+                  <!-- Chars counter -->
+                  <p id="chars-counter" class="contact__form-counter" aria-live="polite"></p>
+                  <!-- Chars counter --> 
+                </div> 
+              </div> 
+              <!-- Grid item -->
+              <!-- Row -->
+              <div class="contact__form-grid-item">
+                <!-- Buttons -->
+                <button type="reset" class="contact__form-button contact__form-button--reset">Wyczyść</button>
+                <button type="submit" class="contact__form-button contact__form-button--submit">Wyślij</button>
+                <!-- Buttons -->
+              </div> 
+              <!-- Row --> 
+            </div>
+            <!-- Grid container -->
+          </form> 
+          <!-- Form -->
+        </div> 
+        <!-- Flex container -->
+      </div> 
+      <!-- Container -->
+    </section> 
+    <!-- Contact -->
+    <!-- Map section -->
+    <section class="map">
+      <!-- Container -->
+      <div class="container">
+        <!-- Section title -->
+        <h2 class="section__title">Mapa dojazdu</h2>
+        <!-- Section title -->
+        <p class="section__command">Spotkajmy się w naszej siedzibie.</p> 
+        <!-- Map box -->
+        <div class="map__box">
+          <!-- Map -->
+          <iframe class="map__frame" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d10239.554907862253!2d19.883373741514465!3d50.08837016197383!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47165a326d015c3b%3A0x47a12cd367a1f34e!2sRestauracja%20McDonald&#39;s!5e0!3m2!1spl!2spl!4v1726518565261!5m2!1spl!2spl" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          <!-- Map -->
+        </div> 
+        <!-- Map box -->
+      </div> 
+      <!-- Container -->
+    </section> 
+    <!-- Map section -->
+  </main> 
+  <!-- Main content -->
+  <!-- Footer -->
+  <footer class="footer">
+    <!-- Container -->
+    <div class="container">
+      <!-- Navigation -->
+      <nav class="footer__nav">
+        <!-- Logo -->
+        <div class="footer__nav-logo">
+          <a href="/" class="footer__nav-logo-link" aria-label="Forest - logo firmy">
+            <picture>
+              <!-- Fallback PNG logo for older browsers -->
+              <source type="image/png" srcset="./assets/icons/tree-icon.png">
+              <!-- SVG logo -->
+              <img src="./assets/icons/tree-icon.svg" class="footer__nav-logo-icon" alt="Czarne drzewo na białym tle - symbol firmy Forest." aria-hidden="true"> 
+            </picture>
+            Forest
+          </a>
+        </div> 
+        <!-- Logo -->
+        <!-- Menu -->
+        <div class="footer__nav-section">
+          <h4 class="footer__nav-section-title">O nas</h4>
+          <!-- Links -->
+          <ul class="footer__nav-section-list">
+            <!-- Link -->
+            <li class="footer__nav-section-item">
+              <a href="#" class="footer__nav-section-link">Historia</a>
+            </li> 
+            <!-- Link -->
+            <!-- Link -->
+            <li class="footer__nav-section-item">
+              <a href="#" class="footer__nav-section-link">Parki</a>
+            </li> 
+            <!-- Link -->
+            <!-- Link -->
+            <li class="footer__nav-section-item">
+              <a href="#" class="footer__nav-section-link">Opinie</a>
+            </li> 
+            <!-- Link -->
+          </ul> 
+          <!-- Links -->
+        </div> 
+        <!-- Menu -->
+        <!-- Menu -->
+        <div class="footer__nav-section">
+          <h4 class="footer__nav-section-title">Nasza firma</h4>
+          <!-- Links -->
+          <ul class="footer__nav-section-list">
+            <!-- Link -->
+            <li class="footer__nav-section-item">
+              <a href="#" class="footer__nav-section-link">Praca</a>
+            </li> 
+            <!-- Link -->
+            <!-- Link -->
+            <li class="footer__nav-section-item">
+              <a href="#" class="footer__nav-section-link">Kadry</a>
+            </li> 
+            <!-- Link -->
+            <!-- Link -->
+            <li class="footer__nav-section-item">
+              <a href="#" class="footer__nav-section-link">Zarząd</a>
+            </li> 
+            <!-- Link -->
+          </ul> 
+          <!-- Links -->
+        </div> 
+        <!-- Menu -->
+        <!-- Menu -->
+        <div class="footer__nav-section">
+          <h4 class="footer__nav-section-title">Dokumenty</h4>
+          <!-- Links -->
+          <ul class="footer__nav-section-list">
+            <!-- Link -->
+            <li class="footer__nav-section-item">
+              <a href="#" class="footer__nav-section-link">Wnioski</a>
+            </li> 
+            <!-- Link -->
+            <!-- Link -->
+            <li class="footer__nav-section-item">
+              <a href="#" class="footer__nav-section-link">Rezerwacje</a>
+            </li> 
+            <!-- Link -->
+          </ul> 
+          <!-- Links -->
+        </div> 
+        <!-- Menu -->
+      </nav> 
+      <!-- Navigation -->
+    </div> 
+    <!-- Container -->
+    <!-- Copyright -->
+    <p class="footer__copyright"><sup>&copy;</sup><span class="footer__copyright-year"></span> Forest Group Company Ltd.</p> 
+    <!-- Copyright -->
+  </footer> 
+  <!-- Footer -->
+  <!-- Popup container -->
+  <div class="form-popup__container">
+    <!-- Popup -->
+    <div class="form-popup" aria-hidden="true" aria-labelledby="popup-heading" role="dialog">
+      <!-- Intro -->
+      <h2 id="popup-heading" class="form-popup__title" aria-live="assertive">Formularz został wysłany</h2> 
+      <!-- Intro -->
+      <!-- Info -->
+      <p class="form-popup__info">Odpowiemy na Twoje pytania najszybciej, jak to tylko będzie mozliwe.</p> 
+      <!-- Info -->
+      <!-- Close button -->
+      <button type="button" class="form-popup__close-button">Zamknij</button> 
+      <!-- Close button -->
+    </div> 
+    <!-- Popup -->
+  </div> 
+  <!-- Popup container -->
+  <script src="./js/main.min.js" defer></script>
+</body>
+</html>
