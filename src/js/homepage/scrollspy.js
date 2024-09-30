@@ -1,25 +1,25 @@
-import { allSections, navbarHeight, navbarLinks } from "../main.js";
+import { scrollSpySections, navbarLinks, navbarHeight, aboutBanner } from "../main.js";
 
 const handleScrollSpy = () => {
-  // We want the scroll spy to work only on the main page:
-  if (document.body.dataset.currentPage === "home") {
-    const sections = []; // Sections for which `offsetHeight` + `offsetTop` - navbarHeight <= `window.scrollY`
+  const matchingSections = [];
 
-    allSections.forEach((section) => {
-      if (window.scrollY <= section.offsetHeight + section.offsetTop - navbarHeight) {
-        sections.push(section);
-      }
-    });
+  scrollSpySections.forEach((scrollSpySection) => {
 
-    allSections.forEach((section) => section.classList.remove("page-section--active"));
-    sections[0].classList.add("page-section--active");
+    if (window.scrollY <= scrollSpySection.offsetHeight + scrollSpySection.offsetTop - navbarHeight) {
+      matchingSections.push(scrollSpySection);
 
-    let activeSectionId;
-    allSections.forEach((section) => section.classList.contains("page-section--active") && (activeSectionId = section.id));
+      const linkToActiveSection = document.querySelector(`a[href*="${matchingSections[0].id}"]`);
+      
+      navbarLinks.forEach((navbarLink) => navbarLink.classList.remove("navbar__link--active"));
+      linkToActiveSection.classList.add("navbar__link--active");
+    }
 
-    navbarLinks.forEach((navbarLink) => navbarLink.classList.remove("navbar__link--active"));
-    document.querySelector(`.navbar__link[href*="${activeSectionId}"]`).classList.add("navbar__link--active");
-  }
+    if (window.scrollY >= aboutBanner.offsetTop - navbarHeight) {
+      navbarLinks.forEach((navbarLink) => navbarLink.classList.remove("navbar__link--active"));
+      document.querySelector('a[href*="offer"]').classList.add("navbar__link--active");
+    }
+
+  });
 }
 
 export default handleScrollSpy;

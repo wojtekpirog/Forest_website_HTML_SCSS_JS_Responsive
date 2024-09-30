@@ -5,16 +5,16 @@ import { setInitialCharsCounter, handleFormClear, handleFormSubmit, handleTextar
 import { toggleNavbarMenu, closeNavbarMenu } from "./navbar.js";
 
 // All sections on the page that need to be spied on when scrolling
-export let allSections;
+export let scrollSpySections;
 // Navbar
 export let navbar;
 export let toggleButton;
 export let navbarLinksContainer;
 export let navbarLinks;
-// Overlay
+// Navbar overlay
 export let overlay;
-// `offsetHeight` of navbar
-export let navbarHeight;
+// About banner
+export let aboutBanner;
 // Contact form buttons
 let resetButton;
 let submitButton;
@@ -37,6 +37,9 @@ export let closePopupButton;
 export let cookieAlertBox;
 let cookieAcceptButton;
 
+// `offsetHeight` of navbar
+export let navbarHeight;
+
 const main = () => {
   prepareDOMElements();
   addListeners();
@@ -52,6 +55,8 @@ const prepareDOMElements = () => {
   navbarLinks = document.querySelectorAll(".navbar__link");
   // Overlay
   overlay = document.querySelector(".navbar__overlay");
+  // About banner
+  aboutBanner = document.querySelector(".about__banner");
   // Footer
   footerYear = document.querySelector(".footer__copyright-year");
   // Contact form controls
@@ -66,7 +71,7 @@ const prepareDOMElements = () => {
   resetButton = document.querySelector(".contact__form-button--reset");
   submitButton = document.querySelector(".contact__form-button--submit");
   // All sections on the page
-  allSections = document.querySelectorAll(".page-section");
+  scrollSpySections = document.querySelectorAll(".page-section");
   // All input elements inside the contact form
   contactFormControls = document.querySelectorAll(".contact__form-input");
   // Popup container
