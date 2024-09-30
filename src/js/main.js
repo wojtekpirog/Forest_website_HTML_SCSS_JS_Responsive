@@ -1,6 +1,6 @@
 import setFooterYear from "./footer.js";
 import handleScrollSpy from "./homepage/scrollspy.js";
-import { handleCookieAlert, checkCookie } from "./cookie_alert.js";
+import { generateCookieAlert, handleCookieAlert, checkCookie } from "./cookie_alert.js";
 import { setInitialCharsCounter, handleFormClear, handleFormSubmit, handleTextarea } from "./contact/form.js";
 import { toggleNavbarMenu, closeNavbarMenu } from "./navbar.js";
 
@@ -41,6 +41,7 @@ let cookieAcceptButton;
 export let navbarHeight;
 
 const main = () => {
+  generateCookieAlert();
   prepareDOMElements();
   addListeners();
   setFooterYear();
