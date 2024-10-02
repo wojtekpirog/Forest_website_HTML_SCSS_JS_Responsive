@@ -37,7 +37,7 @@ export let closePopupButton;
 export let cookieAlertBox;
 let cookieAcceptButton;
 
-// `offsetHeight` of navbar
+// `offsetHeight` of the navbar
 export let navbarHeight;
 
 const main = () => {
@@ -91,6 +91,7 @@ const addListeners = () => {
   overlay.addEventListener("click", closeNavbarMenu);
 
   if (document.body.dataset.currentPage === "home") {
+    // Run 'handleScrollSpy' only on the 'Home' page
     window.addEventListener("scroll", handleScrollSpy);
   }
   

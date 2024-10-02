@@ -33,7 +33,7 @@
   }
 
   .about {
-    &__content {
+    &__description {
       flex-direction: row;
 
       & > * {
@@ -45,7 +45,7 @@
       text-align: initial;
     }
 
-    &__description {
+    &__text {
       font-size: 1.4rem;
     }
 
