@@ -1,0 +1,58 @@
+@use "../utils/colors" as colors;
+
+.testimonials {
+  margin-bottom: 3em;
+
+  &__slide {
+    padding: 1em;
+    border: 2px solid colors.$darkgray;
+    border-radius: 4px;
+
+    &-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    &-logo {
+      width: 150px;
+      align-self: flex-start;
+    }
+
+    &-quote {
+      position: relative;
+      display: inline-block;
+      width: 70px;
+      height: 70px;
+      background-color: colors.$mintshadow;
+      border-radius: 50%;
+
+      &-icon {
+        width: 40px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+    }
+
+    &-body {
+      &-text {
+        margin: 1em 0;
+        color: colors.$darkgray;
+      }
+
+      &-rating > picture {
+        display: inline-flex;
+        height: 26px;
+      }
+    }
+
+    &:first-of-type {
+      & .testimonials__slide-logo {
+        width: 240px;
+        margin-left: -10px;
+      }
+    }
+  }
+}

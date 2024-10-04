@@ -46,7 +46,7 @@
     }
 
     &__text {
-      font-size: 1.4rem;
+      font-size: 1.5rem;
     }
 
     &__banner-text {
@@ -117,5 +117,12 @@
         flex-grow: 1;
       }
     }
+  }
+
+  .swiper-wrapper {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
   }
 }

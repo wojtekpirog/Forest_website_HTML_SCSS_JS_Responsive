@@ -72,7 +72,7 @@ const prepareDOMElements = () => {
   resetButton = document.querySelector(".contact__form-button--reset");
   submitButton = document.querySelector(".contact__form-button--submit");
   // All sections on the page
-  scrollSpySections = document.querySelectorAll(".page-section");
+  scrollSpySections = document.querySelectorAll(".page-section--scrollspy");
   // All input elements inside the contact form
   contactFormControls = document.querySelectorAll(".contact__form-input");
   // Popup container
