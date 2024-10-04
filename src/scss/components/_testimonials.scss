@@ -1,9 +1,40 @@
 @use "../utils/colors" as colors;
+@use "../utils/mixins" as mixins;
 
 .testimonials {
   margin-bottom: 3em;
 
+  &__slider-box {
+    width: 100%;
+    overflow: hidden;
+  }
+
+  &__slider {
+    width: 100%;
+    margin-bottom: 3em;
+    display: flex;
+    transform: translateX(0);
+    transition: transform 300ms linear;
+
+    &-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 1em;
+    }
+
+    &-button {
+      @include mixins.buttonAndLinkStyles(colors.$mint, colors.$darkgray, colors.$mintshadow);
+      padding: .5em 1em;
+      font-size: 2.4rem;
+      border: none;
+      box-shadow: none;
+      transition: none;
+      cursor: pointer;
+    }
+  }
+
   &__slide {
+    flex: 1 0 100%;
     padding: 1em;
     border: 2px solid colors.$darkgray;
     border-radius: 4px;
