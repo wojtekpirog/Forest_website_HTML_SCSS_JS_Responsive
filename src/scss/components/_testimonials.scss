@@ -10,11 +10,10 @@
   }
 
   &__slider {
-    width: 100%;
     margin-bottom: 3em;
     display: flex;
     transform: translateX(0);
-    transition: transform 300ms linear;
+    transition: transform 500ms linear;
 
     &-buttons {
       display: flex;
@@ -34,9 +33,11 @@
   }
 
   &__slide {
-    flex: 1 0 100%;
+    flex-grow: 1;
+    flex-shrink: 0;
+    width: 100%;
     padding: 1em;
-    border: 2px solid colors.$darkgray;
+    // border: 2px solid colors.$darkgray;
     border-radius: 4px;
 
     &-top {
@@ -46,7 +47,7 @@
     }
 
     &-logo {
-      width: 150px;
+      width: 130px;
       align-self: flex-start;
     }
 
@@ -69,20 +70,25 @@
 
     &-body {
       &-text {
-        margin: 1em 0;
+        margin-top: 1.6em;
+        margin-bottom: 1em;
         color: colors.$darkgray;
+        line-height: 1.5;
       }
 
-      &-rating > picture {
-        display: inline-flex;
-        height: 26px;
-      }
+      &-rating {
+        & > picture {
+          display: inline-flex;
+          vertical-align: middle;
+          height: 26px;
+        }
+      } 
     }
 
     &:first-of-type {
       & .testimonials__slide-logo {
-        width: 240px;
-        margin-left: -10px;
+        width: 170px;
+        margin-left: -7px;
       }
     }
   }

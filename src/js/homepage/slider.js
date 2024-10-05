@@ -1,14 +1,22 @@
-import { sliderBox, slider, prevSliderButton, NextSliderButton, allSlides, sliderWidth } from "../main.js";
+import { slider, allSlides, sliderStyle, sliderWidth, sliderIntervalId } from "../main.js";
 
 let sliderSpeed = 3000; // The speed of the slider (3 seconds)
 let sliderIndex = 0; // The actual slide index
 
-export const handleSlider = () => {
-  sliderIndex++;
-  changeSlide();
+export const getSliderWidth = () => {
+  sliderStyle = window.getComputedStyle(slider).getPropertyValue("width");
+  sliderWidth = parseInt(sliderStyle.slice(0, sliderStyle.indexOf("px")));
 }
 
-// let runSlider = setInterval(handleSlider, sliderSpeed);
+export const runSlider = () => {
+  sliderIntervalId = setInterval(handleNextSlide, sliderSpeed);
+}
+
+export const resetSlider = () => {
+  sliderIndex = 0;
+  getSliderWidth();
+  changeSlide();
+}
 
 const changeSlide = () => {
   if (sliderIndex > allSlides.length - 1) {
@@ -23,9 +31,16 @@ const changeSlide = () => {
 export const handlePrevSlide = () => {
   sliderIndex--;
   changeSlide();
+  resetInterval();
 }
 
 export const handleNextSlide = () => {
   sliderIndex++;
   changeSlide();
+  resetInterval();
+}
+
+const resetInterval = () => {
+  clearInterval(sliderIntervalId);
+  runSlider();
 }

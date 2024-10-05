@@ -68,6 +68,17 @@
     }
   }
 
+  .testimonials {
+    &__slide {
+      padding: 2em;
+      border: 2px solid colors.$darkgray;
+
+      &-logo {
+        width: 200px;
+      }
+    }
+  }
+
   .contact {
     &__box {
       flex-direction: row;

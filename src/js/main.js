@@ -1,6 +1,6 @@
 import setFooterYear from "./footer.js";
 import handleScrollSpy from "./homepage/scrollspy.js";
-import { handleSlider, handlePrevSlide, handleNextSlide } from "./homepage/slider.js";
+import { getSliderWidth, runSlider, resetSlider, handlePrevSlide, handleNextSlide } from "./homepage/slider.js";
 import { generateCookieAlert, handleCookieAlert, checkCookie } from "./cookie_alert.js";
 import { setInitialCharsCounter, handleFormClear, handleFormSubmit, handleTextarea } from "./contact/form.js";
 import { toggleNavbarMenu, closeNavbarMenu } from "./navbar.js";
@@ -38,26 +38,31 @@ export let closePopupButton;
 export let cookieAlertBox;
 let cookieAcceptButton;
 // Slider-related variables
-export let sliderBox; // .testimonials__slider-box
 export let slider; // .testimonials__slider
 export let prevSliderButton;
 export let nextSliderButton;
 export let allSlides;
 
-// `offsetHeight` of the navbar
+// `offsetHeight` of the navbar elem
 export let navbarHeight;
 
 // Width of the slider (as a number)
-let sliderStyle;
+export let sliderStyle;
 export let sliderWidth;
+
+// ID of slider interval;
+export let sliderIntervalId;
 
 const main = () => {
   generateCookieAlert();
   prepareDOMElements();
   addListeners();
-  setFooterYear();
   checkCookie();
-  handleSlider();
+  setFooterYear();
+  if (document.body.dataset.currentPage === "home") {
+    getSliderWidth();
+    runSlider();
+  }
   document.body.dataset.currentPage === "contact" ? setInitialCharsCounter() : false;
 }
 
@@ -94,16 +99,12 @@ const prepareDOMElements = () => {
   cookieAlertBox = document.querySelector(".cookie-alert");
   cookieAcceptButton = document.querySelector(".cookie-alert__button");
   // Slider-related variables
-  sliderBox = document.querySelector(".testimonials__slider-box");
   slider = document.querySelector(".testimonials__slider");
   prevSliderButton = document.querySelector(".testimonials__slider-button--prev");
   nextSliderButton = document.querySelector(".testimonials__slider-button--next");
   allSlides = document.querySelectorAll(".testimonials__slide");
 
   navbarHeight = navbar.offsetHeight;
-  // Width of the slider (as a number)
-  sliderStyle = window.getComputedStyle(slider).getPropertyValue("width");
-  sliderWidth = parseInt(sliderStyle.slice(0, sliderStyle.indexOf("px")));
 }
 
 const addListeners = () => {
@@ -114,6 +115,7 @@ const addListeners = () => {
   if (document.body.dataset.currentPage === "home") {
     prevSliderButton.addEventListener("click", handlePrevSlide);
     nextSliderButton.addEventListener("click", handleNextSlide);
+    window.addEventListener("resize", resetSlider);
     window.addEventListener("scroll", handleScrollSpy);
   }
   
