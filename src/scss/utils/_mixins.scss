@@ -44,3 +44,9 @@
   color: colors.$black;
   text-decoration: none;
 }
+
+@mixin iconHeight {
+  display: inline-flex;
+  height: 26px;
+  vertical-align: middle;
+}

@@ -1,7 +1,6 @@
 import { popupContainer, closePopupButton } from "../main.js";
 
 // Popup-related functions
-
 const handlePopup = () => {
   let errorCount = 0;
   
