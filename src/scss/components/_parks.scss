@@ -1,8 +1,23 @@
+@use "../utils/colors" as colors;
+
 .parks {
   margin-bottom: 3em;
 
   &__grid {
     display: grid;
     gap: 2em;
+  }
+
+  &__card {
+    display: flex;
+    flex-direction: column;
+    border: 2px solid colors.$darkgray;
+
+    &-image {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+      object-position: center;
+    }
   }
 }

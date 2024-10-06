@@ -66,6 +66,7 @@ function prepareCSS() {
 // Webpack-stream configuration
 function bundleJS() {
   return src(paths.scripts.src)
+    .pipe(sourcemaps.init())
     .pipe(webpack({
       mode: "production",
       output: {
@@ -82,6 +83,7 @@ function bundleJS() {
     }).on("error", (error) => {
       console.log(`Webpack error: ${error}`);
     }))
+    .pipe(sourcemaps.write("."))
     .pipe(dest(paths.scripts.dist));
 }
 // Webpack-stream configuration

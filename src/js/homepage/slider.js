@@ -1,6 +1,6 @@
 import { slider, allSlides, sliderStyle, sliderWidth, sliderIntervalId } from "../main.js";
 
-let sliderSpeed = 3000; // The speed of the slider (3 seconds)
+let sliderSpeed = 5000; // The speed of the slider (3 seconds)
 let sliderIndex = 0; // The actual slide index
 
 export const getSliderWidth = () => {

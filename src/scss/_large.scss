@@ -120,6 +120,17 @@
     }
   }
 
+  .parks {
+    &__grid {
+      grid-template-columns: repeat(2, 1fr);
+
+      &-item:last-child {
+        grid-column: 1 / -1;
+        justify-self: center;
+      }
+    }
+  }
+
   .footer {
     &__nav {
       flex-direction: row;
@@ -128,12 +139,5 @@
         flex-grow: 1;
       }
     }
-  }
-
-  .swiper-wrapper {
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
   }
 }

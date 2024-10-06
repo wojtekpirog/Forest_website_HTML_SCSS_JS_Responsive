@@ -4,6 +4,7 @@ import { getSliderWidth, runSlider, resetSlider, handlePrevSlide, handleNextSlid
 import { generateCookieAlert, handleCookieAlert, checkCookie } from "./cookie_alert.js";
 import { setInitialCharsCounter, handleFormClear, handleFormSubmit, handleTextarea } from "./contact/form.js";
 import { toggleNavbarMenu, closeNavbarMenu } from "./navbar.js";
+// import initMap from "./contact/map.js";
 
 // All sections on the page that need to be spied on when scrolling
 export let scrollSpySections;
@@ -42,15 +43,17 @@ export let slider; // .testimonials__slider
 export let prevSliderButton;
 export let nextSliderButton;
 export let allSlides;
+// Map box
+export let mapBox;
 
-// `offsetHeight` of the navbar elem
+// `offsetHeight` of the navbar 
 export let navbarHeight;
 
 // Width of the slider (as a number)
 export let sliderStyle;
 export let sliderWidth;
 
-// ID of slider interval;
+// ID of the slider's interval
 export let sliderIntervalId;
 
 const main = () => {
@@ -63,7 +66,11 @@ const main = () => {
     getSliderWidth();
     runSlider();
   }
-  document.body.dataset.currentPage === "contact" ? setInitialCharsCounter() : false;
+  // document.body.dataset.currentPage === "contact" ? setInitialCharsCounter() : false;
+  if (document.body.dataset.currentPage === "contact") {
+    setInitialCharsCounter();
+    // initMap();
+  }
 }
 
 const prepareDOMElements = () => {
@@ -103,6 +110,8 @@ const prepareDOMElements = () => {
   prevSliderButton = document.querySelector(".testimonials__slider-button--prev");
   nextSliderButton = document.querySelector(".testimonials__slider-button--next");
   allSlides = document.querySelectorAll(".testimonials__slide");
+  // Map box
+  mapBox = document.querySelector(".map__box");
 
   navbarHeight = navbar.offsetHeight;
 }

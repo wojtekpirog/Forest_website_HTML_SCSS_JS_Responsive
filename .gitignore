@@ -1,6 +1,9 @@
 # Dependencies
 node_modules/
 
+#API keys
+API_key.txt
+
 # Optional npm cache directory
 .npm
 
