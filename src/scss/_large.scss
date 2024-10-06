@@ -120,17 +120,6 @@
     }
   }
 
-  .parks {
-    &__grid {
-      grid-template-columns: repeat(2, 1fr);
-
-      &-item:last-child {
-        grid-column: 1 / -1;
-        justify-self: center;
-      }
-    }
-  }
-
   .footer {
     &__nav {
       flex-direction: row;
