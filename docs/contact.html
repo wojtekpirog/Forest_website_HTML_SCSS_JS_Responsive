@@ -85,6 +85,9 @@
         <!-- Section title -->
         <h2 class="section__title">Napisz do nas</h2> 
         <!-- Section title -->
+        <!-- Section subtitle -->
+        <p class="section__subtitle">Chętnie odpowiemy na wszystkie Twoje pytania!</p> 
+        <!-- Section subtitle -->
         <!-- Flex container -->
         <div class="contact__box">
           <!-- Details -->
@@ -135,7 +138,7 @@
               <div class="contact__form-grid-item">
                 <!-- Input -->
                 <label for="first-name" class="contact__form-label">Imię: </label> 
-                <input type="text" id="first-name" class="contact__form-input" name="first-name" placeholder="Gall" aria-label="Imię" maxlength="30" required>
+                <input type="text" id="first-name" class="contact__form-input" name="first-name" placeholder='przykład: "Gall"' aria-label="Imię" maxlength="30" required>
                 <!-- Input -->
                 <!-- Error -->
                 <p class="contact__form-error" role="alert"></p>
@@ -146,7 +149,7 @@
               <div class="contact__form-grid-item">
                 <!-- Input -->
                 <label for="last-name" class="contact__form-label">Nazwisko: </label>
-                <input type="text" id="last-name" class="contact__form-input" name="last-name" placeholder="Anonim" aria-label="Nazwisko" maxlength="50" required>
+                <input type="text" id="last-name" class="contact__form-input" name="last-name" placeholder='przykład: "Anonim"' aria-label="Nazwisko" maxlength="50" required>
                 <!-- Input -->
                 <!-- Error -->
                 <p class="contact__form-error" role="alert"></p>
@@ -157,7 +160,7 @@
               <div class="contact__form-grid-item">
                 <!-- Input -->
                 <label for="email" class="contact__form-label">Adres e-mail: </label>
-                <input type="email" id="email" class="contact__form-input" name="email-address" placeholder="gallanonim@gmail.com" aria-label="Adres e-mail" required>
+                <input type="email" id="email" class="contact__form-input" name="email-address" placeholder='przykład: "gall@gmail.com"' aria-label="Adres e-mail" required>
                 <!-- Input -->
                 <!-- Error -->
                 <p class="contact__form-error" role="alert"></p>
@@ -208,8 +211,16 @@
               <!-- Row -->
               <div class="contact__form-grid-item">
                 <!-- Buttons -->
-                <button type="reset" class="contact__form-button contact__form-button--reset">Wyczyść</button>
-                <button type="submit" class="contact__form-button contact__form-button--submit">Wyślij</button>
+                <button type="reset" class="contact__form-button contact__form-button--reset">
+                  <span aria-hidden="true"></span>
+                  <span aria-hidden="true"></span>
+                  Wyczyść
+                </button>
+                <button type="submit" class="contact__form-button contact__form-button--submit">
+                  <span aria-hidden="true"></span>
+                  <span aria-hidden="true"></span>
+                  Wyślij
+                </button>
                 <!-- Buttons -->
               </div> 
               <!-- Row --> 
@@ -230,7 +241,9 @@
         <!-- Section title -->
         <h2 class="section__title">Mapa dojazdu</h2>
         <!-- Section title -->
-        <p class="section__command">Spotkajmy się w naszej siedzibie.</p> 
+        <!-- Section subtitle -->
+        <p class="section__subtitle">Spotkajmy się w naszej siedzibie.</p> 
+        <!-- Section subtitle -->
         <!-- Map box -->
         <div class="map__box">
           <!-- Map -->

@@ -12,10 +12,6 @@
   transform: translateY(100%);
   animation: showCookieAlert 1s 500ms forwards;
 
-  // &--hidden {
-  //   display: none;
-  // }
-
   &__message, &__button {
     margin-top: 1.5em;
   }
@@ -25,7 +21,7 @@
   }
 
   &__button {
-    @include mixins.buttonAndLinkStyles(colors.$mint, colors.$black, colors.$mintshadow);
+    @include mixins.buttonAndLinkStyles(colors.$mint, colors.$black);
     border: 2px solid transparent;
     cursor: pointer;
   }

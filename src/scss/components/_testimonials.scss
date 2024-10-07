@@ -22,7 +22,7 @@
     }
 
     &-button {
-      @include mixins.buttonAndLinkStyles(colors.$mint, colors.$darkgray, colors.$mintshadow);
+      @include mixins.buttonAndLinkStyles(colors.$mint, colors.$darkgray);
       padding: .5em 1em;
       font-size: 2.4rem;
       border: none;

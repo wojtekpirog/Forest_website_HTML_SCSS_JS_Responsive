@@ -36,6 +36,11 @@
     gap: 2em;
   }
 
+  &__title {
+    margin-bottom: 1em;
+    text-transform: uppercase;
+  }
+
   &__subtitle {
     margin-bottom: .5em;
     font-size: 1.8rem;
@@ -48,7 +53,7 @@
       text-transform: uppercase;
     }
 
-    // Grid
+    // Grid (start)
 
     &-grid {
       display: grid;
@@ -75,7 +80,7 @@
       }
     }
 
-    // Grid
+    // Grid (end
 
     &-label {
       display: block;
@@ -127,6 +132,7 @@
       }
 
       &--textarea {
+        min-height: 70px;
         resize: vertical;
       }
 
@@ -158,22 +164,56 @@
     &-button {
       @include mixins.buttonAndLinkStyles();
       width: 220px;
-      border: 2px solid transparent;
+      font-size: 1.6rem;
       cursor: pointer;
 
-      @media (hover: hover) {
-        &:hover {
-          transform: scale(.95);
-          box-shadow: 0 0 4px 0 colors.$darkgray;
+      & > span {
+        @include mixins.buttonAndLinkHover();
+
+        &:first-child {
+          top: -50%;
+          left: -100%;
         }
 
-        &--submit:hover {
-          box-shadow: 0 0 4px 0 colors.$mintshadow;
+        &:last-child {
+          bottom: -50%;
+          right: -100%;
         }
       }
 
+      &:focus {
+        outline: none;
+      }
+
       &--submit {
-        @include mixins.buttonAndLinkStyles(colors.$mint, colors.$black, colors.$mintshadow);
+        background-color: colors.$mint;
+        color: colors.$black;
+        border-color: colors.$darkmint;
+
+        & > span {
+          @include mixins.buttonAndLinkHover(colors.$darkmint);
+        }
+      }
+
+      &--reset:focus {
+        background-color: colors.$lightgray;
+      }
+
+      &--submit:focus {
+        background-color: colors.$darkmint;
+        border-color: colors.$black;
+      }
+
+      @media (hover: hover) {
+        &:hover {
+          & > span:first-child {
+            left: 0;
+          }
+
+          & > span:last-child {
+            right: 0;
+          }
+        }
       }
     }
   }
