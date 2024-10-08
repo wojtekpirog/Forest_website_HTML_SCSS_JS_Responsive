@@ -13,10 +13,9 @@
     display: flex;
     flex-direction: column;
     border: 2px solid colors.$darkgray;
-    // color: colors.$darkgray;
 
     &-title {
-      margin: .5em auto 0 .6em;
+      margin: .75em auto .7em .65em;
       font-size: 2rem;
     }
 
@@ -31,7 +30,7 @@
       display: flex;
       align-items: center;
       gap: .5rem;
-      margin-top: .5em;
+      margin-top: .65em;
       padding: 0 .5em;
       font-size: 1.8rem;
 
@@ -54,9 +53,47 @@
         margin-bottom: .5em;
       }
     }
-    
-    // &-link {
-    //   @include mixins.buttonAndLinkStyles(colors.$mint, colors.$darkgray, colors.$mintshadow);
-    // }
+
+    &-link-box {
+      text-align: center;
+    }
+
+    &-link {
+      @include mixins.buttonAndLinkStyles(colors.$mint, colors.$black);
+      margin: 1em auto .5em;
+      border-color: colors.$darkmint;
+
+      & > span {
+        @include mixins.buttonAndLinkHover(colors.$darkmint);
+
+        &:first-child {
+          top: -50%;
+          left: -100%;
+        }
+
+        &:last-child {
+          bottom: -50%;
+          right: -100%;
+        }
+      }
+
+      &:focus {
+        outline: none;
+        border: 2px solid colors.$black;
+        background-color: colors.$darkmint;
+      }
+
+      @media (hover: hover) {
+        &:hover {
+          & > span:first-child {
+            left: 0;
+          }
+  
+          & > span:last-child {
+            right: 0;
+          }
+        }
+      }
+    }
   }
 }

@@ -7,8 +7,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Forest - poznaj naszą wyjątkową ofertę i spełnij z nami swoje marzenia o idealnym odpoczynku na łonie natury.">
   <meta name="author" content="Forest Group Company Ltd.">
-  <link rel="icon" type="image/svg+xml" href="./assets/icons/tree-icon.svg"> <!-- favicon SVG -->
-  <link rel="icon" type="image/png" href="./assets/icons/tree-icon.png"> <!-- Fallback favicon PNG for older browsers -->
+  <link rel="icon" type="image/svg+xml" href="./assets/icons/tree-icon.svg"> <!-- SVG favicon -->
+  <link rel="icon" type="image/png" href="./assets/icons/tree-icon.png"> <!-- Fallback PNG favicon for older browsers which do not support SVG -->
   <link rel="stylesheet" type="text/css" href="./css/style.min.css">
 </head>
 <body data-current-page="offer">
@@ -28,7 +28,7 @@
       </a> 
       <!-- Logo -->
       <!-- Burger icon -->
-      <button type="button" class="navbar__burger-icon" aria-label="Otwórz menu nawigacyjne" aria-expanded="false" aria-controls="navbarLinks">
+      <button type="button" class="navbar__burger-icon" aria-label="Przełącz menu nawigacyjne" aria-expanded="false" aria-controls="navbarLinks">
         <span class="navbar__burger-icon-line"></span>
       </button> 
       <!-- Burger icon -->
@@ -174,6 +174,66 @@
               <!-- Card image -->
               <img class="parks__card-image" src="./images/park_1.min.jpg" alt="Łazienki Królewskie w Warszawie.">
               <!-- Card image -->
+              <!-- Card body -->
+              <div class="parks__card-body">
+                <!-- Title -->
+                <h4 class="parks__card-title">Łazienki Królewskie w Warszawie</h4>
+                <!-- Title -->
+                <!-- Info -->
+                <div class="parks__card-info">
+                  <!-- Icon -->
+                  <div class="parks__card-info-icon" role="img" aria-label="Lokalizacja parku">
+                    <picture>
+                      <!-- Fallback PNG icon for older browsers -->
+                      <source type="image/png" srcset="./assets/icons/pin.png">
+                      <!-- SVG icon -->
+                      <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="hsl(144, 73%, 52%)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <path d="M9 11a3 3 0 1 0 6 0a3 3 0 0 0 -6 0" />
+                        <path d="M17.657 16.657l-4.243 4.243a2 2 0 0 1 -2.827 0l-4.244 -4.243a8 8 0 1 1 11.314 0z" />
+                      </svg> 
+                    </picture>
+                  </div>
+                  <!-- Icon -->
+                  <p class="parks__card-info-city">Warszawa, Polska</p>
+                </div> 
+                <!-- Info -->
+                <!-- Info -->
+                <div class="parks__card-info">
+                  <!-- Icon -->
+                  <div class="parks__card-info-icon" role="img" aria-label="Powierzchnia parku">
+                    <picture>
+                      <!-- Fallback PNG icon for older browsers -->
+                      <source type="image/png" srcset="./assets/icons/square.png">
+                      <!-- SVG icon -->
+                      <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="hsl(144, 73%, 52%)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-square">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <path d="M3 3m0 2a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v14a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2z" />
+                      </svg>
+                    </picture>
+                  </div> 
+                  <!-- Icon -->
+                  <p class="parks__card-info-city">76 000 m<sup>2</sup></p>
+                </div> 
+                <!-- Info -->
+                <!-- Info -->
+                <div class="parks__card-info">
+                  <!-- Description -->
+                  <p class="parks__card-info-description"><b>Opis: </b>Łazienki Królewskie w Warszawie to malowniczy park pełen zabytków. Warto zobaczyć Pałac na Wyspie, słynący z pięknych wnętrz i otoczenia stawów. W parku znajdują się także Stara Oranżeria z Teatrem Stanisławowskim, a także Pomnik Fryderyka Chopina, który jest miejscem letnich koncertów fortepianowych. Nie można pominąć amfiteatru nad stawem oraz Ogrodu Chińskiego, które razem tworzą wyjątkowy klimat tego miejsca.</p> 
+                  <!-- Description -->
+                </div> 
+                <!-- Info -->
+                <!-- Link -->
+                <div class="parks__card-link-box">
+                  <a href="https://pl.wikipedia.org/wiki/%C5%81azienki_Kr%C3%B3lewskie_w_Warszawie" class="parks__card-link" target="_blank" rel="noopener">
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                    Zobacz na Wikipedii
+                  </a>
+                </div>
+                <!-- Link -->
+              </div> 
+              <!-- Card body --> 
             </div> 
             <!-- Card -->
           </div> 
@@ -193,7 +253,7 @@
                 <!-- Info -->
                 <div class="parks__card-info">
                   <!-- Icon -->
-                  <div class="parks__card-info-icon" aria-hidden="true">
+                  <div class="parks__card-info-icon" role="img" aria-label="Lokalizacja parku">
                     <picture>
                       <!-- Fallback PNG icon for older browsers -->
                       <source type="image/png" srcset="./assets/icons/pin.png">
@@ -212,7 +272,7 @@
                 <!-- Info -->
                 <div class="parks__card-info">
                   <!-- Icon -->
-                  <div class="parks__card-info-icon" aria-hidden="true">
+                  <div class="parks__card-info-icon" role="img" aria-label="Powierzchnia parku">
                     <picture>
                       <!-- Fallback PNG icon for older browsers -->
                       <source type="image/png" srcset="./assets/icons/square.png">
@@ -224,18 +284,24 @@
                     </picture>
                   </div> 
                   <!-- Icon -->
-                  <p class="parks__card-info-city">Powierzchnia: 11300 m<sup>2</sup></p>
+                  <p class="parks__card-info-city">11300 m<sup>2</sup></p>
                 </div> 
                 <!-- Info -->
                 <!-- Info -->
                 <div class="parks__card-info">
                   <!-- Description -->
-                  <p class="parks__card-info-description"><b>Opis: </b>Park składa się z części ogólnodostępnej i wydzielonej części botanicznej, która uatrakcyjnia obiekt, m.in. dzięki palmiarni i alpinarium. Nieopodal palmiarni znajdują się dwie groty szeptów, a w głębi parku altana. Przez teren parku przepływają wody Potoku Oliwskiego z dwoma dużymi stawami i kaskadą.</p> 
+                  <p class="parks__card-info-description"><b>Opis: </b>Park Oliwski im. Adama Mickiewicza w Gdańsku to piękny, zabytkowy park położony w dzielnicy Oliwa. Znany jest z urokliwych alejek, geometrycznych ogrodów i stawów, po których pływają łabędzie. W parku znajduje się Palmiarnia z egzotycznymi roślinami oraz barokowy Pałac Opatów, obecnie mieszczący Muzeum Narodowe. Szczególnie polecany jest spacer po Ogrodzie Francuskim oraz wizyta w Ogrodzie Japońskim, oferującym unikalny klimat i architekturę wschodu.</p> 
                   <!-- Description -->
                 </div> 
                 <!-- Info -->
                 <!-- Link -->
-                <a href="#" class="parks__card-link" target="_blank" rel="noopener">Zobacz na Wikipedii</a>
+                <div class="parks__card-link-box">
+                  <a href="https://pl.wikipedia.org/wiki/Park_Oliwski" class="parks__card-link" target="_blank" rel="noopener">
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                    Zobacz na Wikipedii
+                  </a>
+                </div>
                 <!-- Link -->
               </div> 
               <!-- Card body -->
@@ -250,6 +316,66 @@
               <!-- Card image -->
               <img class="parks__card-image" src="./images/park_3.min.jpg" alt="Park Szczytnicki we Wrocławiu.">
               <!-- Card image -->
+              <!-- Card body -->
+              <div class="parks__card-body">
+                <!-- Title -->
+                <h4 class="parks__card-title">Park Szczytnicki we Wrocławiu</h4>
+                <!-- Title -->
+                <!-- Info -->
+                <div class="parks__card-info">
+                  <!-- Icon -->
+                  <div class="parks__card-info-icon" role="img" aria-label="Lokalizacja parku">
+                    <picture>
+                      <!-- Fallback PNG icon for older browsers -->
+                      <source type="image/png" srcset="./assets/icons/pin.png">
+                      <!-- SVG icon -->
+                      <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="hsl(144, 73%, 52%)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <path d="M9 11a3 3 0 1 0 6 0a3 3 0 0 0 -6 0" />
+                        <path d="M17.657 16.657l-4.243 4.243a2 2 0 0 1 -2.827 0l-4.244 -4.243a8 8 0 1 1 11.314 0z" />
+                      </svg> 
+                    </picture>
+                  </div>
+                  <!-- Icon -->
+                  <p class="parks__card-info-city">Wrocław, Polska</p>
+                </div> 
+                <!-- Info -->
+                <!-- Info -->
+                <div class="parks__card-info">
+                  <!-- Icon -->
+                  <div class="parks__card-info-icon" role="img" aria-label="Powierzchnia parku">
+                    <picture>
+                      <!-- Fallback PNG icon for older browsers -->
+                      <source type="image/png" srcset="./assets/icons/square.png">
+                      <!-- SVG icon -->
+                      <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="hsl(144, 73%, 52%)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-square">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <path d="M3 3m0 2a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v14a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2z" />
+                      </svg>
+                    </picture>
+                  </div> 
+                  <!-- Icon -->
+                  <p class="parks__card-info-city">100 000 m<sup>2</sup></p>
+                </div> 
+                <!-- Info -->
+                <!-- Info -->
+                <div class="parks__card-info">
+                  <!-- Description -->
+                  <p class="parks__card-info-description"><b>Opis: </b>Park Szczytnicki we Wrocławiu to jeden z największych i najstarszych parków w mieście, znany z pięknej zieleni i malowniczych zakątków. Jego główną atrakcją jest Ogród Japoński, zaprojektowany w stylu orientalnym, pełen egzotycznych roślin i charakterystycznych mostków. Warto zobaczyć także kościół pw. św. Jana Nepomucena, drewnianą świątynię z XVII wieku. Park oferuje spokojne ścieżki spacerowe, idealne na relaks w otoczeniu przyrody i pięknych krajobrazów.</p> 
+                  <!-- Description -->
+                </div> 
+                <!-- Info -->
+                <!-- Link -->
+                <div class="parks__card-link-box">
+                  <a href="https://pl.wikipedia.org/wiki/Park_Szczytnicki" class="parks__card-link" target="_blank" rel="noopener">
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                    Zobacz na Wikipedii
+                  </a>
+                </div>
+                <!-- Link -->
+              </div> 
+              <!-- Card body --> 
             </div> 
             <!-- Card -->
           </div> 
@@ -261,6 +387,66 @@
               <!-- Card image -->
               <img class="parks__card-image" src="./images/park_4.min.jpg" alt="Park Güell w Barcelonie.">
               <!-- Card image -->
+              <!-- Card body -->
+              <div class="parks__card-body">
+                <!-- Title -->
+                <h4 class="parks__card-title">Park Guell w Barcelonie</h4>
+                <!-- Title -->
+                <!-- Info -->
+                <div class="parks__card-info">
+                  <!-- Icon -->
+                  <div class="parks__card-info-icon" role="img" aria-label="Lokalizacja parku">
+                    <picture>
+                      <!-- Fallback PNG icon for older browsers -->
+                      <source type="image/png" srcset="./assets/icons/pin.png">
+                      <!-- SVG icon -->
+                      <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="hsl(144, 73%, 52%)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <path d="M9 11a3 3 0 1 0 6 0a3 3 0 0 0 -6 0" />
+                        <path d="M17.657 16.657l-4.243 4.243a2 2 0 0 1 -2.827 0l-4.244 -4.243a8 8 0 1 1 11.314 0z" />
+                      </svg> 
+                    </picture>
+                  </div>
+                  <!-- Icon -->
+                  <p class="parks__card-info-city">Barcelona, Hiszpania</p>
+                </div> 
+                <!-- Info -->
+                <!-- Info -->
+                <div class="parks__card-info">
+                  <!-- Icon -->
+                  <div class="parks__card-info-icon" role="img" aria-label="Powierzchnia parku">
+                    <picture>
+                      <!-- Fallback PNG icon for older browsers -->
+                      <source type="image/png" srcset="./assets/icons/square.png">
+                      <!-- SVG icon -->
+                      <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="hsl(144, 73%, 52%)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-square">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <path d="M3 3m0 2a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v14a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2z" />
+                      </svg>
+                    </picture>
+                  </div> 
+                  <!-- Icon -->
+                  <p class="parks__card-info-city">20000 m<sup>2</sup></p>
+                </div> 
+                <!-- Info -->
+                <!-- Info -->
+                <div class="parks__card-info">
+                  <!-- Description -->
+                  <p class="parks__card-info-description"><b>Opis: </b>Park Guell w Barcelonie to niezwykłe dzieło Antoniego Gaudíego, pełne kolorowych mozaik, fantazyjnych kształtów i organicznych form. W parku warto zobaczyć słynną Salamandrę, zdobioną kolorową ceramiką, oraz długą, falistą ławkę z widokiem na miasto. Spacerując, można podziwiać pawilony przy wejściu, Sala Hipóstila z imponującymi kolumnami i taras z panoramą Barcelony. Park Güell to unikalne połączenie natury i sztuki, które zachwyca kreatywnością i oryginalnością.</p> 
+                  <!-- Description -->
+                </div> 
+                <!-- Info -->
+                <!-- Link -->
+                <div class="parks__card-link-box">
+                  <a href="https://pl.wikipedia.org/wiki/Park_G%C3%BCell" class="parks__card-link" target="_blank" rel="noopener">
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                    Zobacz na Wikipedii
+                  </a>
+                </div>
+                <!-- Link -->
+              </div> 
+              <!-- Card body --> 
             </div> 
             <!-- Card -->
           </div> 
@@ -272,6 +458,66 @@
               <!-- Card image -->
               <img class="parks__card-image" src="./images/park_5.min.jpg" alt="Hyde Park w Londynie.">
               <!-- Card image -->
+              <!-- Card body -->
+              <div class="parks__card-body">
+                <!-- Title -->
+                <h4 class="parks__card-title">Hyde Park w Londynie</h4>
+                <!-- Title -->
+                <!-- Info -->
+                <div class="parks__card-info">
+                  <!-- Icon -->
+                  <div class="parks__card-info-icon" role="img" aria-label="Lokalizacja parku">
+                    <picture>
+                      <!-- Fallback PNG icon for older browsers -->
+                      <source type="image/png" srcset="./assets/icons/pin.png">
+                      <!-- SVG icon -->
+                      <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="hsl(144, 73%, 52%)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <path d="M9 11a3 3 0 1 0 6 0a3 3 0 0 0 -6 0" />
+                        <path d="M17.657 16.657l-4.243 4.243a2 2 0 0 1 -2.827 0l-4.244 -4.243a8 8 0 1 1 11.314 0z" />
+                      </svg> 
+                    </picture>
+                  </div>
+                  <!-- Icon -->
+                  <p class="parks__card-info-city">Londyn, Wielka Brytania</p>
+                </div> 
+                <!-- Info -->
+                <!-- Info -->
+                <div class="parks__card-info">
+                  <!-- Icon -->
+                  <div class="parks__card-info-icon" role="img" aria-label="Powierzchnia parku">
+                    <picture>
+                      <!-- Fallback PNG icon for older browsers -->
+                      <source type="image/png" srcset="./assets/icons/square.png">
+                      <!-- SVG icon -->
+                      <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="hsl(144, 73%, 52%)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-square">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <path d="M3 3m0 2a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v14a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2z" />
+                      </svg>
+                    </picture>
+                  </div> 
+                  <!-- Icon -->
+                  <p class="parks__card-info-city">146 000 m<sup>2</sup></p>
+                </div> 
+                <!-- Info -->
+                <!-- Info -->
+                <div class="parks__card-info">
+                  <!-- Description -->
+                  <p class="parks__card-info-description"><b>Opis: </b>Hyde Park w Londynie to jeden z najsłynniejszych parków na świecie, rozciągający się na ponad 140 hektarach. Oferuje liczne atrakcje, w tym Serpentine Lake, gdzie można wypożyczyć łódki, oraz Speakers' Corner – miejsce publicznych debat. Park jest idealny na spacery, bieganie i pikniki, a także na odkrywanie zabytków, takich jak Pomnik Księżnej Diany czy Apsley House. Hyde Park jest też miejscem wielu koncertów i wydarzeń kulturalnych przez cały rok.</p> 
+                  <!-- Description -->
+                </div> 
+                <!-- Info -->
+                <!-- Link -->
+                <div class="parks__card-link-box">
+                  <a href="https://pl.wikipedia.org/wiki/Hyde_Park" class="parks__card-link" target="_blank" rel="noopener">
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                    Zobacz na Wikipedii
+                  </a>
+                </div>
+                <!-- Link -->
+              </div> 
+              <!-- Card body -->
             </div> 
             <!-- Card -->
           </div> 
@@ -283,6 +529,66 @@
               <!-- Card image -->
               <img class="parks__card-image" src="./images/park_6.min.jpg" alt="Tiergarten Park w Berlinie.">
               <!-- Card image -->
+              <!-- Card body -->
+              <div class="parks__card-body">
+                <!-- Title -->
+                <h4 class="parks__card-title">Tiergarten Park w Berlinie</h4>
+                <!-- Title -->
+                <!-- Info -->
+                <div class="parks__card-info">
+                  <!-- Icon -->
+                  <div class="parks__card-info-icon" role="img" aria-label="Lokalizacja parku">
+                    <picture>
+                      <!-- Fallback PNG icon for older browsers -->
+                      <source type="image/png" srcset="./assets/icons/pin.png">
+                      <!-- SVG icon -->
+                      <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="hsl(144, 73%, 52%)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <path d="M9 11a3 3 0 1 0 6 0a3 3 0 0 0 -6 0" />
+                        <path d="M17.657 16.657l-4.243 4.243a2 2 0 0 1 -2.827 0l-4.244 -4.243a8 8 0 1 1 11.314 0z" />
+                      </svg> 
+                    </picture>
+                  </div>
+                  <!-- Icon -->
+                  <p class="parks__card-info-city">Berlin, Niemcy</p>
+                </div> 
+                <!-- Info -->
+                <!-- Info -->
+                <div class="parks__card-info">
+                  <!-- Icon -->
+                  <div class="parks__card-info-icon"  role="img" aria-label="Powierzchnia parku">
+                    <picture>
+                      <!-- Fallback PNG icon for older browsers -->
+                      <source type="image/png" srcset="./assets/icons/square.png">
+                      <!-- SVG icon -->
+                      <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="hsl(144, 73%, 52%)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-square">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <path d="M3 3m0 2a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v14a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2z" />
+                      </svg>
+                    </picture>
+                  </div> 
+                  <!-- Icon -->
+                  <p class="parks__card-info-city">200 000 m<sup>2</sup></p>
+                </div> 
+                <!-- Info -->
+                <!-- Info -->
+                <div class="parks__card-info">
+                  <!-- Description -->
+                  <p class="parks__card-info-description"><b>Opis: </b>Tiergarten w Berlinie to największy i najstarszy park w mieście, rozciągający się na ponad 200 hektarach. Jest oazą spokoju w sercu stolicy Niemiec, idealną na spacery, pikniki i jazdę na rowerze. Znajduje się tu wiele pomników, w tym Kolumna Zwycięstwa oraz Pomnik Żołnierzy Radzieckich. Park otacza gmachy rządowe, takie jak Reichstag, a jego centralnym punktem jest Großer Stern, gdzie przecinają się główne aleje parku. To ulubione miejsce mieszkańców i turystów.</p> 
+                  <!-- Description -->
+                </div> 
+                <!-- Info -->
+                <!-- Link -->
+                <div class="parks__card-link-box">
+                  <a href="https://en.wikipedia.org/wiki/Tiergarten_(park)" class="parks__card-link" target="_blank" rel="noopener">
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                    Zobacz na Wikipedii
+                  </a>
+                </div>
+                <!-- Link -->
+              </div> 
+              <!-- Card body --> 
             </div> 
             <!-- Card -->
           </div> 
@@ -294,6 +600,66 @@
               <!-- Card image -->
               <img class="parks__card-image" src="./images/park_7.min.jpg" alt="Central Park (Park Centralny) w Nowym Jorku.">
               <!-- Card image -->
+              <!-- Card body -->
+              <div class="parks__card-body">
+                <!-- Title -->
+                <h4 class="parks__card-title">Central Park w Nowym Jorku</h4>
+                <!-- Title -->
+                <!-- Info -->
+                <div class="parks__card-info">
+                  <!-- Icon -->
+                  <div class="parks__card-info-icon" role="img" aria-label="Lokalizacja parku">
+                    <picture>
+                      <!-- Fallback PNG icon for older browsers -->
+                      <source type="image/png" srcset="./assets/icons/pin.png">
+                      <!-- SVG icon -->
+                      <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="hsl(144, 73%, 52%)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <path d="M9 11a3 3 0 1 0 6 0a3 3 0 0 0 -6 0" />
+                        <path d="M17.657 16.657l-4.243 4.243a2 2 0 0 1 -2.827 0l-4.244 -4.243a8 8 0 1 1 11.314 0z" />
+                      </svg> 
+                    </picture>
+                  </div>
+                  <!-- Icon -->
+                  <p class="parks__card-info-city">Nowy Jork, USA</p>
+                </div> 
+                <!-- Info -->
+                <!-- Info -->
+                <div class="parks__card-info">
+                  <!-- Icon -->
+                  <div class="parks__card-info-icon" role="img" aria-label="Powierzchnia parku">
+                    <picture>
+                      <!-- Fallback PNG icon for older browsers -->
+                      <source type="image/png" srcset="./assets/icons/square.png">
+                      <!-- SVG icon -->
+                      <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="hsl(144, 73%, 52%)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-square">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <path d="M3 3m0 2a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v14a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2z" />
+                      </svg>
+                    </picture>
+                  </div> 
+                  <!-- Icon -->
+                  <p class="parks__card-info-city">341 000 m<sup>2</sup></p>
+                </div> 
+                <!-- Info -->
+                <!-- Info -->
+                <div class="parks__card-info">
+                  <!-- Description -->
+                  <p class="parks__card-info-description"><b>Opis: </b>Central Park w Nowym Jorku to rozległy, 340-hektarowy park w samym sercu Manhattanu. Stanowi zieloną oazę wśród wieżowców, oferując różnorodne atrakcje, takie jak malownicze jeziora, ogrody, ścieżki spacerowe i rowerowe. Warto odwiedzić Zamek Belvedere, The Great Lawn, czy staw Conservatory Water, gdzie odbywają się regaty modeli łodzi. Park jest także domem dla Central Park Zoo i Teatru Delacorte, a zimą można ślizgać się na lodowisku Wollman Rink.</p> 
+                  <!-- Description -->
+                </div> 
+                <!-- Info -->
+                <!-- Link -->
+                <div class="parks__card-link-box">
+                  <a href="https://pl.wikipedia.org/wiki/Central_Park" class="parks__card-link" target="_blank" rel="noopener">
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                    Zobacz na Wikipedii
+                  </a>
+                </div>
+                <!-- Link -->
+              </div> 
+              <!-- Card body --> 
             </div> 
             <!-- Card -->
           </div> 
@@ -305,6 +671,66 @@
               <!-- Card image -->
               <img class="parks__card-image" src="./images/park_8.min.jpg" alt="Ogrody Tivoli w Kopenhadze.">
               <!-- Card image -->
+              <!-- Card body -->
+              <div class="parks__card-body">
+                <!-- Title -->
+                <h4 class="parks__card-title">Ogrody Tivoli w Kopenhadze</h4>
+                <!-- Title -->
+                <!-- Info -->
+                <div class="parks__card-info">
+                  <!-- Icon -->
+                  <div class="parks__card-info-icon" role="img" aria-label="Lokalizacja parku">
+                    <picture>
+                      <!-- Fallback PNG icon for older browsers -->
+                      <source type="image/png" srcset="./assets/icons/pin.png">
+                      <!-- SVG icon -->
+                      <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="hsl(144, 73%, 52%)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <path d="M9 11a3 3 0 1 0 6 0a3 3 0 0 0 -6 0" />
+                        <path d="M17.657 16.657l-4.243 4.243a2 2 0 0 1 -2.827 0l-4.244 -4.243a8 8 0 1 1 11.314 0z" />
+                      </svg> 
+                    </picture>
+                  </div>
+                  <!-- Icon -->
+                  <p class="parks__card-info-city">Kopenhaga, Dania</p>
+                </div> 
+                <!-- Info -->
+                <!-- Info -->
+                <div class="parks__card-info">
+                  <!-- Icon -->
+                  <div class="parks__card-info-icon" role="img" aria-label="Powierzchnia parku">
+                    <picture>
+                      <!-- Fallback PNG icon for older browsers -->
+                      <source type="image/png" srcset="./assets/icons/square.png">
+                      <!-- SVG icon -->
+                      <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="hsl(144, 73%, 52%)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-square">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <path d="M3 3m0 2a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v14a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2z" />
+                      </svg>
+                    </picture>
+                  </div> 
+                  <!-- Icon -->
+                  <p class="parks__card-info-city">50 000 m<sup>2</sup></p>
+                </div> 
+                <!-- Info -->
+                <!-- Info -->
+                <div class="parks__card-info">
+                  <!-- Description -->
+                  <p class="parks__card-info-description"><b>Opis: </b>Ogrody Tivoli w Kopenhadze to historyczny park rozrywki, otwarty w 1843 roku, położony w centrum miasta. Słynie z unikalnej atmosfery, łączącej tradycyjne atrakcje, takie jak rollercoastery i karuzele, z pięknymi ogrodami i oświetleniem. Warto odwiedzić drewnianą kolejkę górską z 1914 roku oraz przechadzać się po klimatycznych alejach wśród fontann i kwiatów. Tivoli oferuje również koncerty, pokazy świetlne oraz liczne restauracje, czyniąc go idealnym miejscem dla rodzin i miłośników rozrywki.</p> 
+                  <!-- Description -->
+                </div> 
+                <!-- Info -->
+                <!-- Link -->
+                <div class="parks__card-link-box">
+                  <a href="https://pl.wikipedia.org/wiki/Ogrody_Tivoli" class="parks__card-link" target="_blank" rel="noopener">
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                    Zobacz na Wikipedii
+                  </a>
+                </div>
+                <!-- Link -->
+              </div> 
+              <!-- Card body --> 
             </div> 
             <!-- Card -->
           </div> 
@@ -316,6 +742,66 @@
               <!-- Card image -->
               <img class="parks__card-image" src="./images/park_9.min.jpg" alt="Ogród Botaniczny w Singapurze.">
               <!-- Card image -->
+              <!-- Card body -->
+              <div class="parks__card-body">
+                <!-- Title -->
+                <h4 class="parks__card-title">Ogród Botaniczny w Singapurze</h4>
+                <!-- Title -->
+                <!-- Info -->
+                <div class="parks__card-info">
+                  <!-- Icon -->
+                  <div class="parks__card-info-icon" role="img" aria-label="Lokalizacja parku">
+                    <picture>
+                      <!-- Fallback PNG icon for older browsers -->
+                      <source type="image/png" srcset="./assets/icons/pin.png">
+                      <!-- SVG icon -->
+                      <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="hsl(144, 73%, 52%)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <path d="M9 11a3 3 0 1 0 6 0a3 3 0 0 0 -6 0" />
+                        <path d="M17.657 16.657l-4.243 4.243a2 2 0 0 1 -2.827 0l-4.244 -4.243a8 8 0 1 1 11.314 0z" />
+                      </svg> 
+                    </picture>
+                  </div>
+                  <!-- Icon -->
+                  <p class="parks__card-info-city">Singapur, Singapur</p>
+                </div> 
+                <!-- Info -->
+                <!-- Info -->
+                <div class="parks__card-info">
+                  <!-- Icon -->
+                  <div class="parks__card-info-icon" role="img" aria-label="Powierzchnia parku">
+                    <picture>
+                      <!-- Fallback PNG icon for older browsers -->
+                      <source type="image/png" srcset="./assets/icons/square.png">
+                      <!-- SVG icon -->
+                      <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="hsl(144, 73%, 52%)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-square">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <path d="M3 3m0 2a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v14a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2z" />
+                      </svg>
+                    </picture>
+                  </div> 
+                  <!-- Icon -->
+                  <p class="parks__card-info-city">74 000 m<sup>2</sup></p>
+                </div> 
+                <!-- Info -->
+                <!-- Info -->
+                <div class="parks__card-info">
+                  <!-- Description -->
+                  <p class="parks__card-info-description"><b>Opis: </b>Ogród Botaniczny w Singapurze to wpisany na listę UNESCO tropikalny park, znany z imponującej różnorodności roślin. Jego główną atrakcją jest Narodowy Ogród Orchidei, gdzie można podziwiać ponad 1000 gatunków tych egzotycznych kwiatów. Warto także odwiedzić Ogród Dziecięcy Jacob Ballas, Ogród Imbirowy oraz Jezioro Łabędzie. To spokojne miejsce, idealne na relaks i obcowanie z naturą, przyciąga zarówno miłośników botaniki, jak i turystów szukających wytchnienia od miejskiego zgiełku.</p> 
+                  <!-- Description -->
+                </div> 
+                <!-- Info -->
+                <!-- Link -->
+                <div class="parks__card-link-box">
+                  <a href="https://pl.wikipedia.org/wiki/Ogrody_botaniczne_w_Singapurze" class="parks__card-link" target="_blank" rel="noopener">
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                    Zobacz na Wikipedii
+                  </a>
+                </div>
+                <!-- Link -->
+              </div> 
+              <!-- Card body -->
             </div> 
             <!-- Card -->
           </div> 
