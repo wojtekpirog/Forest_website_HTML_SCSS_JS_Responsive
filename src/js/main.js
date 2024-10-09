@@ -1,5 +1,6 @@
 import setFooterYear from "./footer.js";
 import handleScrollSpy from "./homepage/scrollspy.js";
+import renderParkCards from "./offer/parks_grid.js";
 import { getSliderWidth, runSlider, resetSlider, handlePrevSlide, handleNextSlide } from "./homepage/slider.js";
 import { generateCookieAlert, handleCookieAlert, checkCookie } from "./cookie_alert.js";
 import { setInitialCharsCounter, handleFormClear, handleFormSubmit, handleTextarea } from "./contact/form.js";
@@ -39,10 +40,12 @@ export let closePopupButton;
 export let cookieAlertBox;
 let cookieAcceptButton;
 // Slider-related variables
-export let slider; // .testimonials__slider
+export let slider;
 export let prevSliderButton;
 export let nextSliderButton;
 export let allSlides;
+// Grid container for park-related cards
+export let parkCardsGrid;
 // Map box
 export let mapBox;
 
@@ -62,11 +65,16 @@ const main = () => {
   addListeners();
   checkCookie();
   setFooterYear();
+  // Execute this code only on the "Home" page
   if (document.body.dataset.currentPage === "home") {
     getSliderWidth();
     runSlider();
   }
-  // document.body.dataset.currentPage === "contact" ? setInitialCharsCounter() : false;
+  // Execute this code only on the "Offer" page
+  if (document.body.dataset.currentPage === "offer") {
+    renderParkCards();
+  }
+  // Execute this code only on the "Contact" page
   if (document.body.dataset.currentPage === "contact") {
     setInitialCharsCounter();
     // initMap();
@@ -110,6 +118,8 @@ const prepareDOMElements = () => {
   prevSliderButton = document.querySelector(".testimonials__slider-button--prev");
   nextSliderButton = document.querySelector(".testimonials__slider-button--next");
   allSlides = document.querySelectorAll(".testimonials__slide");
+  // Grid container for park-related cards
+  parkCardsGrid = document.querySelector(".parks__grid");
   // Map box
   mapBox = document.querySelector(".map__box");
 
