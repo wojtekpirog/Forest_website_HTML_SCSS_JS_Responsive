@@ -46,6 +46,8 @@ export let nextSliderButton;
 export let allSlides;
 // Grid container for park-related cards
 export let parkCardsGrid;
+// HTML template for a park-related card
+export let parkCardTemplate;
 // Map box
 export let mapBox;
 
@@ -56,7 +58,7 @@ export let navbarHeight;
 export let sliderStyle;
 export let sliderWidth;
 
-// ID of the slider's interval
+// ID of the slider's interval elem
 export let sliderIntervalId;
 
 const main = () => {
@@ -77,7 +79,6 @@ const main = () => {
   // Execute this code only on the "Contact" page
   if (document.body.dataset.currentPage === "contact") {
     setInitialCharsCounter();
-    // initMap();
   }
 }
 
@@ -120,6 +121,8 @@ const prepareDOMElements = () => {
   allSlides = document.querySelectorAll(".testimonials__slide");
   // Grid container for park-related cards
   parkCardsGrid = document.querySelector(".parks__grid");
+  // HTML template for a park-related card
+  parkCardTemplate = document.querySelector(".parks__template");
   // Map box
   mapBox = document.querySelector(".map__box");
 
