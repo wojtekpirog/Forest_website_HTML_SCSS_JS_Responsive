@@ -396,210 +396,55 @@
         <div class="testimonials__slider-box">
           <!-- Slider wrapper -->
           <div class="testimonials__slider">
-            <!-- Swiper slide -->
-            <div class="testimonials__slide" aria-label="Slajd pierwszy z czterech." aria-live="polite">
-              <!-- Top -->
-              <div class="testimonials__slide-top">
-                <!-- Logo -->
-                <img class="testimonials__slide-logo" src="./images/bizinsider.png" alt="Logo firmy Business Insider.">
-                <!-- Logo -->
-                <div class="testimonials__slide-quote">
-                  <!-- Quote sign -->
-                  <picture>
-                    <!-- Fallback PNG icon for older browsers -->
-                    <source type="image/png" srcset="./assets/icons/quote.png"> 
-                    <!-- SVG icon -->
-                    <img class="testimonials__slide-quote-icon" src="./assets/icons/quote.svg" alt="" aria-hidden="true">
-                  </picture> 
-                  <!-- Quote sign -->
+            <!-- Testimonial template -->
+            <template class="testimonials-template">
+              <!-- Testimonial slide -->
+              <div class="testimonials__slide" aria-label="" aria-live="polite">
+                <!-- Top -->
+                <div class="testimonials__slide-top">
+                  <!-- Logo -->
+                  <img class="testimonials__slide-logo" src="" alt="">
+                  <!-- Logo -->
+                  <div class="testimonials__slide-quote">
+                    <!-- Quote sign -->
+                    <picture>
+                      <!-- Fallback PNG icon for older browsers -->
+                      <source type="image/png" srcset="./assets/icons/quote.png"> 
+                      <!-- SVG icon -->
+                      <img class="testimonials__slide-quote-icon" src="./assets/icons/quote.svg" alt="" aria-hidden="true">
+                    </picture> 
+                    <!-- Quote sign -->
+                  </div> 
                 </div> 
-              </div> 
-              <!-- Top -->
-              <!-- Body -->
-              <div class="testimonials__slide-body">
-                <!-- Text -->
-                <p class="testimonials__slide-body-text">Forest Group to nowy gracz w branży turystycznej, który jest w stanie tworzyć nieszablonowe rozwiązania. Jakość obsługi klienta jest tu na wysokim poziomie, dzięki czemu żaden klient nie zakończy spotkania z doradcą bez świetnego pomysłu na weekend na łonie natury. Serdecznie polecam!</p> 
-                <!-- Text -->
-                <!-- Rating -->
-                <div class="testimonials__slide-body-rating" aria-label="Ocena: 5 gwiazdek.">
-                  <!-- Stars -->
-                  <picture>
-                    <!-- Fallback PNG icon for older browsers -->
-                    <source type="image/png" srcset="./assets/icons/5stars.png"> 
-                    <!-- SVG icon -->
-                    <svg xmlns="http://www.w3.org/2000/svg" role="img">
-                      <symbol id="star" width="26" fill="hsl(144, 73%, 52%)" viewBox="0 0 24 24">
-                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                        <path d="M8.243 7.34l-6.38 .925l-.113 .023a1 1 0 0 0 -.44 1.684l4.622 4.499l-1.09 6.355l-.013 .11a1 1 0 0 0 1.464 .944l5.706 -3l5.693 3l.1 .046a1 1 0 0 0 1.352 -1.1l-1.091 -6.355l4.624 -4.5l.078 -.085a1 1 0 0 0 -.633 -1.62l-6.38 -.926l-2.852 -5.78a1 1 0 0 0 -1.794 0l-2.853 5.78z" />
-                      </symbol>
-                    
-                      <use xlink:href="#star" x="0" />
-                      <use xlink:href="#star" x="26" />
-                      <use xlink:href="#star" x="52" />
-                      <use xlink:href="#star" x="78" />
-                      <use xlink:href="#star" x="104" />
-                    </svg>
-                  </picture>
-                  <!-- Stars -->
-                </div>
-                <!-- Rating -->
-              </div> 
-              <!-- Body -->
-            </div>
-            <!-- Swiper slide -->
-            <!-- Swiper slide -->
-            <div class="testimonials__slide" aria-label="Slajd drugi z czterech." aria-live="polite">
-              <!-- Top -->
-              <div class="testimonials__slide-top">
-                <!-- Logo -->
-                <img class="testimonials__slide-logo" src="./images/mashable.png" alt="Logo firmy Mashable.">
-                <!-- Logo -->
-                <div class="testimonials__slide-quote">
-                  <!-- Quote sign -->
-                  <picture>
-                    <!-- Fallback PNG icon for older browsers -->
-                    <source type="image/png" srcset="./assets/icons/quote.png"> 
-                    <!-- SVG icon -->
-                    <img class="testimonials__slide-quote-icon" src="./assets/icons/quote.svg" alt="" aria-hidden="true">
-                  </picture> 
-                  <!-- Quote sign -->
-                </div>  
-              </div> 
-              <!-- Top -->
-              <!-- Body -->
-              <div class="testimonials__slide-body">
-                <!-- Text -->
-                <p class="testimonials__slide-body-text">Forest Group to firma z potencjałem, która pomaga podróżnikom (i nie tylko) poznać otaczającą ich przyrodę od zupełnie nowej strony. Katalog wycieczek jest bogaty i konsekwentnie rośnie, dzięki czemu firma umacnia swoją pozycję w przemyśle turystycznym. Chyba już wiem, do kogo zwrócić się o pomoc w doborze destynacji turystycznej na następny weekend.</p> 
-                <!-- Text -->
-                <!-- Rating -->
-                <div class="testimonials__slide-body-rating" aria-label="Ocena: 4 gwiazdki">
-                  <!-- Stars -->
-                  <picture role="img">
-                    <!-- Fallback PNG icon for older browsers -->
-                    <source type="image/png" srcset="./assets/icons/4stars.png">
-                    <!-- SVG icon -->
-                    <svg xmlns="http://www.w3.org/2000/svg" role="img">
-                      <symbol id="star" width="26" height="26" fill="hsl(144, 73%, 52%)" viewBox="0 0 24 24">
-                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                        <path d="M8.243 7.34l-6.38 .925l-.113 .023a1 1 0 0 0 -.44 1.684l4.622 4.499l-1.09 6.355l-.013 .11a1 1 0 0 0 1.464 .944l5.706 -3l5.693 3l.1 .046a1 1 0 0 0 1.352 -1.1l-1.091 -6.355l4.624 -4.5l.078 -.085a1 1 0 0 0 -.633 -1.62l-6.38 -.926l-2.852 -5.78a1 1 0 0 0 -1.794 0l-2.853 5.78z" />
-                      </symbol>
-                    
-                      <use xlink:href="#star" x="0" />
-                      <use xlink:href="#star" x="26" />
-                      <use xlink:href="#star" x="52" />
-                      <use xlink:href="#star" x="78" />
-                    </svg> 
-                  </picture>
-                  <!-- Stars -->
+                <!-- Top -->
+                <!-- Body -->
+                <div class="testimonials__slide-body">
+                  <!-- Text -->
+                  <p class="testimonials__slide-body-text"></p> 
+                  <!-- Text -->
+                  <!-- Rating -->
+                  <div class="testimonials__slide-body-rating" aria-label="">
+                    <!-- Stars -->
+                    <picture>
+                      <!-- Fallback PNG icon for older browsers -->
+                      <source type="image/png" srcset=""> 
+                      <!-- SVG icon -->
+                      <svg xmlns="http://www.w3.org/2000/svg" role="img">
+                        <symbol id="star" width="26" fill="hsl(144, 73%, 52%)" viewBox="0 0 24 24">
+                          <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                          <path d="M8.243 7.34l-6.38 .925l-.113 .023a1 1 0 0 0 -.44 1.684l4.622 4.499l-1.09 6.355l-.013 .11a1 1 0 0 0 1.464 .944l5.706 -3l5.693 3l.1 .046a1 1 0 0 0 1.352 -1.1l-1.091 -6.355l4.624 -4.5l.078 -.085a1 1 0 0 0 -.633 -1.62l-6.38 -.926l-2.852 -5.78a1 1 0 0 0 -1.794 0l-2.853 5.78z" />
+                        </symbol>
+                      </svg>
+                    </picture>
+                    <!-- Stars -->
+                  </div>
+                  <!-- Rating -->
                 </div> 
-                <!-- Rating --> 
-              </div> 
-              <!-- Body -->
-            </div>
-            <!-- Swiper slide -->
-            <!-- Swiper slide -->
-            <div class="testimonials__slide" aria-label="Slajd trzeci z czterech." aria-live="polite">
-              <!-- Top -->
-              <div class="testimonials__slide-top">
-                <!-- Logo -->
-                <img class="testimonials__slide-logo" src="./images/techcrunch.png" alt="Logo firmy TechCrunch.">
-                <!-- Logo -->
-                <div class="testimonials__slide-quote">
-                  <!-- Quote sign -->
-                  <picture>
-                    <!-- Fallback PNG icon for older browsers -->
-                    <source type="image/png" srcset="./assets/icons/quote.png"> 
-                    <!-- SVG icon -->
-                    <img class="testimonials__slide-quote-icon" src="./assets/icons/quote.svg" alt="" aria-hidden="true">
-                  </picture> 
-                  <!-- Quote sign -->
-                </div>
-                <!-- Logo -->
-              </div> 
-              <!-- Top -->
-              <!-- Body -->
-              <div class="testimonials__slide-body">
-                <!-- Text -->
-                <p class="testimonials__slide-body-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet vel in alias voluptate quas illo cupiditate libero maxime provident, sapiente molestiae qui! Saepe dolor voluptatibus suscipit blanditiis facilis corrupti, officiis natus eligendi, perferendis consectetur fuga odit tenetur voluptatum temporibus minus.</p> 
-                <!-- Text -->
-                <!-- Rating -->
-                <div class="testimonials__slide-body-rating" aria-label="Ocena: 4 gwiazdki">
-                  <!-- Stars -->
-                  <picture>
-                    <!-- Fallback PNG icon for older browsers -->
-                    <source type="image/png" srcset="./assets/icons/4stars.png">
-                    <!-- SVG icon -->
-                    <svg xmlns="http://www.w3.org/2000/svg" role="img">
-                      <symbol id="star" width="26" height="26" fill="hsl(144, 73%, 52%)" viewBox="0 0 24 24">
-                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                        <path d="M8.243 7.34l-6.38 .925l-.113 .023a1 1 0 0 0 -.44 1.684l4.622 4.499l-1.09 6.355l-.013 .11a1 1 0 0 0 1.464 .944l5.706 -3l5.693 3l.1 .046a1 1 0 0 0 1.352 -1.1l-1.091 -6.355l4.624 -4.5l.078 -.085a1 1 0 0 0 -.633 -1.62l-6.38 -.926l-2.852 -5.78a1 1 0 0 0 -1.794 0l-2.853 5.78z" />
-                      </symbol>
-                    
-                      <use xlink:href="#star" x="0" />
-                      <use xlink:href="#star" x="26" />
-                      <use xlink:href="#star" x="52" />
-                      <use xlink:href="#star" x="78" />
-                    </svg> 
-                  </picture>
-                  <!-- Stars -->
-                </div> 
-                <!-- Rating -->
-              </div> 
-              <!-- Body -->
-            </div>
-            <!-- Swiper slide -->
-            <!-- Swiper slide -->
-            <div class="testimonials__slide" aria-label="Slajd czwarty z czterech." aria-live="polite">
-              <!-- Top -->
-              <div class="testimonials__slide-top">
-                <!-- Logo -->
-                <img class="testimonials__slide-logo" src="./images/tnw.png" alt="Logo firmy The Next Web.">
-                <!-- Logo -->
-                <div class="testimonials__slide-quote">
-                  <!-- Quote sign -->
-                  <picture>
-                    <!-- Fallback PNG icon for older browsers -->
-                    <source type="image/png" srcset="./assets/icons/quote.png"> 
-                    <!-- SVG icon -->
-                    <img class="testimonials__slide-quote-icon" src="./assets/icons/quote.svg" alt="" aria-hidden="true">
-                  </picture> 
-                  <!-- Quote sign -->
-                </div>
-                <!-- Logo --> 
-              </div> 
-              <!-- Top -->
-              <!-- Body -->
-              <div class="testimonials__slide-body">
-                <!-- Text -->
-                <p class="testimonials__slide-body-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet vel in alias voluptate quas illo cupiditate libero maxime provident, sapiente molestiae qui! Saepe dolor voluptatibus suscipit blanditiis facilis corrupti, officiis natus eligendi, perferendis consectetur fuga odit tenetur voluptatum temporibus minus.</p> 
-                <!-- Text -->
-                <!-- Rating -->
-                <div class="testimonials__slide-body-rating" aria-label="Ocena: 5 gwiazdek">
-                  <!-- Stars -->
-                  <picture>
-                    <!-- Fallback PNG icon for older browsers -->
-                    <source type="image/png" srcset="./assets/icons/4stars.png">
-                    <!-- SVG icon -->
-                    <svg xmlns="http://www.w3.org/2000/svg" role="img">
-                      <symbol id="star" width="26" height="26" fill="hsl(144, 73%, 52%)" viewBox="0 0 24 24">
-                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                        <path d="M8.243 7.34l-6.38 .925l-.113 .023a1 1 0 0 0 -.44 1.684l4.622 4.499l-1.09 6.355l-.013 .11a1 1 0 0 0 1.464 .944l5.706 -3l5.693 3l.1 .046a1 1 0 0 0 1.352 -1.1l-1.091 -6.355l4.624 -4.5l.078 -.085a1 1 0 0 0 -.633 -1.62l-6.38 -.926l-2.852 -5.78a1 1 0 0 0 -1.794 0l-2.853 5.78z" />
-                      </symbol>
-                    
-                      <use xlink:href="#star" x="0" />
-                      <use xlink:href="#star" x="26" />
-                      <use xlink:href="#star" x="52" />
-                      <use xlink:href="#star" x="78" />
-                      <use xlink:href="#star" x="104" />
-                    </svg> 
-                  </picture>
-                  <!-- Stars -->
-                </div> 
-                <!-- Rating -->
-              </div> 
-              <!-- Body -->
-            </div>
-            <!-- Swiper slide -->
+                <!-- Body -->
+              </div>
+              <!-- Testimonial slide -->
+            </template> 
+            <!-- testimonial template -->
           </div> 
           <!-- Slider wrapper -->
           <!-- Slider buttons -->
@@ -709,7 +554,7 @@
     <!-- Copyright -->
     <p class="footer__copyright"><sup>&copy;</sup><span class="footer__copyright-year"></span> Forest Group Company Ltd.</p>
     <!-- Copyright -->
-  </footer> 
+  </footer>   
   <!-- Footer -->
   <script src="./js/main.min.js" defer></script>
 </body>

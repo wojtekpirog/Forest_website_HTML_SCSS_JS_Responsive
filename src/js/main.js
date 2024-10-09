@@ -1,7 +1,7 @@
 import setFooterYear from "./footer.js";
 import handleScrollSpy from "./homepage/scrollspy.js";
 import renderParkCards from "./offer/parks_grid.js";
-import { getSliderWidth, runSlider, resetSlider, handlePrevSlide, handleNextSlide } from "./homepage/slider.js";
+import { renderSlider, getSliderWidth, runSlider, resetSlider, handlePrevSlide, handleNextSlide } from "./homepage/slider.js";
 import { generateCookieAlert, handleCookieAlert, checkCookie } from "./cookie_alert.js";
 import { setInitialCharsCounter, handleFormClear, handleFormSubmit, handleTextarea } from "./contact/form.js";
 import { toggleNavbarMenu, closeNavbarMenu } from "./navbar.js";
@@ -39,8 +39,11 @@ export let closePopupButton;
 // Cookie alert
 export let cookieAlertBox;
 let cookieAcceptButton;
-// Slider-related variables
+// Slider with testimonials
 export let slider;
+// HTML template for a testimonial
+export let testimonialTemplate;
+// Other slider-related elements
 export let prevSliderButton;
 export let nextSliderButton;
 export let allSlides;
@@ -58,7 +61,7 @@ export let navbarHeight;
 export let sliderStyle;
 export let sliderWidth;
 
-// ID of the slider's interval elem
+// ID of the slider's interval 
 export let sliderIntervalId;
 
 const main = () => {
@@ -69,6 +72,7 @@ const main = () => {
   setFooterYear();
   // Execute this code only on the "Home" page
   if (document.body.dataset.currentPage === "home") {
+    renderSlider();
     getSliderWidth();
     runSlider();
   }
@@ -114,11 +118,13 @@ const prepareDOMElements = () => {
   // Cookie alert
   cookieAlertBox = document.querySelector(".cookie-alert");
   cookieAcceptButton = document.querySelector(".cookie-alert__button");
-  // Slider-related variables
+  // Slider
   slider = document.querySelector(".testimonials__slider");
+  // HTML template for a testimonial
+  testimonialTemplate = document.querySelector(".testimonials-template");
+  // Other slider-related elements
   prevSliderButton = document.querySelector(".testimonials__slider-button--prev");
   nextSliderButton = document.querySelector(".testimonials__slider-button--next");
-  allSlides = document.querySelectorAll(".testimonials__slide");
   // Grid container for park-related cards
   parkCardsGrid = document.querySelector(".parks__grid");
   // HTML template for a park-related card
@@ -126,7 +132,7 @@ const prepareDOMElements = () => {
   // Map box
   mapBox = document.querySelector(".map__box");
 
-  navbarHeight = navbar.offsetHeight;
+  navbarHeight = navbar.offsetHeight; 
 }
 
 const addListeners = () => {
