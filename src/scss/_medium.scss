@@ -2,16 +2,17 @@
   .parks {
     &__grid {
       grid-template-columns: repeat(2, 1fr);
-
-      &-item:last-child {
-        grid-column: 1 / -1;
-        justify-self: center;
-      }
     }
 
     &__card {
       &-image {
         height: 250px;
+      }
+
+      &:last-child {
+        width: 50%;
+        grid-column: 1 / -1;
+        justify-self: center;
       }
     }
   }

@@ -9,10 +9,6 @@
     }
   }
 
-  // .about__banner-text {
-  //   font-size: 2.4rem;
-  // }
-
   .about {
     &__stats {
       flex-direction: row;
@@ -39,6 +35,24 @@
 
     &__card {
       width: 300px;
+    }
+  }
+
+  .parks {
+    &__card-image {
+      height: 300px;
+    }
+
+    &__card-title {
+      line-height: normal;
+    }
+
+    &__card-info-description {
+      font-size: 1.6rem;
+    }
+
+    &__card-link {
+      padding: .75em 4.5em;
     }
   }
 }
