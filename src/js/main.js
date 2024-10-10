@@ -61,7 +61,7 @@ export let navbarHeight;
 export let sliderStyle;
 export let sliderWidth;
 
-// ID of the slider's interval 
+// ID of the slider's interval
 export let sliderIntervalId;
 
 const main = () => {
