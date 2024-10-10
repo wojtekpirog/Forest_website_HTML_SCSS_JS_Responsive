@@ -16,8 +16,6 @@ export let navbarLinksContainer;
 export let navbarLinks;
 // Navbar overlay
 export let overlay;
-// About banner
-export let aboutBanner;
 // Contact form buttons
 let resetButton;
 let submitButton;
@@ -72,6 +70,7 @@ const main = () => {
   setFooterYear();
   // Execute this code only on the "Home" page
   if (document.body.dataset.currentPage === "home") {
+    handleScrollSpy(); 
     renderSlider();
     getSliderWidth();
     runSlider();
@@ -93,8 +92,6 @@ const prepareDOMElements = () => {
   navbarLinks = document.querySelectorAll(".navbar__link");
   // Overlay
   overlay = document.querySelector(".navbar__overlay");
-  // About banner
-  aboutBanner = document.querySelector(".about__banner");
   // Footer
   footerYear = document.querySelector(".footer__copyright-year");
   // Contact form controls
@@ -144,7 +141,6 @@ const addListeners = () => {
     prevSliderButton.addEventListener("click", handlePrevSlide);
     nextSliderButton.addEventListener("click", handleNextSlide);
     window.addEventListener("resize", resetSlider);
-    window.addEventListener("scroll", handleScrollSpy);
   }
   
   if (document.body.dataset.currentPage === "contact") {
