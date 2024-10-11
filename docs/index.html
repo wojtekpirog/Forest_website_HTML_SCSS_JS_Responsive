@@ -8,29 +8,10 @@
   <meta name="description" content="Forest - zaufana platforma gotowa do pomocy w znalezieniu najpiękniejszych parków w twojej okolicy.">
   <meta name="author" content="Forest Group Company Ltd.">
   <link rel="icon" type="image/svg+xml" href="./assets/icons/tree-icon.svg"> <!-- favicon SVG -->
-  <link rel="icon" type="image/png" href="./assets/icons/tree-icon.png"> <!-- favicon PNG jako fallback dla starszych przeglądarek, które nie wspierają SVG -->
+  <link rel="icon" type="image/png" href="./assets/icons/tree-icon.png"> <!-- fallback PNG favicon for older browsers, which do not support SVG -->
   <link rel="stylesheet" type="text/css" href="./css/style.min.css">
 </head>
 <body data-current-page="home">
-  <!-- Cookie alert -->
-  <div class="cookie-alert" role="alert" aria-label="Informacja o plikach cookies">
-    <!-- Container -->
-    <div class="container">
-      <!-- Cookie alert heading -->
-      <h2 class="cookie-alert__heading">Szanujemy Twoją prywatność</h2> 
-      <!-- Cookie alert heading -->
-      <!-- Cookie alert message -->
-      <p class="cookie-alert__message">W celu zapewnienia podstawowych funkcji witryny, umożliwienia prawidłowej komunikacji oraz analizy ruchu w Internecie, firma Forest Group Ltd. wykorzystuje pliki cookies.</p>
-      <p class="cookie-alert__message">Kliknij "<b>Akceptuję</b>", aby wyrazić zgodę na przetwarzanie Twoich danych osobowych, takich jak Twoje imię i nazwisko oraz adres e-mail w celu zapewnienia płynnej komunikacji między Tobą a firmą Forest Group Ltd.</p>
-      <p class="cookie-alert__message">Administratorem Twoich danych osobowych jest Forest Group Ltd. Masz możliwość zmiany ustawień dotyczących plików cookies w swojej przeglądarce. Więcej informacji znajdziesz w naszej <a href="#" class="cookie-alert__link" target="_blank" rel="noopener noreferrer">polityce prywatności</a>.</p>
-      <!-- Cookie alert message -->
-      <!-- Cookie alert button -->
-      <button type="button" class="cookie-alert__button" aria-label="Zaakceptuj użycie plików cookies i kontynuuj przeglądanie strony">Akceptuję</button>
-      <!-- Cookie alert button -->
-    </div> 
-    <!-- Container -->
-  </div> 
-  <!-- Cookie alert -->
   <!-- Fluid container -->
   <div class="container-fluid">
     <!-- Navbar -->
@@ -47,14 +28,14 @@
       </a>
       <!-- Logo -->
       <!-- Hamburger icon -->
-      <button type="button" class="navbar__burger-icon" aria-label="Otwórz menu nawigacyjne" aria-expanded="false" aria-controls="navbarLinks">
+      <button type="button" class="navbar__burger-icon" aria-label="Przełącz menu nawigacyjne" aria-expanded="false" aria-controls="navbarLinks">
         <span class="navbar__burger-icon-line"></span>
       </button> 
       <!-- Hamburger icon -->
       <!-- Links -->
       <div class="navbar__links" id="navbarLinks">
         <ul class="navbar__list">
-          <li class="navbar__item"><a href="#hero" class="navbar__link navbar__link--active" aria-current="page">Home</a></li>
+          <li class="navbar__item"><a href="#hero" class="navbar__link" aria-current="page">Home</a></li>
           <li class="navbar__item"><a href="#about" class="navbar__link">O nas</a></li>
           <li class="navbar__item"><a href="#offer" class="navbar__link">Oferta</a></li>
           <li class="navbar__item"><a href="./contact.html" class="navbar__link">Kontakt</a></li>
@@ -69,7 +50,7 @@
   <div class="navbar__overlay"></div> 
   <!-- Overlay -->
   <!-- Hero -->
-  <header id="hero" class="hero page-section page-section--active">
+  <header id="hero" class="hero page-section page-section--scrollspy page-section--active">
     <!-- Hero image -->
     <picture>
       <!-- Obrazek dla urządzeń o szerokości ekranu co najmniej 1200px -->
@@ -98,14 +79,15 @@
   <!-- Main content -->
   <main> 
     <!-- About us -->
-    <section id="about" class="about page-section">
+    <section id="about" class="about page-section page-section--scrollspy">
       <!-- Section title -->
       <h2 class="section__title">O nas</h2>
-      <!-- Section title --> 
+      <!-- Section title -->
+      <hr class="section__title-divider"> 
       <!-- Container -->
       <div class="container">
-        <!-- Section content -->
-        <div class="about__content">
+        <!-- About description -->
+        <div class="about__description">
           <!-- Image box -->
           <div class="about__image-box">
             <picture>
@@ -119,12 +101,77 @@
           <!-- Text box -->
           <div class="about__text">
             <h3 class="about__title">Niezapomniane przygody</h3>
-            <p class="about__description">Naszą misją jest odkrywanie z Tobą najpiękniejszych zakątków natury – tych bliskich i dalekich, które ożywiają zmysły i wyciszają umysł. Specjalizujemy się w doradztwie i organizacji wypraw do najpiękniejszych terenów zielonych, gdzie lasy szepczą historie, a łąki rozkwitają kolorami. Z pasją tworzymy niezapomniane doświadczenia, które pozwolą Ci na nowo odkryć harmonię z przyrodą.</p>
-            <p class="about__description">Dołącz do nas, by poczuć magię dzikiej przyrody, odnaleźć spokój i napełnić się energią natury!</p>
+            <p class="about__text">Naszą misją jest odkrywanie z Tobą najpiękniejszych zakątków natury – tych bliskich i dalekich, które ożywiają zmysły i wyciszają umysł. Specjalizujemy się w doradztwie i organizacji wypraw do najpiękniejszych terenów zielonych, gdzie lasy szepczą historie, a łąki rozkwitają kolorami. Z pasją tworzymy niezapomniane doświadczenia, które pozwolą Ci na nowo odkryć harmonię z przyrodą.</p>
+            <p class="about__text">Dołącz do nas, by poczuć magię dzikiej przyrody, odnaleźć spokój i napełnić się energią natury!</p>
           </div> 
           <!-- Text box -->
         </div> 
-        <!-- Section content --> 
+        <!-- About description -->
+        <!-- Section title -->
+        <h2 class="section__title">Statystyki</h2>
+        <!-- Section title -->
+        <hr class="section__title-divider"> 
+        <!-- Section subtitle -->
+        <p class="section__subtitle">Zobacz, dlaczego warto nam zaufać!</p>
+        <!-- Section subtitle -->
+        <!-- Stats -->
+        <div class="about__stats">
+          <!-- Stat -->
+          <div class="about__stat">
+            <!-- Icon box -->
+            <div class="about__stat-icon-box">
+              <!-- Icon -->
+              <picture>
+                <!-- Fallback PNG icon for older browsers -->
+                <source type="image/png" srcset="./assets/icons/trees.png"> 
+                <!-- SVG icon -->
+                <img class="about__stat-icon" src="./assets/icons/trees.svg" alt="" aria-hidden="true">
+              </picture>
+              <!-- Icon -->
+            </div>
+            <!-- Icon box -->
+            <p class="about__stat-number">400+</p>
+            <p class="about__stat-text">Parków</p>
+          </div> 
+          <!-- Stat -->
+          <!-- Stat -->
+          <div class="about__stat">
+            <!-- Icon box -->
+            <div class="about__stat-icon-box">
+              <!-- Icon -->
+              <picture>
+                <!-- Fallback PNG icon for older browsers -->
+                <source type="image/png" srcset="./assets/icons/mood-heart.png"> 
+                <!-- SVG icon -->
+                <img class="about__stat-icon" src="./assets/icons/mood-heart.svg" alt="" aria-hidden="true">
+              </picture>
+              <!-- Icon -->
+            </div>
+            <!-- Icon box -->
+            <p class="about__stat-number">10000+</p>
+            <p class="about__stat-text">Zadowolonych klientów</p>
+          </div> 
+          <!-- Stat -->
+          <!-- Stat -->
+          <div class="about__stat">
+            <!-- Icon box -->
+            <div class="about__stat-icon-box">
+              <!-- Icon -->
+              <picture>
+                <!-- Fallback PNG icon for older browsers -->
+                <source type="image/png" srcset="./assets/icons/map.png"> 
+                <!-- SVG icon -->
+                <img class="about__stat-icon" src="./assets/icons/map.svg" alt="" aria-hidden="true">
+              </picture>
+              <!-- Icon -->
+            </div>
+            <!-- Icon box -->
+            <p class="about__stat-number">1000+</p>
+            <p class="about__stat-text">Zrealizowanych wycieczek</p>
+          </div> 
+          <!-- Stat -->
+        </div> 
+        <!-- Stats -->
       </div> 
       <!-- Container -->
       <!-- Banner -->
@@ -146,13 +193,14 @@
     </section> 
     <!-- About us -->
     <!-- Offer -->
-    <section id="offer" class="offer page-section">
+    <section id="offer" class="offer page-section page-section--scrollspy">
       <!-- Section title -->
       <h2 class="section__title">Oferta</h2> 
       <!-- Section title -->
-      <!-- Section command -->
-      <p class="section__command">Wybierz jedną z naszych wspaniałych ofert!</p>
-      <!-- Section command -->
+      <hr class="section__title-divider">
+      <!-- Section subtitle -->
+      <p class="section__subtitle">Wybierz jedną z naszych wspaniałych ofert!</p>
+      <!-- Section subtitle -->
       <!-- Container -->
       <div class="container">
         <!-- Offer cards -->
@@ -203,9 +251,13 @@
               </ul>
             </div>
             <!-- Options -->
-            <!-- Button -->
-            <a href="#" class="offer__card-link" target="_blank" rel="noopener noreferrer">Wybierz</a> 
-            <!-- Button -->
+            <!-- Link -->
+            <a href="#" class="offer__card-link" target="_blank" rel="noopener">
+              <span aria-hidden="true"></span>
+              <span aria-hidden="true"></span>
+              Wybierz
+            </a> 
+            <!-- Link -->
           </div>
           <!-- Card -->
           <!-- Card -->
@@ -254,9 +306,13 @@
               </ul>
             </div>
             <!-- Options -->
-            <!-- Button -->
-            <a href="#" class="offer__card-link offer__card-link--popular" target="_blank" rel="noopener">Wybierz</a> 
-            <!-- Button --> 
+            <!-- Link -->
+            <a href="#" class="offer__card-link offer__card-link--popular" target="_blank" rel="noopener">
+              <span aria-hidden="true"></span>
+              <span aria-hidden="true"></span>
+              Wybierz
+            </a> 
+            <!-- Link --> 
           </div>
           <!-- Card -->
           <!-- Card -->
@@ -305,22 +361,108 @@
               </ul>
             </div>
             <!-- Options -->
-            <!-- Button -->
-            <a href="#" class="offer__card-link" target="_blank" rel="noopener">Wybierz</a> 
-            <!-- Button -->
+            <!-- Link -->
+            <a href="#" class="offer__card-link" target="_blank" rel="noopener">
+              <span aria-hidden="true"></span>
+              <span aria-hidden="true"></span>
+              Wybierz
+            </a> 
+            <!-- Link -->
           </div>
           <!-- Card -->
         </div>
         <!-- Offer cards -->
         <!-- Go to all offers link -->
         <div class="offer__link-box">
-          <a href="./offer.html" class="offer__link">Dowiedz się więcej</a> 
+          <a href="./offer.html" class="offer__link">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            Dowiedz się więcej
+          </a> 
         </div> 
         <!-- Go to all offers link -->
       </div> 
       <!-- Container -->
     </section> 
     <!-- Offer -->
+    <!-- Testimonials -->
+    <section class="testimonials page-section">
+      <!-- Container -->
+      <div class="container">
+        <!-- Section title -->
+        <h2 class="section__title">Opinie</h2>
+        <!-- Section title -->
+        <hr class="section__title-divider"> 
+        <!-- Section subtitle -->
+        <p class="section__subtitle">Zobacz, co o nas mówią!</p>
+        <!-- Section subtitle -->
+        <!-- Slider wrapper & buttons -->
+        <div class="testimonials__slider-box">
+          <!-- Slider wrapper -->
+          <div class="testimonials__slider">
+            <!-- Testimonial template -->
+            <template class="testimonials-template">
+              <!-- Testimonial slide -->
+              <div class="testimonials__slide" aria-label="" aria-live="polite">
+                <!-- Top -->
+                <div class="testimonials__slide-top">
+                  <!-- Logo -->
+                  <img class="testimonials__slide-logo" src="" alt="">
+                  <!-- Logo -->
+                  <div class="testimonials__slide-quote">
+                    <!-- Quote sign -->
+                    <picture>
+                      <!-- Fallback PNG icon for older browsers -->
+                      <source type="image/png" srcset="./assets/icons/quote.png"> 
+                      <!-- SVG icon -->
+                      <img class="testimonials__slide-quote-icon" src="./assets/icons/quote.svg" alt="" aria-hidden="true">
+                    </picture> 
+                    <!-- Quote sign -->
+                  </div> 
+                </div> 
+                <!-- Top -->
+                <!-- Body -->
+                <div class="testimonials__slide-body">
+                  <!-- Text -->
+                  <p class="testimonials__slide-body-text"></p> 
+                  <!-- Text -->
+                  <!-- Rating -->
+                  <div class="testimonials__slide-body-rating" aria-label="">
+                    <!-- Stars -->
+                    <picture>
+                      <!-- Fallback PNG icon for older browsers -->
+                      <source type="image/png" srcset=""> 
+                      <!-- SVG icon -->
+                      <svg xmlns="http://www.w3.org/2000/svg" role="img">
+                        <symbol id="star" width="26" fill="hsl(144, 73%, 52%)" viewBox="0 0 24 24">
+                          <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                          <path d="M8.243 7.34l-6.38 .925l-.113 .023a1 1 0 0 0 -.44 1.684l4.622 4.499l-1.09 6.355l-.013 .11a1 1 0 0 0 1.464 .944l5.706 -3l5.693 3l.1 .046a1 1 0 0 0 1.352 -1.1l-1.091 -6.355l4.624 -4.5l.078 -.085a1 1 0 0 0 -.633 -1.62l-6.38 -.926l-2.852 -5.78a1 1 0 0 0 -1.794 0l-2.853 5.78z" />
+                        </symbol>
+                      </svg>
+                    </picture>
+                    <!-- Stars -->
+                  </div>
+                  <!-- Rating -->
+                </div> 
+                <!-- Body -->
+              </div>
+              <!-- Testimonial slide -->
+            </template> 
+            <!-- testimonial template -->
+          </div> 
+          <!-- Slider wrapper -->
+          <!-- Slider buttons -->
+          <div class="testimonials__slider-buttons">
+            <button type="button" class="testimonials__slider-button testimonials__slider-button--prev" aria-label="Przejdź do poprzedniej opinii"> &lt; </button> 
+            <button type="button" class="testimonials__slider-button testimonials__slider-button--next" aria-label="Przejdź do następniej opinii"> &gt; </button> 
+          </div> 
+          <!-- Slider buttons -->
+        </div> 
+        <!-- Slider wrapper & buttons -->
+      </div> 
+      <!-- Container -->
+    </section> 
+    <!-- Testimonials -->
   </main> 
   <!-- Main content -->
   <!-- Footer -->
@@ -416,7 +558,7 @@
     <!-- Copyright -->
     <p class="footer__copyright"><sup>&copy;</sup><span class="footer__copyright-year"></span> Forest Group Company Ltd.</p>
     <!-- Copyright -->
-  </footer> 
+  </footer>   
   <!-- Footer -->
   <script src="./js/main.min.js" defer></script>
 </body>

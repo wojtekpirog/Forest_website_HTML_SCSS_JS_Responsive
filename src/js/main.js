@@ -1,6 +1,8 @@
 import setFooterYear from "./footer.js";
 import handleScrollSpy from "./homepage/scrollspy.js";
-import { handleCookieAlert, checkCookie } from "./cookie_alert.js";
+import renderParkCards from "./offer/parks_grid.js";
+import { renderSlider, getSliderWidth, runSlider, resetSlider, handlePrevSlide, handleNextSlide } from "./homepage/slider.js";
+import { generateCookieAlert, handleCookieAlert, checkCookie } from "./cookie_alert.js";
 import { setInitialCharsCounter, handleFormClear, handleFormSubmit, handleTextarea } from "./contact/form.js";
 import { toggleNavbarMenu, closeNavbarMenu } from "./navbar.js";
 
@@ -13,8 +15,6 @@ export let navbarLinksContainer;
 export let navbarLinks;
 // Navbar overlay
 export let overlay;
-// About banner
-export let aboutBanner;
 // Contact form buttons
 let resetButton;
 let submitButton;
@@ -36,16 +36,52 @@ export let closePopupButton;
 // Cookie alert
 export let cookieAlertBox;
 let cookieAcceptButton;
+// Slider with testimonials
+export let slider;
+// HTML template for a testimonial
+export let testimonialTemplate;
+// Other slider-related elements
+export let prevSliderButton;
+export let nextSliderButton;
+export let allSlides;
+// Grid container for park-related cards
+export let parkCardsGrid;
+// HTML template for a park-related card
+export let parkCardTemplate;
+// Map box
+export let mapBox;
 
-// `offsetHeight` of navbar
+// `offsetHeight` of the navbar 
 export let navbarHeight;
 
+// Width of the slider (as a number)
+export let sliderStyle;
+export let sliderWidth;
+
+// ID of the slider's interval
+export let sliderIntervalId;
+
 const main = () => {
+  generateCookieAlert();
   prepareDOMElements();
   addListeners();
-  setFooterYear();
   checkCookie();
-  document.body.dataset.currentPage === "contact" ? setInitialCharsCounter() : false;
+  setFooterYear();
+  // Execute this code only on the "Home" page
+  if (document.body.dataset.currentPage === "home") {
+    handleScrollSpy(); 
+    renderSlider();
+    getSliderWidth();
+    runSlider();
+  }
+  // Execute this code only on the "Offer" page
+  if (document.body.dataset.currentPage === "offer") {
+    renderParkCards();
+  }
+  // Execute this code only on the "Contact" page
+  if (document.body.dataset.currentPage === "contact") {
+    setInitialCharsCounter();
+  }
 }
 
 const prepareDOMElements = () => {
@@ -55,8 +91,6 @@ const prepareDOMElements = () => {
   navbarLinks = document.querySelectorAll(".navbar__link");
   // Overlay
   overlay = document.querySelector(".navbar__overlay");
-  // About banner
-  aboutBanner = document.querySelector(".about__banner");
   // Footer
   footerYear = document.querySelector(".footer__copyright-year");
   // Contact form controls
@@ -71,7 +105,7 @@ const prepareDOMElements = () => {
   resetButton = document.querySelector(".contact__form-button--reset");
   submitButton = document.querySelector(".contact__form-button--submit");
   // All sections on the page
-  scrollSpySections = document.querySelectorAll(".page-section");
+  scrollSpySections = document.querySelectorAll(".page-section--scrollspy");
   // All input elements inside the contact form
   contactFormControls = document.querySelectorAll(".contact__form-input");
   // Popup container
@@ -80,8 +114,21 @@ const prepareDOMElements = () => {
   // Cookie alert
   cookieAlertBox = document.querySelector(".cookie-alert");
   cookieAcceptButton = document.querySelector(".cookie-alert__button");
+  // Slider
+  slider = document.querySelector(".testimonials__slider");
+  // HTML template for a testimonial
+  testimonialTemplate = document.querySelector(".testimonials-template");
+  // Other slider-related elements
+  prevSliderButton = document.querySelector(".testimonials__slider-button--prev");
+  nextSliderButton = document.querySelector(".testimonials__slider-button--next");
+  // Grid container for park-related cards
+  parkCardsGrid = document.querySelector(".parks__grid");
+  // HTML template for a park-related card
+  parkCardTemplate = document.querySelector(".parks__template");
+  // Map box
+  mapBox = document.querySelector(".map__box");
 
-  navbarHeight = navbar.offsetHeight;
+  navbarHeight = navbar.offsetHeight; 
 }
 
 const addListeners = () => {
@@ -90,7 +137,9 @@ const addListeners = () => {
   overlay.addEventListener("click", closeNavbarMenu);
 
   if (document.body.dataset.currentPage === "home") {
-    window.addEventListener("scroll", handleScrollSpy);
+    prevSliderButton.addEventListener("click", handlePrevSlide);
+    nextSliderButton.addEventListener("click", handleNextSlide);
+    window.addEventListener("resize", resetSlider);
   }
   
   if (document.body.dataset.currentPage === "contact") {

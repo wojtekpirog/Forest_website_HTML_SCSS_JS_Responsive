@@ -7,8 +7,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Forest - poznaj naszą wyjątkową ofertę i spełnij z nami swoje marzenia o idealnym odpoczynku na łonie natury.">
   <meta name="author" content="Forest Group Company Ltd.">
-  <link rel="icon" type="image/svg+xml" href="./assets/icons/tree-icon.svg"> <!-- favicon SVG -->
-  <link rel="icon" type="image/png" href="./assets/icons/tree-icon.png"> <!-- Fallback favicon PNG for older browsers -->
+  <link rel="icon" type="image/svg+xml" href="./assets/icons/tree-icon.svg"> <!-- SVG favicon -->
+  <link rel="icon" type="image/png" href="./assets/icons/tree-icon.png"> <!-- Fallback PNG favicon for older browsers which do not support SVG -->
   <link rel="stylesheet" type="text/css" href="./css/style.min.css">
 </head>
 <body data-current-page="offer">
@@ -28,7 +28,7 @@
       </a> 
       <!-- Logo -->
       <!-- Burger icon -->
-      <button type="button" class="navbar__burger-icon" aria-label="Otwórz menu nawigacyjne" aria-expanded="false" aria-controls="navbarLinks">
+      <button type="button" class="navbar__burger-icon" aria-label="Przełącz menu nawigacyjne" aria-expanded="false" aria-controls="navbarLinks">
         <span class="navbar__burger-icon-line"></span>
       </button> 
       <!-- Burger icon -->
@@ -85,7 +85,10 @@
         <!-- Section title -->
         <h2 class="section__title">Dlaczego Forest?</h2>
         <!-- Section title -->
-        <p class="section__command">Na przestrzeni wielu lat działalności i dzięki zebranemu doświadczniu opracowaliśmy ofertę dostosowaną do potrzeb klientów o różnych oczekiwaniach. Jakość naszych usług jest doceniana na rynku. Dowiedz się, co nas wyróżnia i dlaczego warto nam zaufać.</p>
+        <hr class="section__title-divider"> 
+        <!-- Section subtitle -->
+        <p class="section__subtitle">Na przestrzeni wielu lat działalności i dzięki zebranemu doświadczniu opracowaliśmy ofertę dostosowaną do potrzeb klientów o różnych oczekiwaniach. Jakość naszych usług jest doceniana na rynku. Dowiedz się, co nas wyróżnia i dlaczego warto nam zaufać.</p>
+        <!-- Section subtitle -->
         <!-- Services box -->
         <div class="services__cards">
           <!-- Service -->
@@ -160,110 +163,83 @@
         <!-- Section title -->
         <h2 class="section__title">Parki</h2> 
         <!-- Section title -->
-        <!-- Section intro -->
-        <p class="section__command">Oferujemy wycieczki do najpiękniejszych zielonych oaz w Polsce i za granicą, w trakcie których zanurzysz się w malowniczych krajobrazach parków miejskich, gdzie natura spotyka się z kulturą. Podaruj sobie chwilę wytchnienia wśród soczystej zieleni, unikalnej architektury i wyjątkowej atmosfery tych miejsc. Zainspiruj się naszymi propozycjami i wybierz park, który czeka na Ciebie!</p> 
-        <!-- Section intro -->
+        <hr class="section__title-divider"> 
+        <!-- Section subtitle -->
+        <p class="section__subtitle">Oferujemy wycieczki do najpiękniejszych zielonych oaz w Polsce i za granicą, w trakcie których zanurzysz się w malowniczych krajobrazach parków miejskich, gdzie natura spotyka się z kulturą. Podaruj sobie chwilę wytchnienia wśród soczystej zieleni, unikalnej architektury i wyjątkowej atmosfery tych miejsc. Zainspiruj się naszymi propozycjami i wybierz park, który czeka na Ciebie!</p> 
+        <!-- Section subtitle -->
         <!-- Parks grid -->
         <div class="parks__grid">
-          <!-- Park -->
-          <div class="parks__grid-item">
+          <!-- HTML template for `parks__card` -->
+          <template class="parks__template">
             <!-- Card -->
             <div class="parks__card">
               <!-- Card image -->
-              <img class="parks__card-image" src="./images/park_1.min.jpg" alt="Łazienki Królewskie w Warszawie.">
+              <img class="parks__card-image" src="" alt="">
               <!-- Card image -->
+              <!-- Card body -->
+              <div class="parks__card-body">
+                <!-- Title -->
+                <h4 class="parks__card-title"></h4>
+                <!-- Title -->
+                <!-- Info -->
+                <div class="parks__card-info">
+                  <!-- Icon -->
+                  <div class="parks__card-info-icon" role="img" aria-label="Lokalizacja parku">
+                    <picture>
+                      <!-- Fallback PNG icon for older browsers -->
+                      <source type="image/png" srcset="./assets/icons/pin.png">
+                      <!-- SVG icon -->
+                      <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="hsl(144, 73%, 52%)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <path d="M9 11a3 3 0 1 0 6 0a3 3 0 0 0 -6 0" />
+                        <path d="M17.657 16.657l-4.243 4.243a2 2 0 0 1 -2.827 0l-4.244 -4.243a8 8 0 1 1 11.314 0z" />
+                      </svg> 
+                    </picture>
+                  </div>
+                  <!-- Icon -->
+                  <p class="parks__card-info-city"></p>
+                </div> 
+                <!-- Info -->
+                <!-- Info -->
+                <div class="parks__card-info">
+                  <!-- Icon -->
+                  <div class="parks__card-info-icon" role="img" aria-label="Powierzchnia parku">
+                    <picture>
+                      <!-- Fallback PNG icon for older browsers -->
+                      <source type="image/png" srcset="./assets/icons/square.png">
+                      <!-- SVG icon -->
+                      <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="hsl(144, 73%, 52%)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-square">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <path d="M3 3m0 2a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v14a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2z" />
+                      </svg>
+                    </picture>
+                  </div> 
+                  <!-- Icon -->
+                  <p class="parks__card-info-area"></p>
+                </div> 
+                <!-- Info -->
+                <!-- Info -->
+                <div class="parks__card-info">
+                  <!-- Description -->
+                  <p class="parks__card-info-description"></p> 
+                  <!-- Description -->
+                </div> 
+                <!-- Info -->
+                <!-- Link -->
+                <div class="parks__card-link-box">
+                  <a href="" class="parks__card-link" target="_blank" rel="noopener">
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                    Zobacz na Wikipedii
+                  </a>
+                </div>
+                <!-- Link -->
+              </div> 
+              <!-- Card body -->  
             </div> 
             <!-- Card -->
-          </div> 
-          <!-- Park -->
-          <!-- Park -->
-          <div class="parks__grid-item">
-            <!-- Card -->
-            <div class="parks__card">
-              <!-- Card image -->
-              <img class="parks__card-image" src="./images/park_2.min.jpg" alt="Park Oliwski w Gdańsku.">
-              <!-- Card image -->
-            </div> 
-            <!-- Card -->
-          </div> 
-          <!-- Park -->
-          <!-- Park -->
-          <div class="parks__grid-item">
-            <!-- Card -->
-            <div class="parks__card">
-              <!-- Card image -->
-              <img class="parks__card-image" src="./images/park_3.min.jpg" alt="Park Szczytnicki we Wrocławiu.">
-              <!-- Card image -->
-            </div> 
-            <!-- Card -->
-          </div> 
-          <!-- Park -->
-          <!-- Park -->
-          <div class="parks__grid-item">
-            <!-- Card -->
-            <div class="parks__card">
-              <!-- Card image -->
-              <img class="parks__card-image" src="./images/park_4.min.jpg" alt="Park Güell w Barcelonie.">
-              <!-- Card image -->
-            </div> 
-            <!-- Card -->
-          </div> 
-          <!-- Park -->
-          <!-- Park -->
-          <div class="parks__grid-item">
-            <!-- Card -->
-            <div class="parks__card">
-              <!-- Card image -->
-              <img class="parks__card-image" src="./images/park_5.min.jpg" alt="Hyde Park w Londynie.">
-              <!-- Card image -->
-            </div> 
-            <!-- Card -->
-          </div> 
-          <!-- Park -->
-          <!-- Park -->
-          <div class="parks__grid-item">
-            <!-- Card -->
-            <div class="parks__card">
-              <!-- Card image -->
-              <img class="parks__card-image" src="./images/park_6.min.jpg" alt="Tiergarten Park w Berlinie.">
-              <!-- Card image -->
-            </div> 
-            <!-- Card -->
-          </div> 
-          <!-- Park -->
-          <!-- Park -->
-          <div class="parks__grid-item">
-            <!-- Card -->
-            <div class="parks__card">
-              <!-- Card image -->
-              <img class="parks__card-image" src="./images/park_7.min.jpg" alt="Central Park (Park Centralny) w Nowym Jorku.">
-              <!-- Card image -->
-            </div> 
-            <!-- Card -->
-          </div> 
-          <!-- Park -->
-          <!-- Park -->
-          <div class="parks__grid-item">
-            <!-- Card -->
-            <div class="parks__card">
-              <!-- Card image -->
-              <img class="parks__card-image" src="./images/park_8.min.jpg" alt="Ogrody Tivoli w Kopenhadze.">
-              <!-- Card image -->
-            </div> 
-            <!-- Card -->
-          </div> 
-          <!-- Park -->
-          <!-- Park -->
-          <div class="parks__grid-item">
-            <!-- Card -->
-            <div class="parks__card">
-              <!-- Card image -->
-              <img class="parks__card-image" src="./images/park_9.min.jpg" alt="Ogród Botaniczny w Singapurze.">
-              <!-- Card image -->
-            </div> 
-            <!-- Card -->
-          </div> 
-          <!-- Park -->
+          </template>
+          <!-- HTML template for `parks__card` -->
         </div> 
         <!-- Parks grid -->
       </div> 

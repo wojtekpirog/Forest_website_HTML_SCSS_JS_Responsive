@@ -7,8 +7,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Skontaktuj się z nami. Chętnie odpowiemy na Twoje pytania i przedstawimy Ci ofertę dopasowaną do Twoich oczekiwań.">
   <meta name="author" content="Forest Group Company Ltd.">
-  <link rel="icon" type="image/svg+xml" href="./assets/icons/tree-icon.svg"> <!-- favicon SVG -->
-  <link rel="icon" type="image/png" href="./assets/icons/tree-icon.png"> <!-- favicon PNG jako fallback dla starszych przeglądarek, które nie wspierają SVG -->
+  <link rel="icon" type="image/svg+xml" href="./assets/icons/tree-icon.svg"> <!-- SVG favicon -->
+  <link rel="icon" type="image/png" href="./assets/icons/tree-icon.png"> <!-- fallback PNG favicon for older browsers, which do not support SVG -->
   <link rel="stylesheet" type="text/css" href="./css/style.min.css">
 </head>
 <body data-current-page="contact">
@@ -85,6 +85,10 @@
         <!-- Section title -->
         <h2 class="section__title">Napisz do nas</h2> 
         <!-- Section title -->
+        <hr class="section__title-divider"> 
+        <!-- Section subtitle -->
+        <p class="section__subtitle">Chętnie odpowiemy na wszystkie Twoje pytania!</p> 
+        <!-- Section subtitle -->
         <!-- Flex container -->
         <div class="contact__box">
           <!-- Details -->
@@ -135,7 +139,7 @@
               <div class="contact__form-grid-item">
                 <!-- Input -->
                 <label for="first-name" class="contact__form-label">Imię: </label> 
-                <input type="text" id="first-name" class="contact__form-input" name="first-name" placeholder="Gall" aria-label="Imię" maxlength="30" required>
+                <input type="text" id="first-name" class="contact__form-input" name="first-name" placeholder='przykład: "Gall"' aria-label="Imię" maxlength="30" required>
                 <!-- Input -->
                 <!-- Error -->
                 <p class="contact__form-error" role="alert"></p>
@@ -146,7 +150,7 @@
               <div class="contact__form-grid-item">
                 <!-- Input -->
                 <label for="last-name" class="contact__form-label">Nazwisko: </label>
-                <input type="text" id="last-name" class="contact__form-input" name="last-name" placeholder="Anonim" aria-label="Nazwisko" maxlength="50" required>
+                <input type="text" id="last-name" class="contact__form-input" name="last-name" placeholder='przykład: "Anonim"' aria-label="Nazwisko" maxlength="50" required>
                 <!-- Input -->
                 <!-- Error -->
                 <p class="contact__form-error" role="alert"></p>
@@ -157,7 +161,7 @@
               <div class="contact__form-grid-item">
                 <!-- Input -->
                 <label for="email" class="contact__form-label">Adres e-mail: </label>
-                <input type="email" id="email" class="contact__form-input" name="email-address" placeholder="gallanonim@gmail.com" aria-label="Adres e-mail" required>
+                <input type="email" id="email" class="contact__form-input" name="email-address" placeholder='przykład: "gall@gmail.com"' aria-label="Adres e-mail" required>
                 <!-- Input -->
                 <!-- Error -->
                 <p class="contact__form-error" role="alert"></p>
@@ -208,8 +212,16 @@
               <!-- Row -->
               <div class="contact__form-grid-item">
                 <!-- Buttons -->
-                <button type="reset" class="contact__form-button contact__form-button--reset">Wyczyść</button>
-                <button type="submit" class="contact__form-button contact__form-button--submit">Wyślij</button>
+                <button type="reset" class="contact__form-button contact__form-button--reset">
+                  <span aria-hidden="true"></span>
+                  <span aria-hidden="true"></span>
+                  Wyczyść
+                </button>
+                <button type="submit" class="contact__form-button contact__form-button--submit">
+                  <span aria-hidden="true"></span>
+                  <span aria-hidden="true"></span>
+                  Wyślij
+                </button>
                 <!-- Buttons -->
               </div> 
               <!-- Row --> 
@@ -230,11 +242,14 @@
         <!-- Section title -->
         <h2 class="section__title">Mapa dojazdu</h2>
         <!-- Section title -->
-        <p class="section__command">Spotkajmy się w naszej siedzibie.</p> 
+        <hr class="section__title-divider"> 
+        <!-- Section subtitle -->
+        <p class="section__subtitle">Spotkajmy się w naszej siedzibie.</p> 
+        <!-- Section subtitle -->
         <!-- Map box -->
         <div class="map__box">
           <!-- Map -->
-          <iframe class="map__frame" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d10239.554907862253!2d19.883373741514465!3d50.08837016197383!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47165a326d015c3b%3A0x47a12cd367a1f34e!2sRestauracja%20McDonald&#39;s!5e0!3m2!1spl!2spl!4v1726518565261!5m2!1spl!2spl" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          <iframe class="map__box-iframe" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d10239.554907862253!2d19.883373741514465!3d50.08837016197383!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47165a326d015c3b%3A0x47a12cd367a1f34e!2sRestauracja%20McDonald&#39;s!5e0!3m2!1spl!2spl!4v1726518565261!5m2!1spl!2spl" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
           <!-- Map -->
         </div> 
         <!-- Map box -->

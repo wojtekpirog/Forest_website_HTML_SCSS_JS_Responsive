@@ -34,8 +34,9 @@
     }
 
     &__close-button {
-      @include mixins.buttonAndLinkStyles(colors.$mint, colors.$black, colors.$mintshadow);
+      @include mixins.buttonAndLinkStyles(colors.$mint, colors.$black);
       border: 2px solid transparent;
+      font-size: 1.6rem;
       cursor: pointer;
     }
   }

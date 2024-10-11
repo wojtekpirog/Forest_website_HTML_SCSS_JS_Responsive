@@ -71,20 +71,39 @@
 
     &-link {
       @include mixins.buttonAndLinkStyles();
-      text-decoration: none;
+
+      & > span {
+        @include mixins.buttonAndLinkHover();
+
+        &:first-child {
+          top: -50%;
+          left: -100%;
+        }
+
+        &:last-child {
+          bottom: -50%;
+          right: -100%;
+        }
+      }
 
       &--popular {
-        @include mixins.buttonAndLinkStyles(colors.$mint, colors.$black, colors.$mintshadow);
+        @include mixins.buttonAndLinkStyles(colors.$mint, colors.$black);
+        border-color: colors.$darkmint;
+
+        & > span {
+          @include mixins.buttonAndLinkHover(colors.$darkmint);
+        }
       }
 
       @media (hover: hover) {
         &:hover {
-          transform: scale(1.05);
-          box-shadow: 0 3px 8px 0 colors.$darkgray;
-        }
+          & > span:first-child {
+            left: 0;
+          }
 
-        &--popular:hover {
-          box-shadow: 0 3px 8px 0 colors.$mintshadow;
+          & > span:last-child {
+            right: 0;
+          }
         }
       }
     }
@@ -103,13 +122,32 @@
   }
 
   &__link {
-    @include mixins.buttonAndLinkStyles(colors.$mint, colors.$black, colors.$mintshadow);
-    text-decoration: none;
+    @include mixins.buttonAndLinkStyles(colors.$mint, colors.$black);
+    border-color: colors.$darkmint;
+
+    & > span {
+      @include mixins.buttonAndLinkHover(colors.$darkmint);
+
+      &:first-child {
+        top: -50%;
+        left: -100%;
+      }
+
+      &:last-child {
+        bottom: -50%;
+        right: -100%;
+      }
+    }
 
     @media (hover: hover) {
       &:hover {
-        transform: scale(1.05);
-        box-shadow: 0 3px 8px 0 colors.$mintshadow;
+        & > span:first-child {
+          left: 0;
+        }
+
+        & > span:last-child {
+          right: 0;
+        }
       }
     }
   }

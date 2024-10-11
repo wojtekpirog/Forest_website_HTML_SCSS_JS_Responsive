@@ -33,7 +33,7 @@
   }
 
   .about {
-    &__content {
+    &__description {
       flex-direction: row;
 
       & > * {
@@ -45,8 +45,8 @@
       text-align: initial;
     }
 
-    &__description {
-      font-size: 1.4rem;
+    &__text {
+      font-size: 1.5rem;
     }
 
     &__banner-text {
@@ -64,6 +64,17 @@
 
       &-option {
         font-size: 1.4rem;
+      }
+    }
+  }
+
+  .testimonials {
+    &__slide {
+      padding: 2em;
+      border: 2px solid colors.$darkgray;
+
+      &-logo {
+        width: 200px;
       }
     }
   }
@@ -107,7 +118,7 @@
     &__cards {
       flex-wrap: nowrap;
     }
-  }
+  } 
 
   .footer {
     &__nav {

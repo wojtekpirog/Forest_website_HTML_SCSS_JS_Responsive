@@ -31,18 +31,29 @@
   z-index: 8;
 }
 
-.section__title {
-  margin-bottom: 1.6em;
+.section__title, .section__title-divider {
+  margin: 0 auto 1em;
   font-size: 2.8rem;
-  text-transform: uppercase;
+}
+
+.section__title {
   font-family: var(--primary-font-extralight);
+  text-transform: uppercase;
+  letter-spacing: 2px;
 }
 
 .section__title,
-.section__command {
+.section__subtitle {
   text-align: center;
 }
 
-.section__command {
-  margin-bottom: 2em;
+.section__title-divider {
+  width: 60px;
+  border: 2px solid colors.$mint;
+}
+
+.section__subtitle {
+  font-size: 1.6rem;
+  margin-bottom: 2.375em;
+  line-height: 1.5;
 }
