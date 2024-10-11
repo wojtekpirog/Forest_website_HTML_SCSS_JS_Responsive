@@ -1,10 +1,6 @@
 @use "./utils/colors" as colors;
 
 @media screen and (min-width: 992px) {
-  [id] {
-    scroll-margin-top: 120px;
-  }
-
   .container, .navbar {
     width: 960px;
   }
