@@ -5,7 +5,6 @@ import { renderSlider, getSliderWidth, runSlider, resetSlider, handlePrevSlide, 
 import { generateCookieAlert, handleCookieAlert, checkCookie } from "./cookie_alert.js";
 import { setInitialCharsCounter, handleFormClear, handleFormSubmit, handleTextarea } from "./contact/form.js";
 import { toggleNavbarMenu, closeNavbarMenu } from "./navbar.js";
-// import initMap from "./contact/map.js";
 
 // All sections on the page that need to be spied on when scrolling
 export let scrollSpySections;

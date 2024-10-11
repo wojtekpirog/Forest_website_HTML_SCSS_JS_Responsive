@@ -36,8 +36,5 @@
     "sass": "^1.77.8",
     "webpack": "^5.95.0",
     "webpack-stream": "^7.0.0"
-  },
-  "dependencies": {
-    "@here/maps-api-for-javascript": "^1.58.0"
   }
 }
