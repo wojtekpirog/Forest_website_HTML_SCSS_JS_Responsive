@@ -1,7 +1,7 @@
 import setFooterYear from "./footer.js";
 import handleScrollSpy from "./homepage/scrollspy.js";
 import renderParkCards from "./offer/parks_grid.js";
-import { renderMap } from "./contact/map.js";
+import renderMap from "./contact/map.js";
 import { renderSlider, getSliderWidth, runSlider, resetSlider, handlePrevSlide, handleNextSlide } from "./homepage/slider.js";
 import { generateCookieAlert, handleCookieAlert, checkCookie } from "./cookie_alert.js";
 import { setInitialCharsCounter, handleFormClear, handleFormSubmit, handleTextarea } from "./contact/form.js";
@@ -70,7 +70,7 @@ const main = () => {
   setFooterYear();
   // Execute this code only on the "Home" page
   if (document.body.dataset.currentPage === "home") {
-    handleScrollSpy(); 
+    handleScrollSpy();
     renderSlider();
     getSliderWidth();
     runSlider();
@@ -82,7 +82,7 @@ const main = () => {
   // Execute this code only on the "Contact" page
   if (document.body.dataset.currentPage === "contact") {
     renderMap();
-    setInitialCharsCounter(); 
+    setInitialCharsCounter();
   }
 }
 
