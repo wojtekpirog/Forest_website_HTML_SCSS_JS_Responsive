@@ -1,7 +1,7 @@
 const parks = [
   {
     id: 1,
-    title: "Łazienki Królewskie w Warszawie",
+    title: "Łazienki Królewskie",
     imageSource: "./images/park_1.min.jpg",
     altText: "Kanał wodny, a nad nim mostek łączący dwie zabudowy pałacu w Łazienkach Królewskich w Warszawie.",
     city: "Warszawa",
@@ -23,7 +23,7 @@ const parks = [
   },
   {
     id: 3,
-    title: "Park Szczytnicki we Wrocławiu",
+    title: "Park Szczytnicki",
     imageSource: "./images/park_3.min.jpg",
     altText: "Zbiornik wodny wraz z mostkiem w orientalnym stylu wschodnim w parku Szczytnickim we Wrocławiu.",
     city: "Wrocław",
@@ -34,18 +34,18 @@ const parks = [
   },
   {
     id: 4,
-    title: "Park Güell w Barcelonie",
+    title: "Park Güell",
     imageSource: "./images/park_4.min.jpg",
-    altText: "Długa, falista ławka, ozdobiona kolorową ceramiką na pierwszym planie w parku Guell w Barcelonie, a za nią widok na fragment miasta.",
-    city: "Barcelone",
+    city: "Barcelona",
+    altText: "Długa, falista ławka, ozdobiona kolorową ceramiką na pierwszym planie w parku Güell w Barcelonie, a za nią widok na fragment miasta.",
     country: "Hiszpania",
     area: "20 000",
-    description: "Park Guell w Barcelonie to niezwykłe dzieło Antoniego Gaudíego, pełne kolorowych mozaik, fantazyjnych kształtów i organicznych form. W parku warto zobaczyć słynną Salamandrę, zdobioną kolorową ceramiką, oraz długą, falistą ławkę z widokiem na miasto. Spacerując, można podziwiać pawilony przy wejściu, Sala Hipóstila z imponującymi kolumnami i taras z panoramą Barcelony. Park Güell to unikalne połączenie natury i sztuki, które zachwyca kreatywnością i oryginalnością.",
-    linkURL: "https://pl.wikipedia.org/wiki/Park_G%C3%BCell"
+    linkURL: "https://pl.wikipedia.org/wiki/Park_G%C3%BCell",
+    description: "Park Güell w Barcelonie to niezwykłe dzieło Antoniego Gaudíego, pełne kolorowych mozaik, fantazyjnych kształtów i organicznych form. W parku warto zobaczyć słynną Salamandrę, zdobioną kolorową ceramiką, oraz długą, falistą ławkę z widokiem na miasto. Spacerując, można podziwiać pawilony przy wejściu, Sala Hipóstila z imponującymi kolumnami i taras z panoramą Barcelony. Park Güell to unikalne połączenie natury i sztuki, które zachwyca kreatywnością i oryginalnością.",
   },
   {
     id: 5,
-    title: "Hyde Park w Londynie",
+    title: "Hyde Park",
     imageSource: "./images/park_5.min.jpg",
     altText: "Kamienny posąg w kształcie odwróconej litery U, a za nim zielona trawa, drzewa oraz staw w Hyde Park w Londynie.",
     city: "Londyn",
@@ -56,7 +56,7 @@ const parks = [
   },
   {
     id: 6,
-    title: "Tiergarten Park w Berlinie",
+    title: "Tiergarten Park",
     imageSource: "./images/park_6.min.jpg",
     altText: "Widok na Kolumnę Zwyciąstwa w Tiergarten Park w Berlinie, otoczoną drzewami, z dwoma pomnikami rycerzy walczących ze lwami po obu stronach na pierwszym planie.",
     city: "Berlin",
@@ -67,7 +67,7 @@ const parks = [
   },
   {
     id: 7,
-    title: "Central Park w Nowym Jorku",
+    title: "Central Park",
     imageSource: "./images/park_7.min.jpg",
     altText: "Staw w Central Parku w Nowym Jorku, otoczony drzewami, z widokiem na wysokie wieżowce w tle pod niebem z białymi chmurami.",
     city: "Nowy Jork",
@@ -78,7 +78,7 @@ const parks = [
   },
   {
     id: 8,
-    title: "Ogrody Tivoli w Kopenhadze",
+    title: "Ogrody Tivoli",
     imageSource: "./images/park_8.min.jpg",
     altText: "Nocne niebo, a pod rozświetlona zabudowa w stylu azjatyckim, w tle roller coaster oraz podświetlona na fioletowo wieża widokowa.",
     city: "Kopenhaga",
@@ -89,7 +89,7 @@ const parks = [
   },
   {
     id: 9,
-    title: "Ogród Botaniczny w Singapurze",
+    title: "Ogród Botaniczny",
     imageSource: "./images/park_9.min.jpg",
     altText: "Teren zielonych drzew, otoczony rzeką, a na drugim planie wysokie platformy w kształcie lejka w kolorze złotym wbijające się w błękitne niebo.",
     city: "Singapur",

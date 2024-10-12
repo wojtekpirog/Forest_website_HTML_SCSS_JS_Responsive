@@ -19,14 +19,18 @@
     width: 100%;
   }
 
+  &__text {
+    color: colors.$darkgray;
+  }
+
   &__title {
     margin-bottom: 1em;
     text-align: center;
+    color: colors.$black;
     line-height: 1;
   }
 
-  &__text {
-    color: colors.$darkgray;
+  &__mission {
     line-height: 1.8;
   }
 
