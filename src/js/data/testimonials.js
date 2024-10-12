@@ -17,14 +17,14 @@ const testimonials = [
     id: 3,
     logoSource: "./images/techcrunch.png",
     logoAltText: "logo firmy TechCrunch.",
-    quoteText: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet vel in alias voluptate quas illo cupiditate libero maxime provident, sapiente molestiae qui! Saepe dolor voluptatibus suscipit blanditiis facilis corrupti, officiis natus eligendi, perferendis consectetur fuga odit tenetur voluptatum temporibus minus.",
+    quoteText: "Jako miłośnik podróżowania, uważam, że każde miejsce jest na swój sposób wyjątkowe, i warto odwiedzić je kilka razy, szczególnie jeśli chodzi o parki. A jeszcze lepiej, gdy osoba, która mieszka w okolicy, odsłania przed tobą historię i kulturę tego miejsca, dzięki czemu jesteś jeszcze bardziej nim zachwycony. Serdecznie polecam wycieczki firmy Forest Group.",
     stars: 4
   },
   {
     id: 4,
     logoSource: "./images/tnw.png",
     logoAltText: "logo firmy The Next Web.",
-    quoteText: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet vel in alias voluptate quas illo cupiditate libero maxime provident, sapiente molestiae qui! Saepe dolor voluptatibus suscipit blanditiis facilis corrupti, officiis natus eligendi, perferendis consectetur fuga odit tenetur voluptatum temporibus minus.",
+    quoteText: "Płynna obsługa klienta, fachowe doradztwo, przystępne ceny. To sprawia, że Forest Group buduje swoją markę w oparciu o jakościową współpracy z klientem na zasadzie partnerstwa. Firma rozwija się systematycznie, i stopniowo podnosi poprzeczkę, by w przyszłości stać się liderem w branży turystycznej. Polecam zapoznać się z wachlarzem usług Forest Group, gdyż są one warte swojej ceny.",
     stars: 5
   },
 ];

@@ -82,7 +82,7 @@ const main = () => {
   // Execute this code only on the "Contact" page
   if (document.body.dataset.currentPage === "contact") {
     renderMap();
-    setInitialCharsCounter();
+    setInitialCharsCounter(); 
   }
 }
 
