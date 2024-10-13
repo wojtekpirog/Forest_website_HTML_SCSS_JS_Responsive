@@ -9,7 +9,11 @@
   <meta name="author" content="Forest Group Company Ltd.">
   <link rel="icon" type="image/svg+xml" href="./assets/icons/tree-icon.svg"> <!-- SVG favicon -->
   <link rel="icon" type="image/png" href="./assets/icons/tree-icon.png"> <!-- fallback PNG favicon for older browsers, which do not support SVG -->
+  <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/v3.7.0/mapbox-gl.css">
+  <link rel="stylesheet" type="text/css" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.3.1/mapbox-gl-directions.css">
   <link rel="stylesheet" type="text/css" href="./css/style.min.css">
+  <script src="https://api.mapbox.com/mapbox-gl-js/v3.7.0/mapbox-gl.js" defer></script>
+  <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.3.1/mapbox-gl-directions.js" defer></script>
 </head>
 <body data-current-page="contact">
   <!-- Fluid container -->
@@ -247,11 +251,7 @@
         <p class="section__subtitle">Spotkajmy się w naszej siedzibie.</p> 
         <!-- Section subtitle -->
         <!-- Map box -->
-        <div class="map__box">
-          <!-- Map -->
-          <iframe class="map__box-iframe" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d10239.554907862253!2d19.883373741514465!3d50.08837016197383!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47165a326d015c3b%3A0x47a12cd367a1f34e!2sRestauracja%20McDonald&#39;s!5e0!3m2!1spl!2spl!4v1726518565261!5m2!1spl!2spl" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-          <!-- Map -->
-        </div> 
+        <div id="map" class="map__box"></div> 
         <!-- Map box -->
       </div> 
       <!-- Container -->

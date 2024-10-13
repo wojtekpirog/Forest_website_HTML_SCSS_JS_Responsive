@@ -219,15 +219,21 @@
   }
 }
 
-.map {
-  &__box {
-    width: 100%;
-    height: 600px;
-    border: 2px solid colors.$darkgray;
+// .map {
+//   &__box {
+//     width: 100%;
+//     height: 600px;
+//     border: 2px solid colors.$darkgray;
 
-    &-iframe {
-      width: 100%;
-      height: 100%;
-    }
-  }
+//     &-iframe {
+//       width: 100%;
+//       height: 100%;
+//     }
+//   }
+// }
+
+#map {
+  width: 100%;
+  height: 600px;
+  border: 2px solid colors.$darkgray;
 }
