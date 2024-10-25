@@ -26,6 +26,28 @@
     }
   }
 
+  .testimonials {
+    &__companies {
+      // height: 100px;
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+
+    &__company {
+      flex-basis: 50%;
+
+      &-logo {
+        width: 50%;
+      }
+
+      &:first-child {
+        & > .testimonials__company-logo {
+          width: 60%;
+        }
+      }
+    }
+  }
+
   .services {
     &__cards {
       flex-direction: row;

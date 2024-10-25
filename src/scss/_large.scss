@@ -82,6 +82,16 @@
         width: 200px;
       }
     }
+
+    &__company {
+      flex-basis: 25%;
+
+      &:first-child {
+        & > .testimonials__company-logo {
+          width: 75%;
+        }
+      }
+    }
   }
 
   .contact {

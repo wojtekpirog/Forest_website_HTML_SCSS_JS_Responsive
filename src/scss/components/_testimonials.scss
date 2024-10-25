@@ -16,6 +16,7 @@
     transition: transform 500ms linear;
 
     &-buttons {
+      margin-bottom: 2em;
       display: flex;
       justify-content: center;
       gap: 1em;
@@ -89,4 +90,26 @@
       }
     }
   }
+
+  &__companies {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__company {
+    margin: 2em 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &-logo {
+      width: 35%;
+    }
+
+    &:first-child {
+      & > .testimonials__company-logo {
+        width: 40%;
+      }
+    }
+  }  
 }
