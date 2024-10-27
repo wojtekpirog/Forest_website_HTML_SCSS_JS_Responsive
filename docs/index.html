@@ -394,62 +394,56 @@
         <!-- Section title -->
         <hr class="section__title-divider"> 
         <!-- Section subtitle -->
-        <p class="section__subtitle">Zobacz, co o nas mówią!</p>
+        <p class="section__subtitle">Nie musisz wierzyć nam na słowo. Zobacz, co o nas mówią!</p>
         <!-- Section subtitle -->
         <!-- Slider wrapper & buttons -->
-        <div class="testimonials__slider-box">
+        <div class="testimonials__slider">
           <!-- Slider wrapper -->
-          <div class="testimonials__slider">
-            <!-- Testimonial template -->
-            <template class="testimonials-template">
-              <!-- Testimonial slide -->
-              <div class="testimonials__slide" aria-label="" aria-live="polite">
-                <!-- Top -->
-                <div class="testimonials__slide-top">
-                  <!-- Logo -->
-                  <img class="testimonials__slide-logo" src="" alt="">
-                  <!-- Logo -->
-                  <div class="testimonials__slide-quote">
-                    <!-- Quote sign -->
-                    <picture>
-                      <!-- Fallback PNG icon for older browsers -->
-                      <source type="image/png" srcset="./assets/icons/quote.png"> 
-                      <!-- SVG icon -->
-                      <img class="testimonials__slide-quote-icon" src="./assets/icons/quote.svg" alt="" aria-hidden="true">
-                    </picture> 
-                    <!-- Quote sign -->
+          <div class="testimonials__slider-slideshow">
+            <!-- Slides list -->
+            <ul class="testimonials__slider-list">
+              <!-- Carrousel -->
+              <div class="testimonials__slider-carousel">
+
+              <!-- Carrousel template -->
+              <!-- <template class="testimonials__slider-template"> -->
+                <!-- Slider list item -->
+                <li class="testimonials__slider-list-item">
+                  <!-- Card -->
+                  <div class="testimonials__slider-card">
+                    <!-- Top -->
+                    <div class="testimonials__slider-card-top">
+                      <!-- Image -->
+                      <img src="./images/personOne.min.jpg" class="testimonials__slider-card-image" alt="">
+                      <!-- Quote -->
+                      <div class="testimonials__slider-card-quote">
+                        <!-- Quote sign -->
+                        <picture>
+                          <!-- Fallback PNG icon for older browsers -->
+                          <source type="image/png" srcset="./assets/icons/quote.png"> 
+                          <!-- SVG icon -->
+                          <img src="./assets/icons/quote.svg" alt="" aria-hidden="true">
+                        </picture>
+                        <!-- Quote sign -->
+                      </div> 
+                    </div> 
+                    <!-- Top -->
+                    <!-- Bio -->
+                    <p class="testimonials__slider-card-text">Forest Group to nowy gracz w branży turystycznej, który jest w stanie tworzyć nieszablonowe rozwiązania. Jakość obsługi klienta jest tu na wysokim poziomie, dzięki czemu żaden klient nie zakończy spotkania z doradcą bez świetnego pomysłu na weekend na łonie natury. Serdecznie polecam!</p>
+                    <h3 class="testimonials__slider-card-fullname">Leanne Graham</h3>
+                    <p class="testimonials__slider-card-city">Brooklyn, New York</p>
                   </div> 
-                </div> 
-                <!-- Top -->
-                <!-- Body -->
-                <div class="testimonials__slide-body">
-                  <!-- Text -->
-                  <p class="testimonials__slide-body-text"></p> 
-                  <!-- Text -->
-                  <!-- Rating -->
-                  <div class="testimonials__slide-body-rating" aria-label="">
-                    <!-- Stars -->
-                    <picture>
-                      <!-- Fallback PNG icon for older browsers -->
-                      <source type="image/png" srcset=""> 
-                      <!-- SVG icon -->
-                      <svg xmlns="http://www.w3.org/2000/svg" role="img">
-                        <symbol id="star" width="26" fill="hsl(144, 73%, 52%)" viewBox="0 0 24 24">
-                          <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                          <path d="M8.243 7.34l-6.38 .925l-.113 .023a1 1 0 0 0 -.44 1.684l4.622 4.499l-1.09 6.355l-.013 .11a1 1 0 0 0 1.464 .944l5.706 -3l5.693 3l.1 .046a1 1 0 0 0 1.352 -1.1l-1.091 -6.355l4.624 -4.5l.078 -.085a1 1 0 0 0 -.633 -1.62l-6.38 -.926l-2.852 -5.78a1 1 0 0 0 -1.794 0l-2.853 5.78z" />
-                        </symbol>
-                      </svg>
-                    </picture>
-                    <!-- Stars -->
-                  </div>
-                  <!-- Rating -->
-                </div> 
-                <!-- Body -->
-              </div>
-              <!-- Testimonial slide -->
-            </template> 
-            <!-- testimonial template -->
-          </div> 
+                  <!-- Card -->
+                </li> 
+                <!-- Slider list item -->
+              <!-- </template>  -->
+              <!-- Carrousel template -->
+
+              </div> 
+              <!-- Carrousel -->
+            </ul> 
+            <!-- Slides list -->
+          </div>
           <!-- Slider wrapper -->
           <!-- Slider buttons -->
           <div class="testimonials__slider-buttons">
@@ -459,33 +453,37 @@
           <!-- Slider buttons -->
         </div> 
         <!-- Slider wrapper & buttons -->
+        <!-- Section title -->
+        <h2 class="section__title">Nasi partnerzy</h2>
+        <!-- Section title -->
+        <hr class="section__title-divider">  
         <!-- Section subtitle -->
-        <p class="section__subtitle">Te firmy nam zaufały</p> 
+        <p class="section__subtitle">Współpracujemy z firmami, które nas polecają</p> 
         <!-- Section subtitle -->
         <!-- Companies -->
         <div class="testimonials__companies">
           <!-- Company -->
           <div class="testimonials__company">
             <!-- Logo -->
-            <img src="./images/bizinsider.png" alt="logo firmy Business Insider" class="testimonials__company-logo">
+            <img src="./images/bizinsider.png" alt="logo firmy Business Insider" class="testimonials__company-logo" draggable="false">
           </div>
           <!-- Company -->
           <!-- Company -->
           <div class="testimonials__company">
             <!-- Logo -->
-            <img src="./images/mashable.png" alt="logo firmy Mashable" class="testimonials__company-logo">
+            <img src="./images/mashable.png" alt="logo firmy Mashable" class="testimonials__company-logo" draggable="false">
           </div>
           <!-- Company -->
           <!-- Company -->
           <div class="testimonials__company">
             <!-- Logo -->
-            <img src="./images/techcrunch.png" alt="logo firmy Tech Crunch" class="testimonials__company-logo">
+            <img src="./images/techcrunch.png" alt="logo firmy Tech Crunch" class="testimonials__company-logo" draggable="false">
           </div>
           <!-- Company -->
           <!-- Company -->
           <div class="testimonials__company">
             <!-- Logo -->
-            <img src="./images/tnw.png" alt="logo firmy The Next Web" class="testimonials__company-logo">
+            <img src="./images/tnw.png" alt="logo firmy The Next Web" class="testimonials__company-logo" draggable="false">
           </div>
           <!-- Company -->
         </div> 
