@@ -74,12 +74,13 @@
   }
 
   .testimonials {
-    &__slide {
-      padding: 2em;
-      border: 2px solid colors.$darkgray;
+    &__slider {
+      &-carousel {
+        grid-auto-columns: calc((100% / 2) - .5em);
+      }
 
-      &-logo {
-        width: 200px;
+      &-card {
+        height: 480px;
       }
     }
 

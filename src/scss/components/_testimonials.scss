@@ -5,16 +5,42 @@
   margin-bottom: 3em;
 
   &__slider {
-    margin-bottom: 3em;
+    width: 94%;
+    margin: 0 auto 3em;
     display: flex;
     flex-direction: column;
 
+    &-carousel {
+      display: grid;
+      grid-auto-flow: column;
+      grid-auto-columns: 100%;
+      gap: 1em;
+    }
+
     &-slideshow {
-      margin-bottom: 2em;
+      margin-bottom: 3em;
     }
 
     &-list {
       list-style-type: none;
+      overflow: hidden;
+      scroll-behavior: smooth;
+      scroll-snap-type: x mandatory;
+      scrollbar-width: none;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
+
+      &--dragging {
+        scroll-snap-type: none;
+        scroll-behavior: auto;
+
+        .testimonials__slider-card:hover {
+          cursor: grabbing;
+          user-select: none;
+        }
+      }
     }
 
     &-card {
@@ -30,8 +56,8 @@
       }
 
       &-image {
-        width: 140px;
-        height: 140px;
+        width: 120px;
+        height: 120px;
         padding: .2em;
         object-fit: cover;
         border: 4px solid colors.$mint;
@@ -67,6 +93,10 @@
 
       &-city {
         color: colors.$darkgray;
+      }
+
+      &:hover {
+        cursor: grab;
       }
     }
 
