@@ -27,8 +27,21 @@
   }
 
   .testimonials {
+    &__slider {
+      &-button {
+        padding: .5em .6em .35em;
+
+        &--prev {
+          left: -35px;
+        }
+
+        &--next {
+          right: -35px;
+        }
+      }
+    }
+
     &__companies {
-      // height: 100px;
       flex-direction: row;
       flex-wrap: wrap;
     }

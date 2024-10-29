@@ -1,10 +1,7 @@
 @use "../utils/colors" as colors;
 
 .about {
-  margin-bottom: 3em;
-
   &__description {
-    margin-bottom: 3em;
     display: flex;
     flex-direction: column;
     gap: 3em;
