@@ -1,6 +1,10 @@
 @use "../utils/colors" as colors;
 
 .about {
+  & > .section__title-divider {
+    margin-bottom: 3em;
+  }
+
   &__description {
     display: flex;
     flex-direction: column;
