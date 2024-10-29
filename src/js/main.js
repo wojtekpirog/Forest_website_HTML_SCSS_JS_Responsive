@@ -2,7 +2,8 @@ import setFooterYear from "./footer.js";
 import handleScrollSpy from "./homepage/scrollspy.js";
 import renderParkCards from "./offer/parks_grid.js";
 import renderMap from "./contact/map.js";
-import { renderSlider, getSliderWidth, runSlider, resetSlider, handlePrevSlide, handleNextSlide } from "./homepage/slider.js";
+import renderSlider, { getCardWidth, startDragging, stopDragging, dragSlider, changeSlide } from "./homepage/slider.js";
+// import { renderSlider, getSliderWidth, runSlider, resetSlider, handlePrevSlide, handleNextSlide } from "./homepage/slider.js";
 import { generateCookieAlert, handleCookieAlert, checkCookie } from "./cookie_alert.js";
 import { setInitialCharsCounter, handleFormClear, handleFormSubmit, handleTextarea } from "./contact/form.js";
 import { toggleNavbarMenu, closeNavbarMenu } from "./navbar.js";
@@ -38,32 +39,26 @@ export let closePopupButton;
 export let cookieAlertBox;
 let cookieAcceptButton;
 // Slider with testimonials
-export let slider;
+export let sliderCarousel;
 // HTML template for a testimonial
 export let testimonialTemplate;
 // Other slider-related elements
-export let prevSliderButton;
-export let nextSliderButton;
-export let allSlides;
+export let sliderButtons;
 // Grid container for park-related cards
 export let parkCardsGrid;
 // HTML template for a park-related card
 export let parkCardTemplate;
+
 // Map box
 export let mapBox;
 
 // `offsetHeight` of the navbar 
 export let navbarHeight;
-
 // Width of the slider (as a number)
-export let sliderStyle;
-export let sliderWidth;
-
-// ID of the slider's interval
-export let sliderIntervalId;
+export let cardWidth;
 
 const main = () => {
-  generateCookieAlert();
+  generateCookieAlert(); 
   prepareDOMElements();
   addListeners();
   checkCookie();
@@ -72,8 +67,8 @@ const main = () => {
   if (document.body.dataset.currentPage === "home") {
     handleScrollSpy();
     renderSlider();
-    getSliderWidth();
-    runSlider();
+    getCardWidth();
+    // runSlider();
   }
   // Execute this code only on the "Offer" page
   if (document.body.dataset.currentPage === "offer") {
@@ -117,12 +112,11 @@ const prepareDOMElements = () => {
   cookieAlertBox = document.querySelector(".cookie-alert");
   cookieAcceptButton = document.querySelector(".cookie-alert__button");
   // Slider
-  slider = document.querySelector(".testimonials__slider");
+  sliderCarousel = document.querySelector(".testimonials__slider-carousel");
   // HTML template for a testimonial
-  testimonialTemplate = document.querySelector(".testimonials-template");
+  testimonialTemplate = document.querySelector(".testimonials__slider-template");
   // Other slider-related elements
-  prevSliderButton = document.querySelector(".testimonials__slider-button--prev");
-  nextSliderButton = document.querySelector(".testimonials__slider-button--next");
+  sliderButtons = document.querySelectorAll(".testimonials__slider-button");
   // Grid container for park-related cards
   parkCardsGrid = document.querySelector(".parks__grid");
   // HTML template for a park-related card
@@ -130,18 +124,25 @@ const prepareDOMElements = () => {
   // Map box
   mapBox = document.querySelector(".map__box");
 
-  navbarHeight = navbar.offsetHeight; 
+  navbarHeight = navbar.offsetHeight;
 }
 
 const addListeners = () => {
   cookieAcceptButton.addEventListener("click", handleCookieAlert);
   toggleButton.addEventListener("click", toggleNavbarMenu);
-  overlay.addEventListener("click", closeNavbarMenu);
+  overlay.addEventListener("click", closeNavbarMenu); 
+
+  // if (document.body.dataset.currentPage === "home") {
+    // prevSliderButton.addEventListener("click", handlePrevSlide);
+    // nextSliderButton.addEventListener("click", handleNextSlide);
+    //window.addEventListener("resize", resetSlider);
+  // }
 
   if (document.body.dataset.currentPage === "home") {
-    prevSliderButton.addEventListener("click", handlePrevSlide);
-    nextSliderButton.addEventListener("click", handleNextSlide);
-    window.addEventListener("resize", resetSlider);
+    sliderCarousel.addEventListener("mousedown", startDragging);
+    sliderCarousel.addEventListener("mouseup", stopDragging);
+    sliderCarousel.addEventListener("mousemove", dragSlider);
+    sliderButtons.forEach((sliderButton) => sliderButton.addEventListener("click", changeSlide));
   }
   
   if (document.body.dataset.currentPage === "contact") {

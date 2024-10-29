@@ -38,7 +38,23 @@
 
   .about {
     &__description {
-      flex-direction: row;
+      &:nth-of-type(odd) {
+        flex-direction: row;
+
+        & .about__title,
+        & .about__mission {
+          text-align: left;
+        }
+      }
+
+      &:nth-of-type(even) {
+        flex-direction: row-reverse;
+
+        & .about__title,
+        & .about__mission {
+          text-align: right;
+        }
+      }
 
       & > * {
         flex-basis: 50%;
@@ -46,7 +62,6 @@
     }
 
     &__title {
-      text-align: initial;
       font-size: 1.8rem;
     }
 
@@ -74,12 +89,13 @@
   }
 
   .testimonials {
-    &__slide {
-      padding: 2em;
-      border: 2px solid colors.$darkgray;
+    &__slider {
+      &-carousel {
+        grid-auto-columns: calc((100% / 2) - .5em);
+      }
 
-      &-logo {
-        width: 200px;
+      &-card {
+        height: 480px;
       }
     }
 

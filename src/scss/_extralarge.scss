@@ -21,6 +21,12 @@
     }
   }
 
+  .testimonials {
+    &__slider-card {
+      height: 440px;
+    }
+  }
+
   .parks {
     &__card-image {
       height: 350px;

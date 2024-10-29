@@ -1,10 +1,6 @@
 @use "../utils/colors" as colors;
 @use "../utils/mixins" as mixins;
 
-.contact, .map {
-  margin-bottom: 3em;
-}
-
 .contact {
   &__details, &__form {
     padding: 2em;
@@ -219,21 +215,12 @@
   }
 }
 
-// .map {
-//   &__box {
-//     width: 100%;
-//     height: 600px;
-//     border: 2px solid colors.$darkgray;
+.map {
+  margin-bottom: 3em;
 
-//     &-iframe {
-//       width: 100%;
-//       height: 100%;
-//     }
-//   }
-// }
-
-#map {
-  width: 100%;
-  height: 600px;
-  border: 2px solid colors.$darkgray;
+  & .map__box {
+    width: 100%;
+    height: 600px;
+    border: 2px solid colors.$darkgray;
+  }
 }
