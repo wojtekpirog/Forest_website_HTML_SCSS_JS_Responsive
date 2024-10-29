@@ -95,12 +95,6 @@
       }
     }
 
-    // &-buttons {
-    //   display: flex;
-    //   justify-content: center;
-    //   gap: 1em;
-    // }
-
     &-button {
       @include mixins.buttonAndLinkStyles(colors.$mint, colors.$darkgray);
       position: absolute;
