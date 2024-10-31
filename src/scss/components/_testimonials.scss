@@ -14,12 +14,16 @@
       grid-auto-flow: column;
       grid-auto-columns: 100%;
       gap: 1em;
+      scroll-behavior: smooth;
       overflow: hidden;
+
+      &--dragging {
+        scroll-behavior: auto;
+      }
     }
 
     &-list {
       list-style-type: none;
-      scroll-behavior: smooth;
       scroll-snap-type: x mandatory;
       scrollbar-width: none;
 

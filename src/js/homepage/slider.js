@@ -3,9 +3,11 @@ import testimonials from "../data/testimonials.js";
 
 let isDragging = false;
 // The position of the cursor on the slider
-let currentCursorPosition;
+let initialCursorPosition;
 // The position of the scroll on the slider
 let currentScrollLeft;
+
+let intervalId;
 
 const renderSlider = () => {
   // Render a slide for each testimonial in the array:
@@ -30,108 +32,65 @@ export const getCardWidth = () => {
   cardWidth = document.querySelector(".testimonials__slider-card").offsetWidth + 16;
 }
 
+export const expandSlider = () => {
+  // Get all items of the slider:
+  const sliderItems = sliderCarousel.querySelectorAll(".testimonials__slider-list-item");
+  // Get an array of all items of the slider:
+  const sliderItemsArray = Array.from(sliderItems);
+  // Get the number of cards that are visible in the slider:
+  const cardsPerView = Math.round(sliderCarousel.offsetWidth / cardWidth);
+  // Insert the last number of cards equal to `cardsPerView` into the slider:
+  sliderItemsArray.slice(-cardsPerView).reverse().forEach((sliderItem) => {
+    sliderCarousel.insertAdjacentHTML("afterbegin", sliderItem.outerHTML);
+  });
+  // Insert the first number of cards equal to `cardsPerView` into the slider:
+  sliderItemsArray.slice(0, cardsPerView).forEach((sliderItem) => {
+    sliderCarousel.insertAdjacentHTML("beforeend", sliderItem.outerHTML);
+  });
+}
+
 export const startDragging = (event) => {
   isDragging = true;
   // Record the initial position of the cursor and the scroll:
-  currentCursorPosition = event.pageX;
+  initialCursorPosition = event.pageX;
   currentScrollLeft = sliderCarousel.scrollLeft;
 
-  sliderCarousel.parentElement.classList.add("testimonials__slider-list--dragging");
+  sliderCarousel.classList.add("testimonials__slider-list--dragging");
 }
 
 export const stopDragging = () => {
   isDragging = false;
-  sliderCarousel.parentElement.classList.remove("testimonials__slider-list--dragging");
+  sliderCarousel.classList.remove("testimonials__slider-list--dragging");
 }
 
 export const dragSlider = (event) => {
-  if (!isDragging) return;
-  sliderCarousel.scrollLeft = currentScrollLeft + (currentCursorPosition - event.pageX);
+  if (!isDragging) return; // Don't execute if the carousel is not being dragged
+  sliderCarousel.scrollLeft = currentScrollLeft + (initialCursorPosition - event.pageX);
 }
 
-// export const changeSlide = (event) => {
-//   console.log(event.currentTarget);
-
-//   event.currentTarget.classList[1] === "testimonials__slider-button--prev"
-//     ? sliderCarousel.scrollLeft -= cardWidth
-//     : sliderCarousel.scrollLeft += cardWidth;
-
-//   console.log(sliderCarousel.scrollLeft);  
-// }
-
 export const changeSlide = (event) => {
-  event.currentTarget.classList[1] === "testimonials__slider-button--prev"
+  event.currentTarget.classList.contains("testimonials__slider-button--prev")
     ? sliderCarousel.scrollLeft -= cardWidth
     : sliderCarousel.scrollLeft += cardWidth;
 }
 
+export const handleAutoplay = () => {
+  // Change the slide every 3 seconds
+  intervalId = setInterval(() => {
+    // sliderCarousel.scrollLeft += cardWidth;
+    // If the slider is at the beginning, scroll to the end, and if it is at the end, scroll to the beginning
+    if (sliderCarousel.scrollLeft === 0) {
+      // sliderCarousel.style.setProperty("scroll-behavior", "auto");
+      // sliderCarousel.scrollLeft = sliderCarousel.scrollWidth - (sliderCarousel.offsetWidth * 2);
+      // sliderCarousel.style.setProperty("scroll-behavior", "smooth");
+      console.log("Alfa");
+    } else if (Math.ceil(sliderCarousel.scrollLeft) === sliderCarousel.scrollWidth - sliderCarousel.offsetWidth) {
+      // sliderCarousel.style.setProperty("scroll-behavior", "auto");
+      // sliderCarousel.scrollLeft = sliderCarousel.offsetWidth;
+      // sliderCarousel.style.setProperty("scroll-behavior", "smooth");
+      console.log("Omega");
+    } 
+  }, 5000);
+}
+
 export default renderSlider;
-
-// export const renderSlider = () => {
-//   // Render a slide for each testimonial in the `testimonials` array:
-//   testimonials.forEach((testimonial, index) => {
-//     // Get a copy of the HTML document fragment inside the `template` tag:
-//     const slideDocumentFragment = testimonialTemplate.content.cloneNode(true);
-//     // Get the `testimonials__slide` element from the HTML document fragment:
-//     const slide = slideDocumentFragment.querySelector(".testimonials__slide");
-//     // Modify the content of the template slide:
-//     slide.setAttribute("aria-label", `Slajd numer ${index + 1} z ${testimonials.length}`);
-//     slide.querySelector(".testimonials__slide-logo").setAttribute("src", testimonial.logoSource);
-//     slide.querySelector(".testimonials__slide-logo").setAttribute("alt", testimonial.logoAltText);
-//     slide.querySelector(".testimonials__slide-body-text").textContent = testimonial.quoteText;
-//     slide.querySelector(".testimonials__slide-body-rating").setAttribute("aria-label", `Ocena: ${testimonial.stars} gwiazdek na pięć możliwych`);
-//     slide.querySelector(".testimonials__slide-body-rating > picture > source").setAttribute("srcset", `./assets/icons/${testimonial.stars}stars.png`);
-//     // Get the SVG element for stars from the HTML document fragment:
-//     const starsHTML = slide.querySelector(".testimonials__slide-body-rating > picture > svg");
-//     // Insert the number of stars equal to `testimonial.stars` into the SVG element for stars:
-//     for (let i = 0; i < testimonial.stars; i++) {
-//       starsHTML.innerHTML += `<use xlink:href="#star" x="${i * 26}" />`;
-//     }
-//     // Append slide to the slider container:
-//     slider.appendChild(slide);
-//   });
-//   // Get all slides after rendering:
-//   allSlides = document.querySelectorAll(".testimonials__slide");
-// }
-
-// export const getSliderWidth = () => {
-//   sliderStyle = window.getComputedStyle(slider).getPropertyValue("width");
-//   sliderWidth = parseInt(sliderStyle.slice(0, sliderStyle.indexOf("px")));
-// }
-
-// export const runSlider = () => {
-//   sliderIntervalId = setInterval(handleNextSlide, sliderSpeed);
-// }
-
-// export const resetSlider = () => {
-//   sliderIndex = 0;
-//   getSliderWidth();
-//   changeSlide();
-// }
-
-// const changeSlide = () => {
-//   if (sliderIndex > allSlides.length - 1) {
-//     sliderIndex = 0;
-//   } else if (sliderIndex < 0) {
-//     sliderIndex = allSlides.length - 1;
-//   }
-
-//   slider.style.transform = `translateX(-${sliderWidth * sliderIndex}px)`;
-// }
-
-// export const handlePrevSlide = () => {
-//   sliderIndex -= 1;
-//   changeSlide();
-//   resetInterval();
-// }
-
-// export const handleNextSlide = () => {
-//   sliderIndex += 1;
-//   changeSlide();
-//   resetInterval();
-// }
-
-// const resetInterval = () => {
-//   clearInterval(sliderIntervalId);
-//   runSlider();
-// }
