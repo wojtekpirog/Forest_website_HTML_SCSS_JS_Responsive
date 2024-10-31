@@ -2,7 +2,7 @@ import setFooterYear from "./footer.js";
 import handleScrollSpy from "./homepage/scrollspy.js";
 import renderParkCards from "./offer/parks_grid.js";
 import renderMap from "./contact/map.js";
-import renderSlider, { getCardWidth, startDragging, stopDragging, dragSlider, changeSlide } from "./homepage/slider.js";
+import renderSlider, { getCardWidth, startDragging, stopDragging, dragSlider, changeSlide } from "./homepage/slider.js"; 
 // import { renderSlider, getSliderWidth, runSlider, resetSlider, handlePrevSlide, handleNextSlide } from "./homepage/slider.js";
 import { generateCookieAlert, handleCookieAlert, checkCookie } from "./cookie_alert.js";
 import { setInitialCharsCounter, handleFormClear, handleFormSubmit, handleTextarea } from "./contact/form.js";
@@ -124,7 +124,7 @@ const prepareDOMElements = () => {
   // Map box
   mapBox = document.querySelector(".map__box");
 
-  navbarHeight = navbar.offsetHeight;
+  navbarHeight = navbar.offsetHeight; 
 }
 
 const addListeners = () => {
@@ -142,11 +142,12 @@ const addListeners = () => {
     sliderCarousel.addEventListener("mousedown", startDragging);
     sliderCarousel.addEventListener("mouseup", stopDragging);
     sliderCarousel.addEventListener("mousemove", dragSlider);
+    // sliderButtons.forEach((sliderButton) => sliderButton.addEventListener("click", changeSlide));
     sliderButtons.forEach((sliderButton) => sliderButton.addEventListener("click", changeSlide));
   }
   
   if (document.body.dataset.currentPage === "contact") {
-    messageTextarea.addEventListener("input", handleTextarea);
+    messageTextarea.addEventListener("input", handleTextarea); 
     resetButton.addEventListener("click", handleFormClear);
     submitButton.addEventListener("click", handleFormSubmit);
   }

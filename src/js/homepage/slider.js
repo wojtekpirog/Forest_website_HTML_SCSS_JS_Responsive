@@ -3,9 +3,9 @@ import testimonials from "../data/testimonials.js";
 
 let isDragging = false;
 // The position of the cursor on the slider
-let cursorPosition;
+let currentCursorPosition;
 // The position of the scroll on the slider
-let initialScrollLeft;
+let currentScrollLeft;
 
 const renderSlider = () => {
   // Render a slide for each testimonial in the array:
@@ -32,31 +32,37 @@ export const getCardWidth = () => {
 
 export const startDragging = (event) => {
   isDragging = true;
-  sliderCarousel.classList.add("testimonials__slider-list--dragging");
-  // Record the initial position of the cursor:
-  cursorPosition = event.pageX;
-  // Record the initial position of the scroll:
-  initialScrollLeft = sliderCarousel.scrollLeft;
+  // Record the initial position of the cursor and the scroll:
+  currentCursorPosition = event.pageX;
+  currentScrollLeft = sliderCarousel.scrollLeft;
+
+  sliderCarousel.parentElement.classList.add("testimonials__slider-list--dragging");
 }
 
 export const stopDragging = () => {
   isDragging = false;
-  sliderCarousel.classList.remove("testimonials__slider-list--dragging");
+  sliderCarousel.parentElement.classList.remove("testimonials__slider-list--dragging");
 }
 
 export const dragSlider = (event) => {
   if (!isDragging) return;
-  sliderCarousel.scrollLeft = initialScrollLeft - (cursorPosition - event.pageX);
+  sliderCarousel.scrollLeft = currentScrollLeft + (currentCursorPosition - event.pageX);
 }
 
-export const changeSlide = (event) => {
-  console.log(event.currentTarget);
+// export const changeSlide = (event) => {
+//   console.log(event.currentTarget);
 
+//   event.currentTarget.classList[1] === "testimonials__slider-button--prev"
+//     ? sliderCarousel.scrollLeft -= cardWidth
+//     : sliderCarousel.scrollLeft += cardWidth;
+
+//   console.log(sliderCarousel.scrollLeft);  
+// }
+
+export const changeSlide = (event) => {
   event.currentTarget.classList[1] === "testimonials__slider-button--prev"
     ? sliderCarousel.scrollLeft -= cardWidth
     : sliderCarousel.scrollLeft += cardWidth;
-
-  console.log(sliderCarousel.scrollLeft);  
 }
 
 export default renderSlider;
