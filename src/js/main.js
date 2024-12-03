@@ -5,7 +5,7 @@ import renderMap from "./contact/map.js";
 import renderSlider, { expandSlider, getCardWidth, startDragging, stopDragging, dragSlider, changeSlide, handleAutoplay } from "./homepage/slider.js"; 
 import { generateCookieAlert, handleCookieAlert, checkCookie } from "./cookie_alert.js";
 import { setInitialCharsCounter, handleFormClear, handleFormSubmit, handleTextarea } from "./contact/form.js";
-import { toggleNavbarMenu, closeNavbarMenu } from "./navbar.js";
+import { toggleNavbarMenu, closeNavbarMenu } from "./navbar.js"; 
 
 // All sections on the page that need to be spied on when scrolling
 export let scrollSpySections;

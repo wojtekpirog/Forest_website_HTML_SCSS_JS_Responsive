@@ -16,6 +16,29 @@
     box-shadow: 0 2px 5px 0 colors.$darkgray;
     border-radius: 4px;
     text-align: center;
+    transform: scale(1);
+    transition: transform 200ms ease-in-out;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+
+    &--popular {
+      position: relative;
+      border: 3px solid colors.$darkmint;
+      overflow: hidden;
+    }
+
+    &-label {
+      width: 150px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      padding: .5em 1em;
+      background-color: colors.$darkmint;
+      color: colors.$light;
+      transform: rotate(-45deg) translate(-27%, -27%);
+    }
 
     &-title {
       margin-bottom: 1em;
