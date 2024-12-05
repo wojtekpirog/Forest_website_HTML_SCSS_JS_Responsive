@@ -16,30 +16,10 @@
       gap: 1em;
       scroll-behavior: smooth;
       overflow: hidden;
-
-      &--dragging {
-        scroll-behavior: auto;
-      }
     }
 
     &-list {
       list-style-type: none;
-      scroll-snap-type: x mandatory;
-      scrollbar-width: none;
-
-      &::-webkit-scrollbar {
-        display: none;
-      }
-
-      &--dragging {
-        scroll-snap-type: none;
-        scroll-behavior: auto;
-
-        .testimonials__slider-card:hover {
-          cursor: grabbing;
-          user-select: none;
-        }
-      }
     }
 
     &-card {
@@ -92,10 +72,6 @@
 
       &-city {
         color: colors.$darkgray;
-      }
-
-      &:hover {
-        cursor: grab;
       }
     }
 
