@@ -1,7 +1,7 @@
 import { scrollSpySections, navbarLinks, navbarHeight, aboutBanner } from "../main.js";
 
 const options = { 
-  rootMargin: "-50% 0px"
+  rootMargin: "-50%"
 }
 
 const handleScrollSpy = () => {

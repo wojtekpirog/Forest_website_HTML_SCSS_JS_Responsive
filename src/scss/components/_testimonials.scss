@@ -14,28 +14,12 @@
       grid-auto-flow: column;
       grid-auto-columns: 100%;
       gap: 1em;
+      scroll-behavior: smooth;
+      overflow: hidden;
     }
 
     &-list {
       list-style-type: none;
-      overflow: hidden;
-      scroll-behavior: smooth;
-      scroll-snap-type: x mandatory;
-      scrollbar-width: none;
-
-      &::-webkit-scrollbar {
-        display: none;
-      }
-
-      &--dragging {
-        scroll-snap-type: none;
-        scroll-behavior: auto;
-
-        .testimonials__slider-card:hover {
-          cursor: grabbing;
-          user-select: none;
-        }
-      }
     }
 
     &-card {
@@ -89,10 +73,6 @@
       &-city {
         color: colors.$darkgray;
       }
-
-      &:hover {
-        cursor: grab;
-      }
     }
 
     &-button {
@@ -118,6 +98,7 @@
   }
 
   &__companies {
+    margin-bottom: 3em;
     display: flex;
     flex-direction: column;
   }

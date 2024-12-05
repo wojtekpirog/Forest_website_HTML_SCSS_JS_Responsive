@@ -2,11 +2,10 @@ import setFooterYear from "./footer.js";
 import handleScrollSpy from "./homepage/scrollspy.js";
 import renderParkCards from "./offer/parks_grid.js";
 import renderMap from "./contact/map.js";
-import renderSlider, { getCardWidth, startDragging, stopDragging, dragSlider, changeSlide } from "./homepage/slider.js";
-// import { renderSlider, getSliderWidth, runSlider, resetSlider, handlePrevSlide, handleNextSlide } from "./homepage/slider.js";
+import renderSlider, {getCardWidth, changeSlide} from "./homepage/slider.js"; 
 import { generateCookieAlert, handleCookieAlert, checkCookie } from "./cookie_alert.js";
 import { setInitialCharsCounter, handleFormClear, handleFormSubmit, handleTextarea } from "./contact/form.js";
-import { toggleNavbarMenu, closeNavbarMenu } from "./navbar.js";
+import { toggleNavbarMenu, closeNavbarMenu } from "./navbar.js"; 
 
 // All sections on the page that need to be spied on when scrolling
 export let scrollSpySections;
@@ -19,7 +18,7 @@ export let navbarLinks;
 export let overlay;
 // Contact form buttons
 let resetButton;
-let submitButton;
+let submitButton; 
 // Contact form controls
 export let firstNameInput;
 export let lastNameInput;
@@ -53,9 +52,9 @@ export let parkCardTemplate;
 export let mapBox;
 
 // `offsetHeight` of the navbar 
-export let navbarHeight;
+export let navbarHeight; 
 // Width of the slider (as a number)
-export let cardWidth;
+export let cardWidth; 
 
 const main = () => {
   generateCookieAlert(); 
@@ -66,9 +65,8 @@ const main = () => {
   // Execute this code only on the "Home" page
   if (document.body.dataset.currentPage === "home") {
     handleScrollSpy();
-    renderSlider();
+    renderSlider(); 
     getCardWidth();
-    // runSlider();
   }
   // Execute this code only on the "Offer" page
   if (document.body.dataset.currentPage === "offer") {
@@ -122,7 +120,7 @@ const prepareDOMElements = () => {
   // HTML template for a park-related card
   parkCardTemplate = document.querySelector(".parks__template");
   // Map box
-  mapBox = document.querySelector(".map__box");
+  mapBox = document.querySelector(".map__box"); 
 
   navbarHeight = navbar.offsetHeight;
 }
@@ -132,23 +130,15 @@ const addListeners = () => {
   toggleButton.addEventListener("click", toggleNavbarMenu);
   overlay.addEventListener("click", closeNavbarMenu); 
 
-  // if (document.body.dataset.currentPage === "home") {
-    // prevSliderButton.addEventListener("click", handlePrevSlide);
-    // nextSliderButton.addEventListener("click", handleNextSlide);
-    //window.addEventListener("resize", resetSlider);
-  // }
-
   if (document.body.dataset.currentPage === "home") {
-    sliderCarousel.addEventListener("mousedown", startDragging);
-    sliderCarousel.addEventListener("mouseup", stopDragging);
-    sliderCarousel.addEventListener("mousemove", dragSlider);
+    window.addEventListener("resize", getCardWidth);
     sliderButtons.forEach((sliderButton) => sliderButton.addEventListener("click", changeSlide));
   }
   
   if (document.body.dataset.currentPage === "contact") {
-    messageTextarea.addEventListener("input", handleTextarea);
+    messageTextarea.addEventListener("input", handleTextarea); 
     resetButton.addEventListener("click", handleFormClear);
-    submitButton.addEventListener("click", handleFormSubmit);
+    submitButton.addEventListener("click", handleFormSubmit); 
   }
 
   window.addEventListener("resize", () => window.innerWidth >= 992 ? closeNavbarMenu() : false);
