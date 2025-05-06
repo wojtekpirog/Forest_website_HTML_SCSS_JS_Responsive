@@ -7,8 +7,8 @@ const autoprefixer = require('autoprefixer');
 // Plugin used to rename files and change their extensions and location
 const rename = require('gulp-rename');
 // JavaScript-related plug-ins
-const babel = require('gulp-babel');
-const terser = require('gulp-terser');
+// const babel = require('gulp-babel');
+// const terser = require('gulp-terser');
 // Image-related plug-ins
 const imagemin = require('gulp-imagemin');
 // Sourcemaps
@@ -81,6 +81,12 @@ function bundleScripts() {
           {
             test: /\.js$/,
             exclude: /node_modules/,
+            use: {
+              loader: "babel-loader",
+              options: {
+                presets: ["@babel/preset-env"]
+              }
+            }
           }
         ]
       }
@@ -90,27 +96,27 @@ function bundleScripts() {
     .pipe(dest(paths.scripts.dist));
 }
 
-function transformScripts() {
-  return src(`${paths.scripts.dist}/main.min.js`)
-    .pipe(sourcemaps.init())
-    .pipe(babel({
-      presets: ['@babel/env'],
-    }).on("error", (error) => {
-      console.error(`Babel error: ${error}`);
-    }))
-    .pipe(terser({
-      toplevel: true
-    }).on("error", (error) => {
-      console.error(`Terser error: ${error}`);
-    }))
-    .pipe(sourcemaps.write("."))
-    .pipe(dest(paths.scripts.dist));
-}
+// function transformScripts() {
+//   return src(`${paths.scripts.dist}/main.min.js`)
+//     .pipe(sourcemaps.init())
+//     .pipe(babel({
+//       presets: ['@babel/env'],
+//     }).on("error", (error) => {
+//       console.error(`Babel error: ${error}`);
+//     }))
+//     .pipe(terser({
+//       toplevel: true
+//     }).on("error", (error) => {
+//       console.error(`Terser error: ${error}`);
+//     }))
+//     .pipe(sourcemaps.write("."))
+//     .pipe(dest(paths.scripts.dist));
+// }
 
-function prepareScripts(cb) {
-  series(bundleScripts, transformScripts);
-  cb();
-}
+// function prepareScripts(cb) {
+//   series(bundleScripts, transformScripts);
+//   cb();
+// }
 
 function compressImages() {
   return src(paths.images.src)
@@ -143,11 +149,11 @@ function startBrowserSync(cb) {
 function watchForChanges() {
   watch(paths.html).on("change", reload);
   watch(paths.styles.src, prepareCSS).on("change", reload);
-  watch(paths.scripts.src, prepareScripts).on("change", reload);
+  watch(paths.scripts.src, bundleScripts).on("change", reload);
   watch(paths.images.src, compressImages).on("change", reload);
 }
 
-module.exports.default = series(prepareCSS, prepareScripts, compressImages, startBrowserSync, watchForChanges);
+module.exports.default = series(prepareCSS, bundleScripts, compressImages, startBrowserSync, watchForChanges);
 module.exports.prepareCSS = prepareCSS;
 module.exports.compressImages = compressImages;
 module.exports.startBrowserSync = startBrowserSync;
