@@ -48,7 +48,7 @@ export let parkCardsGrid;
 // HTML template for a park-related card
 export let parkCardTemplate;
 
-// Map box
+// Map box 
 export let mapBox;
 
 // `offsetHeight` of the navbar 
@@ -122,13 +122,14 @@ const prepareDOMElements = () => {
   // Map box
   mapBox = document.querySelector(".map__box"); 
 
-  navbarHeight = navbar.offsetHeight;
+  navbarHeight = navbar.offsetHeight; 
 }
 
 const addListeners = () => {
   cookieAcceptButton.addEventListener("click", handleCookieAlert);
   toggleButton.addEventListener("click", toggleNavbarMenu);
-  overlay.addEventListener("click", closeNavbarMenu); 
+  overlay.addEventListener("click", closeNavbarMenu);
+  navbarLinks.forEach((navbarLink) => navbarLink.addEventListener("click", closeNavbarMenu));
 
   if (document.body.dataset.currentPage === "home") {
     window.addEventListener("resize", getCardWidth);
