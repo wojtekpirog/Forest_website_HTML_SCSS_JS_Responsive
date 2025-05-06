@@ -48,8 +48,17 @@ function prepareCSS() {
       console.error(`Sass error: ${error}`);
     }))
     .pipe(postcss([
-      autoprefixer(),
-      cssnano()
+      autoprefixer({
+        cascade: false,
+        grid: "autoplace",
+      }),
+      cssnano({
+        preset: ['default', {
+          discardComments: {
+            removeAll: true,
+          }
+        }]
+      })
     ]))
     .pipe(rename({
       basename: 'style',
