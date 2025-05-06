@@ -11,8 +11,6 @@ const babel = require('gulp-babel');
 const terser = require('gulp-terser');
 // Image-related plug-ins
 const imagemin = require('gulp-imagemin');
-// Gulp-clean
-const clean = require('gulp-clean');
 // Sourcemaps
 const sourcemaps = require('gulp-sourcemaps');
 // BrowserSync & reload
@@ -71,8 +69,7 @@ function prepareCSS() {
     .pipe(dest(paths.styles.dist));
 }
 
-// Webpack-stream configuration
-function bundleJS() {
+function bundleScripts() {
   return src(paths.scripts.src)
     .pipe(webpack({
       mode: "production",
@@ -92,9 +89,8 @@ function bundleJS() {
     }))
     .pipe(dest(paths.scripts.dist));
 }
-// Webpack-stream configuration
 
-function transformJS() {
+function transformScripts() {
   return src(`${paths.scripts.dist}/main.min.js`)
     .pipe(sourcemaps.init())
     .pipe(babel({
@@ -107,9 +103,13 @@ function transformJS() {
     }).on("error", (error) => {
       console.error(`Terser error: ${error}`);
     }))
- 
     .pipe(sourcemaps.write("."))
     .pipe(dest(paths.scripts.dist));
+}
+
+function prepareScripts(cb) {
+  series(bundleScripts, transformScripts);
+  cb();
 }
 
 function compressImages() {
@@ -125,13 +125,7 @@ function compressImages() {
     .pipe(dest(paths.images.dist));
 }
 
-function cleanUnncessaryFiles(done) {
-  src(paths.dist, { read: false })
-    .pipe(clean());
-  done();
-}
-
-function startBrowserSync(callback) {
+function startBrowserSync(cb) {
   browserSync.init(
     {
       host: "192.168.1.101",
@@ -143,21 +137,18 @@ function startBrowserSync(callback) {
       },
     }
   );
-
-  callback();
+  cb();
 }
-
-const optimizeJS = series(bundleJS, transformJS);
 
 function watchForChanges() {
   watch(paths.html).on("change", reload);
   watch(paths.styles.src, prepareCSS).on("change", reload);
-  watch(paths.scripts.src, optimizeJS).on("change", reload);
+  watch(paths.scripts.src, prepareScripts).on("change", reload);
   watch(paths.images.src, compressImages).on("change", reload);
 }
 
-const optimizeFiles = series(prepareCSS, optimizeJS, compressImages);
-module.exports.default = series(optimizeFiles, startBrowserSync, watchForChanges);
-module.exports.cleanUnncessaryFiles = cleanUnncessaryFiles;
+module.exports.default = series(prepareCSS, prepareScripts, compressImages, startBrowserSync, watchForChanges);
+module.exports.prepareCSS = prepareCSS;
+module.exports.compressImages = compressImages;
 module.exports.startBrowserSync = startBrowserSync;
 module.exports.watch = watch;
