@@ -3,7 +3,7 @@
 
 .container-fluid {
   width: 100%;
-  position: sticky;
+  position: fixed;
   top: 0;
   background-color: colors.$light;
   border-bottom: 2px solid black;

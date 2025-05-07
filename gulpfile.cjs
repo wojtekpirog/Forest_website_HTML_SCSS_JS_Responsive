@@ -18,6 +18,10 @@ const browserSync = require('browser-sync').create();
 const reload = browserSync.reload;
 // Webpack
 const webpack = require('webpack-stream');
+// Gulp-if
+const gulpIf = require('gulp-if');
+// Path
+const path = require("path");
 
 const paths = {
   styles: {
@@ -118,16 +122,24 @@ function bundleScripts() {
 //   cb();
 // }
 
+function isNotWebp(file) {
+  return path.extname(file.path).toLowerCase() !== ".webp";
+}
+
 function compressImages() {
   return src(paths.images.src)
-    .pipe(imagemin().on("error", (error) => {
-      console.error(`Imagemin error: ${error}`);
-    }))
-    .pipe(rename({
-      suffix: '.min',
-    }).on("error", (error) => {
-      console.error(`Rename error: ${error}`);
-    }))
+    .pipe(gulpIf(
+      isNotWebp, 
+      imagemin().on("error", (error) => {
+        console.error(`Imagemin error: ${error}`)
+      })
+    ))
+    .pipe(gulpIf(
+      isNotWebp, 
+      rename({suffix: ".min"}).on("error", (error) => {
+        console.error(`Rename error: ${error}`)
+      })
+    ))
     .pipe(dest(paths.images.dist));
 }
 
