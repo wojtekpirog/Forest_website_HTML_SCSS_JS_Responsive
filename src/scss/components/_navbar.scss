@@ -10,11 +10,16 @@
   background-color: colors.$light;
 
   &__logo {
-    margin-left: .5em;
     @include mixins.companyLogo;
+    padding-left: .5em;
 
     &-icon {
       width: 25px;
+      vertical-align: middle;
+    }
+
+    &-name {
+      transform: translateY(4px);
     }
   }
 
@@ -79,6 +84,7 @@
 
     &--active {
       display: block;
+      padding-top: 8px;
     }
   }
 
@@ -106,10 +112,6 @@
       &:hover {
         @include mixins.navbarLinkActiveAndHover;
       }
-    }
-
-    &--active {
-      @include mixins.navbarLinkActiveAndHover;      
     }
   }
 }

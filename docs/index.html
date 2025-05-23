@@ -14,36 +14,40 @@
 <body data-current-page="home">
   <!-- Fluid container -->
   <div class="container-fluid">
-    <!-- Navbar -->
-    <nav class="navbar">
-      <!-- Logo -->
-      <a href="./index.html" class="navbar__logo" aria-label="Forest - logo firmy">
-        <picture>
-          <!-- Fallback PNG logo for older browsers -->
-          <source type="image/png" srcset="./assets/icons/tree-icon.png">
-          <!-- SVG logo -->
-          <img src="./assets/icons/tree-icon.svg" class="navbar__logo-icon" alt="Czarne drzewo na białym tle - symbol firmy Forest." aria-hidden="true"> 
-        </picture>
-        Forest
-      </a>
-      <!-- Logo -->
-      <!-- Hamburger icon -->
-      <button type="button" class="navbar__burger-icon" aria-label="Przełącz menu nawigacyjne" aria-expanded="false" aria-controls="navbarLinks">
-        <span class="navbar__burger-icon-line"></span>
-      </button> 
-      <!-- Hamburger icon -->
-      <!-- Links -->
-      <div class="navbar__links" id="navbarLinks">
-        <ul class="navbar__list">
-          <li class="navbar__item"><a href="#hero" class="navbar__link" aria-current="page">Home</a></li>
-          <li class="navbar__item"><a href="#about" class="navbar__link">O nas</a></li>
-          <li class="navbar__item"><a href="#offer" class="navbar__link">Oferta</a></li>
-          <li class="navbar__item"><a href="./contact.html" class="navbar__link">Kontakt</a></li>
-        </ul>
-      </div> 
-      <!-- Links -->
-    </nav>
-    <!-- Navbar -->
+    <!-- Container -->
+    <div class="container">
+      <!-- Navbar -->
+      <nav class="navbar">
+        <!-- Logo -->
+        <a href="./index.html" class="navbar__logo" aria-label="Forest - logo firmy">
+          <picture>
+            <!-- Fallback PNG logo for older browsers -->
+            <source type="image/png" srcset="./assets/icons/tree-icon.png">
+            <!-- SVG logo -->
+            <img src="./assets/icons/tree-icon.svg" class="navbar__logo-icon" alt="Czarne drzewo na białym tle - symbol firmy Forest." aria-hidden="true"> 
+          </picture>
+          <span class="navbar__logo-name">Forest</span>
+        </a>
+        <!-- Logo -->
+        <!-- Hamburger icon -->
+        <button type="button" class="navbar__burger-icon" aria-label="Przełącz menu nawigacyjne" aria-expanded="false" aria-controls="navbarLinks">
+          <span class="navbar__burger-icon-line"></span>
+        </button> 
+        <!-- Hamburger icon -->
+        <!-- Links -->
+        <div class="navbar__links" id="navbarLinks">
+          <ul class="navbar__list">
+            <li class="navbar__item"><a href="#hero" class="navbar__link" aria-current="page">Home</a></li>
+            <li class="navbar__item"><a href="#about" class="navbar__link">O nas</a></li>
+            <li class="navbar__item"><a href="#offer" class="navbar__link">Oferta</a></li>
+            <li class="navbar__item"><a href="./contact.html" class="navbar__link">Kontakt</a></li>
+          </ul>
+        </div> 
+        <!-- Links -->
+      </nav>
+      <!-- Navbar -->
+    </div> 
+    <!-- Container -->
   </div>
   <!-- Fluid container -->
   <!-- Overlay -->
@@ -54,11 +58,11 @@
     <!-- Hero image -->
     <picture>
       <!-- Obrazek dla urządzeń o szerokości ekranu co najmniej 1200px -->
-      <source srcset="./images/hero_image_desktop_hq.min.jpg" media="(min-width: 1200px)">
+      <source srcset="./assets/media/hero_image_desktop_hq.min.jpg" media="(min-width: 1200px)">
       <!-- Obrazek dla urządzeń o szerokości ekranu co najmniej 768px -->
-      <source srcset="./images/hero_image_desktop.min.jpg" media="(min-width: 768px)">
+      <source srcset="./assets/media/hero_image_desktop.min.jpg" media="(min-width: 768px)">
       <!-- Obrazek domyślny, dla urządzeń o węższych ekranach -->
-      <img class="hero__image" src="./images/hero_image_mobile.min.jpg" alt="Drewniany pomost biegnący przez las."> 
+      <img class="hero__image" src="./assets/media/hero_image_mobile.min.jpg" alt="Drewniany pomost biegnący przez las."> 
     </picture> 
     <!-- Hero image -->
     <!-- Container -->
@@ -92,8 +96,8 @@
           <div class="about__image-box">
             <!--  -->
             <picture>
-              <source srcset="./images/aboutus_image.min.jpg" type="image/webp">
-              <img class="about__image" src="./images/aboutus_image.webp" alt="Malutka wyspa porośnięta mchem na środku jeziora otoczonego wysokimi drzewami.">
+              <source srcset="./assets/media/aboutus_image.min.jpg">
+              <img class="about__image" src="./assets/media/aboutus_image.webp" alt="Malutka wyspa porośnięta mchem na środku jeziora otoczonego wysokimi drzewami.">
             </picture>
             <!--  -->
           </div> 

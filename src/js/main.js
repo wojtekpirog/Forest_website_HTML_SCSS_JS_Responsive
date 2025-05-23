@@ -142,7 +142,7 @@ const addListeners = () => {
     submitButton.addEventListener("click", handleFormSubmit); 
   }
 
-  window.addEventListener("resize", () => window.innerWidth >= 992 ? closeNavbarMenu() : false);
+  window.addEventListener("resize", () => window.innerWidth >= 768 ? closeNavbarMenu() : false);
 }
 
 document.addEventListener("DOMContentLoaded", main);

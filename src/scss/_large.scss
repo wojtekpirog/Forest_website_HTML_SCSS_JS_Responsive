@@ -9,28 +9,7 @@
     width: 960px;
   }
 
-  .navbar {
-    padding: 0;
-
-    &__burger-icon {
-      display: none;
-    }
-
-    &__links {
-      display: block;
-      flex-basis: auto;
-    }
-
-    &__list {
-      flex-direction: row;
-    }
-  }
-
   .hero {
-    &__text {
-      padding-left: 1em;
-    }
-
     &__description {
       font-size: 3.2rem;
     }

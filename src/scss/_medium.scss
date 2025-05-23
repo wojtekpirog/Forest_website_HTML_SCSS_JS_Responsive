@@ -1,4 +1,33 @@
+@use "./utils/mixins" as mixins;
+
 @media screen and (min-width: 768px) {
+  .navbar {
+    padding: 0;
+
+    &__burger-icon {
+      display: none;
+    }
+
+    &__links {
+      display: block;
+      flex-basis: auto;
+
+      &--active {
+        padding-top: 0;
+      }
+    }
+
+    &__link {
+      &--active {
+        @include mixins.navbarLinkActiveAndHover;      
+      }
+    }
+
+    &__list {
+      flex-direction: row;
+    }
+  }
+
   .parks {
     &__grid {
       grid-template-columns: repeat(2, 1fr);

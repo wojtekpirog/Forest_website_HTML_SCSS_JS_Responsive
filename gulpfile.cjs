@@ -36,7 +36,7 @@ const paths = {
 
   images: {
     src: "./src/images/**/*",
-    dist: "./docs/images" 
+    dist: "./docs/assets/media"
   },
 
   html: "./docs/*.html",
