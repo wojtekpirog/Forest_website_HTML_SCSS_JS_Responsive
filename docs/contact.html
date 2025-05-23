@@ -18,36 +18,40 @@
 <body data-current-page="contact">
   <!-- Fluid container -->
   <div class="container-fluid">
-    <!-- Navbar -->
-    <nav class="navbar">
-      <!-- Logo -->
-      <a href="./index.html" class="navbar__logo" aria-label="Forest - logo firmy">
-        <picture>
-          <!-- Fallback PNG logo for older browsers -->
-          <source type="image/png" srcset="./assets/icons/tree-icon.png">
-          <!-- SVG logo -->
-          <img src="./assets/icons/tree-icon.svg" class="navbar__logo-icon" alt="Czarne drzewo na białym tle - symbol firmy Forest." aria-hidden="true"> 
-        </picture>
-        Forest
-      </a>
-      <!-- Logo -->
-      <!-- Burger icon -->
-      <button type="button" class="navbar__burger-icon" aria-label="Otwórz menu nawigacyjne" aria-expanded="false" aria-controls="navbarLinks">
-        <span class="navbar__burger-icon-line"></span>
-      </button> 
-      <!-- Burger icon -->
-      <!-- Links -->
-      <div class="navbar__links" id="navbarLinks">
-        <ul class="navbar__list">
-          <li class="navbar__item"><a href="./index.html" class="navbar__link">Home</a></li>
-          <li class="navbar__item"><a href="./index.html#about" class="navbar__link">O nas</a></li>
-          <li class="navbar__item"><a href="./index.html#offer" class="navbar__link">Oferta</a></li>
-          <li class="navbar__item"><a href="./contact.html" class="navbar__link navbar__link--active" aria-current="page">Kontakt</a></li>
-        </ul>
-      </div> 
-      <!-- Links -->
-    </nav> 
-    <!-- Navbar -->
+    <!-- Container -->
+    <div class="container">
+      <!-- Navbar -->
+      <nav class="navbar">
+        <!-- Logo -->
+        <a href="./index.html" class="navbar__logo" aria-label="Forest - logo firmy">
+          <picture>
+            <!-- Fallback PNG logo for older browsers -->
+            <source type="image/png" srcset="./assets/icons/tree-icon.png">
+            <!-- SVG logo -->
+            <img src="./assets/icons/tree-icon.svg" class="navbar__logo-icon" alt="Czarne drzewo na białym tle - symbol firmy Forest." aria-hidden="true"> 
+          </picture>
+          <span class="navbar__logo-name">Forest</span>
+        </a>
+        <!-- Logo -->
+        <!-- Burger icon -->
+        <button type="button" class="navbar__burger-icon" aria-label="Otwórz menu nawigacyjne" aria-expanded="false" aria-controls="navbarLinks">
+          <span class="navbar__burger-icon-line"></span>
+        </button> 
+        <!-- Burger icon -->
+        <!-- Links -->
+        <div class="navbar__links" id="navbarLinks">
+          <ul class="navbar__list">
+            <li class="navbar__item"><a href="./index.html" class="navbar__link">Home</a></li>
+            <li class="navbar__item"><a href="./index.html#about" class="navbar__link">O nas</a></li>
+            <li class="navbar__item"><a href="./index.html#offer" class="navbar__link">Oferta</a></li>
+            <li class="navbar__item"><a href="./contact.html" class="navbar__link navbar__link--active" aria-current="page">Kontakt</a></li>
+          </ul>
+        </div> 
+        <!-- Links -->
+      </nav> 
+      <!-- Navbar -->
+    </div> 
+    <!-- Container -->
   </div> 
   <!-- Fluid container -->
   <!-- Overlay -->
@@ -58,11 +62,11 @@
     <!-- Hero image -->
     <picture>
       <!-- Obrazek dla urządzeń o szerokości ekranu co najmniej 1200px -->
-      <source srcset="./images/contact_page_hero_image_hq.min.jpg" media="(min-width: 1200px)">
+      <source srcset="./assets/media/contact_page_hero_image_hq.min.jpg" media="(min-width: 1200px)">
       <!-- Obrazek dla urządzeń o szerokości ekranu co najmniej 768px -->
-      <source srcset="./images/contact_page_hero_image_desktop.min.jpg" media="(min-width: 768px)"> 
+      <source srcset="./assets/media/contact_page_hero_image_desktop.min.jpg" media="(min-width: 768px)"> 
       <!-- Obrazek domyślny, dla urządzeń o węższych ekranach -->
-      <img class="hero__image" src="./images/contact_page_hero_image_mobile.min.jpg" alt="Drewniany mostek nad rzeką w parku.">
+      <img class="hero__image" src="./assets/media/contact_page_hero_image_mobile.min.jpg" alt="Drewniany mostek nad rzeką w parku.">
     </picture>
     <!-- Hero image -->
     <!-- Container -->
