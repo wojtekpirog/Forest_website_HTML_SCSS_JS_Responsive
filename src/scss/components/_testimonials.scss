@@ -4,25 +4,9 @@
 .testimonials {
   &__slider {
     position: relative;
-    width: 90%;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-
-    &-carousel {
-      display: grid;
-      grid-auto-flow: column;
-      grid-auto-columns: 100%;
-      gap: 1em;
-      scroll-behavior: smooth;
-      overflow: hidden;
-    }
-
-    &-list {
-      list-style-type: none;
-    }
 
     &-card {
+      height: var(--testimonial-slide-height);
       padding: 1.5em;
       border: 3px solid colors.$darkgray;
       border-radius: 6px;
@@ -75,24 +59,13 @@
       }
     }
 
-    &-button {
-      @include mixins.buttonAndLinkStyles(colors.$mint, colors.$darkgray);
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      padding: .5em .4em .35em;
-      font-size: 3rem;
-      border: none;
-      box-shadow: none;
-      transition: none;
-      cursor: pointer;
+    &-pagination {
+      .swiper-pagination-bullet {
+        background-color: colors.$darkgray;
 
-      &--prev {
-        left: -20px;
-      }
-
-      &--next {
-        right: -20px;
+        &-active {
+          background-color: colors.$darkmint;
+        }
       }
     }
   }

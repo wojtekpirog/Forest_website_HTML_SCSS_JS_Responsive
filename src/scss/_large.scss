@@ -69,10 +69,6 @@
 
   .testimonials {
     &__slider {
-      &-carousel {
-        grid-auto-columns: calc((100% / 2) - .5em);
-      }
-
       &-card {
         height: 480px;
       }
