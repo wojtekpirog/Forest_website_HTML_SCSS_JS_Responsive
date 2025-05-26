@@ -2,6 +2,20 @@
 @use "../utils/mixins" as mixins;
 
 .testimonials {
+  .slider-hint {
+    margin-bottom: 1em;
+    font-size: 1.2rem;
+    color: colors.$darkgray;
+    opacity: .75;
+    display: none;
+
+    @media (hover: none) and (pointer: coarse) {
+      & {
+        display: block;
+      }
+    }
+  }
+
   &__slider {
     position: relative;
 
@@ -19,11 +33,11 @@
       }
 
       &-image {
-        width: 100px;
-        height: 100px;
+        width: 70px;
+        height: 70px;
         padding: .2em;
         object-fit: cover;
-        border: 4px solid colors.$mint;
+        border: 3px solid colors.$mint;
         border-radius: 50%;
       }
 
