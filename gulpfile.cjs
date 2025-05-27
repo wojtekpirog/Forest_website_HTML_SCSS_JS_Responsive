@@ -75,6 +75,7 @@ function prepareCSS() {
 
 function bundleScripts() {
   return src(paths.scripts.src)
+    .pipe(sourcemaps.init())
     .pipe(webpack({
       mode: "production",
       output: {
@@ -110,6 +111,7 @@ function bundleScripts() {
     }).on("error", (error) => {
       console.log(`Webpack error: ${error}`);
     }))
+    .pipe(sourcemaps.write("."))
     .pipe(dest(paths.scripts.dist));
 }
 

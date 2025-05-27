@@ -23,58 +23,97 @@
     }
   }
 
-  &__burger-icon {
-    position: relative;
-    width: 72px;
-    height: 66px;
+  &__burger {
+    display: inline-block;
     padding: 1em;
-    background: none;
+    background-color: transparent;
     border: 2px solid transparent;
     border-radius: 4px;
-    font-size: 1.6rem;
     cursor: pointer;
 
-    &-line {
+    &-box {
+      position: relative;
       display: block;
+      width: 46px;
+      height: 40px;
     }
 
-    &-line,
-    &-line::before,
-    &-line::after {
-      width: 37px;
-      height: 4px;
-      background-color: colors.$black;
-      border-radius: 2px;
+    &-inner {
+      top: 50%;
+      margin-top: -2px;
+
+      &,
+      &::before,
+      &::after {
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 4px;
+        background-color: colors.$black;
+        border-radius: 4px;
+      }
+
+      &::before,
+      &::after {
+        content: "";
+      }
+
+      &::before {
+        top: -10px;
+      }
+
+      &::after {
+        bottom: -10px;
+      }
     }
 
-    &-line::before,
-    &-line::after {
-      content: "";
-      position: absolute;
-      left: 16px;
-      transition: transform 200ms ease-in-out;
-    }
+    &--spring {
+      .navbar__burger-inner {
+        &::before {
+          top: 10px;
+        }
 
-    &-line::before {
-      top: 16px;
-    }
+        &::after {
+          top: 20px;
+        }
+      }
 
-    &-line::after {
-      bottom: 16px;
+      &.navbar__burger--active {
+        .navbar__burger-inner {
+          background-color: transparent;
+
+          &::before,
+          &::after {
+            top: 0;
+          }
+
+          &::before {
+            transform: rotate(45deg);
+          }
+
+          &::after {
+            transform: rotate(-45deg);
+          }
+        }
+      }
     }
 
     &--active {
-      & > .navbar__burger-icon-line::before {
-        transform: translateY(-4px);
-      }
-      & > .navbar__burger-icon-line::after {
-        transform: translateY(4px);
+      .hamburger-inner,
+      .hamburger-inner::before,
+      .hamburger-inner::after {
+        background-color: colors.$black;
       }
     }
 
     &:focus {
-      outline: none;
       border-color: colors.$black;
+    }
+
+    @media (hover: hover) {
+      &:hover {
+        opacity: .7;
+      }
     }
   }
 

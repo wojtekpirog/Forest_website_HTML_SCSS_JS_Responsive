@@ -1,7 +1,6 @@
 import setFooterYear from "./footer.js";
 import handleScrollSpy from "./homepage/scrollspy.js";
 import renderParkCards from "./offer/parks_grid.js";
-import renderMap from "./contact/map.js";
 import runSlider from "./homepage/slider.js";
 import { generateCookieAlert, handleCookieAlert, checkCookie } from "./cookie_alert.js";
 import { setInitialCharsCounter, handleFormClear, handleFormSubmit, handleTextarea } from "./contact/form.js";
@@ -41,14 +40,8 @@ let cookieAcceptButton;
 export let parkCardsGrid;
 // HTML template for a park-related card
 export let parkCardTemplate;
-
-// Map box
-export let mapBox;
-
 // `offsetHeight` of the navbar 
-export let navbarHeight; 
-// Width of the slider (as a number)
-export let cardWidth; 
+export let navbarHeight;
 
 const main = () => {
   generateCookieAlert(); 
@@ -67,14 +60,13 @@ const main = () => {
   }
   // Execute this code only on the "Contact" page
   if (document.body.dataset.currentPage === "contact") {
-    renderMap();
     setInitialCharsCounter();
   }
 }
 
 const prepareDOMElements = () => {
   navbar = document.querySelector(".navbar");
-  toggleButton = document.querySelector(".navbar__burger-icon");
+  toggleButton = document.querySelector(".navbar__burger");
   navbarLinksContainer = document.querySelector(".navbar__links");
   navbarLinks = document.querySelectorAll(".navbar__link");
   // Overlay
@@ -105,9 +97,7 @@ const prepareDOMElements = () => {
   // Grid container for park-related cards
   parkCardsGrid = document.querySelector(".parks__grid");
   // HTML template for a park-related card
-  parkCardTemplate = document.querySelector(".parks__template");
-  // Map box
-  mapBox = document.querySelector(".map__box"); 
+  parkCardTemplate = document.querySelector(".parks__template"); 
 
   navbarHeight = navbar.offsetHeight;
 }

@@ -1,7 +1,12 @@
 import { navbarLinksContainer, toggleButton, overlay } from "./main.js";
 
 export const toggleNavbarMenu = () => {
-  toggleButton.classList.toggle("navbar__burger-icon--active");
+  if (toggleButton.classList.contains("navbar__burger--active")) {
+    toggleButton.classList.remove("navbar__burger--spring", "navbar__burger--active");
+  } else {
+    toggleButton.classList.add("navbar__burger--spring", "navbar__burger--active");
+  }
+
   navbarLinksContainer.classList.toggle("navbar__links--active");
   overlay.classList.toggle("navbar__overlay--active");
 
@@ -19,7 +24,7 @@ export const toggleNavbarMenu = () => {
 export const closeNavbarMenu = () => {
   document.body.classList.remove("no-scroll");
   overlay.classList.remove("navbar__overlay--active");
-  toggleButton.classList.remove("navbar__burger-icon--active");
+  toggleButton.classList.remove("navbar__burger--spring", "navbar__burger--active");
   navbarLinksContainer.classList.remove("navbar__links--active");
   toggleButton.setAttribute("aria-expanded", "false");
   toggleButton.setAttribute("aria-label", "Otwórz menu nawigacyjne");
