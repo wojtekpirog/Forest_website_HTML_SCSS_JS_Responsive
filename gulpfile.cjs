@@ -77,7 +77,8 @@ function bundleScripts() {
   return src(paths.scripts.src)
     .pipe(sourcemaps.init())
     .pipe(webpack({
-      mode: "production",
+      mode: "development",
+      devtool: "eval-cheap-source-map",
       output: {
         filename: "main.min.js",
       },
