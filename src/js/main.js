@@ -40,8 +40,8 @@ let cookieAcceptButton;
 export let parkCardsGrid;
 // HTML template for a park-related card
 export let parkCardTemplate;
-// `offsetHeight` of the navbar 
-export let navbarHeight;
+// Box for the map
+export let mapBox;
 
 const main = () => {
   generateCookieAlert(); 
@@ -98,8 +98,8 @@ const prepareDOMElements = () => {
   parkCardsGrid = document.querySelector(".parks__grid");
   // HTML template for a park-related card
   parkCardTemplate = document.querySelector(".parks__template"); 
-
-  navbarHeight = navbar.offsetHeight;
+  // Box for the map
+  mapBox = document.querySelector(".map__box");
 }
 
 const addListeners = () => {

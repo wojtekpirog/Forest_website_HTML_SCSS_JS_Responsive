@@ -1,4 +1,4 @@
-import { scrollSpySections, navbarLinks, navbarHeight, aboutBanner } from "../main.js";
+import { scrollSpySections, navbarLinks } from "../main.js";
 
 const options = { 
   rootMargin: "-50%"
