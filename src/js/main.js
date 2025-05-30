@@ -43,6 +43,23 @@ export let parkCardsGrid;
 export let parkCardTemplate;
 // Box for the map
 export let mapBox;
+// Current page:
+const currentPage = document.body.dataset.currentPage; // np. "home"
+
+// Object containing actions to be executed depending on the page the script is running on
+const pageActions = {
+  home: () => { // Action when `currentPage === "home"`
+    handleScrollSpy();
+    runSlider();
+  },
+  offer: () => { // Action when `currentPage === "offer"`
+    renderParkCards();
+  },
+  contact: () => { // Action when `currentPage === "contact"`
+    renderMap();
+    setInitialCharsCounter();
+  }
+};
 
 const main = () => {
   generateCookieAlert(); 
@@ -50,19 +67,9 @@ const main = () => {
   addListeners();
   checkCookie();
   setFooterYear();
-  // Execute this code only on the "Home" page
-  if (document.body.dataset.currentPage === "home") {
-    handleScrollSpy();
-    runSlider();
-  }
-  // Execute this code only on the "Offer" page
-  if (document.body.dataset.currentPage === "offer") {
-    renderParkCards();
-  }
-  // Execute this code only on the "Contact" page
-  if (document.body.dataset.currentPage === "contact") {
-    renderMap();
-    setInitialCharsCounter();
+
+  if (pageActions[currentPage]) {
+    pageActions[currentPage]();
   }
 }
 
@@ -110,7 +117,7 @@ const addListeners = () => {
   overlay.addEventListener("click", closeNavbarMenu);
   navbarLinks.forEach((navbarLink) => navbarLink.addEventListener("click", closeNavbarMenu));
   
-  if (document.body.dataset.currentPage === "contact") {
+  if (currentPage === "contact") {
     messageTextarea.addEventListener("input", handleTextarea); 
     resetButton.addEventListener("click", handleFormClear);
     submitButton.addEventListener("click", handleFormSubmit); 
