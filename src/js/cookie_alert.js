@@ -1,6 +1,6 @@
 import { cookieAlertBox } from "./main.js";
 
-export const generateCookieAlert = () => {
+const generateCookieAlert = () => {
   const cookieAlertHTML = `
     <!-- Cookie alert -->
       <div class="cookie-alert" role="alert" aria-label="Informacja o plikach cookies">
@@ -41,3 +41,5 @@ export const handleCookieAlert = () => {
   localStorage.setItem("cookieAccepted", "true");
   cookieAlertBox.remove();
 }
+
+export default generateCookieAlert;

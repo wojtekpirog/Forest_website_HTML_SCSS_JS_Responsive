@@ -1,6 +1,6 @@
 import { navbarLinksContainer, toggleButton, overlay } from "./main.js";
 
-export const toggleNavbarMenu = () => {
+const toggleNavbarMenu = () => {
   if (toggleButton.classList.contains("navbar__burger--active")) {
     toggleButton.classList.remove("navbar__burger--spring", "navbar__burger--active");
   } else {
@@ -29,3 +29,5 @@ export const closeNavbarMenu = () => {
   toggleButton.setAttribute("aria-expanded", "false");
   toggleButton.setAttribute("aria-label", "Otwórz menu nawigacyjne");
 }
+
+export default toggleNavbarMenu;

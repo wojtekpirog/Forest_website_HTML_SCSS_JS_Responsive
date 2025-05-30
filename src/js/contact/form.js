@@ -7,12 +7,9 @@ import {
   charsCounter,
   contactFormControls,
 } from "../main.js";
-
 import handlePopup from "./popup.js";
 
-// Form-related functions
-
-export const setInitialCharsCounter = () => {
+const setInitialCharsCounter = () => {
   charsCounter.innerHTML = `<span>${messageTextarea.value.length}</span>/${messageTextarea.maxLength}`;
 }
 
@@ -31,7 +28,7 @@ export const handleFormSubmit = (event) => {
   checkForm([firstNameInput, lastNameInput, emailAddressInput, messageTextarea]);
   checkEmailAddress(emailAddressInput);
   checkSelect(contactSelect);
-  // Symulacja wysyłania formularza
+  // Form submit simulation
   setTimeout(handlePopup, 1000);
 }
 
@@ -83,3 +80,5 @@ const clearError = (input) => {
   input.parentElement.querySelector(".contact__form-error").textContent = "";
   input.parentElement.querySelector(".contact__form-error").classList.remove("contact__form-error--active");
 }
+
+export default setInitialCharsCounter;
