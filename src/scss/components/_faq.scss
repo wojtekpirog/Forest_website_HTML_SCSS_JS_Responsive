@@ -1,0 +1,81 @@
+@use "../utils/colors" as colors;
+@use "../utils/mixins" as mixins;
+
+.faq {
+  &__accordion {
+    margin-bottom: 2em;
+
+    &-box {
+      margin: 1em;
+    }
+    
+    &-question,
+    &-answer {
+      font-size: 1.6rem;
+      text-align: left;
+      line-height: 1.4;
+    }
+
+    &-question {
+      width: 100%;
+      @include mixins.buttonAndLinkStyles(colors.$light, colors.$black);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1em;
+      padding: 1em .75em;
+      border-color: colors.$darkmint;
+      font-family: "Primary_semibold", Arial, Helvetica, sans-serif;
+      cursor: pointer;
+
+      &:focus {
+        outline: none;
+        background-color: colors.$mint;
+      }
+    }
+
+    &-answer {
+      display: none;
+      padding: .75em .5em;
+
+      &--active {
+        display: block;
+      }
+    }
+  }
+
+  &__link-box {
+    text-align: center;
+  }
+
+  &__link {
+    @include mixins.buttonAndLinkStyles(colors.$mint, colors.$black);
+    border-color: colors.$darkmint;
+
+    & > span {
+      @include mixins.buttonAndLinkHover(colors.$darkmint);
+
+      &:first-child {
+        top: -50%;
+        left: -100%;
+      }
+
+      &:last-child {
+        bottom: -50%;
+        right: -100%;
+      }
+    }
+
+    @media (hover: hover) {
+      &:hover {
+        & > span:first-child {
+          left: 0;
+        }
+
+        & > span:last-child {
+          right: 0;
+        }
+      }
+    }
+  }
+}
