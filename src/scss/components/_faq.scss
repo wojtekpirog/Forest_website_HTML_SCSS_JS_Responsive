@@ -7,6 +7,13 @@
 
     &-box {
       margin: 1em;
+
+      // &:focus {
+      //   .faq__accordion-question {
+      //     outline: none;
+      //     background-color: colors.$mint;
+      //   }
+      // }
     }
     
     &-question,
@@ -40,6 +47,10 @@
 
       &--open {
         display: block;
+      }
+
+      &:focus {
+        background-color: royalblue;
       }
     }
   }

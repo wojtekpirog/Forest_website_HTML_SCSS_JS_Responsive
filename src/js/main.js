@@ -36,11 +36,11 @@ export let contactFormControls;
 export let popupContainer;
 export let closePopupButton;
 // Cookie alert
-export let cookieAlertBox;
 let cookieAcceptButton;
+export let cookieAlertBox;
 // FAQ accordion
-export let faqAccordion;
-export let faqAccordionQuestions;
+let faqAccordion;
+let faqAccordionQuestions;
 export let faqAccordionAnswers;
 // Grid container for park-related cards
 export let parkCardsGrid;
@@ -117,7 +117,7 @@ const prepareDOMElements = () => {
   // HTML template for a park-related card
   parkCardTemplate = document.querySelector(".parks__template"); 
   // Box for the map 
-  mapBox = document.querySelector(".map__box");
+  mapBox = document.querySelector(".map__box"); 
 }
 
 const addListeners = () => {
