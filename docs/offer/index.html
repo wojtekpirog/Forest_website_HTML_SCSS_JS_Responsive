@@ -7,9 +7,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Forest - poznaj naszą wyjątkową ofertę i spełnij z nami swoje marzenia o idealnym odpoczynku na łonie natury.">
   <meta name="author" content="Wojciech Piróg">
-  <link rel="icon" type="image/svg+xml" href="./assets/icons/tree-icon.svg"> <!-- SVG favicon -->
-  <link rel="icon" type="image/png" href="./assets/icons/tree-icon.png"> <!-- Fallback PNG favicon for older browsers which do not support SVG -->
-  <link rel="stylesheet" type="text/css" href="./css/style.min.css">
+  <link rel="icon" type="image/svg+xml" href="../assets/icons/tree-icon.svg"> <!-- SVG favicon -->
+  <link rel="icon" type="image/png" href="../assets/icons/tree-icon.png"> <!-- Fallback PNG favicon for older browsers which do not support SVG -->
+  <link rel="stylesheet" type="text/css" href="../css/style.min.css">
 </head>
 <body data-current-page="offer">
   <!-- Fluid container -->
@@ -17,12 +17,12 @@
     <!-- Navbar -->
     <nav class="navbar">
       <!-- Logo -->
-      <a href="./index.html" class="navbar__logo" aria-label="Forest - logo firmy">
+      <a href="../index.html" class="navbar__logo" aria-label="Forest - logo firmy">
         <picture>
           <!-- Fallback PNG logo for older browsers -->
-          <source type="image/png" srcset="./assets/icons/tree-icon.png">
+          <source type="image/png" srcset="../assets/icons/tree-icon.png">
           <!-- SVG logo -->
-          <img src="./assets/icons/tree-icon.svg" class="navbar__logo-icon" alt="Czarne drzewo na białym tle - symbol firmy Forest." aria-hidden="true"> 
+          <img src="../assets/icons/tree-icon.svg" class="navbar__logo-icon" alt="Czarne drzewo na białym tle - symbol firmy Forest." aria-hidden="true"> 
         </picture>
         Forest
       </a> 
@@ -41,10 +41,10 @@
       <!-- Links -->
       <div class="navbar__links" id="navbarLinks">
         <ul class="navbar__list">
-          <li class="navbar__item"><a href="./index.html" class="navbar__link">Home</a></li>
-          <li class="navbar__item"><a href="./index.html#about" class="navbar__link">O nas</a></li>
-          <li class="navbar__item"><a href="./offer.html" class="navbar__link navbar__link--active" aria-current="page">Oferta</a></li>
-          <li class="navbar__item"><a href="./contact.html" class="navbar__link">Kontakt</a></li>
+          <li class="navbar__item"><a href="../index.html" class="navbar__link">Home</a></li>
+          <li class="navbar__item"><a href="../index.html#about" class="navbar__link">O nas</a></li>
+          <li class="navbar__item"><a href="/" class="navbar__link navbar__link--active" aria-current="page">Oferta</a></li>
+          <li class="navbar__item"><a href="../contact/index.html" class="navbar__link">Kontakt</a></li>
           <li class="navbar__item"><a href="tel:612-488-916" class="navbar__link"><img src="../assets/icons/phone.svg" alt="Ikonka słuchawki telefonicznej."> 612 488 916</a></li>
         </ul>
       </div> 
@@ -61,11 +61,11 @@
     <!-- Hero image -->
     <picture>
       <!-- Obrazek dla urządności o szerokości ekranu co najmniej 1200px -->
-      <source media="(min-width: 1200px)" srcset="./images/offer_image_hq.min.jpg">
+      <source media="(min-width: 1200px)" srcset="../assets/media/offer_image_hq.min.jpg">
       <!-- Obrazek dla urządności o szerokości ekranu co najmniej 768px -->
-      <source media="(min-width: 768px)" srcset="./images/offer_image_desktop.min.jpg">  
+      <source media="(min-width: 768px)" srcset="../assets/media/offer_image_desktop.min.jpg">  
       <!-- Obrazek domyślny, dla urządzeń o węższych ekranach -->
-      <img class="hero__image" src="./images/offer_image_mobile.min.jpg" alt="Drzewa rozsadzone w równych odstępach w parku miejskim."> 
+      <img class="hero__image" src="../assets/media/offer_image_mobile.min.jpg" alt="Drzewa rozsadzone w równych odstępach w parku miejskim."> 
     </picture> 
     <!-- Hero image -->
     <!-- Container -->
@@ -104,9 +104,9 @@
             <div class="services__card-header">
               <picture>
                 <!-- Fallback PNG icon for older browsers -->
-                <source type="image/png" srcset="./assets/icons/compass-solid.png"> 
+                <source type="image/png" srcset="../assets/icons/compass-solid.png"> 
                 <!-- SVG icon -->
-                <img class="services__card-icon" src="./assets/icons/compass-solid.svg" alt="" aria-hidden="true">
+                <img class="services__card-icon" src="../assets/icons/compass-solid.svg" alt="" aria-hidden="true">
               </picture>
             </div> 
             <!-- Card header -->
@@ -124,9 +124,9 @@
             <div class="services__card-header">
               <picture>
                 <!-- Fallback PNG icon for older browsers -->
-                <source type="image/png" srcset="./assets/icons/hand-sparkles-solid.png">
+                <source type="image/png" srcset="../assets/icons/hand-sparkles-solid.png">
                 <!-- SVG icon -->
-                <img class="services__card-icon" src="./assets/icons/hand-sparkles-solid.svg" alt="" aria-hidden="true">
+                <img class="services__card-icon" src="../assets/icons/hand-sparkles-solid.svg" alt="" aria-hidden="true">
               </picture>
             </div> 
             <!-- Card header -->
@@ -144,9 +144,9 @@
             <div class="services__card-header">
               <picture>
                 <!-- Fallback PNG icon for older browsers -->
-                <source type="image/png" srcset="./assets/icons/book-open-solid.png">
+                <source type="image/png" srcset="../assets/icons/book-open-solid.png">
                 <!-- SVG icon -->
-                <img class="services__card-icon" src="./assets/icons/book-open-solid.svg" alt="" aria-hidden="true">
+                <img class="services__card-icon" src="../assets/icons/book-open-solid.svg" alt="" aria-hidden="true">
               </picture>
             </div> 
             <!-- Card header -->
@@ -194,7 +194,7 @@
                   <div class="parks__card-info-icon" role="img" aria-label="Lokalizacja parku">
                     <picture>
                       <!-- Fallback PNG icon for older browsers -->
-                      <source type="image/png" srcset="./assets/icons/pin.png">
+                      <source type="image/png" srcset="../assets/icons/pin.png">
                       <!-- SVG icon -->
                       <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="hsl(144, 73%, 52%)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <path stroke="none" d="M0 0h24v24H0z" fill="none" />
@@ -213,7 +213,7 @@
                   <div class="parks__card-info-icon" role="img" aria-label="Powierzchnia parku">
                     <picture>
                       <!-- Fallback PNG icon for older browsers -->
-                      <source type="image/png" srcset="./assets/icons/square.png">
+                      <source type="image/png" srcset="../assets/icons/square.png">
                       <!-- SVG icon -->
                       <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="hsl(144, 73%, 52%)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-square">
                         <path stroke="none" d="M0 0h24v24H0z" fill="none" />
@@ -263,12 +263,12 @@
       <nav class="footer__nav">
         <!-- Logo -->
         <div class="footer__nav-logo">
-          <a href="/" class="footer__nav-logo-link">
+          <a href="../index.html" class="footer__nav-logo-link">
             <picture>
               <!-- Fallback PNG logo for older browsers -->
-              <source type="image/png" srcset="./assets/icons/tree-icon.png">
+              <source type="image/png" srcset="../assets/icons/tree-icon.png">
               <!-- SVG logo -->
-              <img src="./assets/icons/tree-icon.svg" class="footer__nav-logo-icon" alt="Czarne drzewo na białym tle - symbol firmy Forest.">  
+              <img src="../assets/icons/tree-icon.svg" class="footer__nav-logo-icon" alt="Czarne drzewo na białym tle - symbol firmy Forest.">  
             </picture>
             Forest
           </a> 
@@ -350,6 +350,6 @@
     <!-- Copyright -->
   </footer> 
   <!-- Footer -->
-  <script src="./js/main.min.js"></script>
+  <script src="../js/main.min.js"></script>
 </body>
 </html>
