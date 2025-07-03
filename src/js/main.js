@@ -110,8 +110,8 @@ const prepareDOMElements = () => {
   cookieAcceptButton = document.querySelector(".cookie-alert__button");
   // FAQ accordion
   faqAccordion = document.querySelector(".faq__accordion");
-  faqAccordionQuestions = faqAccordion.querySelectorAll(".faq__accordion-question");
-  faqAccordionAnswers = faqAccordion.querySelectorAll(".faq__accordion-answer");
+  faqAccordionQuestions = document.querySelectorAll(".faq__accordion-question");
+  faqAccordionAnswers = document.querySelectorAll(".faq__accordion-answer");
   // Grid container for park-related cards
   parkCardsGrid = document.querySelector(".parks__grid");
   // HTML template for a park-related card
