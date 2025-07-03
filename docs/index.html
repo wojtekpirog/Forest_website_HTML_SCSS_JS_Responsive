@@ -47,6 +47,7 @@
             <li class="navbar__item"><a href="#about" class="navbar__link">O nas</a></li>
             <li class="navbar__item"><a href="#offer" class="navbar__link">Oferta</a></li>
             <li class="navbar__item"><a href="./contact.html" class="navbar__link">Kontakt</a></li>
+            <li class="navbar__item"><a href="tel:612-488-916" class="navbar__link"><img src="./assets/icons/phone.svg" alt="Ikonka słuchawki telefonicznej."> 612 488 916</a></li>
           </ul>
         </div> 
         <!-- Links -->
@@ -92,7 +93,7 @@
     <section id="about" class="about page-section page-section--scrollspy">
       <!-- Section title -->
       <h2 class="section__title">O nas</h2>
-      <!-- Section title -->
+      <!-- Section divider -->
       <hr class="section__title-divider"> 
       <!-- Container -->
       <div class="container">
@@ -135,7 +136,7 @@
         <!-- About description -->
         <!-- Section title -->
         <h2 class="section__title">Statystyki</h2>
-        <!-- Section title -->
+        <!-- Section divider -->
         <hr class="section__title-divider"> 
         <!-- Section subtitle -->
         <p class="section__subtitle">Zobacz, dlaczego warto nam zaufać!</p>
@@ -222,7 +223,7 @@
     <section id="offer" class="offer page-section page-section--scrollspy">
       <!-- Section title -->
       <h2 class="section__title">Oferta</h2> 
-      <!-- Section title -->
+      <!-- Section divider -->
       <hr class="section__title-divider">
       <!-- Section subtitle -->
       <p class="section__subtitle">Wybierz jedną z naszych wspaniałych ofert!</p>
@@ -414,13 +415,95 @@
       <!-- Container -->
     </section> 
     <!-- Offer -->
+    <!-- FAQ -->
+    <section class="faq page-section">
+      <!-- Container -->
+      <div class="container">
+        <!-- Section title -->
+        <h2 class="section__title">Często zadawane pytania</h2>
+        <!-- Section divider -->
+        <hr class="section__title-divider">
+        <!-- Section subtitle -->
+        <p class="section__subtitle">Poznaj odpowiedzi na nurtujące cię pytania!</p> 
+        <!-- FAQ accordion -->
+        <div class="faq__accordion">
+          <!-- FAQ box -->
+          <div class="faq__accordion-box">
+            <!-- Question -->
+            <button type="button" id="questionOne" class="faq__accordion-question" aria-expanded="false" aria-controls="collapseOne">
+              Jak mogę zapisać się na wycieczkę edukacyjną?
+              <picture>
+                <!-- SVG icon -->
+                <source srcset="./assets/icons/chevron-down.svg">
+                <!-- Fallback PNG icon for older browsers which do not support SVG -->
+                <img src="./assets/icons/chevron-down.png" class="faq__accordion-icon" alt="" aria-hidden="true">
+              </picture>
+            </button> 
+            <!-- Answer -->
+            <div id="collapseOne" class="faq__accordion-answer" role="region" aria-labelledby="questionOne" aria-hidden="true">
+              <p class="faq__accordion-text">Możesz zarezerwować miejsce poprzez formularz kontaktowy na naszej stronie lub dzwoniąc bezpośrednio do naszego biura. Po wstępnej rezerwacji nasz przedstawiciel skontaktuje się z Tobą w celu potwierdzenia szczegółów i wyboru dogodnego terminu.</p>
+            </div>
+            <!-- Answer -->
+          </div>
+          <!-- FAQ box -->
+          <div class="faq__accordion-box">
+            <!-- Question -->
+            <button type="button" id="questionTwo" class="faq__accordion-question" aria-expanded="false" aria-controls="collapseTwo">
+              Czy oferujecie wycieczki dla szkół, firm lub grup zorganizowanych?
+              <picture>
+                <!-- SVG icon -->
+                <source srcset="./assets/icons/chevron-down.svg">
+                <!-- Fallback PNG icon for older browsers which do not support SVG -->
+                <img src="./assets/icons/chevron-down.png" class="faq__accordion-icon" alt="" aria-hidden="true">
+              </picture>
+            </button>
+            <!-- Answer -->
+            <div id="collapseTwo" class="faq__accordion-answer" role="region" aria-labelledby="questionTwo" aria-hidden="true">
+              <p class="faq__accordion-text">Tak, organizujemy wyprawy zarówno dla klientów indywidualnych, jak i grup zorganizowanych – w tym szkół, firm i instytucji publicznych. Każda wycieczka jest dostosowywana do potrzeb i wieku uczestników.</p>
+            </div>
+            <!-- Answer -->
+          </div>
+          <!-- FAQ box -->
+          <div class="faq__accordion-box">
+            <!-- Question -->
+            <button type="button" id="questionThree" class="faq__accordion-question" aria-expanded="false" aria-controls="collapseThree">
+              Gdzie mogę znaleźć katalog dostępnych wycieczek i lokalizacji?
+              <picture>
+                <!-- SVG icon -->
+                <source srcset="./assets/icons/chevron-down.svg">
+                <!-- Fallback PNG icon for older browsers which do not support SVG -->
+                <img src="./assets/icons/chevron-down.png" class="faq__accordion-icon" alt="" aria-hidden="true">
+              </picture>
+            </button>
+            <!-- Answer -->
+            <div id="collapseThree" class="faq__accordion-answer" role="region" aria-labelledby="questionThree" aria-hidden="true">
+              <p class="faq__accordion-text">Pełny katalog wypraw znajduje się w zakładce "Oferta". Możesz tam przeglądać wycieczki według kategorii (np. parki narodowe, pomniki przyrody, rezerwaty) lub lokalizacji geograficznej.</p>
+            </div>
+            <!-- Answer -->
+          </div>
+          <!-- FAQ box -->
+        </div> 
+        <!-- FAQ accordion -->
+        <!-- Go to all questions link -->
+        <div class="faq__link-box">
+          <a href="./faq.html" class="faq__link">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            Więcej pytań
+          </a>
+        </div> 
+        <!-- Go to all questions link --> 
+      </div> 
+      <!-- Container -->
+    </section> 
+    <!-- FAQ -->
     <!-- Testimonials -->
     <section class="testimonials page-section">
       <!-- Container -->
       <div class="container">
         <!-- Section title -->
         <h2 class="section__title">Opinie</h2>
-        <!-- Section title -->
+        <!-- Section divider -->
         <hr class="section__title-divider"> 
         <!-- Section subtitle -->
         <p class="section__subtitle">Nie musisz wierzyć nam na słowo. Zobacz, co o nas mówią!</p>
@@ -539,7 +622,7 @@
         <!-- Slider wrapper & buttons -->
         <!-- Section title -->
         <h2 class="section__title">Nasi partnerzy</h2>
-        <!-- Section title -->
+        <!-- Section divider -->
         <hr class="section__title-divider">  
         <!-- Section subtitle -->
         <p class="section__subtitle">Współpracujemy z firmami, które nas polecają</p> 

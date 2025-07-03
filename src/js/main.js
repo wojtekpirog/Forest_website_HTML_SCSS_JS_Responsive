@@ -1,7 +1,8 @@
 import setFooterYear from "./footer.js";
 import handleScrollSpy from "./homepage/scrollspy.js";
-import renderParkCards from "./offer/parks_grid.js";
 import runSlider from "./homepage/slider.js";
+import handleAccordionQuestions, { closeAccordionOutside } from "./homepage/accordion.js";
+import renderParkCards from "./offer/parks_grid.js";
 import renderMap from "./contact/map.js";
 import generateCookieAlert, { handleCookieAlert, checkCookie } from "./cookie_alert.js";
 import setInitialCharsCounter, { handleFormClear, handleFormSubmit, handleTextarea } from "./contact/form.js";
@@ -35,8 +36,12 @@ export let contactFormControls;
 export let popupContainer;
 export let closePopupButton;
 // Cookie alert
-export let cookieAlertBox;
 let cookieAcceptButton;
+export let cookieAlertBox;
+// FAQ accordion
+let faqAccordion;
+let faqAccordionQuestions;
+export let faqAccordionAnswers;
 // Grid container for park-related cards
 export let parkCardsGrid;
 // HTML template for a park-related card
@@ -44,7 +49,7 @@ export let parkCardTemplate;
 // Box for the map
 export let mapBox;
 // Current page:
-const currentPage = document.body.dataset.currentPage; // np. "home"
+const currentPage = document.body.dataset.currentPage;
 
 // Object containing actions to be executed depending on the page the script is running on
 const pageActions = {
@@ -103,12 +108,16 @@ const prepareDOMElements = () => {
   // Cookie alert
   cookieAlertBox = document.querySelector(".cookie-alert");
   cookieAcceptButton = document.querySelector(".cookie-alert__button");
+  // FAQ accordion
+  faqAccordion = document.querySelector(".faq__accordion");
+  faqAccordionQuestions = faqAccordion.querySelectorAll(".faq__accordion-question");
+  faqAccordionAnswers = faqAccordion.querySelectorAll(".faq__accordion-answer");
   // Grid container for park-related cards
   parkCardsGrid = document.querySelector(".parks__grid");
   // HTML template for a park-related card
   parkCardTemplate = document.querySelector(".parks__template"); 
-  // Box for the map
-  mapBox = document.querySelector(".map__box");
+  // Box for the map 
+  mapBox = document.querySelector(".map__box"); 
 }
 
 const addListeners = () => {
@@ -117,6 +126,11 @@ const addListeners = () => {
   overlay.addEventListener("click", closeNavbarMenu);
   navbarLinks.forEach((navbarLink) => navbarLink.addEventListener("click", closeNavbarMenu));
   
+  if (currentPage === "home") {
+    faqAccordionQuestions.forEach((question) => question.addEventListener("click", handleAccordionQuestions));
+    window.addEventListener("click", closeAccordionOutside);
+  }
+
   if (currentPage === "contact") {
     messageTextarea.addEventListener("input", handleTextarea); 
     resetButton.addEventListener("click", handleFormClear);

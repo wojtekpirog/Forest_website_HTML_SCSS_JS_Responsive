@@ -135,12 +135,20 @@
   }
 
   &__item {
-    width: 100%;
+    width: fit-content; // było: 100%
     text-align: center;
+
+    &:last-child > .navbar__link {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      font-family: "Primary_semibold", Arial, sans-serif;
+      color: colors.$mint;
+    }
   }
 
   &__link {
-    width: 100%;
+    // width: fit-content; // było: 100%
     display: inline-block;
     padding: 2em 1em;
     text-decoration: none;
