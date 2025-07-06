@@ -30,21 +30,7 @@
     }
   }
 
-  .testimonials {
-    &__slider {
-      &-button {
-        padding: .5em .6em .35em;
-
-        &--prev {
-          left: -35px;
-        }
-
-        &--next {
-          right: -35px;
-        }
-      }
-    }
-
+  .partners {
     &__companies {
       flex-direction: row;
       flex-wrap: wrap;
@@ -58,7 +44,7 @@
       }
 
       &:first-child {
-        & > .testimonials__company-logo {
+        & > .partners__company-logo {
           width: 60%;
         }
       }

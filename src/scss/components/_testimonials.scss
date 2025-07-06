@@ -85,28 +85,5 @@
         }
       }
     }
-  }
-
-  &__companies {
-    margin-bottom: 3em;
-    display: flex;
-    flex-direction: column;
-  }
-
-  &__company {
-    margin: 2em 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    &-logo {
-      width: 35%;
-    }
-
-    &:first-child {
-      & > .testimonials__company-logo {
-        width: 40%;
-      }
-    }
-  }  
+  } 
 }

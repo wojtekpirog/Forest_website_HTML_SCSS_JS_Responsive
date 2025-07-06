@@ -67,18 +67,12 @@
     }
   }
 
-  .testimonials {
-    &__slider {
-      &-card {
-        height: 480px;
-      }
-    }
-
+  .partners {
     &__company {
       flex-basis: 25%;
 
       &:first-child {
-        & > .testimonials__company-logo {
+        & > .partners__company-logo {
           width: 75%;
         }
       }
