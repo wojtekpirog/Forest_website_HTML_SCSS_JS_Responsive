@@ -43,6 +43,10 @@
   font-family: var(--primary-font);
   text-transform: uppercase;
   letter-spacing: 1px;
+
+  &--on-faq-page {
+    margin-top: 2.4em;
+  }
 }
 
 .section__title-divider {
