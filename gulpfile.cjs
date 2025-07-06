@@ -39,7 +39,7 @@ const paths = {
     dist: "./docs/assets/media"
   },
 
-  html: "./docs/*.html",
+  html: "./docs/**/*.html",
   dist: "./docs"
 };
 
