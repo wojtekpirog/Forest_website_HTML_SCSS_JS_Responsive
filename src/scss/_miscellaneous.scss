@@ -25,6 +25,10 @@
   margin: 0 auto;
 }
 
+.page-section {
+  margin: 6.6em 0;
+}
+
 .section__overlay {
   position: absolute;
   @include mixins.overlay;
@@ -38,7 +42,6 @@
 }
 
 .section__title {
-  margin-top: 3.2em;
   font-size: 3.2rem; 
   font-family: var(--primary-font);
   text-transform: uppercase;
