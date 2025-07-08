@@ -41,15 +41,16 @@
   text-align: center;
 }
 
+.section__title,
+.slider-hint {
+  line-height: 1.4;
+}
+
 .section__title {
   font-size: 3.2rem; 
   font-family: var(--primary-font);
   text-transform: uppercase;
   letter-spacing: 1px;
-
-  &--on-faq-page {
-    margin-top: 2.4em;
-  }
 }
 
 .section__title-divider {
@@ -61,7 +62,7 @@
 .section__subtitle {
   margin-bottom: 3em;
   font-size: 1.6rem;
-  line-height: 1.5;
+  line-height: 1.8;
 }
 
 .no-scroll {

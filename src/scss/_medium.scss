@@ -28,6 +28,12 @@
     }
   }
 
+  .services {
+    &__grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
   .faq-listing {
       &__question {
       text-align: left;

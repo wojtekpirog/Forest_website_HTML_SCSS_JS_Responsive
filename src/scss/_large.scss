@@ -53,6 +53,12 @@
     }
   }
 
+  .services {
+    &__grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
   .offer {
     &__card-group {
       flex-direction: row;

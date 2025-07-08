@@ -54,18 +54,6 @@
     }
   }
 
-  .services {
-    &__cards {
-      flex-direction: row;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-
-    &__card {
-      width: 300px;
-    }
-  }
-
   .parks {
     &__card-image {
       height: 300px;
