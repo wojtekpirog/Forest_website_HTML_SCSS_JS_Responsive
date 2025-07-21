@@ -57,6 +57,14 @@
     &__grid {
       grid-template-columns: repeat(3, 1fr);
     }
+
+    &__card {
+      grid-column: auto;
+
+      &:last-child {
+        grid-column: 3 / -1;
+      }
+    }
   }
 
   .offer {

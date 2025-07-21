@@ -30,7 +30,15 @@
 
   .services {
     &__grid {
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    &__card {
+      grid-column: span 2;
+
+      &:last-child {
+        grid-column: 2 / 4;
+      }
     }
   }
 

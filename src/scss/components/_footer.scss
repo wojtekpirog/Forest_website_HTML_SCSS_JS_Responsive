@@ -2,15 +2,15 @@
 @use "../utils/mixins" as mixins;
 
 .footer {
+  padding-top: 6.6em;
   background-color: colors.$lightgray;
   color: colors.$darkgray;
 
   &__nav {
+    margin-bottom: 2em;
     display: flex;
     flex-direction: column;
-    flex-wrap: wrap;
     gap: 2em;
-    padding: 3em;
 
     &-logo {
       &-link {
@@ -23,35 +23,17 @@
       }
     }
 
-    &-section {
-      &-title, &-item {
-        margin-bottom: 1em;
-      }
+    &-list {
+      list-style-type: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: .5em;
+    }
 
-      &-title {
-        font-size: 2.2rem;
-        color: colors.$black;
-      }
-
-      &-list {
-        list-style-type: none;
-      }
-
-      &-item:last-child {
-        margin-bottom: 0;
-      }
-
-      &-link {
-        text-decoration: none;
-        color: colors.$darkgray;
-        font-size: 1.4rem;
-      }
-
-      &:last-child {
-        .footer__nav-section-item:last-child {
-          margin-bottom: 1em;
-        }
-      }
+    &-link {
+      text-decoration: none;
+      display: inline-block;
+      padding: 1em;
     }
   }
 
