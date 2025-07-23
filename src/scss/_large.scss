@@ -141,6 +141,7 @@
   .footer {
     &__nav {
       flex-direction: row;
+      align-items: center;
 
       &-logo {
         flex-grow: 1;

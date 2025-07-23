@@ -177,92 +177,84 @@
   <!-- Footer -->
   <footer class="footer">
     <!-- Container -->
-    <div class="container">
+    <div class="container footer__container">
       <!-- Navigation -->
-      <nav class="footer__nav">
+      <nav class="footer__nav" aria-label="Główna nawigacja wewnątrz stopki.">
         <!-- Logo -->
         <div class="footer__nav-logo">
-          <a href="../index.html" class="footer__nav-logo-link">
+          <a href="/" class="footer__nav-logo-link">
             <picture>
               <!-- Fallback PNG logo for older browsers -->
-              <source type="image/png" srcset="../assets/icons/tree-icon.png">
+              <source type="image/svg+xml" srcset="../assets/icons/tree-icon.svg">
               <!-- SVG logo -->
-              <img src="../assets/icons/tree-icon.svg" class="footer__nav-logo-icon" alt="Czarne drzewo na białym tle - symbol firmy Forest."> 
+              <img src="../assets/icons/tree-icon.png" class="footer__nav-logo-icon" alt="Czarne drzewo na białym tle - symbol firmy Forest."> 
             </picture>
             Forest
           </a>
         </div>
         <!-- Logo -->
-        <!-- Menu -->
-        <div class="footer__nav-section">
-          <h4 class="footer__nav-section-title">O nas</h4>
-          <!-- Links -->
-          <ul class="footer__nav-section-list">
-            <!-- Link -->
-            <li class="footer__nav-section-item">
-              <a href="#" class="footer__nav-section-link">Historia</a>
+        <!-- Links -->
+        <div class="footer__nav-links">
+          <!-- List -->
+          <ul class="footer__nav-list">
+            <li class="footer__nav-item">
+              <a href="/" class="footer__nav-link">Home</a>
             </li>
-            <!-- Link -->
-            <!-- Link -->
-            <li class="footer__nav-section-item">
-              <a href="#" class="footer__nav-section-link">Parki</a>
+            <li class="footer__nav-item">
+              <a href="../index.html#offer" class="footer__nav-link">Oferta</a>
             </li>
-            <!-- Link -->
-            <!-- Link -->
-            <li class="footer__nav-section-item">
-              <a href="#" class="footer__nav-section-link">Opinie</a>
+            <li class="footer__nav-item">
+              <a href="../index.html#faq" class="footer__nav-link footer__nav-link--active" aria-current="page">FAQ</a>
             </li>
-            <!-- Link -->
-          </ul> 
-          <!-- Links -->
-        </div> 
-        <!-- Menu -->
-        <!-- Menu -->
-        <div class="footer__nav-section">
-          <h4 class="footer__nav-section-title">Nasza firma</h4>
-          <!-- Links -->
-          <ul class="footer__nav-section-list">
-            <!-- Link -->
-            <li class="footer__nav-section-item">
-              <a href="#" class="footer__nav-section-link">Praca</a>
+            <li class="footer__nav-item">
+              <a href="../contact/index.html" class="footer__nav-link">Kontakt</a>
             </li>
-            <!-- Link -->
-            <!-- Link -->
-            <li class="footer__nav-section-item">
-              <a href="#" class="footer__nav-section-link">Kadry</a>
+            <li class="footer__nav-item">
+              <a href="../privacy/index.html" class="footer__nav-link">Polityka prywatności</a>
             </li>
-            <!-- Link -->
-            <!-- Link -->
-            <li class="footer__nav-section-item">
-              <a href="#" class="footer__nav-section-link">Zarząd</a>
-            </li>
-            <!-- Link -->
-          </ul> 
-          <!-- Links -->
-        </div> 
-        <!-- Menu -->
-        <!-- Menu -->
-        <div class="footer__nav-section">
-          <h4 class="footer__nav-section-title">Dokumenty</h4>
-          <!-- Links -->
-          <ul class="footer__nav-section-list">
-            <!-- Link -->
-            <li class="footer__nav-section-item">
-              <a href="#" class="footer__nav-section-link">Wnioski</a>
-            </li>
-            <!-- Link -->
-            <!-- Link -->
-            <li class="footer__nav-section-item">
-              <a href="#" class="footer__nav-section-link">Rezerwacje</a>
-            </li>
-            <!-- Link -->
-          </ul> 
-          <!-- Links -->
-        </div> 
-        <!-- Menu -->
-      </nav> 
-      <!-- Navigation -->
-    </div>   
+          </ul>
+          <!-- List -->
+        </div>
+        <!-- Links -->
+      </nav>
+      <!-- Footer nav -->
+      <!-- Socials -->
+      <nav class="footer__socials" aria-label="Łącza do profili Forest w mediach społecznościowych.">
+        <!-- Heading -->
+        <h3 class="footer__title">Znajdź nas w mediach społecznościowych</h3>
+        <!-- Links -->
+        <ul class="footer__socials-list">
+          <!-- Link -->
+          <li class="footer__socials-item">
+            <a href="#" class="footer__socials-link">
+              <img src="../assets/icons/facebook.svg" alt="Odwiedź profil Forest na Facebooku."> 
+            </a>
+          </li>
+          <!-- Link -->
+          <li class="footer__socials-item">
+            <a href="#" class="footer__socials-link">
+              <img src="../assets/icons/instagram.svg" alt="Odwiedź profil Forest na Instagramie.">
+            </a>
+          </li>
+          <!-- Link -->
+        </ul> 
+        <!-- Links -->
+      </nav>
+      <!-- Socials -->
+      <!-- Address -->
+      <section class="footer__address">
+        <!-- Heading -->
+        <h3 class="footer__title">Skontaktuj się z nami</h3>
+        <!-- Address -->
+        <div class="footer__details">
+          <p class="footer__details-address">Forest Group</p>
+          <p class="footer__details-address">ul. Jasnogórska 2, 31-358 Kraków</p>
+          <p class="footer__details-address">+48 612 488 916</p>
+        </div>
+        <!-- Address -->
+      </section> 
+      <!-- Address -->
+    </div>
     <!-- Container -->
     <!-- Copyright -->
     <p class="footer__copyright"><sup>&copy;</sup><span class="footer__copyright-year"></span> Forest Group Company Ltd.</p>

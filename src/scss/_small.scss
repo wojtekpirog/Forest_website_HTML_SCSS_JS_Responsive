@@ -77,4 +77,15 @@
       font-size: 1.8rem;
     }
   }
+
+  .footer {
+    &__title {
+      font-size: 2.2rem;
+    }
+
+    &__nav-list {
+      flex-direction: row;
+      gap: 1.5em;
+    }
+  }
 }

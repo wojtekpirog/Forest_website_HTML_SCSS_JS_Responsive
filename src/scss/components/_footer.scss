@@ -2,15 +2,18 @@
 @use "../utils/mixins" as mixins;
 
 .footer {
-  padding-top: 6.6em;
   background-color: colors.$lightgray;
   color: colors.$darkgray;
+
+  &__container {
+    padding: 6.6em 0 3em;
+  }
 
   &__nav {
     margin-bottom: 2em;
     display: flex;
     flex-direction: column;
-    gap: 2em;
+    gap: 1em;
 
     &-logo {
       &-link {
@@ -26,14 +29,57 @@
     &-list {
       list-style-type: none;
       display: flex;
+      flex-direction: column;
       flex-wrap: wrap;
       gap: .5em;
     }
 
     &-link {
       text-decoration: none;
+      display: block;
+      padding: 1em 0;
+      color: colors.$darkgray;
+      transition: color 200ms linear;
+
+      &--active {
+        color: colors.$black;
+        font-family: var(--primary-font-semibold);
+      }
+
+      @media (hover: hover) {
+        &:hover {
+          color: colors.$black;
+        }
+      }
+    }
+  }
+
+  &__title {
+    margin: 1em 0 .5em;
+    font-size: 2.2rem;
+  }
+
+  &__socials {
+    &-list {
+      list-style-type: none;
+      display: flex;
+      gap: 1.5em;
+    }
+
+    &-link {
+      height: calc(40px + 1em);
       display: inline-block;
-      padding: 1em;
+      padding: .5em;
+
+      & > img {
+        height: 40px;
+      }
+    }
+  }
+
+  &__details {
+    &-address {
+      padding: .5em 0;
     }
   }
 
