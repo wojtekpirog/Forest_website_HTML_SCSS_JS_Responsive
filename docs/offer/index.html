@@ -19,9 +19,9 @@
       <!-- Logo -->
       <a href="/" class="navbar__logo" aria-label="Forest - logo firmy">
         <picture>
-          <!-- Fallback PNG logo for older browsers -->
-          <source type="image/svg+xml" srcset="../assets/icons/tree-icon.svg">
           <!-- SVG logo -->
+          <source type="image/svg+xml" srcset="../assets/icons/tree-icon.svg">
+          <!-- Fallback PNG logo for older browsers -->
           <img src="../assets/icons/tree-icon.png" class="navbar__logo-icon" alt="Czarne drzewo na białym tle - symbol firmy Forest." aria-hidden="true"> 
         </picture>
         Forest
@@ -40,13 +40,28 @@
       <!-- Hamburger -->
       <!-- Links -->
       <div class="navbar__links" id="navbarLinks">
+        <!-- List -->
         <ul class="navbar__list">
-          <li class="navbar__item"><a href="../index.html#about" class="navbar__link">O nas</a></li>
-          <li class="navbar__item"><a href="../index.html#offer" class="navbar__link navbar__link--active" aria-current="page">Oferta</a></li>
-          <li class="navbar__item"><a href="../index.html#faq" class="navbar__link">FAQ</a></li>
-          <li class="navbar__item"><a href="../contact/index.html" class="navbar__link">Kontakt</a></li>
-          <li class="navbar__item"><a href="tel:612-488-916" class="navbar__link"><img src="../assets/icons/phone.svg" alt="Ikonka słuchawki telefonicznej."> 612 488 916</a></li>
+          <li class="navbar__item">
+            <a href="../index.html#about" class="navbar__link">O nas</a>
+          </li>
+          <li class="navbar__item">
+            <a href="../index.html#offer" class="navbar__link navbar__link--active" aria-current="page">Oferta</a>
+          </li>
+          <li class="navbar__item">
+            <a href="../index.html#faq" class="navbar__link">FAQ</a>
+          </li>
+          <li class="navbar__item">
+            <a href="../contact/index.html" class="navbar__link">Kontakt</a>
+          </li>
+          <li class="navbar__item">
+            <a href="tel:+48123456789" class="navbar__link" aria-label="Zadzwoń pod numer 123 456 789.">
+              <img src="../assets/icons/phone.svg" alt="" aria-hidden="true">
+              123 456 789
+            </a>
+          </li>
         </ul>
+        <!-- List -->
       </div> 
       <!-- Links -->
     </nav> 
@@ -187,9 +202,9 @@
         <div class="footer__nav-logo">
           <a href="/" class="footer__nav-logo-link">
             <picture>
-              <!-- Fallback PNG logo for older browsers -->
-              <source type="image/svg+xml" srcset="../assets/icons/tree-icon.svg">
               <!-- SVG logo -->
+              <source type="image/svg+xml" srcset="../assets/icons/tree-icon.svg">
+              <!-- Fallback PNG logo for older browsers -->
               <img src="../assets/icons/tree-icon.png" class="footer__nav-logo-icon" alt="Czarne drzewo na białym tle - symbol firmy Forest."> 
             </picture>
             Forest
@@ -229,17 +244,48 @@
         <ul class="footer__socials-list">
           <!-- Link -->
           <li class="footer__socials-item">
-            <a href="#" class="footer__socials-link">
-              <img src="../assets/icons/facebook.svg" alt="Odwiedź profil Forest na Facebooku."> 
+            <a href="#" class="footer__socials-link" target="_blank" rel="noopener">
+              <picture>
+                <!-- SVG icon -->
+                <source type="image/svg+xml" srcset="../assets/icons/facebook.svg">
+                <!-- PNG fallback for older browsers -->
+                <img src="../assets/icons/facebook.png" alt="Odwiedź profil Forest Group na platformie Facebook."> 
+              </picture>
             </a>
           </li>
           <!-- Link -->
           <li class="footer__socials-item">
-            <a href="#" class="footer__socials-link">
-              <img src="../assets/icons/instagram.svg" alt="Odwiedź profil Forest na Instagramie.">
+            <a href="#" class="footer__socials-link" target="_blank" rel="noopener">
+              <picture>
+                <!-- SVG icon -->
+                <source type="image/svg+xml" srcset="../assets/icons/instagram.svg">
+                <!-- PNG fallback for older browsers -->
+                <img src="../assets/icons/instagram.png" alt="Odwiedź profil Forest Group na platformie Instagram.">
+              </picture>
             </a>
           </li>
           <!-- Link -->
+          <li class="footer__socials-item">
+            <a href="#" class="footer__socials-link" target="_blank" rel="noopener">
+              <picture>
+                <!-- SVG icon -->
+                <source type="image/svg+xml" srcset="../assets/icons/x-twitter.svg">
+                <!-- PNG fallback for older browsers -->
+                <img src="../assets/icons/x-twitter.png" alt="Odwiedź profil Forest Group na platformie Eks, dawnym Twitterze.">
+              </picture>
+            </a>
+          </li>
+          <!-- Link -->
+          <li class="footer__socials-item">
+            <a href="#" class="footer__socials-link" target="_blank" rel="noopener">
+              <picture>
+                <!-- SVG icon -->
+                <source type="image/svg+xml" srcset="../assets/icons/pinterest.svg">
+                <!-- PNG fallback for older browsers -->
+                <img src="../assets/icons/pinterest.png" alt="Odwiedź profil Forest Group na platformie Pinterest.">
+              </picture>
+            </a>
+          </li>
         </ul> 
         <!-- Links -->
       </nav>
