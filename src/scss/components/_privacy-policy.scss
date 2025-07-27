@@ -1,0 +1,42 @@
+@use "../utils/colors" as colors;
+
+.privacy-policy {
+  &__section {
+    margin: 3em 0;
+  }
+
+  &__heading {
+    line-height: 1.25;
+  }
+
+  &__update {
+    font-family: var(--primary-font-medium);
+  }
+
+  &__update,
+  &__intro,
+  &__text,
+  &__list {
+    margin-top: 1em;
+    line-height: 1.6;
+  }
+
+  &__intro,
+  &__text {
+    color: colors.$darkgray;
+  }
+
+  &__list {
+    margin-left: 1em;
+    list-style-position: inside;
+    color: colors.$darkgray;
+
+    &-item {
+      margin-bottom: .25em;
+    }
+  }
+
+  &__link {
+    color: colors.$darkmint;
+  }
+}
