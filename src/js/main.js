@@ -1,5 +1,6 @@
 import setFooterYear from "./footer.js";
 import handleScrollSpy from "./homepage/scrollspy.js";
+import handleCounterAnimation from "./homepage/counter.js";
 import runSlider from "./homepage/slider.js";
 import handleAccordionQuestions, { closeAccordionOutside } from "./homepage/accordion.js";
 import renderParkCards from "./offer/parks_grid.js";
@@ -8,8 +9,12 @@ import generateCookieAlert, { handleCookieAlert, checkCookie } from "./cookie_al
 import setInitialCharsCounter, { handleFormClear, handleFormSubmit, handleTextarea } from "./contact/form.js";
 import toggleNavbarMenu, { closeNavbarMenu } from "./navbar.js"; 
 
-// All sections on the page that need to be spied on when scrolling
+// All scroll-spy sections on the homepage that need to be spied on when scrolling
 export let scrollSpySections;
+// Section with stats on the homepage (has to be spied on when scrolling)
+export let statsSection;
+// All counters in the stats section
+export let counters;
 // Navbar
 export let navbar;
 export let toggleButton;
@@ -49,12 +54,13 @@ export let parkCardTemplate;
 // Box for the map
 export let mapBox;
 // Current page:
-const currentPage = document.body.dataset.currentPage;
+const currentPage = document.body.dataset.currentPage; 
 
 // Object containing actions to be executed depending on the page the script is running on
 const pageActions = {
   home: () => { // Action when `currentPage === "home"`
     handleScrollSpy();
+    handleCounterAnimation();
     runSlider();
   },
   offer: () => { // Action when `currentPage === "offer"`
@@ -79,6 +85,13 @@ const main = () => {
 }
 
 const prepareDOMElements = () => {
+  // All scroll-spy sections on the homepage that need to be spied on when scrolling
+  scrollSpySections = document.querySelectorAll(".page-section--scrollspy");
+  // Section with stats on the homepage (has to be spied on when scrolling)
+  statsSection = document.querySelector(".stats");
+  // All counters in the stats section
+  counters = document.querySelectorAll(".stats__item-number > span");
+  // Navbar
   navbar = document.querySelector(".navbar");
   toggleButton = document.querySelector(".navbar__burger");
   navbarLinksContainer = document.querySelector(".navbar__links");
@@ -98,8 +111,6 @@ const prepareDOMElements = () => {
   // Contact form buttons
   resetButton = document.querySelector(".contact__form-button--reset");
   submitButton = document.querySelector(".contact__form-button--submit");
-  // All sections on the page
-  scrollSpySections = document.querySelectorAll(".page-section--scrollspy");
   // All input elements inside the contact form
   contactFormControls = document.querySelectorAll(".contact__form-input");
   // Popup container
@@ -117,7 +128,7 @@ const prepareDOMElements = () => {
   // HTML template for a park-related card
   parkCardTemplate = document.querySelector(".parks__template"); 
   // Box for the map 
-  mapBox = document.querySelector(".map__box"); 
+  mapBox = document.querySelector(".map__box");
 }
 
 const addListeners = () => {

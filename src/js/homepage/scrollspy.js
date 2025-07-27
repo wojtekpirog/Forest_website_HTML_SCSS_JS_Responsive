@@ -5,6 +5,7 @@ const options = {
 }
 
 const handleScrollSpy = () => {
+  // Create an IntersectionObserver instance
   const observer = new IntersectionObserver((entries) => {
     // Loop through each entry
     for (const entry of entries) {
