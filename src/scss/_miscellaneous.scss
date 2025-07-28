@@ -80,3 +80,34 @@
   overflow: hidden;
   border: 0;
 }
+
+.scroll-to-top-button {
+  @include mixins.buttonAndLinkStyles(colors.$mint, colors.$black);
+  position: fixed;
+  bottom: 50px;
+  right: 50px;
+  padding: 1em;
+  display: flex;
+  align-items: center;
+  gap: .5em;
+  border-color: colors.$darkmint;
+  font-size: 1.6rem;
+  font-family: var(--primary-font-medium);
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: right 200ms ease-in-out;
+  z-index: 11;
+
+  &__icon {
+    width: 30px;
+  }
+
+  &--hidden {
+    right: -150px;
+  }
+
+  &:focus {
+    outline: none;
+    border-color: colors.$black;
+  }
+}

@@ -2,6 +2,7 @@ import setFooterYear from "./footer.js";
 import handleScrollSpy from "./homepage/scrollspy.js";
 import handleCounterAnimation from "./homepage/counter.js";
 import runSlider from "./homepage/slider.js";
+import handleScrollToTop, { scrollToTop } from "./homepage/scroll-to-top-button.js"; 
 import handleAccordionQuestions, { closeAccordionOutside } from "./homepage/accordion.js";
 import renderParkCards from "./offer/parks_grid.js";
 import renderMap from "./contact/map.js";
@@ -15,6 +16,8 @@ export let scrollSpySections;
 export let statsSection;
 // All counters in the stats section
 export let counters;
+// Scroll-to-the-top button
+export let scrollToTopButton;
 // Navbar
 export let navbar;
 export let toggleButton;
@@ -91,6 +94,8 @@ const prepareDOMElements = () => {
   statsSection = document.querySelector(".stats");
   // All counters in the stats section
   counters = document.querySelectorAll(".stats__item-number > span");
+  // Scroll-to-the-top button
+  scrollToTopButton = document.querySelector(".scroll-to-top-button");
   // Navbar
   navbar = document.querySelector(".navbar");
   toggleButton = document.querySelector(".navbar__burger");
@@ -128,7 +133,7 @@ const prepareDOMElements = () => {
   // HTML template for a park-related card
   parkCardTemplate = document.querySelector(".parks__template"); 
   // Box for the map 
-  mapBox = document.querySelector(".map__box");
+  mapBox = document.querySelector(".map__box"); 
 }
 
 const addListeners = () => {
@@ -139,7 +144,9 @@ const addListeners = () => {
   
   if (currentPage === "home") {
     faqAccordionQuestions.forEach((question) => question.addEventListener("click", handleAccordionQuestions));
+    scrollToTopButton.addEventListener("click", scrollToTop);
     window.addEventListener("click", closeAccordionOutside);
+    window.addEventListener("scroll", handleScrollToTop);
   }
 
   if (currentPage === "contact") {
