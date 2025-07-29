@@ -65,19 +65,41 @@
 
   &__socials {
     &-list {
+      position: relative;
       list-style-type: none;
       display: flex;
       gap: 1em;
     }
 
     &-link {
+      position: relative;
       height: calc(40px + 1em);
       display: inline-block;
       padding: .5em;
+      text-decoration: none;
 
       & img {
         width: 40px;
         height: 40px;
+      }
+    }
+
+    &-tooltip {
+      position: absolute;
+      display: inline-block;
+      visibility: hidden;
+      opacity: 0;
+      background-color: colors.$darkgray;
+      color: colors.$light;
+      padding: .5em 1em;
+      border-radius: 4px;
+      pointer-events: none;
+      transition: opacity 200ms ease-in-out;
+
+      &--visible {
+        visibility: visible;
+        opacity: 1;
+        pointer-events: auto;
       }
     }
   }

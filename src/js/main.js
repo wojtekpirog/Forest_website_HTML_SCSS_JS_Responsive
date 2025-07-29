@@ -1,4 +1,3 @@
-import setFooterYear from "./footer.js";
 import handleScrollSpy from "./homepage/scrollspy.js";
 import handleCounterAnimation from "./homepage/counter.js";
 import runSlider from "./homepage/slider.js";
@@ -9,6 +8,8 @@ import renderMap from "./contact/map.js";
 import generateCookieAlert, { handleCookieAlert, checkCookie } from "./cookie_alert.js";
 import setInitialCharsCounter, { handleFormClear, handleFormSubmit, handleTextarea } from "./contact/form.js";
 import toggleNavbarMenu, { closeNavbarMenu } from "./navbar.js"; 
+import { showTooltip, hideTooltip } from "./tooltip.js";
+import setFooterYear from "./footer.js"; 
 
 // All scroll-spy sections on the homepage that need to be spied on when scrolling
 export let scrollSpySections;
@@ -36,8 +37,10 @@ export let contactSelect;
 export let messageTextarea;
 // Chars counter
 export let charsCounter;
-// Footer
+// Footer year
 export let footerYear;
+// Social links inside the footer
+let footerSocialLinks;
 // All input elements inside the contact form
 export let contactFormControls;
 // Popup
@@ -103,8 +106,10 @@ const prepareDOMElements = () => {
   navbarLinks = document.querySelectorAll(".navbar__link");
   // Overlay
   overlay = document.querySelector(".navbar__overlay");
-  // Footer
+  // Footer year
   footerYear = document.querySelector(".footer__copyright-year");
+  // Social links inside the footer
+  footerSocialLinks = document.querySelectorAll(".footer__socials-link");
   // Contact form controls
   firstNameInput = document.querySelector("#first-name");
   lastNameInput = document.querySelector("#last-name");
@@ -141,8 +146,12 @@ const addListeners = () => {
   toggleButton.addEventListener("click", toggleNavbarMenu);
   overlay.addEventListener("click", closeNavbarMenu);
   navbarLinks.forEach((navbarLink) => navbarLink.addEventListener("click", closeNavbarMenu));
-  
+
   if (currentPage === "home") {
+    footerSocialLinks.forEach((link) => link.addEventListener("mouseover", showTooltip));
+    footerSocialLinks.forEach((link) => link.addEventListener("focus", showTooltip));
+    footerSocialLinks.forEach((link) => link.addEventListener("mouseout", hideTooltip));
+    footerSocialLinks.forEach((link) => link.addEventListener("blur", hideTooltip));
     faqAccordionQuestions.forEach((question) => question.addEventListener("click", handleAccordionQuestions));
     scrollToTopButton.addEventListener("click", scrollToTop);
     window.addEventListener("click", closeAccordionOutside);
