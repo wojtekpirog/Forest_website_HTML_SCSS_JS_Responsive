@@ -151,7 +151,7 @@ const prepareDOMElements = () => {
 
 const addListeners = () => {
   cookieAcceptButton.addEventListener("click", handleCookieAlert);
-  toggleButton.addEventListener("click", toggleNavbarMenu);
+  toggleButton.addEventListener("click", toggleNavbarMenu); 
   overlay.addEventListener("click", closeNavbarMenu);
   navbarLinks.forEach((navbarLink) => navbarLink.addEventListener("click", closeNavbarMenu));
 

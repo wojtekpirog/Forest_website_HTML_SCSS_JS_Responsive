@@ -10,7 +10,7 @@ import {
 } from "../main.js";
 
 const setInitialCharsCounter = () => {
-  charsCounter.innerHTML = `<span>${messageTextarea.value.length}</span>/${messageTextarea.maxLength}`;
+  charsCounter.innerHTML = `<p class="contact__form-counter">0/${messageTextarea.maxLength}</p>`;
 }
 
 export const handleFormClear = (event) => {
@@ -76,14 +76,12 @@ const checkSelect = (contactSelect) => {
 }
 
 export const handleTextarea = () => {
-  charsCounter.innerHTML = `<p class="contact__form-counter"><span>${messageTextarea.value.length}</span>/${messageTextarea.maxLength}</p>`;
-
-  if (messageTextarea.value.length === messageTextarea.maxLength) {
-    messageTextarea.value = messageTextarea.value.slice(0, messageTextarea.maxLength + 1);
-    showError(messageTextarea, `Osiągnięto limit ${messageTextarea.maxLength} znaków.`);
-  } else {
-    clearError(messageTextarea);
-  }
+  // Update chars counter every time the textarea's value changes
+  charsCounter.innerHTML = `<p class="contact__form-counter">${messageTextarea.value.length}/${messageTextarea.maxLength}</p>`;
+  // If the textarea's value exceeds the maximum length, show an error
+  messageTextarea.value.length > messageTextarea.maxLength
+    ? showError(messageTextarea, `Osiągnięto limit ${messageTextarea.maxLength} znaków.`)
+    : clearError(messageTextarea);
 }
 
 const showError = (input, message) => {
