@@ -41,8 +41,12 @@ export let charsCounter;
 export let footerYear;
 // Social links inside the footer
 let footerSocialLinks;
+// Contact form
+export let contactForm;
 // All input elements inside the contact form
 export let contactFormControls;
+// All boxes for error messages inside the contact form
+export let contactFormErrors;
 // Popup
 export let popupContainer;
 export let closePopupButton;
@@ -121,8 +125,12 @@ const prepareDOMElements = () => {
   // Contact form buttons
   resetButton = document.querySelector(".contact__form-button--reset");
   submitButton = document.querySelector(".contact__form-button--submit");
+  // Contact form
+  contactForm = document.querySelector(".contact__form");
   // All input elements inside the contact form
   contactFormControls = document.querySelectorAll(".contact__form-input");
+  // All boxes for error messages inside the contact form
+  contactFormErrors = document.querySelectorAll(".contact__form-error");
   // Popup container
   popupContainer = document.querySelector(".form-popup__container");
   closePopupButton = document.querySelector(".form-popup__close-button");
@@ -159,9 +167,9 @@ const addListeners = () => {
   }
 
   if (currentPage === "contact") {
-    messageTextarea.addEventListener("input", handleTextarea); 
+    messageTextarea.addEventListener("input", handleTextarea);
     resetButton.addEventListener("click", handleFormClear);
-    submitButton.addEventListener("click", handleFormSubmit); 
+    submitButton.addEventListener("click", handleFormSubmit);
   }
 
   window.addEventListener("resize", () => window.innerWidth >= 768 ? closeNavbarMenu() : false);

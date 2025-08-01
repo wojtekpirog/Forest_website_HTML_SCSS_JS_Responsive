@@ -6,8 +6,8 @@ import {
   messageTextarea,
   charsCounter,
   contactFormControls,
+  contactFormErrors
 } from "../main.js";
-import handlePopup from "./popup.js";
 
 const setInitialCharsCounter = () => {
   charsCounter.innerHTML = `<span>${messageTextarea.value.length}</span>/${messageTextarea.maxLength}`;
@@ -15,47 +15,64 @@ const setInitialCharsCounter = () => {
 
 export const handleFormClear = (event) => {
   event.preventDefault();
-
+  // Reset form controls & clear error boxes
   contactFormControls.forEach((input) => {
     input.value = "";
     clearError(input);
   });
+  // Reset chars counter
+  setInitialCharsCounter();
 }
 
-export const handleFormSubmit = (event) => {
+export async function handleFormSubmit(event) {
+  // Prevent page reload
   event.preventDefault();
-
-  checkForm([firstNameInput, lastNameInput, emailAddressInput, messageTextarea]);
-  checkEmailAddress(emailAddressInput);
-  checkSelect(contactSelect);
-  // Form submit simulation
-  setTimeout(handlePopup, 1000);
+  // Validate form
+  const isValid = validateForm();
+  // If the form is not valid, return
+  if (!isValid) return;
+  // Print the result of the form validation
+  console.log("Form is valid");
 }
 
-const checkForm = (inputs) => {
+const validateForm = () => {
+  // This variable holds all form controls, except the select dropdown
+  const formControls = [firstNameInput, lastNameInput, emailAddressInput, messageTextarea];
+  // Check if all required controls are filled
+  checkRequiredControls(formControls);
+  // Check if the email address is valid
+  checkEmailAddress(emailAddressInput);
+  // Check if the select dropdown has a value selected
+  checkSelect(contactSelect);
+  // Get all error boxes
+  const errorBoxesArray = [...contactFormErrors];
+  // Get the number of errors and save it in a constant
+  const errorCount = errorBoxesArray.filter((errorBox) => errorBox.textContent !== "").length;
+  // If there are no errors, return true, otherwise return false
+  return errorCount === 0;
+}
+
+const checkRequiredControls = (inputs) => {
   inputs.forEach((input) => {
-    input.value === "" ? showError(input, `Pole "${input.previousElementSibling.textContent.slice(0, -2)}" nie może być puste`) : clearError(input);
+    input.value === "" 
+      ? showError(input, "Pole jest wymagane") 
+      : clearError(input);
   });
 }
 
 const checkEmailAddress = (emailAddressInput) => {
+  // Regular expression (regExp) for email
   const regExp = /^[\w\.-]+@[a-zA-Z\d\.-]+\.[a-zA-Z]{2,}$/;
-  
-  if (emailAddressInput.value === "") {
-    showError(emailAddressInput, 'Pole "Adres e-mail" nie może być puste');
-  } else if (!regExp.test(emailAddressInput.value)) {
-    showError(emailAddressInput, 'Adres e-mail jest nieprawidłowy');
-  } else {
-    clearError(emailAddressInput);
-  }
+  // Check if the email address matches its regular expression
+  !regExp.test(emailAddressInput.value)
+    ? showError(emailAddressInput, "Adres e-mail jest nieprawidłowy")
+    : clearError(emailAddressInput);
 }
 
 const checkSelect = (contactSelect) => {
-  if (contactSelect.value === "") {
-    showError(contactSelect, "Powiedz nam, w jakiej sprawie piszesz");
-  } else {
-    clearError(contactSelect);
-  }
+  contactSelect.value === ""
+    ? showError(contactSelect, "Wybierz, w jakiej sprawie piszesz")
+    : clearError(contactSelect);
 }
 
 export const handleTextarea = () => {
