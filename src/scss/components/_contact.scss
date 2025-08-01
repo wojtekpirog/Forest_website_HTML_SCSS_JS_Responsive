@@ -87,7 +87,15 @@
     }
 
     &-input {
-      @include mixins.formControlStyles;
+      --border-color: transparent;
+      
+      margin-bottom: .25em;
+      width: 100%;
+      padding: 1em;
+      border: 2px solid var(--border-color);
+      font-size: 1.6rem;
+      font-family: var(--primary-font);
+      border-color: var(--border-color);
 
       &::-webkit-input-placeholder {
         color: colors.$darkgray;
@@ -99,9 +107,7 @@
       }
 
       &--select {
-        @include mixins.formControlStyles;
         appearance: none;
-        -webkit-appearance: none;
         cursor: pointer;
   
         &:focus {

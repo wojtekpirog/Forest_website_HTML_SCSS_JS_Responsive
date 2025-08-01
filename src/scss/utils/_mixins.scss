@@ -36,15 +36,6 @@
   transition: left 300ms ease-out, right 300ms ease-out;  
 }
 
-@mixin formControlStyles {
-  margin-bottom: .25em;
-  width: 100%;
-  padding: 1em;
-  border: 2px solid transparent;
-  font-size: 1.6rem;
-  font-family: var(--primary-font);
-}
-
 @mixin companyLogo {
   display: flex;
   align-items: center;

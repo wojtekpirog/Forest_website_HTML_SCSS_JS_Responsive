@@ -85,13 +85,13 @@ export const handleTextarea = () => {
 }
 
 const showError = (input, message) => {
-  input.style.borderColor = "hsl(0, 100%, 40%)";
+  input.style.setProperty("--border-color", "hsl(0, 100%, 40%)");
   input.parentElement.querySelector(".contact__form-error").textContent = message;
   input.parentElement.querySelector(".contact__form-error").classList.add("contact__form-error--active");
 }
 
 const clearError = (input) => {
-  input.style.borderColor = "hsl(0, 0%, 25%)";
+  input.style.setProperty("--border-color", "transparent");
   input.parentElement.querySelector(".contact__form-error").textContent = "";
   input.parentElement.querySelector(".contact__form-error").classList.remove("contact__form-error--active");
 }
