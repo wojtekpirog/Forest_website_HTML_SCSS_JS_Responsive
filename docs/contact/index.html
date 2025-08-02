@@ -157,7 +157,9 @@
           </div>
           <!-- Details -->
           <!-- Form -->
-          <form class="contact__form" name="contact-form" method="POST" data-netlify="true">
+          <form class="contact__form" name="contact-form" netlify>
+            <!-- Hidden input for proper form handling -->
+            <input type="hidden" name="form-name" value="contact-form">
             <!-- Grid container -->
             <div class="contact__form-grid">
               <!-- Grid item -->

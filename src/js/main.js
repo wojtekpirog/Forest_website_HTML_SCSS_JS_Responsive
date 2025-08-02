@@ -169,7 +169,7 @@ const addListeners = () => {
   if (currentPage === "contact") {
     messageTextarea.addEventListener("input", handleTextarea);
     resetButton.addEventListener("click", handleFormClear);
-    submitButton.addEventListener("click", handleFormSubmit);
+    contactForm.addEventListener("submit", handleFormSubmit);
   }
 
   window.addEventListener("resize", () => window.innerWidth >= 768 ? closeNavbarMenu() : false);

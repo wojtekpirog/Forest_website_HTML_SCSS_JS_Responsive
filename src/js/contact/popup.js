@@ -20,13 +20,16 @@ import { popupContainer, closePopupButton } from "../main.js";
 //   });
 // }
 
-export const openPopup = () => {
+const openPopup = () => {
   popupContainer.classList.add("form-popup__container--active");
-  popupContainer.setAttribute("aria-hidden", false);
+  popupContainer.setAttribute("aria-hidden", "false");
   closePopupButton.addEventListener("click", closePopup);
 }
 
-export const closePopup = () => {
+const closePopup = () => {
   popupContainer.classList.remove("form-popup__container--active");
-  popupContainer.setAttribute("aria-hidden", true);
+  popupContainer.setAttribute("aria-hidden", "true");
+  closePopupButton.removeEventListener("click", closePopup);
 }
+
+export default openPopup;

@@ -8,6 +8,7 @@ import {
   contactFormControls,
   contactFormErrors
 } from "../main.js";
+import openPopup from "./popup.js";
 
 const setInitialCharsCounter = () => {
   charsCounter.innerHTML = `<p class="contact__form-counter">0/${messageTextarea.maxLength}</p>`;
@@ -31,8 +32,28 @@ export async function handleFormSubmit(event) {
   const isValid = validateForm();
   // If the form is not valid, return
   if (!isValid) return;
-  // Print the result of the form validation
-  console.log("Form is valid");
+  // Create a new FormData object
+  const form = event.currentTarget;
+  const formData = new FormData(form);
+  // Send the form data to the server
+  try {
+    // Send a POST request
+    const response = await fetch("/contact", {
+      method: "POST",
+      headers: {"Content-Type": "application/x-www-form-urlencoded"},
+      body: new URLSearchParams(formData).toString()
+    });
+    // If the request was successful, show a success pop-up
+    if (response.ok) {
+      openPopup()
+    } else {
+      alert("Wystąpił błąd w trakcie wysyłania wiadomości.");
+    };
+    // If the request fails, show an error message
+  } catch (error) {
+    alert("Wystąpił błąd w trakcie wysyłania wiadomości.");
+    console.error(`Network error: ${error.message}`);
+  }
 }
 
 const validateForm = () => {
