@@ -18,7 +18,7 @@ export let statsSection;
 // All counters in the stats section
 export let counters;
 // Scroll-to-the-top button
-export let scrollToTopButton;
+export let scrollToTopButton; 
 // Navbar
 export let navbar;
 export let toggleButton;

@@ -107,7 +107,7 @@
   <!-- Main content -->
   <main>
     <!-- Parks -->
-    <section class="section parks">
+    <section class="parks page-section">
       <!-- Container -->
       <div class="container">
         <!-- Section title -->
@@ -124,7 +124,12 @@
             <!-- Card -->
             <div class="parks__card">
               <!-- Card image -->
-              <img class="parks__card-image" src="" alt="">
+              <picture>
+                <!-- WEBP image -->
+                <source type="image/webp" srcset="">
+                <!-- JPG fallback image -->
+                <img class="parks__card-image" src="" alt="">
+              </picture> 
               <!-- Card image -->
               <!-- Card body -->
               <div class="parks__card-body">
@@ -250,13 +255,14 @@
         <ul class="footer__socials-list">
           <!-- Link -->
           <li class="footer__socials-item">
-            <a href="#" class="footer__socials-link" target="_blank" rel="noopener">
+            <a href="#" class="footer__socials-link" target="_blank" rel="noopener" aria-describedby="tooltip-facebook">
               <picture>
                 <!-- SVG icon -->
                 <source type="image/svg+xml" srcset="../assets/icons/facebook.svg">
                 <!-- PNG fallback for older browsers -->
                 <img src="../assets/icons/facebook.png" alt="Odwiedź profil Forest Group na platformie Facebook."> 
               </picture>
+              <span id="tooltip-facebook" class="footer__socials-tooltip" role="tooltip" aria-hidden="true">Facebook</span>
             </a>
           </li>
           <!-- Link -->

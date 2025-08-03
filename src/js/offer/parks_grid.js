@@ -9,7 +9,8 @@ const renderParkCards = () => {
     // Get the `parks__card` element from the HTML document fragment:
     const card = cardDocumentFragment.querySelector(".parks__card");
     // Modify the content of the template card:
-    card.querySelector(".parks__card-image").setAttribute("src", park.imageSource);
+    card.querySelector("source").setAttribute("srcset", park.imageSource);
+    card.querySelector(".parks__card-image").setAttribute("src", park.fallbackImageSource);
     card.querySelector(".parks__card-image").setAttribute("alt", park.altText);
     card.querySelector(".parks__card-title").textContent = park.title;
     card.querySelector(".parks__card-info-city").textContent = `${park.city}, ${park.country}`;

@@ -2,7 +2,8 @@ const parks = [
   {
     id: 1,
     title: "Łazienki Królewskie",
-    imageSource: "./images/park_1.min.jpg",
+    imageSource: "../assets/media/park_1.webp",
+    fallbackImageSource: "../assets/media/park_1.min.jpg",
     altText: "Kanał wodny, a nad nim mostek łączący dwie zabudowy pałacu w Łazienkach Królewskich w Warszawie.",
     city: "Warszawa",
     country: "Polska",
@@ -13,7 +14,8 @@ const parks = [
   {
     id: 2,
     title: "Park Oliwski im. Adama Mickiewicza",
-    imageSource: "./images/park_2.min.jpg",
+    imageSource: "../assets/media/park_2.webp",
+    fallbackImageSource: "../assets/media/park_2.min.jpg",
     altText: "Ogród kwiatowy, z bujnymi różowymi kwiatami na pierwszym planie, otoczony niskimi żywopłotami, prowadzący do centralnej części parku z alejkami po obu stronach, w tle widoczne drzewa w jesiennych kolorach.",
     city: "Gdańsk",
     country: "Polska",
@@ -24,7 +26,8 @@ const parks = [
   {
     id: 3,
     title: "Park Szczytnicki",
-    imageSource: "./images/park_3.min.jpg",
+    imageSource: "../assets/media/park_3.webp",
+    fallbackImageSource: "../assets/media/park_3.min.jpg",
     altText: "Zbiornik wodny wraz z mostkiem w orientalnym stylu wschodnim w parku Szczytnickim we Wrocławiu.",
     city: "Wrocław",
     country: "Polska",
@@ -35,7 +38,8 @@ const parks = [
   {
     id: 4,
     title: "Park Güell",
-    imageSource: "./images/park_4.min.jpg",
+    imageSource: "../assets/media/park_4.webp",
+    fallbackImageSource: "../assets/media/park_4.min.jpg",
     city: "Barcelona",
     altText: "Długa, falista ławka, ozdobiona kolorową ceramiką na pierwszym planie w parku Güell w Barcelonie, a za nią widok na fragment miasta.",
     country: "Hiszpania",
@@ -46,7 +50,8 @@ const parks = [
   {
     id: 5,
     title: "Hyde Park",
-    imageSource: "./images/park_5.min.jpg",
+    imageSource: "../assets/media/park_5.webp",
+    fallbackImageSource: "../assets/media/park_5.min.jpg",
     altText: "Kamienny posąg w kształcie odwróconej litery U, a za nim zielona trawa, drzewa oraz staw w Hyde Park w Londynie.",
     city: "Londyn",
     country: "Wielka Brytania",
@@ -57,7 +62,8 @@ const parks = [
   {
     id: 6,
     title: "Tiergarten Park",
-    imageSource: "./images/park_6.min.jpg",
+    imageSource: "../assets/media/park_6.webp",
+    fallbackImageSource: "../assets/media/park_6.min.jpg",
     altText: "Widok na Kolumnę Zwyciąstwa w Tiergarten Park w Berlinie, otoczoną drzewami, z dwoma pomnikami rycerzy walczących ze lwami po obu stronach na pierwszym planie.",
     city: "Berlin",
     country: "Niemcy",
@@ -68,7 +74,8 @@ const parks = [
   {
     id: 7,
     title: "Central Park",
-    imageSource: "./images/park_7.min.jpg",
+    imageSource: "../assets/media/park_7.webp",
+    fallbackImageSource: "../assets/media/park_7.min.jpg",
     altText: "Staw w Central Parku w Nowym Jorku, otoczony drzewami, z widokiem na wysokie wieżowce w tle pod niebem z białymi chmurami.",
     city: "Nowy Jork",
     country: "USA",
@@ -79,7 +86,8 @@ const parks = [
   {
     id: 8,
     title: "Ogrody Tivoli",
-    imageSource: "./images/park_8.min.jpg",
+    imageSource: "../assets/media/park_8.webp",
+    fallbackImageSource: "../assets/media/park_8.min.jpg",
     altText: "Nocne niebo, a pod rozświetlona zabudowa w stylu azjatyckim, w tle roller coaster oraz podświetlona na fioletowo wieża widokowa.",
     city: "Kopenhaga",
     country: "Dania",
@@ -90,7 +98,8 @@ const parks = [
   {
     id: 9,
     title: "Ogród Botaniczny",
-    imageSource: "./images/park_9.min.jpg",
+    imageSource: "../assets/media/park_9.webp",
+    fallbackImageSource: "../assets/media/park_9.min.jpg",
     altText: "Teren zielonych drzew, otoczony rzeką, a na drugim planie wysokie platformy w kształcie lejka w kolorze złotym wbijające się w błękitne niebo.",
     city: "Singapur",
     country: "Singapur",
