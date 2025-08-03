@@ -45,7 +45,7 @@ export async function handleFormSubmit(event) {
     });
     // If the request was successful, show a success pop-up
     if (response.ok) {
-      openPopup()
+      openPopup();
     } else {
       alert("Wystąpił błąd w trakcie wysyłania wiadomości.");
     };

@@ -79,13 +79,19 @@
   <header id="hero" class="hero">
     <!-- Hero image -->
     <picture>
-      <!-- Obrazek dla urządzeń o szerokości ekranu co najmniej 1200px -->
+      <!-- WEBP: >= 1200px -->
+      <source type="image/webp" srcset="./assets/media/hero_image_desktop_hq.webp" media="(min-width: 1200px)"> 
+      <!-- WEBP: >= 768px -->
+      <source type="image/webp" srcset="./assets/media/hero_image_desktop.webp" media="(min-width: 768px)">
+      <!-- WEBP: mobile screens -->
+      <source type="image/webp" srcset="./assets/media/hero_image_mobile.webp">
+      <!-- JPG fallback: >= 1200px -->
       <source srcset="./assets/media/hero_image_desktop_hq.min.jpg" media="(min-width: 1200px)">
-      <!-- Obrazek dla urządzeń o szerokości ekranu co najmniej 768px -->
+      <!-- JPG fallback: >= 768px -->
       <source srcset="./assets/media/hero_image_desktop.min.jpg" media="(min-width: 768px)">
-      <!-- Obrazek domyślny, dla urządzeń o węższych ekranach -->
+      <!-- JPG fallback: mobile screens -->
       <img class="hero__image" src="./assets/media/hero_image_mobile.min.jpg" alt="Drewniany pomost biegnący przez las."> 
-    </picture> 
+    </picture>
     <!-- Hero image -->
     <!-- Container -->
     <div class="container">
@@ -118,8 +124,8 @@
           <div class="about__image-box">
             <!--  -->
             <picture>
-              <source srcset="./assets/media/aboutus_image.min.jpg">
-              <img class="about__image" src="./assets/media/aboutus_image.webp" alt="Malutka wyspa porośnięta mchem na środku jeziora otoczonego wysokimi drzewami.">
+              <source type="image/webp" srcset="./assets/media/aboutus_image.webp">
+              <img class="about__image" src="./assets/media/aboutus_image.min.jpg" alt="Malutka wyspa porośnięta mchem na środku jeziora otoczonego wysokimi drzewami.">
             </picture>
             <!--  -->
           </div> 
@@ -137,6 +143,7 @@
         <div class="about__description">
           <!-- Image box -->
           <div class="about__image-box">
+            <source type="image/webp" srcset="./assets/media/aboutus_image_two.webp">
             <img class="about__image" src="./assets/media/aboutus_image_two.min.jpg" alt="Domki z drewnianą fasadą nad jeziorem otoczone górami i chmurami.">
           </div>
           <!-- Image box -->
@@ -625,7 +632,12 @@
               <!-- Top -->
               <div class="testimonials__slider-card-top">
                 <!-- Image -->
-                <img src="./assets/media/personOne.min.jpg" class="testimonials__slider-card-image" alt="Młoda kobieta w ciemnych włosach nosząca jasnozielony sweter, na drugim planie łąka oraz drzewo." draggable="false">
+                <picture>
+                  <!-- WEBP -->
+                  <source type="image/webp" srcset="./assets/media/personOne.webp">
+                  <!-- JPG fallback -->
+                  <img src="./assets/media/personOne.min.jpg" class="testimonials__slider-card-image" alt="Młoda kobieta w ciemnych włosach nosząca jasnozielony sweter, na drugim planie łąka oraz drzewo." draggable="false">
+                </picture> 
                 <!-- Quote -->
                 <div class="testimonials__slider-card-quote">
                   <!-- Quote sign -->
@@ -650,7 +662,12 @@
               <!-- Top -->
               <div class="testimonials__slider-card-top">
                 <!-- Image -->
-                <img src="./assets/media/personTwo.min.jpg" class="testimonials__slider-card-image" alt="Młoda kobieta o ciemnej karnacji i ciemnych włosach, nosząca ciemnoszary sweter, przed nią laptop, a na drugim planie kuchnia." draggable="false">
+                <picture>
+                  <!-- WEBP -->
+                  <source type="image/webp" srcset="./assets/media/personTwo.webp"> 
+                  <!-- JPG fallback -->
+                  <img src="./assets/media/personTwo.min.jpg" class="testimonials__slider-card-image" alt="Młoda kobieta o ciemnej karnacji i ciemnych włosach, nosząca ciemnoszary sweter, przed nią laptop, a na drugim planie kuchnia." draggable="false">
+                </picture>
                 <!-- Quote -->
                 <div class="testimonials__slider-card-quote">
                   <!-- Quote sign -->
@@ -675,7 +692,12 @@
               <!-- Top -->
               <div class="testimonials__slider-card-top">
                 <!-- Image -->
-                <img src="./assets/media/personThree.min.jpg" class="testimonials__slider-card-image" alt="Mężczyzna o ciemnych włosach, noszący jasno-beżowy sweter, pod nim czerwoną koszulę w kratę oraz jasno-niebieskie spodnie jeansowe, siedzi na kamieniu. Na drugim planie inne kamienie oraz śnieg." draggable="false">
+                <picture>
+                  <!-- WEBP -->
+                  <source type="image/webp" srcset="./assets/media/personThree.webp">
+                  <!-- JPG fallback -->
+                  <img src="./assets/media/personThree.min.jpg" class="testimonials__slider-card-image" alt="Mężczyzna o ciemnych włosach, noszący jasno-beżowy sweter, pod nim czerwoną koszulę w kratę oraz jasno-niebieskie spodnie jeansowe, siedzi na kamieniu. Na drugim planie inne kamienie oraz śnieg." draggable="false">
+                </picture> 
                 <!-- Quote -->
                 <div class="testimonials__slider-card-quote">
                   <!-- Quote sign -->
@@ -700,7 +722,12 @@
               <!-- Top -->
               <div class="testimonials__slider-card-top">
                 <!-- Image -->
-                <img src="./assets/media/personFour.min.jpg" class="testimonials__slider-card-image" alt="Młoda kobieta o ciemnych, długich włosach, nosząca czarną sukienkę, a na drugim planie wysokie, suche trawy." draggable="false">
+                <picture>
+                  <!-- WEBP -->
+                  <source type="image/webp" srcset="./assets/media/personFour.webp">
+                  <!-- JPG fallback -->
+                  <img src="./assets/media/personFour.min.jpg" class="testimonials__slider-card-image" alt="Młoda kobieta o ciemnych, długich włosach, nosząca czarną sukienkę, a na drugim planie wysokie, suche trawy." draggable="false">
+                </picture>
                 <!-- Quote -->
                 <div class="testimonials__slider-card-quote">
                   <!-- Quote sign -->
