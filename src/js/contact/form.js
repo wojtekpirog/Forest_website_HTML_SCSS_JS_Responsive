@@ -11,7 +11,7 @@ import {
 import openPopup from "./popup.js";
 
 const setInitialCharsCounter = () => {
-  charsCounter.innerHTML = `<p class="contact__form-counter">0/${messageTextarea.maxLength}</p>`;
+  charsCounter.innerText = `0/${messageTextarea.maxLength}`;
 }
 
 export const handleFormClear = (event) => {
@@ -98,7 +98,7 @@ const checkSelect = (contactSelect) => {
 
 export const handleTextarea = () => {
   // Update chars counter every time the textarea's value changes
-  charsCounter.innerHTML = `<p class="contact__form-counter">${messageTextarea.value.length}/${messageTextarea.maxLength}</p>`;
+  charsCounter.innerText = `${messageTextarea.value.length}/${messageTextarea.maxLength}`;
   // If the textarea's value exceeds the maximum length, show an error
   messageTextarea.value.length > messageTextarea.maxLength
     ? showError(messageTextarea, `Osiągnięto limit ${messageTextarea.maxLength} znaków.`)

@@ -1,6 +1,13 @@
 @use "./utils/mixins" as mixins;
 @use "./utils/colors" as colors;
 
+[data-current-page]:not([data-current-page="home"]) {
+  .hero {
+    margin-top: 85px;
+    height: calc(50vh - 85px);
+  }
+}
+
 .container-fluid {
   width: 100%;
   position: fixed;

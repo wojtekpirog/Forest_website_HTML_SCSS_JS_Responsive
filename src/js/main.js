@@ -89,7 +89,7 @@ const main = () => {
   checkCookie();
   setFooterYear();
 
-  if (pageActions[currentPage]) {
+  if (pageActions[currentPage]) { 
     pageActions[currentPage]();
   }
 }
@@ -150,28 +150,33 @@ const prepareDOMElements = () => {
 }
 
 const addListeners = () => {
-  cookieAcceptButton.addEventListener("click", handleCookieAlert);
-  toggleButton.addEventListener("click", toggleNavbarMenu);
-  overlay.addEventListener("click", closeNavbarMenu);
-  navbarLinks.forEach((navbarLink) => navbarLink.addEventListener("click", closeNavbarMenu));
-
+  // Events for the homepage
   if (currentPage === "home") {
-    footerSocialLinks.forEach((link) => link.addEventListener("mouseover", showTooltip));
-    footerSocialLinks.forEach((link) => link.addEventListener("focus", showTooltip));
-    footerSocialLinks.forEach((link) => link.addEventListener("mouseout", hideTooltip));
-    footerSocialLinks.forEach((link) => link.addEventListener("blur", hideTooltip));
     faqAccordionQuestions.forEach((question) => question.addEventListener("click", handleAccordionQuestions));
     scrollToTopButton.addEventListener("click", scrollToTop);
-    window.addEventListener("click", closeAccordionOutside);
-    window.addEventListener("scroll", handleScrollToTop);
   }
-
+  // Events for the contact page
   if (currentPage === "contact") {
     messageTextarea.addEventListener("input", handleTextarea);
     resetButton.addEventListener("click", handleFormClear);
     contactForm.addEventListener("submit", handleFormSubmit);
   }
+  // Events for all pages on the website
+  overlay.addEventListener("click", closeNavbarMenu);
+  cookieAcceptButton.addEventListener("click", handleCookieAlert);
+  toggleButton.addEventListener("click", toggleNavbarMenu);
+  navbarLinks.forEach((navbarLink) => navbarLink.addEventListener("click", closeNavbarMenu));
+  // Events for social media links in the page footer
+  const showEvents = ["mouseover", "focus"];
+  const hideEvents = ["mouseout", "blur"];
 
+  footerSocialLinks.forEach((socialLink) => {
+    showEvents.forEach((showEvent) => socialLink.addEventListener(showEvent, showTooltip));
+    hideEvents.forEach((hideEvent) => socialLink.addEventListener(hideEvent, hideTooltip));
+  });
+  // Events for the `window` global object
+  window.addEventListener("click", closeAccordionOutside);
+  window.addEventListener("scroll", handleScrollToTop);
   window.addEventListener("resize", () => window.innerWidth >= 768 ? closeNavbarMenu() : false);
 }
 
