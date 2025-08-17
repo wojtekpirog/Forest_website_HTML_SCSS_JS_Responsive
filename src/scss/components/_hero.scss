@@ -1,9 +1,9 @@
 @use "../utils/colors" as colors;
+@use "../utils/mixins" as mixins;
 
 .hero {
   height: 100vh;
   position: relative;
-  overflow: hidden;
 
   &__image {
     width: 100%;
@@ -13,21 +13,77 @@
   }
 
   &__text {
+    padding-right: .5em;
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
     color: colors.$light;
     z-index: 9;
+
+    &--center {
+      text-align: center;
+    }
   }
 
+  &__company-name,
   &__title {
-    margin-bottom: .5em;
+    margin-bottom: .75em;
+  }
+  
+  &__company-name {
     font-size: 2.4rem;
     font-family: var(--primary-font-light);
   }
-
-  &__description {
-    padding-right: 1em;
+  
+  &__title {
     font-size: 3.2rem;
+    line-height: 1.5;
+  }
+
+  &__divider {
+    @include mixins.divider(1px);
+
+    &--align-left {
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
+
+  &__cta-link {
+    @include mixins.buttonAndLinkStyles($bgColor: colors.$mint, $txtColor: colors.$black);
+    border-color: colors.$darkmint;
+    border-width: 2px;
+    font-size: 1.6rem;
+    cursor: pointer;
+
+    & > span {
+      @include mixins.buttonAndLinkHover(colors.$darkmint);
+
+      &:first-child {
+        top: -50%;
+        left: -100%;
+      }
+
+      &:last-child {
+        bottom: -50%;
+        right: -100%;
+      }
+    }
+
+    @media (hover: hover) {
+      &:hover {
+        & > span:first-child {
+          left: 0;
+        }
+
+        & > span:last-child {
+          right: 0;
+        }
+      }
+    }
+  }
+
+  &__overlay {
+    @include mixins.overlay;
   }
 }

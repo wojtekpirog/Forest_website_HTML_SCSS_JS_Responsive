@@ -28,21 +28,16 @@
           </picture>
           <span class="navbar__logo-name">Forest</span>
         </a>
-        <!-- Logo -->
         <!-- Hamburger -->
         <button type="button" class="navbar__burger" aria-label="Przełącz menu nawigacyjne" aria-expanded="false" aria-controls="navbarLinks">
           <!--  -->
           <span class="navbar__burger-box">
-            <!--  -->
             <span class="navbar__burger-inner"></span>
-            <!--  -->
           </span>
           <!--  -->
         </button>
-        <!-- Hamburger -->
         <!-- Links -->
         <div class="navbar__links" id="navbarLinks">
-          <!-- List -->
           <ul class="navbar__list">
             <li class="navbar__item">
               <a href="#about" class="navbar__link">O nas</a>
@@ -59,11 +54,10 @@
             <li class="navbar__item">
               <a href="tel:+48123456789" class="navbar__link" aria-label="Zadzwoń pod numer 123 456 789.">
                 <img src="./assets/icons/phone.svg" alt="" aria-hidden="true">
-                123 456 789
+                612 488 916
               </a>
             </li>
           </ul>
-          <!-- List -->
         </div> 
         <!-- Links -->
       </nav>
@@ -71,41 +65,45 @@
     </div> 
     <!-- Container -->
   </div>
-  <!-- Fluid container -->
-  <!-- Overlay -->
+  <!-- /Fluid container -->
+  <!-- Navbar overlay (page overlay when mobile menu is opened) -->
   <div class="navbar__overlay"></div> 
-  <!-- Overlay -->
   <!-- Hero -->
   <header id="hero" class="hero">
     <!-- Hero image -->
     <picture>
       <!-- WEBP: >= 1200px -->
-      <source type="image/webp" srcset="./assets/media/hero_image_desktop_hq.webp" media="(min-width: 1200px)"> 
+      <source type="image/webp" srcset="./assets/media/home_page_hero_image_desktop_hq.webp" media="(min-width: 1200px)"> 
       <!-- WEBP: >= 768px -->
-      <source type="image/webp" srcset="./assets/media/hero_image_desktop.webp" media="(min-width: 768px)">
+      <source type="image/webp" srcset="./assets/media/home_page_hero_image_desktop.webp" media="(min-width: 768px)">
       <!-- WEBP: mobile screens -->
-      <source type="image/webp" srcset="./assets/media/hero_image_mobile.webp">
+      <source type="image/webp" srcset="./assets/media/home_page_hero_image_mobile.webp">
       <!-- JPG fallback: >= 1200px -->
-      <source srcset="./assets/media/hero_image_desktop_hq.min.jpg" media="(min-width: 1200px)">
+      <source srcset="./assets/media/home_page_hero_image_desktop_hq.min.jpg" media="(min-width: 1200px)">
       <!-- JPG fallback: >= 768px -->
-      <source srcset="./assets/media/hero_image_desktop.min.jpg" media="(min-width: 768px)">
+      <source srcset="./assets/media/home_page_hero_image_desktop.min.jpg" media="(min-width: 768px)">
       <!-- JPG fallback: mobile screens -->
-      <img class="hero__image" src="./assets/media/hero_image_mobile.min.jpg" alt="Drewniany pomost biegnący przez las."> 
+      <img class="hero__image" src="./assets/media/home_page_hero_image_mobile.min.jpg" alt="Drewniany pomost biegnący przez las."> 
     </picture>
-    <!-- Hero image -->
     <!-- Container -->
     <div class="container">
       <!-- Hero text -->
-      <div class="hero__text">
-        <p class="hero__title">Forest Group</p>
-        <h1 class="hero__description">Znajdź z nami najpiękniejszy park w Twojej okolicy!</h1>
+      <div class="hero__text hero__text--center">
+        <p class="hero__company-name">Forest Group</p>
+        <hr class="hero__divider">
+        <h1 class="hero__title">Znajdź z nami najpiękniejszy park w Twojej okolicy!</h1>
+        <!-- CTA button -->
+        <a href="#about" class="hero__cta-link">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          Poznaj nas
+        </a>
       </div> 
-      <!-- Hero text -->
+      <!-- /Hero text -->
     </div> 
-    <!-- Container -->
-    <!-- Overlay -->
-    <div class="section__overlay"></div> 
-    <!-- Overlay -->
+    <!-- Section overlay -->
+    <div class="hero__overlay"></div>
+    <!-- /Section overlay -->
   </header> 
   <!-- Hero -->
   <!-- Main content -->
@@ -122,56 +120,55 @@
         <div class="about__description">
           <!-- Image box -->
           <div class="about__image-box">
-            <!--  -->
             <picture>
+              <!-- WEBP image -->
               <source type="image/webp" srcset="./assets/media/aboutus_image.webp">
+              <!-- Fallback JPG image -->
               <img class="about__image" src="./assets/media/aboutus_image.min.jpg" alt="Malutka wyspa porośnięta mchem na środku jeziora otoczonego wysokimi drzewami.">
             </picture>
-            <!--  -->
-          </div> 
-          <!-- Image box -->
+          </div>
+          <!-- /Image box -->
           <!-- Text box -->
           <div class="about__text">
             <h3 class="about__title">Niezapomniane przygody</h3>
             <p class="about__mission">Naszą misją jest odkrywanie z Tobą najpiękniejszych zakątków natury – tych bliskich i dalekich, które ożywiają zmysły i wyciszają umysł. Specjalizujemy się w doradztwie i organizacji wypraw do najpiękniejszych terenów zielonych, gdzie lasy szepczą historie, a łąki rozkwitają kolorami. Z pasją tworzymy niezapomniane doświadczenia, które pozwolą Ci na nowo odkryć harmonię z przyrodą.</p>
             <p class="about__mission">Dołącz do nas, by poczuć magię dzikiej przyrody, odnaleźć spokój i napełnić się energią natury!</p>
           </div> 
-          <!-- Text box -->
-        </div> 
-        <!-- About description -->
+          <!-- /Text box -->
+        </div>
         <!-- About description -->
         <div class="about__description">
           <!-- Image box -->
           <div class="about__image-box">
+            <!-- WEBP image -->
             <source type="image/webp" srcset="./assets/media/aboutus_image_two.webp">
+            <!-- Fallback JPG image -->
             <img class="about__image" src="./assets/media/aboutus_image_two.min.jpg" alt="Domki z drewnianą fasadą nad jeziorem otoczone górami i chmurami.">
           </div>
-          <!-- Image box -->
+          <!-- /Image box -->
           <!-- Text box -->
           <div class="about__text">
             <h3 class="about__title">Najwspanialsze cuda natury</h3>
             <p class="about__mission">Jesteśmy, tak jak Ty, miłośnikami natury, i tak jak Ty każdego dnia uwielbiamy delektować się jej dziełami. Dlatego chcemy pomóc Ci poznać świat dzikiej przyrody i wzbudzić w Tobie naturalne, lecz wcześniej skrywane, pragnienie zjednoczenia się w harmonii z naturą.</p>
             <p class="about__mission">Odwiedź z nami miejsca, których długa historia i bogata tradycja mówią same za siebie, a tysiące zadowolonych turystów gorąco polecają. Niech wspomnienia z tej przygody zapadnią Ci w pamięć!</p>
           </div>
-          <!-- Text box -->
+          <!-- /Text box -->
         </div> 
-        <!-- About description -->
+        <!-- /About description -->
       </div> 
       <!-- Container -->
       <!-- Banner -->
       <div class="about__banner about__banner-image">
         <!-- Container -->
         <div class="container">
-          <!-- Text -->
           <div class="about__banner-text-box">
             <p class="about__banner-text">Przygoda dla całej rodziny</p>
-          </div> 
-          <!-- Text -->
+          </div>
         </div> 
-        <!-- Container -->
-        <!-- Overlay -->
+        <!-- /Container -->
+        <!-- Section overlay -->
         <div class="section__overlay"></div>
-        <!-- Overlay -->        
+        <!-- /Section overlay -->        
       </div> 
       <!-- Banner -->
     </section> 

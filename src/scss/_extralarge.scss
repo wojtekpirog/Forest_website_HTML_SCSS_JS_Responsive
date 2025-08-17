@@ -3,6 +3,16 @@
     width: 1140px;
   }
 
+  .hero {
+    &__company-name {
+      font-size: 3.2rem;
+    }
+
+    &__title {
+      font-size: 5rem;
+    }
+  }
+
   .about__banner-text {
     font-size: 4rem;
   }

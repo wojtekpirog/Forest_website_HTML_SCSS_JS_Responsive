@@ -22,8 +22,8 @@
 }
 
 .navbar__overlay--active {
-  position: fixed;
   @include mixins.overlay;
+  position: fixed;
   z-index: 10;
 }
 
@@ -65,9 +65,7 @@
 }
 
 .section__title-divider {
-  margin: 1.5em auto;
-  width: 60px;
-  border: 2px solid colors.$mint;
+  @include mixins.divider(2px);
 }
 
 .section__subtitle {
