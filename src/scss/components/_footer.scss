@@ -23,6 +23,7 @@
       &-link {
         @include mixins.companyLogo;
         font-size: 4.6rem;
+        color: colors.$black;
       }
 
       &-icon {
