@@ -15,10 +15,6 @@
   background-color: colors.$light;
   border-bottom: 2px solid black;
   z-index: 11;
-
-  &--dark {
-    background-color: colors.$black;
-  }
 }
 
 .navbar__overlay--active {
@@ -38,8 +34,8 @@
 }
 
 .section__overlay {
-  position: absolute;
   @include mixins.overlay;
+  position: absolute;
   z-index: 8;
 }
 

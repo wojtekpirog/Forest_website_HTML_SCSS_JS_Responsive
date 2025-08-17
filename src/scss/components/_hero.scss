@@ -85,5 +85,6 @@
 
   &__overlay {
     @include mixins.overlay;
+    background-color: hsla(0, 0%, 0%, .7);
   }
 }

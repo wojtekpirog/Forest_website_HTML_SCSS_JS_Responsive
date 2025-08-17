@@ -1,8 +1,9 @@
 @use "./utils/mixins" as mixins;
 
-@media screen and (min-width: 768px) {
+@media (min-width: 768px) {
   .navbar {
     padding: 0;
+    flex-wrap: nowrap;
 
     &__burger {
       display: none;
@@ -10,22 +11,32 @@
 
     &__links {
       display: block;
-      flex-basis: auto;
 
       &--active {
         padding-top: 0;
       }
     }
 
+    &__list {
+      flex-direction: row;
+      justify-content: flex-end;
+      gap: .25em;
+    }
+
+    &__item,
     &__link {
+      width: auto;
+    }
+
+    &__link {
+      display: inline-flex;
+      white-space: nowrap;
+
       &--active {
         @include mixins.navbarLinkActiveAndHover;      
       }
     }
 
-    &__list {
-      flex-direction: row;
-    }
   }
 
   .services {

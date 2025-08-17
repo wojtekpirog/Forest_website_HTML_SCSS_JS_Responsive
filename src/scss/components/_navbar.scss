@@ -7,17 +7,21 @@
   justify-content: space-between;
   flex-wrap: wrap;
   padding: .5em;
-  background-color: colors.$light;
+
+  &__logo,
+  &__link {
+    color: colors.$black;
+  }
 
   &__logo {
     @include mixins.companyLogo;
     padding-left: .5em;
-
+    
     &-icon {
       width: 25px;
       vertical-align: middle;
     }
-
+    
     &-name {
       transform: translateY(4px);
     }
@@ -135,11 +139,12 @@
   }
 
   &__item {
-    width: fit-content; // było: 100%
+    width: 100%;
     text-align: center;
 
     &:last-child > .navbar__link {
       display: flex;
+      justify-content: center;
       align-items: center;
       gap: 4px;
       font-family: "Primary_semibold", Arial, sans-serif;
@@ -149,9 +154,9 @@
 
   &__link {
     display: inline-block;
+    width: 100%;
     padding: 2em 1em;
     text-decoration: none;
-    color: colors.$black;
     transition: background-color 200ms linear, color 200ms linear;
 
     @media (hover: hover) {
