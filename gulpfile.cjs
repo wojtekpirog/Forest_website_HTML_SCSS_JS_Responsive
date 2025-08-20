@@ -77,8 +77,8 @@ function bundleScripts() {
   return src(paths.scripts.src)
     .pipe(sourcemaps.init())
     .pipe(webpack({
-      mode: "development",
-      devtool: "eval-cheap-source-map",
+      mode: "production",
+      // devtool: "eval-cheap-source-map",
       output: {
         filename: "main.min.js",
       },
@@ -115,28 +115,6 @@ function bundleScripts() {
     .pipe(sourcemaps.write("."))
     .pipe(dest(paths.scripts.dist));
 }
-
-// function transformScripts() {
-//   return src(`${paths.scripts.dist}/main.min.js`)
-//     .pipe(sourcemaps.init())
-//     .pipe(babel({
-//       presets: ['@babel/env'],
-//     }).on("error", (error) => {
-//       console.error(`Babel error: ${error}`);
-//     }))
-//     .pipe(terser({
-//       toplevel: true
-//     }).on("error", (error) => {
-//       console.error(`Terser error: ${error}`);
-//     }))
-//     .pipe(sourcemaps.write("."))
-//     .pipe(dest(paths.scripts.dist));
-// }
-
-// function prepareScripts(cb) {
-//   series(bundleScripts, transformScripts);
-//   cb();
-// }
 
 function isNotWebp(file) {
   return path.extname(file.path).toLowerCase() !== ".webp";
