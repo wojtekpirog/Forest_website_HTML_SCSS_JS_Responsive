@@ -1,2 +1,4 @@
 User-agent: *
 Allow: /
+
+Sitemap: https://www.forestgroupapp.netlify.app/sitemap.xml
