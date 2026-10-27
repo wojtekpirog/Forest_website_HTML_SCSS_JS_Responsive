@@ -1,23 +1,17 @@
 {
   "name": "forest-website",
   "version": "1.0.0",
-  "description": "Forest Group - Find the most beautiful parks near you",
+  "description": "",
   "main": "index.js",
   "type": "module",
   "scripts": {},
-  "keywords": [
-    "forest",
-    "park",
-    "nature",
-    "travel",
-    "beautiful"
-  ],
+  "keywords": [],
   "author": {
     "name": "Forest Group Inc",
     "email": "contact@forestgroup.com",
     "url": "https://www.forestgroup.com"
   },
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
     "@babel/core": "^7.27.1",
     "@babel/preset-env": "^7.27.2",
